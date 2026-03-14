@@ -233,26 +233,26 @@
 
     // --- Pool de Pokémon ex Básicos da Liga ---
     const POKEMON_POOL = [
-      { id: "PFL_4", name: "Mega Heracross ex", type: "Pokémon", hp: 280, pokemonType: "Planta", prints: ["PFL #4","PFL #108"], desc: "Habilidade: —  |  GG Chifre Maciço 100+ (se foi danificado no último turno, causa a mesma quantidade a mais)  |  GGG Colisão Montanhosa 170 (descarta 2 cartas do topo do baralho do oponente). Fraqueza: Fogo. Recuo: 2." },
-      { id: "PFL_18", name: "Oricorio ex", type: "Pokémon", hp: 190, pokemonType: "Fogo", prints: ["PFL #18","PFL #110","MEP #24"], desc: "Habilidade: Turbo Animado — Quantas vezes desejar, se você tiver algum Pokémon ex de Megaevolução [R] em jogo, ligue uma Energia [R] Básica da sua mão a 1 dos seus Pokémon [R] no Banco.  |  RRC Asa de Fogo 110. Fraqueza: Água. Recuo: 1." },
-      { id: "PFL_29", name: "Rotom ex", type: "Pokémon", hp: 190, pokemonType: "Raio", prints: ["PFL #29","PFL #111","PFL #126"], desc: "Habilidade: Adaptador Multiuso — Cada Pokémon 'Rotom' pode ter até 2 Ferramentas ligadas. Se parar de funcionar, descarte até restar 1.  |  LC Relâmpago 130 (descarte todas as Energias). Fraqueza: Luta. Recuo: 1." },
-      { id: "PFL_41", name: "Mega Diancie ex", type: "Pokémon", hp: 270, pokemonType: "Psíquico", prints: ["PFL #41"], desc: "Habilidade: Camada Diamantina — Recebe 30 de dano a menos de ataques.  |  PP Feixe Grinalda 120× (descarte até 2 Energias, 120 por cada). Fraqueza: Metal. Recuo: 1." },
-      { id: "MEG_86", name: "Mega Absol ex", type: "Pokémon", hp: 280, pokemonType: "Escuridão", prints: ["MEG #86","MEG #161","MEG #180"], desc: "DC Fase Terminal (se o Ativo do oponente tiver exatamente 6 contadores de dano, Nocauteado)  |  DDC Garra Nefasta 200 (oponente revela a mão, você descarta 1 carta). Fraqueza: Planta. Recuo: 2." },
-      { id: "MEG_94", name: "Mega Mawile ex", type: "Pokémon", hp: 270, pokemonType: "Metal", prints: ["MEG #94","MEG #162"], desc: "MM Engolidona 80× (80 por carta de Prêmio que você pegou)  |  MMC Dentadona 260 (se o Ativo do oponente já tiver dano, base é 30). Fraqueza: Fogo. Resist: Planta. Recuo: 2." },
-      { id: "MEG_100", name: "Mega Latias ex", type: "Pokémon", hp: 280, pokemonType: "Dragão", prints: ["MEG #100","MEG #163","MEG #181","MEP #11"], desc: "C Bombardear 40 (pode trocar por Pokémon do Banco)  |  RPC Impulso Ilusório 300 (descarta todas as Energias). Sem Fraqueza. Recuo: 1." },
-      { id: "MEG_104", name: "Mega Kangaskhan ex", type: "Pokémon", hp: 300, pokemonType: "Incolor", prints: ["MEG #104","MEG #164","MEG #182","MEP #25"], desc: "Habilidade: Faz Teu Corre — Uma vez por turno, se Ativo, compre 2 cartas.  |  CCC Combo de Disparo Rápido 200+ (jogue moedas até coroa, +50 por cara). Fraqueza: Luta. Recuo: 3." },
-      { id: "BLK_28", name: "Kyurem ex", type: "Pokémon", hp: 230, pokemonType: "Água", prints: ["BLK #28","BLK #157","BLK #165"], desc: "CC Talho 50  |  WWC Explosão Nevada 130 (causa 10 de dano a cada Pokémon do Banco do oponente por cada Prêmio que o oponente pegou). Fraqueza: Metal. Recuo: 2." },
-      { id: "BLK_34", name: "Zekrom ex", type: "Pokémon", hp: 230, pokemonType: "Raio", prints: ["BLK #34","BLK #158","BLK #166","BLK #172"], desc: "CC Talho 50  |  LLC Explosão Voltaica 130+ (+50 por Prêmio do oponente, causa 30 a si mesmo). Fraqueza: Luta. Recuo: 2." },
-      { id: "BLK_44", name: "Meloetta ex", type: "Pokémon", hp: 200, pokemonType: "Psíquico", prints: ["BLK #44","BLK #159","BLK #167"], desc: "Habilidade: Primeira Performance — Se você for primeiro, pode atacar no 1º turno.  |  P Voz Ecoante 30 (no próximo turno causa 80 a mais). Fraqueza: Escuridão. Resist: Luta. Recuo: 1." },
-      { id: "BLK_67", name: "Genesect ex", type: "Pokémon", hp: 220, pokemonType: "Metal", prints: ["BLK #67","BLK #161","BLK #169"], desc: "Habilidade: Sinal Metálico — Uma vez por turno, procure por até 2 Pokémon [M] de Evolução no baralho e coloque na mão.  |  MMC Carga Protetora 150 (recebe 30 de dano a menos no próximo turno). Fraqueza: Fogo. Resist: Planta. Recuo: 2." },
-      { id: "WHT_20", name: "Reshiram ex", type: "Pokémon", hp: 230, pokemonType: "Fogo", prints: ["WHT #20","WHT #158","WHT #166","WHT #173"], desc: "CC Talho 50  |  RRC Explosão Flamejante 130+ (+50 por Prêmio do oponente, descarte 1 Energia). Fraqueza: Água. Recuo: 2." },
-      { id: "WHT_30", name: "Keldeo ex", type: "Pokémon", hp: 210, pokemonType: "Água", prints: ["WHT #30","WHT #159","WHT #167"], desc: "WC Propulsão de Tempestade 30+ (+90 se movido do Banco neste turno)  |  WCC Gume Sônico 120 (dano não afetado por efeitos no Pokémon Ativo). Fraqueza: Raio. Recuo: 2." },
-      { id: "WHT_77", name: "Bouffalant ex", type: "Pokémon", hp: 220, pokemonType: "Incolor", prints: ["WHT #77","WHT #162","WHT #170"], desc: "Habilidade: Bouffer — Recebe 30 de dano a menos de ataques.  |  CCC Quebrador de Ouro 100+ (+100 se o Ativo do oponente for Pokémon ex). Fraqueza: Luta. Recuo: 2." },
-      { id: "DRI_31", name: "Moltres ex da Equipe Rocket", type: "Pokémon", hp: 220, pokemonType: "Fogo", prints: ["DRI #31","DRI #208","DRI #214","DRI #229"], desc: "RCC Cortina de Chamas 110 (recebe 50 de dano a menos no próximo turno)  |  RCCC Incineração do Mal (descarte 1 Energia da Equipe Rocket; se fizer isto, descarte o Pokémon Ativo do oponente e tudo ligado a ele). Fraqueza: Raio. Resist: Luta. Recuo: 2." },
-      { id: "DRI_39", name: "Ho-Oh ex do Ethan", type: "Pokémon", hp: 230, pokemonType: "Fogo", prints: ["DRI #39","DRI #209","DRI #230","DRI #239"], desc: "Habilidade: Chama Dourada — Uma vez por turno, ligue até 2 Energias [R] Básicas da mão a 1 Pokémon do Ethan no Banco.  |  RRRR Plumas Brilhantes 160 (cure 50 de dano de cada um dos seus Pokémon). Fraqueza: Água. Recuo: 2." },
-      { id: "DRI_66", name: "Dondozo ex", type: "Pokémon", hp: 260, pokemonType: "Água", prints: ["DRI #66","DRI #211"], desc: "WC Maremoto Vingativo 30+ (+10 por contador de dano neste Pokémon)  |  WWCC Mergulho Dinâmico 120+ (pode causar 120 a mais, mas causa 50 a si mesmo). Fraqueza: Raio. Recuo: 4." },
-      { id: "DRI_81", name: "Mewtwo ex da Equipe Rocket", type: "Pokémon", hp: 280, pokemonType: "Psíquico", prints: ["DRI #81","DRI #213","DRI #231","DRI #240"], desc: "Habilidade: Economizador de Energia — Não pode atacar a não ser que você tenha 4+ Pokémon da Equipe Rocket em jogo.  |  PPC Bola de Supressão 160+ (descarte até 2 Energias do Banco, +60 por cada). Fraqueza: Escuridão. Resist: Luta. Recuo: 3." },
-      { id: "DRI_101", name: "Regirock ex", type: "Pokémon", hp: 230, pokemonType: "Luta", prints: ["DRI #101","DRI #214"], desc: "C Carga Regi (ligue até 2 Energias [F] Básicas da pilha de descarte a este Pokémon)  |  FCCC Pedregulho 140+ (+140 se o Ativo do oponente for Pokémon Estágio 2). Fraqueza: Planta. Recuo: 3." },
+      { id: "PFL_4", name: "Mega Heracross ex", type: "Básicos EX", hp: 280, pokemonType: "Planta", prints: ["PFL #4","PFL #108"], desc: "Habilidade: —  |  GG Chifre Maciço 100+ (se foi danificado no último turno, causa a mesma quantidade a mais)  |  GGG Colisão Montanhosa 170 (descarta 2 cartas do topo do baralho do oponente). Fraqueza: Fogo. Recuo: 2." },
+      { id: "PFL_18", name: "Oricorio ex", type: "Básicos EX", hp: 190, pokemonType: "Fogo", prints: ["PFL #18","PFL #110","MEP #24"], desc: "Habilidade: Turbo Animado — Quantas vezes desejar, se você tiver algum Pokémon ex de Megaevolução [R] em jogo, ligue uma Energia [R] Básica da sua mão a 1 dos seus Pokémon [R] no Banco.  |  RRC Asa de Fogo 110. Fraqueza: Água. Recuo: 1." },
+      { id: "PFL_29", name: "Rotom ex", type: "Básicos EX", hp: 190, pokemonType: "Raio", prints: ["PFL #29","PFL #111","PFL #126"], desc: "Habilidade: Adaptador Multiuso — Cada Pokémon 'Rotom' pode ter até 2 Ferramentas ligadas. Se parar de funcionar, descarte até restar 1.  |  LC Relâmpago 130 (descarte todas as Energias). Fraqueza: Luta. Recuo: 1." },
+      { id: "PFL_41", name: "Mega Diancie ex", type: "Básicos EX", hp: 270, pokemonType: "Psíquico", prints: ["PFL #41"], desc: "Habilidade: Camada Diamantina — Recebe 30 de dano a menos de ataques.  |  PP Feixe Grinalda 120× (descarte até 2 Energias, 120 por cada). Fraqueza: Metal. Recuo: 1." },
+      { id: "MEG_86", name: "Mega Absol ex", type: "Básicos EX", hp: 280, pokemonType: "Escuridão", prints: ["MEG #86","MEG #161","MEG #180"], desc: "DC Fase Terminal (se o Ativo do oponente tiver exatamente 6 contadores de dano, Nocauteado)  |  DDC Garra Nefasta 200 (oponente revela a mão, você descarta 1 carta). Fraqueza: Planta. Recuo: 2." },
+      { id: "MEG_94", name: "Mega Mawile ex", type: "Básicos EX", hp: 270, pokemonType: "Metal", prints: ["MEG #94","MEG #162"], desc: "MM Engolidona 80× (80 por carta de Prêmio que você pegou)  |  MMC Dentadona 260 (se o Ativo do oponente já tiver dano, base é 30). Fraqueza: Fogo. Resist: Planta. Recuo: 2." },
+      { id: "MEG_100", name: "Mega Latias ex", type: "Básicos EX", hp: 280, pokemonType: "Dragão", prints: ["MEG #100","MEG #163","MEG #181","MEP #11"], desc: "C Bombardear 40 (pode trocar por Pokémon do Banco)  |  RPC Impulso Ilusório 300 (descarta todas as Energias). Sem Fraqueza. Recuo: 1." },
+      { id: "MEG_104", name: "Mega Kangaskhan ex", type: "Básicos EX", hp: 300, pokemonType: "Incolor", prints: ["MEG #104","MEG #164","MEG #182","MEP #25"], desc: "Habilidade: Faz Teu Corre — Uma vez por turno, se Ativo, compre 2 cartas.  |  CCC Combo de Disparo Rápido 200+ (jogue moedas até coroa, +50 por cara). Fraqueza: Luta. Recuo: 3." },
+      { id: "BLK_28", name: "Kyurem ex", type: "Básicos EX", hp: 230, pokemonType: "Água", prints: ["BLK #28","BLK #157","BLK #165"], desc: "CC Talho 50  |  WWC Explosão Nevada 130 (causa 10 de dano a cada Pokémon do Banco do oponente por cada Prêmio que o oponente pegou). Fraqueza: Metal. Recuo: 2." },
+      { id: "BLK_34", name: "Zekrom ex", type: "Básicos EX", hp: 230, pokemonType: "Raio", prints: ["BLK #34","BLK #158","BLK #166","BLK #172"], desc: "CC Talho 50  |  LLC Explosão Voltaica 130+ (+50 por Prêmio do oponente, causa 30 a si mesmo). Fraqueza: Luta. Recuo: 2." },
+      { id: "BLK_44", name: "Meloetta ex", type: "Básicos EX", hp: 200, pokemonType: "Psíquico", prints: ["BLK #44","BLK #159","BLK #167"], desc: "Habilidade: Primeira Performance — Se você for primeiro, pode atacar no 1º turno.  |  P Voz Ecoante 30 (no próximo turno causa 80 a mais). Fraqueza: Escuridão. Resist: Luta. Recuo: 1." },
+      { id: "BLK_67", name: "Genesect ex", type: "Básicos EX", hp: 220, pokemonType: "Metal", prints: ["BLK #67","BLK #161","BLK #169"], desc: "Habilidade: Sinal Metálico — Uma vez por turno, procure por até 2 Pokémon [M] de Evolução no baralho e coloque na mão.  |  MMC Carga Protetora 150 (recebe 30 de dano a menos no próximo turno). Fraqueza: Fogo. Resist: Planta. Recuo: 2." },
+      { id: "WHT_20", name: "Reshiram ex", type: "Básicos EX", hp: 230, pokemonType: "Fogo", prints: ["WHT #20","WHT #158","WHT #166","WHT #173"], desc: "CC Talho 50  |  RRC Explosão Flamejante 130+ (+50 por Prêmio do oponente, descarte 1 Energia). Fraqueza: Água. Recuo: 2." },
+      { id: "WHT_30", name: "Keldeo ex", type: "Básicos EX", hp: 210, pokemonType: "Água", prints: ["WHT #30","WHT #159","WHT #167"], desc: "WC Propulsão de Tempestade 30+ (+90 se movido do Banco neste turno)  |  WCC Gume Sônico 120 (dano não afetado por efeitos no Pokémon Ativo). Fraqueza: Raio. Recuo: 2." },
+      { id: "WHT_77", name: "Bouffalant ex", type: "Básicos EX", hp: 220, pokemonType: "Incolor", prints: ["WHT #77","WHT #162","WHT #170"], desc: "Habilidade: Bouffer — Recebe 30 de dano a menos de ataques.  |  CCC Quebrador de Ouro 100+ (+100 se o Ativo do oponente for Pokémon ex). Fraqueza: Luta. Recuo: 2." },
+      { id: "DRI_31", name: "Moltres ex da Equipe Rocket", type: "Básicos EX", hp: 220, pokemonType: "Fogo", prints: ["DRI #31","DRI #208","DRI #214","DRI #229"], desc: "RCC Cortina de Chamas 110 (recebe 50 de dano a menos no próximo turno)  |  RCCC Incineração do Mal (descarte 1 Energia da Equipe Rocket; se fizer isto, descarte o Pokémon Ativo do oponente e tudo ligado a ele). Fraqueza: Raio. Resist: Luta. Recuo: 2." },
+      { id: "DRI_39", name: "Ho-Oh ex do Ethan", type: "Básicos EX", hp: 230, pokemonType: "Fogo", prints: ["DRI #39","DRI #209","DRI #230","DRI #239"], desc: "Habilidade: Chama Dourada — Uma vez por turno, ligue até 2 Energias [R] Básicas da mão a 1 Pokémon do Ethan no Banco.  |  RRRR Plumas Brilhantes 160 (cure 50 de dano de cada um dos seus Pokémon). Fraqueza: Água. Recuo: 2." },
+      { id: "DRI_66", name: "Dondozo ex", type: "Básicos EX", hp: 260, pokemonType: "Água", prints: ["DRI #66","DRI #211"], desc: "WC Maremoto Vingativo 30+ (+10 por contador de dano neste Pokémon)  |  WWCC Mergulho Dinâmico 120+ (pode causar 120 a mais, mas causa 50 a si mesmo). Fraqueza: Raio. Recuo: 4." },
+      { id: "DRI_81", name: "Mewtwo ex da Equipe Rocket", type: "Básicos EX", hp: 280, pokemonType: "Psíquico", prints: ["DRI #81","DRI #213","DRI #231","DRI #240"], desc: "Habilidade: Economizador de Energia — Não pode atacar a não ser que você tenha 4+ Pokémon da Equipe Rocket em jogo.  |  PPC Bola de Supressão 160+ (descarte até 2 Energias do Banco, +60 por cada). Fraqueza: Escuridão. Resist: Luta. Recuo: 3." },
+      { id: "DRI_101", name: "Regirock ex", type: "Básicos EX", hp: 230, pokemonType: "Luta", prints: ["DRI #101","DRI #214"], desc: "C Carga Regi (ligue até 2 Energias [F] Básicas da pilha de descarte a este Pokémon)  |  FCCC Pedregulho 140+ (+140 se o Ativo do oponente for Pokémon Estágio 2). Fraqueza: Planta. Recuo: 3." },
     ];
 
     // Pool unificado
@@ -295,6 +295,9 @@
       const [poolSearch, setPoolSearch] = useState('');
       const [selectedSetSigla, setSelectedSetSigla] = useState(null);
       const [setSearch, setSetSearch] = useState('');
+      const [collSearch, setCollSearch] = useState('');
+      const [collSetFilter, setCollSetFilter] = useState('todos');
+      const [collStatusFilter, setCollStatusFilter] = useState('todos');
 
       const isPortuguese = (name) => {
         if (!name) return false;
@@ -618,7 +621,7 @@
 
                 {/* Pool view */}
                 {leagueView === 'pool' && (() => {
-                  const typeColors = { Item: 'bg-blue-100 text-blue-700', Ferramenta: 'bg-purple-100 text-purple-700', Estádio: 'bg-green-100 text-green-700', Energia: 'bg-amber-100 text-amber-700', 'Pokémon': 'bg-red-100 text-red-700' };
+                  const typeColors = { Item: 'bg-blue-100 text-blue-700', Ferramenta: 'bg-purple-100 text-purple-700', Estádio: 'bg-green-100 text-green-700', Energia: 'bg-amber-100 text-amber-700', 'Pokémon': 'bg-red-100 text-red-700', 'Básicos EX': 'bg-red-100 text-red-700' };
                   const filtered = LEAGUE_POOL.filter(c => {
                     const matchType = poolFilter === 'todos' || c.type === poolFilter;
                     const matchSearch = poolSearch === '' || c.name.toLowerCase().includes(poolSearch.toLowerCase());
@@ -634,7 +637,7 @@
                           onChange={e => setPoolSearch(e.target.value)}
                         />
                         <div className="flex gap-1.5 flex-wrap">
-                          {['todos','Pokémon','Item','Ferramenta','Estádio','Energia'].map(f => (
+                          {['todos','Básicos EX','Item','Ferramenta','Estádio','Energia'].map(f => (
                             <button key={f} onClick={() => setPoolFilter(f)}
                               className={`px-3 py-2 rounded-lg text-xs font-bold transition-all border ${poolFilter === f ? 'bg-blue-600 text-white border-blue-600' : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'}`}>
                               {f === 'todos' ? 'Todos' : f}
@@ -773,7 +776,6 @@
                     </div>
                   );
                 })()}
-                })()}
               </div>
             )}
 
@@ -814,37 +816,67 @@
                   </div>
                 </div>
 
-                <div className="bg-white rounded-xl border border-slate-200 divide-y shadow-sm overflow-hidden">
-                  <div className="bg-slate-50 p-4 font-bold text-slate-600 flex justify-between items-center">
-                    <span>Minha Coleção Global</span>
-                    <div className="flex items-center gap-3">
-                      <button
-                        onClick={handleUpdateToPT}
-                        className="text-xs bg-blue-50 text-blue-600 border border-blue-200 px-3 py-1.5 rounded-lg flex items-center gap-1.5 hover:bg-blue-100 transition-colors font-bold"
-                        title="Atualiza nomes em inglês da coleção para português, usando os decks cadastrados como referência"
-                      >
-                        <RefreshCw className="w-3.5 h-3.5" /> Atualizar nomes PT
-                      </button>
-                      <span className="text-xs bg-white px-2 py-1 rounded-full border">{Object.keys(collection).length} tipos únicos</span>
+                {(() => {
+                  const allCollCards = Object.values(collection).sort((a,b) => a.name.localeCompare(b.name));
+                  const knownSets = [...new Set(allCollCards.map(c => c.set).filter(Boolean))].sort();
+                  const filteredColl = allCollCards.filter(card => {
+                    const matchSearch = collSearch === '' || card.name.toLowerCase().includes(collSearch.toLowerCase());
+                    const matchSet = collSetFilter === 'todos' || card.set === collSetFilter;
+                    return matchSearch && matchSet;
+                  });
+                  return (
+                  <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                    <div className="bg-slate-50 p-4 border-b">
+                      <div className="flex justify-between items-center mb-3">
+                        <span className="font-bold text-slate-600">Minha Coleção Global</span>
+                        <div className="flex items-center gap-2">
+                          <button onClick={handleUpdateToPT} className="text-xs bg-blue-50 text-blue-600 border border-blue-200 px-3 py-1.5 rounded-lg flex items-center gap-1.5 hover:bg-blue-100 transition-colors font-bold">
+                            <RefreshCw className="w-3.5 h-3.5" /> Atualizar PT
+                          </button>
+                          <span className="text-xs bg-white px-2 py-1 rounded-full border">{filteredColl.length}/{allCollCards.length}</span>
+                        </div>
+                      </div>
+                      <div className="flex flex-col sm:flex-row gap-2">
+                        <input
+                          className="flex-1 p-2 border rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500"
+                          placeholder="Buscar por nome..."
+                          value={collSearch}
+                          onChange={e => setCollSearch(e.target.value)}
+                        />
+                        <select
+                          className="p-2 border rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+                          value={collSetFilter}
+                          onChange={e => setCollSetFilter(e.target.value)}
+                        >
+                          <option value="todos">Todos os sets</option>
+                          {knownSets.map(s => <option key={s} value={s}>{s}</option>)}
+                        </select>
+                      </div>
+                    </div>
+                    <div className="divide-y">
+                      {filteredColl.map(card => (
+                        <div key={card.id} className="p-4 flex justify-between items-center hover:bg-slate-50 transition-colors">
+                          <div>
+                            <p className="font-bold text-slate-800">{card.name}</p>
+                            <p className="text-xs font-mono text-slate-500 uppercase">{card.set} — {card.number}</p>
+                          </div>
+                          <div className="flex items-center gap-3 bg-slate-100 p-1.5 rounded-lg border border-slate-200">
+                            <button onClick={() => updateCollectionQty(card, -1)} className="w-8 h-8 flex items-center justify-center hover:bg-white rounded shadow-sm transition-colors font-bold disabled:opacity-30" disabled={card.qty <= 0}>-</button>
+                            <span className="font-bold w-6 text-center text-blue-600">{card.qty}</span>
+                            <button onClick={() => updateCollectionQty(card, 1)} className="w-8 h-8 flex items-center justify-center hover:bg-white rounded shadow-sm transition-colors font-bold">+</button>
+                          </div>
+                        </div>
+                      ))}
+                      {allCollCards.length === 0 && (
+                        <div className="p-12 text-center text-slate-400">Nenhuma carta na coleção ainda.</div>
+                      )}
+                      {allCollCards.length > 0 && filteredColl.length === 0 && (
+                        <div className="p-12 text-center text-slate-400">Nenhuma carta encontrada com esses filtros.</div>
+                      )}
                     </div>
                   </div>
-                  {Object.values(collection).sort((a,b)=>a.name.localeCompare(b.name)).map(card => (
-                    <div key={card.id} className="p-4 flex justify-between items-center hover:bg-slate-50 transition-colors">
-                      <div>
-                        <p className="font-bold text-slate-800">{card.name}</p>
-                        <p className="text-xs font-mono text-slate-500 uppercase">{card.set} — {card.number}</p>
-                      </div>
-                      <div className="flex items-center gap-3 bg-slate-100 p-1.5 rounded-lg border border-slate-200">
-                        <button onClick={() => updateCollectionQty(card, -1)} className="w-8 h-8 flex items-center justify-center hover:bg-white rounded shadow-sm transition-colors font-bold disabled:opacity-30" disabled={card.qty <= 0}>-</button>
-                        <span className="font-bold w-6 text-center text-blue-600">{card.qty}</span>
-                        <button onClick={() => updateCollectionQty(card, 1)} className="w-8 h-8 flex items-center justify-center hover:bg-white rounded shadow-sm transition-colors font-bold">+</button>
-                      </div>
-                    </div>
-                  ))}
-                  {Object.keys(collection).length === 0 && (
-                    <div className="p-12 text-center text-slate-400">Nenhuma carta na coleção ainda.</div>
-                  )}
-                </div>
+                  );
+                })()}
               </div>
             )}
 
