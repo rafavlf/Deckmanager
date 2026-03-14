@@ -4,63 +4,123 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>PTCG Collector</title>
-  
-  <!-- Configurações PWA -->
   <meta name="theme-color" content="#2563eb">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  
-  <!-- Manifest PWA -->
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icon-192.png">
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Babel -->
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  
-  <!-- Import Map (Sem Firebase) -->
-  <script type="importmap">
-    {
-      "imports": {
-        "react": "https://esm.sh/react@18.2.0",
-        "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
-        "lucide-react": "https://esm.sh/lucide-react@0.344.0"
-      }
-    }
-  </script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8fafc;color:#1e293b;padding-bottom:70px;}
+    /* ---- LAYOUT ---- */
+    header{background:#2563eb;color:#fff;padding:14px 16px;position:sticky;top:0;z-index:20;box-shadow:0 2px 8px rgba(0,0,0,.2);}
+    header h1{font-size:18px;font-weight:800;letter-spacing:-.3px;}
+    header nav{display:none;}
+    @media(min-width:768px){header{display:flex;align-items:center;justify-content:space-between;} header nav{display:flex;gap:8px;} body{padding-bottom:0;}}
+    header nav button{background:transparent;border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;}
+    header nav button.active{background:rgba(255,255,255,.2);}
+    main{max-width:900px;margin:0 auto;padding:16px;}
+    /* ---- BOTTOM NAV ---- */
+    .bottom-nav{display:flex;position:fixed;bottom:0;width:100%;background:#fff;border-top:1px solid #e2e8f0;z-index:30;padding:8px 0 calc(8px + env(safe-area-inset-bottom));}
+    .bottom-nav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;font-size:10px;font-weight:800;color:#94a3b8;cursor:pointer;padding:4px 0;letter-spacing:.5px;}
+    .bottom-nav button.active{color:#2563eb;}
+    .bottom-nav button svg{width:22px;height:22px;}
+    @media(min-width:768px){.bottom-nav{display:none;}}
+    /* ---- CARDS / UI ---- */
+    .card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;}
+    .card-p{padding:16px;}
+    .section-title{font-size:18px;font-weight:800;color:#1e293b;margin-bottom:12px;}
+    /* ---- BUTTONS ---- */
+    .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:8px;font-weight:700;font-size:14px;border:none;cursor:pointer;transition:all .15s;}
+    .btn-primary{background:#2563eb;color:#fff;}
+    .btn-primary:hover{background:#1d4ed8;}
+    .btn-secondary{background:#f1f5f9;color:#475569;border:1px solid #e2e8f0;}
+    .btn-secondary:hover{background:#e2e8f0;}
+    .btn-danger{background:#dc2626;color:#fff;}
+    .btn-sm{padding:6px 10px;font-size:12px;border-radius:6px;}
+    /* ---- INPUTS ---- */
+    input,textarea,select{width:100%;padding:10px 12px;border:1px solid #e2e8f0;border-radius:8px;font-size:14px;outline:none;font-family:inherit;background:#fff;}
+    input:focus,textarea:focus,select:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.1);}
+    textarea{resize:vertical;font-family:monospace;}
+    /* ---- COUNTER ---- */
+    .counter{display:flex;align-items:center;gap:4px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:8px;padding:4px;}
+    .counter button{width:30px;height:30px;border:none;background:transparent;border-radius:6px;font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+    .counter button:hover:not(:disabled){background:#fff;}
+    .counter button:disabled{opacity:.25;cursor:default;}
+    .counter span{font-weight:700;width:24px;text-align:center;font-size:13px;}
+    /* ---- PROGRESS ---- */
+    .progress-bar{height:8px;background:#e2e8f0;border-radius:99px;overflow:hidden;}
+    .progress-fill{height:100%;border-radius:99px;transition:width .4s ease;}
+    .progress-fill.blue{background:#3b82f6;}
+    .progress-fill.amber{background:#f59e0b;}
+    .progress-fill.green{background:#22c55e;}
+    /* ---- TAGS ---- */
+    .tag{display:inline-flex;align-items:center;padding:2px 8px;border-radius:99px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;}
+    .tag-blue{background:#dbeafe;color:#1d4ed8;}
+    .tag-purple{background:#ede9fe;color:#6d28d9;}
+    .tag-green{background:#dcfce7;color:#15803d;}
+    .tag-amber{background:#fef3c7;color:#b45309;}
+    .tag-red{background:#fee2e2;color:#b91c1c;}
+    .tag-slate{background:#f1f5f9;color:#475569;}
+    /* ---- LISTS ---- */
+    .list-item{padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:background .1s;}
+    .list-item:hover{background:#f8fafc;}
+    .list-item+.list-item{border-top:1px solid #f1f5f9;}
+    .list-item.green{background:#f0fdf4;}
+    /* ---- TOAST ---- */
+    #toast{position:fixed;bottom:80px;right:16px;z-index:99;padding:12px 16px;border-radius:10px;font-weight:700;font-size:14px;display:flex;align-items:center;gap:8px;box-shadow:0 4px 20px rgba(0,0,0,.2);transition:all .3s;opacity:0;transform:translateY(10px);pointer-events:none;}
+    #toast.show{opacity:1;transform:translateY(0);}
+    #toast.success{background:#16a34a;color:#fff;}
+    #toast.error{background:#dc2626;color:#fff;}
+    @media(min-width:768px){#toast{bottom:24px;}}
+    /* ---- GRID ---- */
+    .grid-2{display:grid;grid-template-columns:1fr;gap:12px;}
+    @media(min-width:600px){.grid-2{grid-template-columns:1fr 1fr;}}
+    /* ---- MISC ---- */
+    .empty{padding:48px 16px;text-align:center;color:#94a3b8;font-size:14px;}
+    .divider{border:none;border-top:1px solid #f1f5f9;margin:0;}
+    .flex{display:flex;align-items:center;gap:8px;}
+    .flex-between{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+    .mono{font-family:monospace;font-size:11px;color:#94a3b8;text-transform:uppercase;}
+    .sub-tabs{display:flex;gap:6px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:6px;}
+    .sub-tab{flex:1;padding:8px;border-radius:8px;border:none;font-size:12px;font-weight:700;cursor:pointer;background:transparent;color:#64748b;transition:all .15s;}
+    .sub-tab.active{background:#2563eb;color:#fff;box-shadow:0 1px 4px rgba(37,99,235,.3);}
+    .filters-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;}
+    .filter-btn{padding:6px 12px;border-radius:8px;border:1px solid #e2e8f0;font-size:12px;font-weight:700;cursor:pointer;background:#fff;color:#475569;}
+    .filter-btn.active{background:#2563eb;color:#fff;border-color:#2563eb;}
+    .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:40;display:flex;align-items:flex-end;padding:0;}
+    @media(min-width:600px){.modal-overlay{align-items:center;padding:16px;}}
+    .modal{background:#fff;border-radius:16px 16px 0 0;padding:20px;width:100%;max-height:90vh;overflow-y:auto;}
+    @media(min-width:600px){.modal{border-radius:16px;max-width:520px;margin:auto;}}
+    .modal h2{font-size:18px;font-weight:800;margin-bottom:16px;}
+    .gap-8{gap:8px;}
+    .gap-12{gap:12px;}
+    .mt-8{margin-top:8px;}
+    .mt-12{margin-top:12px;}
+    .mt-16{margin-top:16px;}
+    .mb-8{margin-bottom:8px;}
+    .mb-12{margin-bottom:12px;}
+    .w100{width:100%;}
+    .text-sm{font-size:13px;}
+    .text-xs{font-size:11px;}
+    .font-bold{font-weight:700;}
+    .font-black{font-weight:900;}
+    .text-muted{color:#64748b;}
+    .text-blue{color:#2563eb;}
+    .text-green{color:#16a34a;}
+    .truncate{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .hidden{display:none!important;}
+    .spinner{display:flex;align-items:center;justify-content:center;min-height:100vh;font-size:14px;color:#64748b;}
+  </style>
 </head>
-<body class="bg-slate-50">
-  <div id="root"></div>
+<body>
 
-  <!-- Service Worker PWA -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js')
-          .then(reg => console.log('SW registrado:', reg.scope))
-          .catch(err => console.error('Falha ao registrar SW:', err));
-      });
-    }
-  </script>
+<div id="app"><div class="spinner">Carregando...</div></div>
+<div id="toast"></div>
 
-  <script type="text/babel" data-type="module">
-    import React, { useState, useEffect, useMemo } from 'react';
-    import { createRoot } from 'react-dom/client';
-    import { 
-      Trash2, Plus, ArrowLeft, CheckSquare, Square, 
-      Library, Archive, Check, ClipboardCopy,
-      AlertTriangle, AlertCircle, Layers, FileText, Swords, RefreshCw
-    } from 'lucide-react';
-
-    // --- Helper: ID Generator ---
-    const generateId = () => 
-      typeof crypto !== 'undefined' && crypto.randomUUID 
-        ? crypto.randomUUID() 
-        : Date.now().toString(36) + Math.random().toString(36).slice(2);
-
-    // --- Decks Fixos (Batalha de Liga) ---
+<script>
+// ─────────────────────────────────────────────
+//  DATA (injected below)
+// ─────────────────────────────────────────────
     const PRESET_DECKS = [
       {
         id: 'preset-mewtwo-rocket',
@@ -160,7 +220,6 @@
       }
     ];
 
-
     // --- Pool de Cartas da Liga ---
     const TRAINER_POOL = [
       { id: "ASC_181", name: "Balão de Ar", type: "Ferramenta", prints: ["ASC #181","MEG #166","BLK #79"], desc: "O Custo de Recuo do Pokémon ao qual esta carta está ligada é [C][C] a menos." },
@@ -255,10 +314,6 @@
       { id: "DRI_101", name: "Regirock ex", type: "Básicos EX", hp: 230, pokemonType: "Luta", prints: ["DRI #101","DRI #214"], desc: "C Carga Regi (ligue até 2 Energias [F] Básicas da pilha de descarte a este Pokémon)  |  FCCC Pedregulho 140+ (+140 se o Ativo do oponente for Pokémon Estágio 2). Fraqueza: Planta. Recuo: 3." },
     ];
 
-    // Pool unificado
-    const LEAGUE_POOL = [...TRAINER_POOL, ...POKEMON_POOL];
-
-
     const SET_COLLECTIONS = [
       { sigla: "ASC", name: "Heróis Excelsos", cards: [{"id": "ASC_001", "name": "Oddish da Érica", "set": "ASC", "number": "001"}, {"id": "ASC_002", "name": "Gloom da Érica", "set": "ASC", "number": "002"}, {"id": "ASC_003", "name": "Vileplume ex da Érica", "set": "ASC", "number": "003"}, {"id": "ASC_004", "name": "Bellsprout da Érica", "set": "ASC", "number": "004"}, {"id": "ASC_005", "name": "Weepinbell da Érica", "set": "ASC", "number": "005"}, {"id": "ASC_006", "name": "Victreebel da Érica", "set": "ASC", "number": "006"}, {"id": "ASC_007", "name": "Tangela da Érica", "set": "ASC", "number": "007"}, {"id": "ASC_008", "name": "Chikorita", "set": "ASC", "number": "008"}, {"id": "ASC_009", "name": "Bayleef", "set": "ASC", "number": "009"}, {"id": "ASC_010", "name": "Mega Meganium ex", "set": "ASC", "number": "010"}, {"id": "ASC_011", "name": "Wurmple", "set": "ASC", "number": "011"}, {"id": "ASC_012", "name": "Silcoon", "set": "ASC", "number": "012"}, {"id": "ASC_013", "name": "Beautifly", "set": "ASC", "number": "013"}, {"id": "ASC_014", "name": "Cascoon", "set": "ASC", "number": "014"}, {"id": "ASC_015", "name": "Dustox", "set": "ASC", "number": "015"}, {"id": "ASC_016", "name": "Budew", "set": "ASC", "number": "016"}, {"id": "ASC_017", "name": "Grubbin", "set": "ASC", "number": "017"}, {"id": "ASC_018", "name": "Tarountula da Equipe Rocket", "set": "ASC", "number": "018"}, {"id": "ASC_019", "name": "Spidops da Equipe Rocket", "set": "ASC", "number": "019"}, {"id": "ASC_020", "name": "Charmander", "set": "ASC", "number": "020"}, {"id": "ASC_021", "name": "Charmeleon", "set": "ASC", "number": "021"}, {"id": "ASC_022", "name": "Mega Charizard Y ex", "set": "ASC", "number": "022"}, {"id": "ASC_023", "name": "Slugma do Ethan", "set": "ASC", "number": "023"}, {"id": "ASC_024", "name": "Magcargo do Ethan", "set": "ASC", "number": "024"}, {"id": "ASC_025", "name": "Entei", "set": "ASC", "number": "025"}, {"id": "ASC_026", "name": "Ho-Oh ex do Ethan", "set": "ASC", "number": "026"}, {"id": "ASC_027", "name": "Numel", "set": "ASC", "number": "027"}, {"id": "ASC_028", "name": "Camerupt", "set": "ASC", "number": "028"}, {"id": "ASC_029", "name": "Tepig", "set": "ASC", "number": "029"}, {"id": "ASC_030", "name": "Pignite", "set": "ASC", "number": "030"}, {"id": "ASC_031", "name": "Mega Emboar ex", "set": "ASC", "number": "031"}, {"id": "ASC_032", "name": "Darumaka do N", "set": "ASC", "number": "032"}, {"id": "ASC_033", "name": "Darmanitan do N", "set": "ASC", "number": "033"}, {"id": "ASC_034", "name": "Salandit", "set": "ASC", "number": "034"}, {"id": "ASC_035", "name": "Salazzle", "set": "ASC", "number": "035"}, {"id": "ASC_036", "name": "Scorbunny", "set": "ASC", "number": "036"}, {"id": "ASC_037", "name": "Raboot", "set": "ASC", "number": "037"}, {"id": "ASC_038", "name": "Cinderace ex", "set": "ASC", "number": "038"}, {"id": "ASC_039", "name": "Psyduck", "set": "ASC", "number": "039"}, {"id": "ASC_040", "name": "Golduck", "set": "ASC", "number": "040"}, {"id": "ASC_041", "name": "Totodile", "set": "ASC", "number": "041"}, {"id": "ASC_042", "name": "Croconaw", "set": "ASC", "number": "042"}, {"id": "ASC_043", "name": "Mega Feraligatr ex", "set": "ASC", "number": "043"}, {"id": "ASC_044", "name": "Sneasel", "set": "ASC", "number": "044"}, {"id": "ASC_045", "name": "Weavile", "set": "ASC", "number": "045"}, {"id": "ASC_046", "name": "Snorunt", "set": "ASC", "number": "046"}, {"id": "ASC_047", "name": "Mega Froslass ex", "set": "ASC", "number": "047"}, {"id": "ASC_048", "name": "Regice ex", "set": "ASC", "number": "048"}, {"id": "ASC_049", "name": "Vanillite do N", "set": "ASC", "number": "049"}, {"id": "ASC_050", "name": "Vanillish do N", "set": "ASC", "number": "050"}, {"id": "ASC_051", "name": "Vanilluxe do N", "set": "ASC", "number": "051"}, {"id": "ASC_052", "name": "Snom", "set": "ASC", "number": "052"}, {"id": "ASC_053", "name": "Frosmoth", "set": "ASC", "number": "053"}, {"id": "ASC_054", "name": "Glastrier", "set": "ASC", "number": "054"}, {"id": "ASC_055", "name": "Pikachu", "set": "ASC", "number": "055"}, {"id": "ASC_056", "name": "Raichu", "set": "ASC", "number": "056"}, {"id": "ASC_057", "name": "Pikachu ex", "set": "ASC", "number": "057"}, {"id": "ASC_058", "name": "Voltorb ex", "set": "ASC", "number": "058"}, {"id": "ASC_059", "name": "Tynamo", "set": "ASC", "number": "059"}, {"id": "ASC_060", "name": "Eelektrik", "set": "ASC", "number": "060"}, {"id": "ASC_061", "name": "Mega Eelektross ex", "set": "ASC", "number": "061"}, {"id": "ASC_062", "name": "Stunfisk", "set": "ASC", "number": "062"}, {"id": "ASC_063", "name": "Helioptile", "set": "ASC", "number": "063"}, {"id": "ASC_064", "name": "Heliolisk", "set": "ASC", "number": "064"}, {"id": "ASC_065", "name": "Charjabug", "set": "ASC", "number": "065"}, {"id": "ASC_066", "name": "Vikavolt", "set": "ASC", "number": "066"}, {"id": "ASC_067", "name": "Tapu Koko", "set": "ASC", "number": "067"}, {"id": "ASC_068", "name": "Pincurchin ex do Lupo", "set": "ASC", "number": "068"}, {"id": "ASC_069", "name": "Tadbulb da Kissera", "set": "ASC", "number": "069"}, {"id": "ASC_070", "name": "Bellibolt ex da Kissera", "set": "ASC", "number": "070"}, {"id": "ASC_071", "name": "Wattrel da Kissera", "set": "ASC", "number": "071"}, {"id": "ASC_072", "name": "Kilowattrel da Kissera", "set": "ASC", "number": "072"}, {"id": "ASC_073", "name": "Miraidon ex", "set": "ASC", "number": "073"}, {"id": "ASC_074", "name": "Clefairy", "set": "ASC", "number": "074"}, {"id": "ASC_075", "name": "Clefable", "set": "ASC", "number": "075"}, {"id": "ASC_076", "name": "Clefairy ex da Lílian", "set": "ASC", "number": "076"}, {"id": "ASC_077", "name": "Exeggcute da Equipe Rocket", "set": "ASC", "number": "077"}, {"id": "ASC_078", "name": "Exeggutor da Equipe Rocket", "set": "ASC", "number": "078"}, {"id": "ASC_079", "name": "Mewtwo ex da Equipe Rocket", "set": "ASC", "number": "079"}, {"id": "ASC_080", "name": "Togepi", "set": "ASC", "number": "080"}, {"id": "ASC_081", "name": "Togetic", "set": "ASC", "number": "081"}, {"id": "ASC_082", "name": "Togekiss", "set": "ASC", "number": "082"}, {"id": "ASC_083", "name": "Marill", "set": "ASC", "number": "083"}, {"id": "ASC_084", "name": "Azumarill ex", "set": "ASC", "number": "084"}, {"id": "ASC_085", "name": "Misdreavus", "set": "ASC", "number": "085"}, {"id": "ASC_086", "name": "Mismagius", "set": "ASC", "number": "086"}, {"id": "ASC_087", "name": "Ralts", "set": "ASC", "number": "087"}, {"id": "ASC_088", "name": "Kirlia", "set": "ASC", "number": "088"}, {"id": "ASC_089", "name": "Mega Gardevoir ex", "set": "ASC", "number": "089"}, {"id": "ASC_090", "name": "Shuppet", "set": "ASC", "number": "090"}, {"id": "ASC_091", "name": "Banette", "set": "ASC", "number": "091"}, {"id": "ASC_092", "name": "Rotom", "set": "ASC", "number": "092"}, {"id": "ASC_093", "name": "Swirlix", "set": "ASC", "number": "093"}, {"id": "ASC_094", "name": "Slurpuff", "set": "ASC", "number": "094"}, {"id": "ASC_095", "name": "Phantump do Lupo", "set": "ASC", "number": "095"}, {"id": "ASC_096", "name": "Trevenant do Lupo", "set": "ASC", "number": "096"}, {"id": "ASC_097", "name": "Mimikyu da Equipe Rocket", "set": "ASC", "number": "097"}, {"id": "ASC_098", "name": "Spectrier", "set": "ASC", "number": "098"}, {"id": "ASC_099", "name": "Munkidori", "set": "ASC", "number": "099"}, {"id": "ASC_100", "name": "Diglett da Equipe Rocket", "set": "ASC", "number": "100"}, {"id": "ASC_101", "name": "Dugtrio da Equipe Rocket", "set": "ASC", "number": "101"}, {"id": "ASC_102", "name": "Hitmontop", "set": "ASC", "number": "102"}, {"id": "ASC_103", "name": "Meditite", "set": "ASC", "number": "103"}, {"id": "ASC_104", "name": "Medicham", "set": "ASC", "number": "104"}, {"id": "ASC_105", "name": "Lunatone", "set": "ASC", "number": "105"}, {"id": "ASC_106", "name": "Solrock", "set": "ASC", "number": "106"}, {"id": "ASC_107", "name": "Regirock ex", "set": "ASC", "number": "107"}, {"id": "ASC_108", "name": "Groudon", "set": "ASC", "number": "108"}, {"id": "ASC_109", "name": "Gible da Cíntia", "set": "ASC", "number": "109"}, {"id": "ASC_110", "name": "Gabite da Cíntia", "set": "ASC", "number": "110"}, {"id": "ASC_111", "name": "Garchomp ex da Cíntia", "set": "ASC", "number": "111"}, {"id": "ASC_112", "name": "Riolu", "set": "ASC", "number": "112"}, {"id": "ASC_113", "name": "Mega Lucario ex", "set": "ASC", "number": "113"}, {"id": "ASC_114", "name": "Stunfisk ex", "set": "ASC", "number": "114"}, {"id": "ASC_115", "name": "Pancham", "set": "ASC", "number": "115"}, {"id": "ASC_116", "name": "Mega Hawlucha ex", "set": "ASC", "number": "116"}, {"id": "ASC_117", "name": "Carbink", "set": "ASC", "number": "117"}, {"id": "ASC_118", "name": "Rolycoly", "set": "ASC", "number": "118"}, {"id": "ASC_119", "name": "Carkol", "set": "ASC", "number": "119"}, {"id": "ASC_120", "name": "Coalossal", "set": "ASC", "number": "120"}, {"id": "ASC_121", "name": "Koraidon ex", "set": "ASC", "number": "121"}, {"id": "ASC_122", "name": "Okidogi", "set": "ASC", "number": "122"}, {"id": "ASC_123", "name": "Gastly", "set": "ASC", "number": "123"}, {"id": "ASC_124", "name": "Haunter", "set": "ASC", "number": "124"}, {"id": "ASC_125", "name": "Mega Gengar ex", "set": "ASC", "number": "125"}, {"id": "ASC_126", "name": "Murkrow da Equipe Rocket", "set": "ASC", "number": "126"}, {"id": "ASC_127", "name": "Honchkrow da Equipe Rocket", "set": "ASC", "number": "127"}, {"id": "ASC_128", "name": "Poochyena", "set": "ASC", "number": "128"}, {"id": "ASC_129", "name": "Mightyena", "set": "ASC", "number": "129"}, {"id": "ASC_130", "name": "Zigzagoon de Galar", "set": "ASC", "number": "130"}, {"id": "ASC_131", "name": "Linoone de Galar", "set": "ASC", "number": "131"}, {"id": "ASC_132", "name": "Obstagoon de Galar", "set": "ASC", "number": "132"}, {"id": "ASC_133", "name": "Spiritomb da Cíntia", "set": "ASC", "number": "133"}, {"id": "ASC_134", "name": "Scraggy", "set": "ASC", "number": "134"}, {"id": "ASC_135", "name": "Mega Scrafty ex", "set": "ASC", "number": "135"}, {"id": "ASC_136", "name": "Zorua do N", "set": "ASC", "number": "136"}, {"id": "ASC_137", "name": "Zoroark ex do N", "set": "ASC", "number": "137"}, {"id": "ASC_138", "name": "Vullaby", "set": "ASC", "number": "138"}, {"id": "ASC_139", "name": "Mandibuzz ex", "set": "ASC", "number": "139"}, {"id": "ASC_140", "name": "Pangoro", "set": "ASC", "number": "140"}, {"id": "ASC_141", "name": "Hoopa", "set": "ASC", "number": "141"}, {"id": "ASC_142", "name": "Fezandipiti ex", "set": "ASC", "number": "142"}, {"id": "ASC_143", "name": "Pecharunt", "set": "ASC", "number": "143"}, {"id": "ASC_144", "name": "Mawile", "set": "ASC", "number": "144"}, {"id": "ASC_145", "name": "Registeel ex", "set": "ASC", "number": "145"}, {"id": "ASC_146", "name": "Pawniard", "set": "ASC", "number": "146"}, {"id": "ASC_147", "name": "Bisharp", "set": "ASC", "number": "147"}, {"id": "ASC_148", "name": "Kingambit", "set": "ASC", "number": "148"}, {"id": "ASC_149", "name": "Togedemaru ex", "set": "ASC", "number": "149"}, {"id": "ASC_150", "name": "Dratini", "set": "ASC", "number": "150"}, {"id": "ASC_151", "name": "Dragonair", "set": "ASC", "number": "151"}, {"id": "ASC_152", "name": "Mega Dragonite ex", "set": "ASC", "number": "152"}, {"id": "ASC_153", "name": "Rayquaza", "set": "ASC", "number": "153"}, {"id": "ASC_154", "name": "Reshiram do N", "set": "ASC", "number": "154"}, {"id": "ASC_155", "name": "Zekrom do N", "set": "ASC", "number": "155"}, {"id": "ASC_156", "name": "Noibat", "set": "ASC", "number": "156"}, {"id": "ASC_157", "name": "Noivern", "set": "ASC", "number": "157"}, {"id": "ASC_158", "name": "Dreepy", "set": "ASC", "number": "158"}, {"id": "ASC_159", "name": "Drakloak", "set": "ASC", "number": "159"}, {"id": "ASC_160", "name": "Dragapult ex", "set": "ASC", "number": "160"}, {"id": "ASC_161", "name": "Meowth da Equipe Rocket", "set": "ASC", "number": "161"}, {"id": "ASC_162", "name": "Kangaskhan ex da Equipe Rocket", "set": "ASC", "number": "162"}, {"id": "ASC_163", "name": "Dunsparce do Lauro", "set": "ASC", "number": "163"}, {"id": "ASC_164", "name": "Dudunsparce ex do Lauro", "set": "ASC", "number": "164"}, {"id": "ASC_165", "name": "Skitty", "set": "ASC", "number": "165"}, {"id": "ASC_166", "name": "Delcatty", "set": "ASC", "number": "166"}, {"id": "ASC_167", "name": "Zangoose ex", "set": "ASC", "number": "167"}, {"id": "ASC_168", "name": "Starly do Lauro", "set": "ASC", "number": "168"}, {"id": "ASC_169", "name": "Staravia do Lauro", "set": "ASC", "number": "169"}, {"id": "ASC_170", "name": "Staraptor do Lauro", "set": "ASC", "number": "170"}, {"id": "ASC_171", "name": "Rotom Ventilador", "set": "ASC", "number": "171"}, {"id": "ASC_172", "name": "Mega Audino ex", "set": "ASC", "number": "172"}, {"id": "ASC_173", "name": "Rufflet do Lauro", "set": "ASC", "number": "173"}, {"id": "ASC_174", "name": "Braviary do Lauro", "set": "ASC", "number": "174"}, {"id": "ASC_175", "name": "Komala do Lauro", "set": "ASC", "number": "175"}, {"id": "ASC_176", "name": "Drampa", "set": "ASC", "number": "176"}, {"id": "ASC_177", "name": "Cramorant do Lupo", "set": "ASC", "number": "177"}, {"id": "ASC_178", "name": "Terapagos", "set": "ASC", "number": "178"}, {"id": "ASC_179", "name": "Terapagos ex", "set": "ASC", "number": "179"}, {"id": "ASC_180", "name": "Traquinagem da Acerola", "set": "ASC", "number": "180"}, {"id": "ASC_181", "name": "Balão de Ar", "set": "ASC", "number": "181"}, {"id": "ASC_182", "name": "Amor e Paz", "set": "ASC", "number": "182"}, {"id": "ASC_183", "name": "Ordem da Chefia", "set": "ASC", "number": "183"}, {"id": "ASC_184", "name": "Poffin de Colega", "set": "ASC", "number": "184"}, {"id": "ASC_185", "name": "Canari", "set": "ASC", "number": "185"}, {"id": "ASC_186", "name": "Contra-ataque de Alcance", "set": "ASC", "number": "186"}, {"id": "ASC_187", "name": "Gongo de Luta", "set": "ASC", "number": "187"}, {"id": "ASC_188", "name": "Floresta da Vitalidade", "set": "ASC", "number": "188"}, {"id": "ASC_189", "name": "Trompete de Vidro", "set": "ASC", "number": "189"}, {"id": "ASC_190", "name": "Espírito de Luta da Iris", "set": "ASC", "number": "190"}, {"id": "ASC_191", "name": "Esfera de Luz", "set": "ASC", "number": "191"}, {"id": "ASC_192", "name": "Determinação da Lílian", "set": "ASC", "number": "192"}, {"id": "ASC_193", "name": "Megassinal", "set": "ASC", "number": "193"}, {"id": "ASC_194", "name": "Jardim Misterioso", "set": "ASC", "number": "194"}, {"id": "ASC_195", "name": "PP Up do N", "set": "ASC", "number": "195"}, {"id": "ASC_196", "name": "Maca Noturna", "set": "ASC", "number": "196"}, {"id": "ASC_197", "name": "Mina Noturna", "set": "ASC", "number": "197"}, {"id": "ASC_198", "name": "Poké Tablet", "set": "ASC", "number": "198"}, {"id": "ASC_199", "name": "Suplemento Premium Pro", "set": "ASC", "number": "199"}, {"id": "ASC_200", "name": "Surfista", "set": "ASC", "number": "200"}, {"id": "ASC_201", "name": "Apollo da Equipe Rocket", "set": "ASC", "number": "201"}, {"id": "ASC_202", "name": "Athena da Equipe Rocket", "set": "ASC", "number": "202"}, {"id": "ASC_203", "name": "Fábrica da Equipe Rocket", "set": "ASC", "number": "203"}, {"id": "ASC_204", "name": "Giovanni da Equipe Rocket", "set": "ASC", "number": "204"}, {"id": "ASC_205", "name": "Grande Bola da Equipe Rocket", "set": "ASC", "number": "205"}, {"id": "ASC_206", "name": "Hipnotizador da Equipe Rocket", "set": "ASC", "number": "206"}, {"id": "ASC_207", "name": "Petrel da Equipe Rocket", "set": "ASC", "number": "207"}, {"id": "ASC_208", "name": "Próton da Equipe Rocket", "set": "ASC", "number": "208"}, {"id": "ASC_209", "name": "Transmissor da Equipe Rocket", "set": "ASC", "number": "209"}, {"id": "ASC_210", "name": "Torre de Vigia da Equipe Rocket", "set": "ASC", "number": "210"}, {"id": "ASC_211", "name": "Escama Espessa", "set": "ASC", "number": "211"}, {"id": "ASC_212", "name": "Sucateador de Ferramentas", "set": "ASC", "number": "212"}, {"id": "ASC_213", "name": "Ultra Bola", "set": "ASC", "number": "213"}, {"id": "ASC_214", "name": "Urbano", "set": "ASC", "number": "214"}, {"id": "ASC_215", "name": "Garçonete", "set": "ASC", "number": "215"}, {"id": "ASC_216", "name": "Energia de Prisma", "set": "ASC", "number": "216"}, {"id": "ASC_217", "name": "Energia da Equipe Rocket", "set": "ASC", "number": "217"}, {"id": "ASC_218", "name": "Tangela da Érica", "set": "ASC", "number": "218"}, {"id": "ASC_219", "name": "Beautifly", "set": "ASC", "number": "219"}, {"id": "ASC_220", "name": "Dustox", "set": "ASC", "number": "220"}, {"id": "ASC_221", "name": "Budew", "set": "ASC", "number": "221"}, {"id": "ASC_222", "name": "Magcargo do Ethan", "set": "ASC", "number": "222"}, {"id": "ASC_223", "name": "Numel", "set": "ASC", "number": "223"}, {"id": "ASC_224", "name": "Salazzle", "set": "ASC", "number": "224"}, {"id": "ASC_225", "name": "Scorbunny", "set": "ASC", "number": "225"}, {"id": "ASC_226", "name": "Psyduck", "set": "ASC", "number": "226"}, {"id": "ASC_227", "name": "Snorunt", "set": "ASC", "number": "227"}, {"id": "ASC_228", "name": "Weavile", "set": "ASC", "number": "228"}, {"id": "ASC_229", "name": "Heliolisk", "set": "ASC", "number": "229"}, {"id": "ASC_230", "name": "Vikavolt", "set": "ASC", "number": "230"}, {"id": "ASC_231", "name": "Wattrel da Kissera", "set": "ASC", "number": "231"}, {"id": "ASC_232", "name": "Marill", "set": "ASC", "number": "232"}, {"id": "ASC_233", "name": "Misdreavus", "set": "ASC", "number": "233"}, {"id": "ASC_234", "name": "Banette", "set": "ASC", "number": "234"}, {"id": "ASC_235", "name": "Togekiss", "set": "ASC", "number": "235"}, {"id": "ASC_236", "name": "Slurpuff", "set": "ASC", "number": "236"}, {"id": "ASC_237", "name": "Trevenant do Lupo", "set": "ASC", "number": "237"}, {"id": "ASC_238", "name": "Mimikyu da Equipe Rocket", "set": "ASC", "number": "238"}, {"id": "ASC_239", "name": "Dugtrio da Equipe Rocket", "set": "ASC", "number": "239"}, {"id": "ASC_240", "name": "Hitmontop", "set": "ASC", "number": "240"}, {"id": "ASC_241", "name": "Medicham", "set": "ASC", "number": "241"}, {"id": "ASC_242", "name": "Carbink", "set": "ASC", "number": "242"}, {"id": "ASC_243", "name": "Mightyena", "set": "ASC", "number": "243"}, {"id": "ASC_244", "name": "Spiritomb da Cíntia", "set": "ASC", "number": "244"}, {"id": "ASC_245", "name": "Obstagoon de Galar", "set": "ASC", "number": "245"}, {"id": "ASC_246", "name": "Mawile", "set": "ASC", "number": "246"}, {"id": "ASC_247", "name": "Dreepy", "set": "ASC", "number": "247"}, {"id": "ASC_248", "name": "Drakloak", "set": "ASC", "number": "248"}, {"id": "ASC_249", "name": "Staraptor do Lauro", "set": "ASC", "number": "249"}, {"id": "ASC_250", "name": "Rotom Ventilador", "set": "ASC", "number": "250"}, {"id": "ASC_251", "name": "Sprigatito ex", "set": "ASC", "number": "251"}, {"id": "ASC_252", "name": "Stunfisk ex", "set": "ASC", "number": "252"}, {"id": "ASC_253", "name": "Mega Audino ex", "set": "ASC", "number": "253"}, {"id": "ASC_254", "name": "Amor e Paz", "set": "ASC", "number": "254"}, {"id": "ASC_255", "name": "Treino de Faixa Preta", "set": "ASC", "number": "255"}, {"id": "ASC_256", "name": "Ordem da Chefia", "set": "ASC", "number": "256"}, {"id": "ASC_257", "name": "Canari", "set": "ASC", "number": "257"}, {"id": "ASC_258", "name": "Cheren", "set": "ASC", "number": "258"}, {"id": "ASC_259", "name": "Contra-ataque de Alcance", "set": "ASC", "number": "259"}, {"id": "ASC_260", "name": "Trompete de Vidro", "set": "ASC", "number": "260"}, {"id": "ASC_261", "name": "Torre de Interferência", "set": "ASC", "number": "261"}, {"id": "ASC_262", "name": "PP Up do N", "set": "ASC", "number": "262"}, {"id": "ASC_263", "name": "Transmissor da Equipe Rocket", "set": "ASC", "number": "263"}, {"id": "ASC_264", "name": "Ultra Bola", "set": "ASC", "number": "264"}, {"id": "ASC_265", "name": "Mega Froslass ex", "set": "ASC", "number": "265"}, {"id": "ASC_266", "name": "Mega Eelektross ex", "set": "ASC", "number": "266"}, {"id": "ASC_267", "name": "Mega Diancie ex", "set": "ASC", "number": "267"}, {"id": "ASC_268", "name": "Mega Hawlucha ex", "set": "ASC", "number": "268"}, {"id": "ASC_269", "name": "Mega Gengar ex", "set": "ASC", "number": "269"}, {"id": "ASC_270", "name": "Mega Scrafty ex", "set": "ASC", "number": "270"}, {"id": "ASC_271", "name": "Mega Dragonite ex", "set": "ASC", "number": "271"}, {"id": "ASC_272", "name": "Mega Meganium ex", "set": "ASC", "number": "272"}, {"id": "ASC_273", "name": "Mega Emboar ex", "set": "ASC", "number": "273"}, {"id": "ASC_274", "name": "Mega Feraligatr ex", "set": "ASC", "number": "274"}, {"id": "ASC_275", "name": "Mega Froslass ex", "set": "ASC", "number": "275"}, {"id": "ASC_276", "name": "Pikachu ex", "set": "ASC", "number": "276"}, {"id": "ASC_277", "name": "Pikachu ex", "set": "ASC", "number": "277"}, {"id": "ASC_278", "name": "Mega Eelektross ex", "set": "ASC", "number": "278"}, {"id": "ASC_279", "name": "Bellibolt ex da Kissera", "set": "ASC", "number": "279"}, {"id": "ASC_280", "name": "Clefairy ex da Lílian", "set": "ASC", "number": "280"}, {"id": "ASC_281", "name": "Mewtwo ex da Equipe Rocket", "set": "ASC", "number": "281"}, {"id": "ASC_282", "name": "Mega Diancie ex", "set": "ASC", "number": "282"}, {"id": "ASC_283", "name": "Mega Hawlucha ex", "set": "ASC", "number": "283"}, {"id": "ASC_284", "name": "Mega Gengar ex", "set": "ASC", "number": "284"}, {"id": "ASC_285", "name": "Mega Scrafty ex", "set": "ASC", "number": "285"}, {"id": "ASC_286", "name": "Zoroark ex do N", "set": "ASC", "number": "286"}, {"id": "ASC_287", "name": "Grimmsnarl ex da Marine", "set": "ASC", "number": "287"}, {"id": "ASC_288", "name": "Fezandipiti ex", "set": "ASC", "number": "288"}, {"id": "ASC_289", "name": "Metagross ex do Steven", "set": "ASC", "number": "289"}, {"id": "ASC_290", "name": "Mega Dragonite ex", "set": "ASC", "number": "290"}, {"id": "ASC_291", "name": "Canari", "set": "ASC", "number": "291"}, {"id": "ASC_292", "name": "Espírito de Luta da Iris", "set": "ASC", "number": "292"}, {"id": "ASC_293", "name": "Surfista", "set": "ASC", "number": "293"}, {"id": "ASC_294", "name": "Mega Charizard Y ex", "set": "ASC", "number": "294"}, {"id": "ASC_295", "name": "Mega Dragonite ex", "set": "ASC", "number": "295"}] },
       { sigla: "PFL", name: "Fogo Fantasmagórico", cards: [{"id": "PFL_001", "name": "Oddish", "set": "PFL", "number": "001"}, {"id": "PFL_002", "name": "Gloom", "set": "PFL", "number": "002"}, {"id": "PFL_003", "name": "Vileplume", "set": "PFL", "number": "003"}, {"id": "PFL_004", "name": "Mega Heracross ex", "set": "PFL", "number": "004"}, {"id": "PFL_005", "name": "Lotad", "set": "PFL", "number": "005"}, {"id": "PFL_006", "name": "Lombre", "set": "PFL", "number": "006"}, {"id": "PFL_007", "name": "Ludicolo", "set": "PFL", "number": "007"}, {"id": "PFL_008", "name": "Genesect", "set": "PFL", "number": "008"}, {"id": "PFL_009", "name": "Nymble", "set": "PFL", "number": "009"}, {"id": "PFL_010", "name": "Lokix", "set": "PFL", "number": "010"}, {"id": "PFL_011", "name": "Charmander", "set": "PFL", "number": "011"}, {"id": "PFL_012", "name": "Charmeleon", "set": "PFL", "number": "012"}, {"id": "PFL_013", "name": "Mega Charizard X ex", "set": "PFL", "number": "013"}, {"id": "PFL_014", "name": "Moltres", "set": "PFL", "number": "014"}, {"id": "PFL_015", "name": "Darumaka", "set": "PFL", "number": "015"}, {"id": "PFL_016", "name": "Darmanitan", "set": "PFL", "number": "016"}, {"id": "PFL_017", "name": "Reshiram", "set": "PFL", "number": "017"}, {"id": "PFL_018", "name": "Oricorio ex", "set": "PFL", "number": "018"}, {"id": "PFL_019", "name": "Charcadet", "set": "PFL", "number": "019"}, {"id": "PFL_020", "name": "Ceruledge", "set": "PFL", "number": "020"}, {"id": "PFL_021", "name": "Seel", "set": "PFL", "number": "021"}, {"id": "PFL_022", "name": "Dewgong", "set": "PFL", "number": "022"}, {"id": "PFL_023", "name": "Swinub", "set": "PFL", "number": "023"}, {"id": "PFL_024", "name": "Piloswine", "set": "PFL", "number": "024"}, {"id": "PFL_025", "name": "Mamoswine", "set": "PFL", "number": "025"}, {"id": "PFL_026", "name": "Suicune", "set": "PFL", "number": "026"}, {"id": "PFL_027", "name": "Piplup", "set": "PFL", "number": "027"}, {"id": "PFL_028", "name": "Prinplup", "set": "PFL", "number": "028"}, {"id": "PFL_029", "name": "Rotom ex", "set": "PFL", "number": "029"}, {"id": "PFL_030", "name": "Yamper", "set": "PFL", "number": "030"}, {"id": "PFL_031", "name": "Boltund", "set": "PFL", "number": "031"}, {"id": "PFL_032", "name": "Pawmi", "set": "PFL", "number": "032"}, {"id": "PFL_033", "name": "Pawmo", "set": "PFL", "number": "033"}, {"id": "PFL_034", "name": "Pawmot", "set": "PFL", "number": "034"}, {"id": "PFL_035", "name": "Misdreavus", "set": "PFL", "number": "035"}, {"id": "PFL_036", "name": "Mismagius ex", "set": "PFL", "number": "036"}, {"id": "PFL_037", "name": "Snubbull", "set": "PFL", "number": "037"}, {"id": "PFL_038", "name": "Granbull", "set": "PFL", "number": "038"}, {"id": "PFL_039", "name": "Cresselia", "set": "PFL", "number": "039"}, {"id": "PFL_040", "name": "Meloetta", "set": "PFL", "number": "040"}, {"id": "PFL_041", "name": "Mega Diancie ex", "set": "PFL", "number": "041"}, {"id": "PFL_042", "name": "Mimikyu", "set": "PFL", "number": "042"}, {"id": "PFL_043", "name": "Milcery", "set": "PFL", "number": "043"}, {"id": "PFL_044", "name": "Alcremie", "set": "PFL", "number": "044"}, {"id": "PFL_045", "name": "Zacian", "set": "PFL", "number": "045"}, {"id": "PFL_046", "name": "Bramblin", "set": "PFL", "number": "046"}, {"id": "PFL_047", "name": "Brambleghast", "set": "PFL", "number": "047"}, {"id": "PFL_048", "name": "Tauros de Paldea", "set": "PFL", "number": "048"}, {"id": "PFL_049", "name": "Gligar", "set": "PFL", "number": "049"}, {"id": "PFL_050", "name": "Gliscor", "set": "PFL", "number": "050"}, {"id": "PFL_051", "name": "Trapinch", "set": "PFL", "number": "051"}, {"id": "PFL_052", "name": "Vibrava", "set": "PFL", "number": "052"}, {"id": "PFL_053", "name": "Flygon", "set": "PFL", "number": "053"}, {"id": "PFL_054", "name": "Gastly", "set": "PFL", "number": "054"}, {"id": "PFL_055", "name": "Haunter", "set": "PFL", "number": "055"}, {"id": "PFL_056", "name": "Mega Gengar ex", "set": "PFL", "number": "056"}, {"id": "PFL_057", "name": "Murkrow", "set": "PFL", "number": "057"}, {"id": "PFL_058", "name": "Honchkrow", "set": "PFL", "number": "058"}, {"id": "PFL_059", "name": "Sableye", "set": "PFL", "number": "059"}, {"id": "PFL_060", "name": "Carvanha", "set": "PFL", "number": "060"}, {"id": "PFL_061", "name": "Mega Sharpedo ex", "set": "PFL", "number": "061"}, {"id": "PFL_062", "name": "Seviper", "set": "PFL", "number": "062"}, {"id": "PFL_063", "name": "Absol", "set": "PFL", "number": "063"}, {"id": "PFL_064", "name": "Sandile", "set": "PFL", "number": "064"}, {"id": "PFL_065", "name": "Krokorok", "set": "PFL", "number": "065"}, {"id": "PFL_066", "name": "Krookodile", "set": "PFL", "number": "066"}, {"id": "PFL_067", "name": "Toxel", "set": "PFL", "number": "067"}, {"id": "PFL_068", "name": "Toxtricity", "set": "PFL", "number": "068"}, {"id": "PFL_069", "name": "Eternatus", "set": "PFL", "number": "069"}, {"id": "PFL_070", "name": "Empoleon ex", "set": "PFL", "number": "070"}, {"id": "PFL_071", "name": "Bronzor", "set": "PFL", "number": "071"}, {"id": "PFL_072", "name": "Bronzong", "set": "PFL", "number": "072"}, {"id": "PFL_073", "name": "Togedemaru", "set": "PFL", "number": "073"}, {"id": "PFL_074", "name": "Duraludon", "set": "PFL", "number": "074"}, {"id": "PFL_075", "name": "Archaludon", "set": "PFL", "number": "075"}, {"id": "PFL_076", "name": "Jigglypuff", "set": "PFL", "number": "076"}, {"id": "PFL_077", "name": "Wigglytuff", "set": "PFL", "number": "077"}, {"id": "PFL_078", "name": "Aipom", "set": "PFL", "number": "078"}, {"id": "PFL_079", "name": "Ambipom", "set": "PFL", "number": "079"}, {"id": "PFL_080", "name": "Smeargle", "set": "PFL", "number": "080"}, {"id": "PFL_081", "name": "Zigzagoon", "set": "PFL", "number": "081"}, {"id": "PFL_082", "name": "Linoone", "set": "PFL", "number": "082"}, {"id": "PFL_083", "name": "Buneary", "set": "PFL", "number": "083"}, {"id": "PFL_084", "name": "Mega Lopunny ex", "set": "PFL", "number": "084"}, {"id": "PFL_085", "name": "Jaula de Batalha", "set": "PFL", "number": "085"}, {"id": "PFL_086", "name": "Maçarico", "set": "PFL", "number": "086"}, {"id": "PFL_087", "name": "Dawn", "set": "PFL", "number": "087"}, {"id": "PFL_088", "name": "Vale Vertiginoso", "set": "PFL", "number": "088"}, {"id": "PFL_089", "name": "Cuspidor de Fogo", "set": "PFL", "number": "089"}, {"id": "PFL_090", "name": "Artimanha do Funesto", "set": "PFL", "number": "090"}, {"id": "PFL_091", "name": "Sorvetão Jumbo", "set": "PFL", "number": "091"}, {"id": "PFL_092", "name": "Capacete Punk", "set": "PFL", "number": "092"}, {"id": "PFL_093", "name": "Pingente Sagrado", "set": "PFL", "number": "093"}, {"id": "PFL_094", "name": "Fragmento Encantado", "set": "PFL", "number": "094"}, {"id": "PFL_095", "name": "Ludicolo", "set": "PFL", "number": "095"}, {"id": "PFL_096", "name": "Nymble", "set": "PFL", "number": "096"}, {"id": "PFL_097", "name": "Dewgong", "set": "PFL", "number": "097"}, {"id": "PFL_098", "name": "Piplup", "set": "PFL", "number": "098"}, {"id": "PFL_099", "name": "Yamper", "set": "PFL", "number": "099"}, {"id": "PFL_100", "name": "Zacian", "set": "PFL", "number": "100"}, {"id": "PFL_101", "name": "Flygon", "set": "PFL", "number": "101"}, {"id": "PFL_102", "name": "Wooper de Paldea", "set": "PFL", "number": "102"}, {"id": "PFL_103", "name": "Toxtricity", "set": "PFL", "number": "103"}, {"id": "PFL_104", "name": "Togedemaru", "set": "PFL", "number": "104"}, {"id": "PFL_105", "name": "Wigglytuff", "set": "PFL", "number": "105"}, {"id": "PFL_106", "name": "Meowth", "set": "PFL", "number": "106"}, {"id": "PFL_107", "name": "Ambipom", "set": "PFL", "number": "107"}, {"id": "PFL_108", "name": "Mega Heracross ex", "set": "PFL", "number": "108"}, {"id": "PFL_109", "name": "Mega Charizard X ex", "set": "PFL", "number": "109"}, {"id": "PFL_110", "name": "Oricorio ex", "set": "PFL", "number": "110"}, {"id": "PFL_111", "name": "Rotom ex", "set": "PFL", "number": "111"}, {"id": "PFL_112", "name": "Mismagius ex", "set": "PFL", "number": "112"}, {"id": "PFL_113", "name": "Mega Sharpedo ex", "set": "PFL", "number": "113"}, {"id": "PFL_114", "name": "Empoleon ex", "set": "PFL", "number": "114"}, {"id": "PFL_115", "name": "Mega Lopunny ex", "set": "PFL", "number": "115"}, {"id": "PFL_116", "name": "Jaula de Batalha", "set": "PFL", "number": "116"}, {"id": "PFL_117", "name": "Maçarico", "set": "PFL", "number": "117"}, {"id": "PFL_118", "name": "Dawn", "set": "PFL", "number": "118"}, {"id": "PFL_119", "name": "Cuspidor de Fogo", "set": "PFL", "number": "119"}, {"id": "PFL_120", "name": "Artimanha do Funesto", "set": "PFL", "number": "120"}, {"id": "PFL_121", "name": "Capacete Punk", "set": "PFL", "number": "121"}, {"id": "PFL_122", "name": "Pingente Sagrado", "set": "PFL", "number": "122"}, {"id": "PFL_123", "name": "Substituição", "set": "PFL", "number": "123"}, {"id": "PFL_124", "name": "Energia de Ignição", "set": "PFL", "number": "124"}, {"id": "PFL_125", "name": "Mega Charizard X ex", "set": "PFL", "number": "125"}, {"id": "PFL_126", "name": "Rotom ex", "set": "PFL", "number": "126"}, {"id": "PFL_127", "name": "Mega Sharpedo ex", "set": "PFL", "number": "127"}, {"id": "PFL_128", "name": "Mega Lopunny ex", "set": "PFL", "number": "128"}, {"id": "PFL_129", "name": "Dawn", "set": "PFL", "number": "129"}, {"id": "PFL_130", "name": "Mega Charizard X ex", "set": "PFL", "number": "130"}] },
@@ -269,691 +324,683 @@
       { sigla: "MEP", name: "Mega Evolution Promos", cards: [{"id": "MEP_001", "name": "Meganium", "set": "MEP", "number": "001"}, {"id": "MEP_002", "name": "Inteleon", "set": "MEP", "number": "002"}, {"id": "MEP_003", "name": "Alakazam", "set": "MEP", "number": "003"}, {"id": "MEP_004", "name": "Lunatone", "set": "MEP", "number": "004"}, {"id": "MEP_005", "name": "Drifloon", "set": "MEP", "number": "005"}, {"id": "MEP_006", "name": "Drifblim", "set": "MEP", "number": "006"}, {"id": "MEP_007", "name": "Psyduck", "set": "MEP", "number": "007"}, {"id": "MEP_008", "name": "Golduck", "set": "MEP", "number": "008"}, {"id": "MEP_009", "name": "Alakazam", "set": "MEP", "number": "009"}, {"id": "MEP_010", "name": "Riolu", "set": "MEP", "number": "010"}, {"id": "MEP_011", "name": "Mega Latias ex", "set": "MEP", "number": "011"}, {"id": "MEP_012", "name": "Mega Lucario ex", "set": "MEP", "number": "012"}, {"id": "MEP_013", "name": "Mega Venusaur ex", "set": "MEP", "number": "013"}, {"id": "MEP_014", "name": "Ceruledge", "set": "MEP", "number": "014"}, {"id": "MEP_015", "name": "Zacian", "set": "MEP", "number": "015"}, {"id": "MEP_016", "name": "Flygon", "set": "MEP", "number": "016"}, {"id": "MEP_017", "name": "Toxtricity", "set": "MEP", "number": "017"}, {"id": "MEP_018", "name": "Cottonee", "set": "MEP", "number": "018"}, {"id": "MEP_019", "name": "Whimsicott", "set": "MEP", "number": "019"}, {"id": "MEP_020", "name": "Sneasel", "set": "MEP", "number": "020"}, {"id": "MEP_021", "name": "Weavile", "set": "MEP", "number": "021"}, {"id": "MEP_022", "name": "Charcadet", "set": "MEP", "number": "022"}, {"id": "MEP_023", "name": "Mega Charizard X ex", "set": "MEP", "number": "023"}, {"id": "MEP_024", "name": "Oricorio ex", "set": "MEP", "number": "024"}, {"id": "MEP_025", "name": "Mega Kangaskhan ex", "set": "MEP", "number": "025"}, {"id": "MEP_026", "name": "Meloetta", "set": "MEP", "number": "026"}, {"id": "MEP_027", "name": "Haunter", "set": "MEP", "number": "027"}, {"id": "MEP_028", "name": "Fanfarra de Celebração", "set": "MEP", "number": "028"}, {"id": "MEP_029", "name": "Mega Charizard X ex", "set": "MEP", "number": "029"}, {"id": "MEP_030", "name": "Mega Charizard Y ex", "set": "MEP", "number": "030"}, {"id": "MEP_031", "name": "Zekrom do N", "set": "MEP", "number": "031"}] },
     ];
 
-    function App() {
-      const [decks, setDecks] = useState([]);
-      const [collection, setCollection] = useState({});
-      const [activeTab, setActiveTab] = useState('decks');
-      const [selectedDeckId, setSelectedDeckId] = useState(null);
-      
-      const [toast, setToast] = useState(null);
-      const showToast = (message, type = 'success') => {
-        setToast({ message, type });
-        setTimeout(() => setToast(null), 3000);
-      };
+    const LEAGUE_POOL = [...TRAINER_POOL, ...POKEMON_POOL];
 
-      const [confirmDeleteId, setConfirmDeleteId] = useState(null);
 
-      const [isAddingDeck, setIsAddingDeck] = useState(false);
-      const [newDeckName, setNewDeckName] = useState('');
-      const [newDeckDescription, setNewDeckDescription] = useState('');
-      const [newDeckList, setNewDeckList] = useState('');
-      const [manualCollectionEntry, setManualCollectionEntry] = useState('');
+// ─────────────────────────────────────────────
+//  STATE
+// ─────────────────────────────────────────────
+let state = {
+  tab: 'decks',          // decks | league | collection
+  leagueTab: 'decks',    // decks | pool | sets
+  decks: [],
+  collection: {},
+  selectedDeckId: null,
+  confirmDeleteId: null,
+  // deck form
+  showAddDeck: false,
+  newDeckName: '', newDeckDesc: '', newDeckList: '',
+  // pool
+  poolFilter: 'todos', poolSearch: '',
+  // sets
+  selectedSet: null, setSearch: '',
+  // collection
+  collSearch: '', collSetFilter: 'todos',
+  // manual collection
+  manualEntry: '',
+};
 
-      const [isLoading, setIsLoading] = useState(true);
-      const [leagueView, setLeagueView] = useState('decks');
-      const [poolFilter, setPoolFilter] = useState('todos');
-      const [poolSearch, setPoolSearch] = useState('');
-      const [selectedSetSigla, setSelectedSetSigla] = useState(null);
-      const [setSearch, setSetSearch] = useState('');
-      const [collSearch, setCollSearch] = useState('');
-      const [collSetFilter, setCollSetFilter] = useState('todos');
-      const [collStatusFilter, setCollStatusFilter] = useState('todos');
+// ─────────────────────────────────────────────
+//  STORAGE
+// ─────────────────────────────────────────────
+function loadStorage() {
+  try {
+    const d = localStorage.getItem('tcg_decks');
+    const c = localStorage.getItem('tcg_collection');
+    if (d) state.decks = JSON.parse(d);
+    if (c) state.collection = JSON.parse(c);
+  } catch(e) { console.error(e); }
+}
+function saveStorage() {
+  try {
+    localStorage.setItem('tcg_decks', JSON.stringify(state.decks));
+    localStorage.setItem('tcg_collection', JSON.stringify(state.collection));
+  } catch(e) { showToast('Falha ao salvar dados.', 'error'); }
+}
 
-      const isPortuguese = (name) => {
-        if (!name) return false;
-        const ptPatterns = [
-          /da equipe/i, /fábrica/i, /transceptor/i, /próton/i, /petrel/i,
-          /archer/i, /ariana/i, /giovanni/i,
-          /bola ultra/i, /bola ninho/i, /bola amiga/i, /bola premier/i,
-          /pesquisa do professor/i, /ordens do chefe/i, /iono/i,
-          /troca/i, /treinador/i, /energia/i, /remendo/i,
-          /corretor noturno/i, /amigo íntimo/i, /poffin/i,
-          /companheiro/i, /rastreador/i, /bengala/i,
-          /escotilha/i, /desvio/i, /rede pokémon/i,
-          /energia básica/i, /energia especial/i,
-          /fogo/i, /água/i, /grama/i, /psíquico/i, /sombrio/i, /metálico/i,
-        ];
-        return ptPatterns.some(pattern => pattern.test(name));
-      };
+// ─────────────────────────────────────────────
+//  TOAST
+// ─────────────────────────────────────────────
+let toastTimer;
+function showToast(msg, type='success') {
+  const el = document.getElementById('toast');
+  el.textContent = (type==='success'?'✓ ':'✕ ') + msg;
+  el.className = 'show ' + type;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { el.className = ''; }, 3000);
+}
 
-      const allDecks = useMemo(() => [...decks, ...PRESET_DECKS], [decks]);
-      const sortedUserDecks = useMemo(() => [...decks].sort((a, b) => b.createdAt - a.createdAt), [decks]);
-      
-      const calculateProgress = (deckCards) => {
-        if (!deckCards || deckCards.length === 0) return 0;
-        const totalReq = deckCards.reduce((acc, c) => acc + c.qty, 0);
-        const totalOwned = deckCards.reduce((acc, c) => acc + Math.min(collection[c.id]?.qty || 0, c.qty), 0);
-        return totalReq === 0 ? 0 : Math.floor((totalOwned / totalReq) * 100);
-      };
+// ─────────────────────────────────────────────
+//  HELPERS
+// ─────────────────────────────────────────────
+function genId() {
+  return (typeof crypto !== 'undefined' && crypto.randomUUID)
+    ? crypto.randomUUID()
+    : Date.now().toString(36) + Math.random().toString(36).slice(2);
+}
+function esc(str) {
+  return String(str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function parseInput(text) {
+  let invalid = 0;
+  const cards = text.split('\n').map(l=>l.trim()).filter(Boolean).reduce((acc, line) => {
+    const parts = line.split(/\s+/);
+    if (parts.length < 3) { invalid++; return acc; }
+    let qty = 1;
+    if (!isNaN(parseInt(parts[0],10))) qty = Math.max(1, parseInt(parts.shift(),10));
+    const number = parts.pop();
+    const set = parts.pop();
+    const name = parts.join(' ');
+    if (!name || !set || !number) { invalid++; return acc; }
+    acc.push({ id: `${set}_${number}`, qty, name, set, number });
+    return acc;
+  }, []);
+  return { cards, invalidCount: invalid };
+}
+function calcProgress(deckCards) {
+  if (!deckCards || !deckCards.length) return 0;
+  const total = deckCards.reduce((a,c)=>a+c.qty,0);
+  const owned = deckCards.reduce((a,c)=>a+Math.min(state.collection[c.id]?.qty||0, c.qty),0);
+  return total===0?0:Math.floor((owned/total)*100);
+}
+function updateCollectionQty(card, delta, exact=null) {
+  const cur = state.collection[card.id]?.qty || 0;
+  let next = exact !== null ? exact : cur + delta;
+  if (next < 0) next = 0;
+  if (next === 0) delete state.collection[card.id];
+  else state.collection[card.id] = { ...card, qty: next };
+  saveStorage();
+  render();
+}
+function allDecks() { return [...state.decks, ...PRESET_DECKS]; }
+function selectedDeck() {
+  if (!state.selectedDeckId) return null;
+  return allDecks().find(d => d.id === state.selectedDeckId) || null;
+}
+function copyDeck(deck) {
+  const txt = deck.cards.map(c=>`${c.qty} ${c.name} ${c.set} ${c.number}`).join('\n');
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(txt).then(()=>showToast(`Deck "${deck.name}" copiado!`)).catch(()=>fallbackCopy(txt,deck.name));
+  } else { fallbackCopy(txt, deck.name); }
+}
+function fallbackCopy(txt, name) {
+  const el = document.createElement('textarea');
+  el.value = txt; el.style.position='fixed'; el.style.opacity='0';
+  document.body.appendChild(el); el.focus(); el.select();
+  try { document.execCommand('copy'); showToast(`Deck "${name}" copiado!`); }
+  catch { showToast('Erro ao copiar.','error'); }
+  document.body.removeChild(el);
+}
 
-      const deckProgress = useMemo(() => {
-        const map = {};
-        allDecks.forEach(d => { map[d.id] = calculateProgress(d.cards); });
-        return map;
-      }, [allDecks, collection]);
+// ─────────────────────────────────────────────
+//  SVG ICONS
+// ─────────────────────────────────────────────
+const ICONS = {
+  decks: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/><line x1="12" y1="12" x2="12" y2="16"/></svg>`,
+  league: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 9H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5S16.33 9 15.5 9z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 15H10v-1.5c0-.83-.67-1.5-1.5-1.5S7 12.67 7 13.5 7.67 15 8.5 15z"/></svg>`,
+  collection: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>`,
+  plus: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>`,
+  back: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>`,
+  trash: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>`,
+  copy: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`,
+  check: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>`,
+  square: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>`,
+  refresh: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>`,
+};
 
-      const selectedDeck = useMemo(() => {
-        if (!selectedDeckId) return null;
-        return allDecks.find(d => d.id === selectedDeckId) || null;
-      }, [allDecks, selectedDeckId]);
+// ─────────────────────────────────────────────
+//  RENDER
+// ─────────────────────────────────────────────
+function render() {
+  document.getElementById('app').innerHTML = buildApp();
+  attachEvents();
+}
 
-      // LOAD DATA FROM LOCAL STORAGE
-      useEffect(() => {
-        try {
-          const savedDecks = localStorage.getItem('tcg_decks');
-          const savedCollection = localStorage.getItem('tcg_collection');
-          if (savedDecks) setDecks(JSON.parse(savedDecks));
-          if (savedCollection) setCollection(JSON.parse(savedCollection));
-        } catch (error) {
-          console.error("Erro ao carregar dados locais:", error);
-        } finally {
-          setIsLoading(false);
-        }
-      }, []);
+function buildApp() {
+  return `
+    ${buildHeader()}
+    <main>${buildMain()}</main>
+    ${buildBottomNav()}
+  `;
+}
 
-      // SAVE DATA TO LOCAL STORAGE
-      const syncData = (newDecks, newCollection) => {
-        setDecks(newDecks);
-        setCollection(newCollection);
-        try {
-          localStorage.setItem('tcg_decks', JSON.stringify(newDecks));
-          localStorage.setItem('tcg_collection', JSON.stringify(newCollection));
-        } catch (err) {
-          console.error('Erro ao salvar no Local Storage:', err);
-          showToast("Falha ao salvar dados.", "error");
-        }
-      };
+function buildHeader() {
+  const tabs = [['decks','Meus Decks'],['league','Liga'],['collection','Coleção']];
+  return `<header>
+    <h1>⚡ PTCG Collector</h1>
+    <nav>
+      ${tabs.map(([id,label])=>`<button class="${state.tab===id?'active':''}" data-nav="${id}">${label}</button>`).join('')}
+    </nav>
+  </header>`;
+}
 
-      const parseInput = (text) => {
-        let invalidLinesCount = 0;
-        const rawParsed = text.split('\n')
-          .map(line => line.trim())
-          .filter(line => line.length > 0);
+function buildBottomNav() {
+  return `<nav class="bottom-nav">
+    <button class="${state.tab==='decks'?'active':''}" data-nav="decks">${ICONS.decks}<span>DECKS</span></button>
+    <button class="${state.tab==='league'?'active':''}" data-nav="league">${ICONS.league}<span>LIGA</span></button>
+    <button class="${state.tab==='collection'?'active':''}" data-nav="collection">${ICONS.collection}<span>COLEÇÃO</span></button>
+  </nav>`;
+}
 
-        const parsed = rawParsed.reduce((acc, line) => {
-          const parts = line.split(/\s+/);
-          if (parts.length < 3) {
-            invalidLinesCount++;
-            return acc;
-          }
-          
-          let qty = 1;
-          if (!isNaN(parseInt(parts[0], 10))) {
-            qty = Math.max(1, parseInt(parts.shift(), 10));
-          }
-          
-          const number = parts.pop();
-          const set = parts.pop();
-          const name = parts.join(' ');
-          
-          if (!name || !set || !number) {
-            invalidLinesCount++;
-            return acc;
-          }
+function buildMain() {
+  const deck = selectedDeck();
+  if (deck) return buildDeckDetail(deck);
+  if (state.tab === 'decks') return buildDecksTab();
+  if (state.tab === 'league') return buildLeagueTab();
+  if (state.tab === 'collection') return buildCollectionTab();
+  return '';
+}
 
-          acc.push({ id: `${set}_${number}`, qty, name, set, number });
-          return acc;
-        }, []);
+// ── DECKS TAB ────────────────────────────────
+function buildDecksTab() {
+  let html = `<div class="flex-between mb-12">
+    <span class="section-title" style="margin:0">Meus Decks</span>
+    <button class="btn btn-primary btn-sm" id="btn-add-deck">${ICONS.plus} Novo Deck</button>
+  </div>`;
 
-        return { cards: parsed, invalidCount: invalidLinesCount };
-      };
-
-      const updateCollectionQty = (card, delta, exactValue = null) => {
-        const newCollection = { ...collection };
-        const currentEntry = newCollection[card.id];
-        const currentQty = currentEntry?.qty || 0;
-        let nextQty = exactValue !== null ? exactValue : currentQty + delta;
-        if (nextQty < 0) nextQty = 0;
-
-        if (nextQty === 0) {
-          delete newCollection[card.id];
-        } else {
-          let finalName = card.name;
-          if (currentEntry) {
-            const currentIsPT = isPortuguese(currentEntry.name);
-            const newIsPT = isPortuguese(card.name);
-            
-            if (currentIsPT && !newIsPT) {
-              finalName = currentEntry.name; 
-            } else if (!currentIsPT && newIsPT) {
-              finalName = card.name; 
-            }
-          }
-          newCollection[card.id] = { ...card, name: finalName, qty: nextQty };
-        }
-        syncData(decks, newCollection);
-      };
-
-      const copyDeckToClipboard = async (deck) => {
-        let output = deck.cards.map(c => `${c.qty} ${c.name} ${c.set} ${c.number}`).join('\n');
-        try {
-          await navigator.clipboard.writeText(output);
-          showToast(`Deck "${deck.name}" copiado!`);
-        } catch {
-          const el = document.createElement('textarea');
-          el.value = output;
-          el.style.position = 'fixed';
-          el.style.opacity = '0';
-          document.body.appendChild(el);
-          el.focus();
-          el.select();
-          try { 
-            document.execCommand('copy'); 
-            showToast(`Deck "${deck.name}" copiado!`);
-          } catch {
-            showToast("Erro ao copiar.", "error");
-          }
-          document.body.removeChild(el);
-        }
-      };
-
-      const handleUpdateToPT = () => {
-        const ptNameMap = {};
-        allDecks.forEach(deck => {
-          deck.cards.forEach(card => {
-            if (card.id && card.name && isPortuguese(card.name)) {
-              if (!ptNameMap[card.id]) {
-                ptNameMap[card.id] = card.name;
-              }
-            }
-          });
-        });
-
-        let updatedCount = 0;
-        const newCollection = { ...collection };
-        
-        Object.keys(newCollection).forEach(cardId => {
-          const entry = newCollection[cardId];
-          if (!isPortuguese(entry.name) && ptNameMap[cardId]) {
-            newCollection[cardId] = { ...entry, name: ptNameMap[cardId] };
-            updatedCount++;
-          }
-        });
-
-        if (updatedCount === 0) {
-          showToast("Nenhuma carta para atualizar.", "error");
-          return;
-        }
-
-        syncData(decks, newCollection);
-        showToast(`${updatedCount} carta(s) atualizada(s) para português!`);
-      };
-
-      if (isLoading) return <div className="min-h-screen flex items-center justify-center bg-slate-50">Carregando dados...</div>;
-
-      return (
-        <div className="min-h-screen bg-slate-50 text-slate-900 pb-20 md:pb-0 font-sans">
-          
-          {toast && (
-            <div className={`fixed bottom-4 right-4 p-4 rounded-lg shadow-2xl z-50 animate-in slide-in-from-right-4 duration-300 ${toast.type === 'error' ? 'bg-red-600' : 'bg-green-600'} text-white font-bold flex items-center gap-2`}>
-              {toast.type === 'error' ? <AlertCircle className="w-5 h-5"/> : <Check className="w-5 h-5"/>}
-              {toast.message}
-            </div>
-          )}
-
-          <header className="bg-blue-600 text-white p-4 shadow-md sticky top-0 z-20">
-            <div className="max-w-4xl mx-auto flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <h1 className="text-xl font-bold flex items-center gap-2"><Layers className="w-6 h-6" /> PTCG Collector</h1>
-              </div>
-              <div className="hidden md:flex gap-4">
-                <button onClick={() => { setActiveTab('decks'); setSelectedDeckId(null); }} className={`px-3 py-1.5 rounded-lg transition-colors ${activeTab === 'decks' ? 'bg-white/20' : 'hover:bg-white/10'}`}>Meus Decks</button>
-                <button onClick={() => { setActiveTab('league'); setSelectedDeckId(null); }} className={`px-3 py-1.5 rounded-lg transition-colors ${activeTab === 'league' ? 'bg-white/20' : 'hover:bg-white/10'}`}>Liga</button>
-                <button onClick={() => { setActiveTab('collection'); setSelectedDeckId(null); }} className={`px-3 py-1.5 rounded-lg transition-colors ${activeTab === 'collection' ? 'bg-white/20' : 'hover:bg-white/10'}`}>Coleção</button>
-              </div>
-            </div>
-          </header>
-
-          <main className="max-w-4xl mx-auto p-4 mt-4">
-            
-            {/* MODAL: NOVO DECK */}
-            {isAddingDeck && (
-              <div className="bg-white p-6 rounded-xl border border-slate-200 mb-6 animate-in fade-in shadow-sm">
-                <h2 className="text-xl font-bold mb-4">Importar Novo Deck</h2>
-                <input className="w-full p-3 border rounded-lg mb-4 outline-none focus:ring-2 focus:ring-blue-500" placeholder="Nome do Deck" value={newDeckName} onChange={e => setNewDeckName(e.target.value)} />
-                <input className="w-full p-3 border rounded-lg mb-4 outline-none focus:ring-2 focus:ring-blue-500" placeholder="Descrição (opcional)" value={newDeckDescription} onChange={e => setNewDeckDescription(e.target.value)} maxLength={120} />
-                <textarea className="w-full p-3 border rounded-lg h-32 font-mono text-sm outline-none focus:ring-2 focus:ring-blue-500" placeholder="Cole a lista (ex: 4 Torchic DRI 040)" value={newDeckList} onChange={e => setNewDeckList(e.target.value)} />
-                <div className="flex justify-end gap-3 mt-4">
-                  <button onClick={() => setIsAddingDeck(false)} className="px-4 py-2 text-slate-500">Cancelar</button>
-                  <button onClick={() => {
-                    if (!newDeckName.trim()) return showToast("O deck precisa ter um nome.", "error");
-                    
-                    const { cards: parsed, invalidCount } = parseInput(newDeckList);
-                    if (invalidCount > 0) showToast(`${invalidCount} linha(s) ignoradas por formato inválido.`, "error");
-                    if (parsed.length === 0) return showToast("Adicione cartas válidas ao deck.", "error");
-                    if (parsed.reduce((a,b)=>a+b.qty,0) > 60) return showToast("Erro: O deck ultrapassa 60 cartas.", "error");
-                    
-                    const newDeck = { id: generateId(), name: newDeckName, description: newDeckDescription.trim(), cards: parsed, createdAt: Date.now() };
-                    syncData([...decks, newDeck], collection);
-                    setIsAddingDeck(false); setNewDeckName(''); setNewDeckDescription(''); setNewDeckList('');
-                    showToast("Deck salvo com sucesso!");
-                  }} className="bg-blue-600 text-white px-6 py-2 rounded-lg font-bold shadow-md hover:bg-blue-700 transition-colors">Salvar Deck</button>
-                </div>
-              </div>
-            )}
-
-            {/* VIEW: MEUS DECKS */}
-            {!isAddingDeck && !selectedDeck && activeTab === 'decks' && (
-              <div className="space-y-4 animate-in fade-in">
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-4 rounded-xl border border-slate-200 gap-4 shadow-sm">
-                  <h2 className="text-lg font-bold text-slate-700">Meus Decks</h2>
-                  <button onClick={() => setIsAddingDeck(true)} className="w-full sm:w-auto bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-blue-700 shadow-md transition-colors">
-                    <Plus className="w-4 h-4"/> Novo Deck
-                  </button>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {sortedUserDecks.map(deck => (
-                    <div key={deck.id} onClick={() => setSelectedDeckId(deck.id)} className="bg-white p-5 rounded-xl border border-slate-200 hover:shadow-md transition-all cursor-pointer relative">
-                      <h3 className="font-bold text-lg pr-8 truncate">{deck.name}</h3>
-                      <p className="text-xs text-slate-500 mt-1 line-clamp-2 h-8">{deck.description || "Sem descrição"}</p>
-                      
-                      <div className="mt-4">
-                        <div className="flex justify-between items-center text-sm mb-1.5">
-                          <span className="font-medium text-slate-600">{deckProgress[deck.id]}% completo</span>
-                          
-                          {confirmDeleteId === deck.id ? (
-                            <div className="flex gap-2 animate-in fade-in zoom-in-95" onClick={e => e.stopPropagation()}>
-                              <button onClick={() => {
-                                const newDecks = decks.filter(d => d.id !== deck.id);
-                                syncData(newDecks, collection);
-                                setConfirmDeleteId(null);
-                                showToast("Deck excluído.");
-                              }} className="text-[10px] bg-red-600 text-white px-2 py-1 rounded font-bold uppercase">Excluir</button>
-                              <button onClick={() => setConfirmDeleteId(null)} className="text-[10px] bg-slate-200 px-2 py-1 rounded font-bold uppercase">Voltar</button>
-                            </div>
-                          ) : (
-                            <button onClick={e => { e.stopPropagation(); setConfirmDeleteId(deck.id); }} className="text-slate-400 hover:text-red-500 p-1"><Trash2 className="w-4 h-4"/></button>
-                          )}
-                        </div>
-                        <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                          <div className="bg-blue-500 h-full transition-all duration-500" style={{ width: `${deckProgress[deck.id]}%` }} />
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                  {sortedUserDecks.length === 0 && (
-                    <div className="col-span-full p-12 text-center text-slate-400 border-2 border-dashed rounded-xl border-slate-200">
-                      Nenhum deck criado ainda. Clique em "Novo Deck" para começar.
-                    </div>
-                  )}
-                </div>
-              </div>
-            )}
-
-            {/* VIEW: LIGA */}
-            {activeTab === 'league' && !selectedDeck && (
-              <div className="space-y-4 animate-in fade-in">
-                {/* Sub-tabs */}
-                <div className="flex gap-2 bg-white p-1.5 rounded-xl border border-slate-200 shadow-sm">
-                  <button onClick={() => setLeagueView('decks')} className={`flex-1 py-2 rounded-lg text-sm font-bold transition-all flex items-center justify-center gap-2 ${leagueView === 'decks' ? 'bg-blue-600 text-white shadow' : 'text-slate-500 hover:bg-slate-100'}`}>
-                    <Swords className="w-4 h-4"/> Decks
-                  </button>
-                  <button onClick={() => setLeagueView('pool')} className={`flex-1 py-2 rounded-lg text-sm font-bold transition-all flex items-center justify-center gap-2 ${leagueView === 'pool' ? 'bg-blue-600 text-white shadow' : 'text-slate-500 hover:bg-slate-100'}`}>
-                    <FileText className="w-4 h-4"/> Pool da Liga
-                  </button>
-                  <button onClick={() => { setLeagueView('sets'); setSelectedSetSigla(null); setSetSearch(''); }} className={`flex-1 py-2 rounded-lg text-sm font-bold transition-all flex items-center justify-center gap-2 ${leagueView === 'sets' ? 'bg-blue-600 text-white shadow' : 'text-slate-500 hover:bg-slate-100'}`}>
-                    <Archive className="w-4 h-4"/> Coleções
-                  </button>
-                </div>
-
-                {/* Decks view */}
-                {leagueView === 'decks' && (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {PRESET_DECKS.map(deck => (
-                      <div key={deck.id} onClick={() => setSelectedDeckId(deck.id)} className="bg-white p-6 rounded-xl border border-slate-200 cursor-pointer hover:shadow-lg transition-all flex flex-col justify-between group">
-                        <div>
-                          <h3 className="font-bold text-xl flex items-center gap-2 group-hover:text-blue-600 transition-colors"><Swords className="w-5 h-5 text-amber-500"/> {deck.name}</h3>
-                          <p className="text-sm text-slate-500 mt-2">{deck.description}</p>
-                        </div>
-                        <div className="mt-6">
-                          <div className="flex justify-between text-sm font-bold mb-1.5 text-slate-700">
-                            <span>Progresso de Coleção</span>
-                            <span>{deckProgress[deck.id]}%</span>
-                          </div>
-                          <div className="mt-2 bg-slate-100 h-2.5 rounded-full overflow-hidden">
-                            <div className="bg-amber-500 h-full transition-all duration-500 shadow-[0_0_8px_rgba(245,158,11,0.5)]" style={{ width: `${deckProgress[deck.id]}%` }} />
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {/* Pool view */}
-                {leagueView === 'pool' && (() => {
-                  const typeColors = { Item: 'bg-blue-100 text-blue-700', Ferramenta: 'bg-purple-100 text-purple-700', Estádio: 'bg-green-100 text-green-700', Energia: 'bg-amber-100 text-amber-700', 'Pokémon': 'bg-red-100 text-red-700', 'Básicos EX': 'bg-red-100 text-red-700' };
-                  const filtered = LEAGUE_POOL.filter(c => {
-                    const matchType = poolFilter === 'todos' || c.type === poolFilter;
-                    const matchSearch = poolSearch === '' || c.name.toLowerCase().includes(poolSearch.toLowerCase());
-                    return matchType && matchSearch;
-                  });
-                  return (
-                    <div className="space-y-3">
-                      <div className="flex flex-col sm:flex-row gap-2">
-                        <input
-                          className="flex-1 p-2.5 border rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500"
-                          placeholder="Buscar carta..."
-                          value={poolSearch}
-                          onChange={e => setPoolSearch(e.target.value)}
-                        />
-                        <div className="flex gap-1.5 flex-wrap">
-                          {['todos','Básicos EX','Item','Ferramenta','Estádio','Energia'].map(f => (
-                            <button key={f} onClick={() => setPoolFilter(f)}
-                              className={`px-3 py-2 rounded-lg text-xs font-bold transition-all border ${poolFilter === f ? 'bg-blue-600 text-white border-blue-600' : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'}`}>
-                              {f === 'todos' ? 'Todos' : f}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                      <p className="text-xs text-slate-400 font-medium">{filtered.length} carta{filtered.length !== 1 ? 's' : ''}</p>
-                      <div className="space-y-2">
-                        {filtered.map((card, i) => {
-                          const owned = collection[card.id]?.qty || 0;
-                          const collCard = { id: card.id, name: card.name, set: card.id.split('_')[0], number: card.id.split('_')[1] };
-                          return (
-                          <div key={i} className={`bg-white rounded-xl border p-4 shadow-sm transition-all ${owned > 0 ? 'border-blue-200 bg-blue-50/30' : 'border-slate-200'}`}>
-                            <div className="flex items-start justify-between gap-3 mb-2">
-                              <div className="flex items-center gap-2 flex-wrap flex-1 min-w-0">
-                                <span className="font-bold text-slate-800 truncate">{card.name}</span>
-                                <span className={`text-[10px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider shrink-0 ${typeColors[card.type] || 'bg-slate-100 text-slate-600'}`}>{card.type}</span>
-                                {card.hp && <span className="text-[10px] text-slate-400 font-mono shrink-0">{card.hp} PS • {card.pokemonType}</span>}
-                              </div>
-                              <div className="flex items-center gap-2 shrink-0">
-                                <div className="flex items-center gap-1 bg-slate-100 rounded-lg p-1 border border-slate-200">
-                                  <button onClick={() => updateCollectionQty(collCard, -1)} disabled={owned <= 0} className="w-7 h-7 flex items-center justify-center hover:bg-white rounded transition-colors disabled:opacity-20 font-bold">-</button>
-                                  <span className={`text-xs font-bold w-6 text-center font-mono ${owned > 0 ? 'text-blue-600' : 'text-slate-400'}`}>{owned}</span>
-                                  <button onClick={() => updateCollectionQty(collCard, 1)} className="w-7 h-7 flex items-center justify-center hover:bg-white rounded transition-colors font-bold">+</button>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="flex flex-wrap gap-1 mb-2">
-                              {card.prints.map((p, j) => (
-                                <span key={j} className="text-[10px] font-mono bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded border border-slate-200">{p}</span>
-                              ))}
-                            </div>
-                            <p className="text-xs text-slate-600 leading-relaxed">{card.desc}</p>
-                          </div>
-                          );
-                        })}
-                        {filtered.length === 0 && (
-                          <div className="p-12 text-center text-slate-400 border-2 border-dashed rounded-xl border-slate-200">Nenhuma carta encontrada.</div>
-                        )}
-                      </div>
-                    </div>
-                  );
-
-                {/* Coleções view */}
-                {leagueView === 'sets' && (() => {
-                  const currentSet = selectedSetSigla ? SET_COLLECTIONS.find(s => s.sigla === selectedSetSigla) : null;
-                  const filteredCards = currentSet ? currentSet.cards.filter(c =>
-                    setSearch === '' || c.name.toLowerCase().includes(setSearch.toLowerCase())
-                  ) : [];
-                  const setProgress = (s) => {
-                    const total = s.cards.length;
-                    const owned = s.cards.filter(c => (collection[c.id]?.qty || 0) > 0).length;
-                    return total === 0 ? 0 : Math.floor((owned / total) * 100);
-                  };
-                  return (
-                    <div className="space-y-3">
-                      {!currentSet ? (
-                        <>
-                          <p className="text-sm text-slate-500">Selecione um set para ver e rastrear suas cartas.</p>
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            {SET_COLLECTIONS.map(s => {
-                              const pct = setProgress(s);
-                              const ownedCount = s.cards.filter(c => (collection[c.id]?.qty || 0) > 0).length;
-                              return (
-                                <div key={s.sigla} onClick={() => { setSelectedSetSigla(s.sigla); setSetSearch(''); }}
-                                  className="bg-white rounded-xl border border-slate-200 p-4 cursor-pointer hover:shadow-md transition-all group">
-                                  <div className="flex items-center justify-between mb-1">
-                                    <div>
-                                      <span className="font-black text-slate-800 group-hover:text-blue-600 transition-colors">{s.name}</span>
-                                      <span className="ml-2 text-[10px] font-mono bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded border">{s.sigla}</span>
-                                    </div>
-                                    <span className="text-xs font-bold text-slate-500">{ownedCount}/{s.cards.length}</span>
-                                  </div>
-                                  <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden mt-2">
-                                    <div className="bg-blue-500 h-full transition-all duration-500" style={{ width: `${pct}%` }} />
-                                  </div>
-                                  <p className="text-[10px] text-slate-400 mt-1 text-right">{pct}% coletado</p>
-                                </div>
-                              );
-                            })}
-                          </div>
-                        </>
-                      ) : (
-                        <>
-                          <div className="flex items-center gap-3">
-                            <button onClick={() => { setSelectedSetSigla(null); setSetSearch(''); }} className="flex items-center gap-1 text-blue-600 font-bold hover:underline text-sm">
-                              <ArrowLeft className="w-4 h-4"/> Voltar
-                            </button>
-                            <div>
-                              <span className="font-black text-slate-800">{currentSet.name}</span>
-                              <span className="ml-2 text-[10px] font-mono bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded border">{currentSet.sigla}</span>
-                            </div>
-                            <span className="ml-auto text-xs font-bold text-slate-500">
-                              {currentSet.cards.filter(c => (collection[c.id]?.qty || 0) > 0).length}/{currentSet.cards.length} cartas
-                            </span>
-                          </div>
-                          <input
-                            className="w-full p-2.5 border rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500"
-                            placeholder="Buscar carta no set..."
-                            value={setSearch}
-                            onChange={e => setSetSearch(e.target.value)}
-                          />
-                          <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                            <div className="bg-blue-500 h-full transition-all" style={{ width: `${setProgress(currentSet)}%` }} />
-                          </div>
-                          <div className="bg-white rounded-xl border border-slate-200 divide-y overflow-hidden shadow-sm">
-                            {filteredCards.map((card) => {
-                              const owned = collection[card.id]?.qty || 0;
-                              return (
-                                <div key={card.id} className={`flex items-center justify-between px-4 py-3 transition-colors ${owned > 0 ? 'bg-green-50' : 'hover:bg-slate-50'}`}>
-                                  <div className="flex items-center gap-3 flex-1 min-w-0">
-                                    {owned > 0
-                                      ? <CheckSquare className="w-5 h-5 text-green-500 shrink-0"/>
-                                      : <Square className="w-5 h-5 text-slate-200 shrink-0"/>
-                                    }
-                                    <div className="min-w-0">
-                                      <p className={`text-sm font-bold truncate ${owned > 0 ? 'text-green-800' : 'text-slate-700'}`}>{card.name}</p>
-                                      <p className="text-[10px] font-mono text-slate-400">{card.set} #{card.number}</p>
-                                    </div>
-                                  </div>
-                                  <div className="flex items-center gap-1 bg-slate-100 rounded-lg p-1 border border-slate-200 ml-3 shrink-0">
-                                    <button onClick={() => updateCollectionQty(card, -1)} disabled={owned <= 0} className="w-7 h-7 flex items-center justify-center hover:bg-white rounded transition-colors disabled:opacity-20 font-bold text-sm">-</button>
-                                    <span className={`text-xs font-bold w-6 text-center font-mono ${owned > 0 ? 'text-green-700' : 'text-slate-400'}`}>{owned}</span>
-                                    <button onClick={() => updateCollectionQty(card, 1)} className="w-7 h-7 flex items-center justify-center hover:bg-white rounded transition-colors font-bold text-sm">+</button>
-                                  </div>
-                                </div>
-                              );
-                            })}
-                            {filteredCards.length === 0 && (
-                              <div className="p-8 text-center text-slate-400">Nenhuma carta encontrada.</div>
-                            )}
-                          </div>
-                        </>
-                      )}
-                    </div>
-                  );
-                })()}
-              </div>
-            )}
-
-            {/* VIEW: COLEÇÃO */}
-            {activeTab === 'collection' && (
-              <div className="space-y-4 animate-in fade-in">
-                <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-                  <h2 className="font-bold text-lg mb-4 flex items-center gap-2"><Plus className="w-5 h-5 text-blue-500"/> Adicionar à Coleção</h2>
-                  <div className="flex flex-col gap-3">
-                    <textarea 
-                      className="w-full p-3 border rounded-lg text-sm font-mono h-24 outline-none focus:ring-2 focus:ring-blue-500" 
-                      placeholder="Formato: Nome Sigla Número (ex: Torchic DRI 040 ou 4 Torchic DRI 040)"
-                      value={manualCollectionEntry}
-                      onChange={e => setManualCollectionEntry(e.target.value)}
-                    />
-                    <button 
-                      onClick={() => {
-                        if (!manualCollectionEntry.trim()) return;
-                        
-                        const { cards: items, invalidCount: inv } = parseInput(manualCollectionEntry);
-                        if (inv > 0) showToast(`${inv} linha(s) ignoradas por formato inválido.`, "error");
-                        if (items.length === 0) return;
-
-                        let newColl = { ...collection };
-                        items.forEach(item => {
-                          const existing = newColl[item.id];
-                          const finalName = (existing && isPortuguese(existing.name) && !isPortuguese(item.name)) ? existing.name : item.name;
-                          newColl[item.id] = { ...item, name: finalName, qty: (existing?.qty || 0) + item.qty };
-                        });
-                        syncData(decks, newColl);
-                        setManualCollectionEntry('');
-                        showToast("Coleção atualizada!");
-                      }}
-                      className="bg-blue-600 text-white p-3 rounded-lg font-bold flex items-center justify-center gap-2 shadow-md hover:bg-blue-700 transition-colors"
-                    >
-                      <Plus className="w-5 h-5"/> Adicionar Cartas
-                    </button>
-                  </div>
-                </div>
-
-                {(() => {
-                  const allCollCards = Object.values(collection).sort((a,b) => a.name.localeCompare(b.name));
-                  const knownSets = [...new Set(allCollCards.map(c => c.set).filter(Boolean))].sort();
-                  const filteredColl = allCollCards.filter(card => {
-                    const matchSearch = collSearch === '' || card.name.toLowerCase().includes(collSearch.toLowerCase());
-                    const matchSet = collSetFilter === 'todos' || card.set === collSetFilter;
-                    return matchSearch && matchSet;
-                  });
-                  return (
-                  <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
-                    <div className="bg-slate-50 p-4 border-b">
-                      <div className="flex justify-between items-center mb-3">
-                        <span className="font-bold text-slate-600">Minha Coleção Global</span>
-                        <div className="flex items-center gap-2">
-                          <button onClick={handleUpdateToPT} className="text-xs bg-blue-50 text-blue-600 border border-blue-200 px-3 py-1.5 rounded-lg flex items-center gap-1.5 hover:bg-blue-100 transition-colors font-bold">
-                            <RefreshCw className="w-3.5 h-3.5" /> Atualizar PT
-                          </button>
-                          <span className="text-xs bg-white px-2 py-1 rounded-full border">{filteredColl.length}/{allCollCards.length}</span>
-                        </div>
-                      </div>
-                      <div className="flex flex-col sm:flex-row gap-2">
-                        <input
-                          className="flex-1 p-2 border rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500"
-                          placeholder="Buscar por nome..."
-                          value={collSearch}
-                          onChange={e => setCollSearch(e.target.value)}
-                        />
-                        <select
-                          className="p-2 border rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500 bg-white"
-                          value={collSetFilter}
-                          onChange={e => setCollSetFilter(e.target.value)}
-                        >
-                          <option value="todos">Todos os sets</option>
-                          {knownSets.map(s => <option key={s} value={s}>{s}</option>)}
-                        </select>
-                      </div>
-                    </div>
-                    <div className="divide-y">
-                      {filteredColl.map(card => (
-                        <div key={card.id} className="p-4 flex justify-between items-center hover:bg-slate-50 transition-colors">
-                          <div>
-                            <p className="font-bold text-slate-800">{card.name}</p>
-                            <p className="text-xs font-mono text-slate-500 uppercase">{card.set} — {card.number}</p>
-                          </div>
-                          <div className="flex items-center gap-3 bg-slate-100 p-1.5 rounded-lg border border-slate-200">
-                            <button onClick={() => updateCollectionQty(card, -1)} className="w-8 h-8 flex items-center justify-center hover:bg-white rounded shadow-sm transition-colors font-bold disabled:opacity-30" disabled={card.qty <= 0}>-</button>
-                            <span className="font-bold w-6 text-center text-blue-600">{card.qty}</span>
-                            <button onClick={() => updateCollectionQty(card, 1)} className="w-8 h-8 flex items-center justify-center hover:bg-white rounded shadow-sm transition-colors font-bold">+</button>
-                          </div>
-                        </div>
-                      ))}
-                      {allCollCards.length === 0 && (
-                        <div className="p-12 text-center text-slate-400">Nenhuma carta na coleção ainda.</div>
-                      )}
-                      {allCollCards.length > 0 && filteredColl.length === 0 && (
-                        <div className="p-12 text-center text-slate-400">Nenhuma carta encontrada com esses filtros.</div>
-                      )}
-                    </div>
-                  </div>
-                  );
-                })()}
-              </div>
-            )}
-
-            {/* VIEW: DETALHE DO DECK (PERSONALIZADO OU LIGA) */}
-            {selectedDeck && (
-              <div className="bg-white rounded-xl border border-slate-200 overflow-hidden animate-in slide-in-from-right-4 shadow-lg">
-                <div className="p-5 bg-slate-50 border-b flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                  <div>
-                    <button onClick={() => setSelectedDeckId(null)} className="flex items-center gap-1 text-blue-600 font-bold mb-2 hover:underline transition-all"><ArrowLeft className="w-4 h-4"/> Voltar</button>
-                    <div className="flex items-center gap-3">
-                       <h2 className="text-xl sm:text-2xl font-black text-slate-800">{selectedDeck.name}</h2>
-                       {PRESET_DECKS.some(p => p.id === selectedDeck.id) && <span className="bg-amber-100 text-amber-700 text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">Liga</span>}
-                    </div>
-                    {selectedDeck.description && <p className="text-sm text-slate-500 mt-1">{selectedDeck.description}</p>}
-                  </div>
-                  <button onClick={() => copyDeckToClipboard(selectedDeck)} className="w-full sm:w-auto p-3 bg-white border border-slate-300 rounded-lg shadow-sm hover:bg-slate-50 flex items-center justify-center gap-2 font-bold transition-all"><ClipboardCopy className="w-4 h-4"/> Copiar Lista</button>
-                </div>
-                <div className="p-4 space-y-2">
-                  <div className="flex justify-between items-center text-xs font-black text-slate-400 uppercase tracking-widest mb-4">
-                    <div className="flex items-center gap-2">
-                      <div className="w-24 h-2 bg-slate-100 rounded-full overflow-hidden">
-                        <div className="bg-blue-600 h-full" style={{ width: `${deckProgress[selectedDeck.id]}%` }} />
-                      </div>
-                      <span>{deckProgress[selectedDeck.id]}% completo</span>
-                    </div>
-                    <span>{selectedDeck.cards.reduce((a,b)=>a+b.qty,0)} cartas totais</span>
-                  </div>
-                  <div className="grid grid-cols-1 gap-2">
-                    {selectedDeck.cards.map((card, i) => {
-                      const owned = collection[card.id]?.qty || 0;
-                      const isComplete = owned >= card.qty;
-                      return (
-                        <div key={i} className={`p-3 rounded-xl border flex justify-between items-center transition-all ${isComplete ? 'bg-green-50 border-green-200 shadow-sm' : 'bg-white border-slate-100'}`}>
-                          <div className="flex items-center gap-3 flex-1 min-w-0">
-                            <button onClick={() => updateCollectionQty(card, 0, isComplete ? 0 : card.qty)} className={`transition-transform active:scale-90 ${isComplete ? 'text-green-600' : 'text-slate-200'}`}>
-                              {isComplete ? <CheckSquare className="w-6 h-6" /> : <Square className="w-6 h-6" />}
-                            </button>
-                            <div className="truncate">
-                              <p className={`font-bold text-sm truncate ${isComplete ? 'text-green-800' : 'text-slate-700'}`}>{card.qty}x {card.name}</p>
-                              <p className="text-[10px] font-mono text-slate-400 uppercase">{card.set} {card.number}</p>
-                            </div>
-                          </div>
-                          <div className="flex items-center gap-2 bg-slate-50 rounded-lg p-1 border border-slate-200 ml-4">
-                            <button onClick={() => updateCollectionQty(card, -1)} className="w-7 h-7 flex items-center justify-center hover:bg-white rounded transition-colors disabled:opacity-20" disabled={owned <= 0}>-</button>
-                            <span className={`text-xs font-bold w-8 text-center font-mono ${owned >= card.qty ? 'text-green-700' : owned > 0 ? 'text-amber-600' : 'text-slate-400'}`}>{owned}/{card.qty}</span>
-                            <button onClick={() => updateCollectionQty(card, 1)} className="w-7 h-7 flex items-center justify-center hover:bg-white rounded transition-colors">+</button>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-            )}
-
-          </main>
-
-          {/* MOBILE NAV */}
-          <nav className="md:hidden fixed bottom-0 w-full bg-white border-t border-slate-200 flex justify-around p-3 z-30 shadow-[0_-4px_10px_rgba(0,0,0,0.05)] pb-safe">
-            <button onClick={() => { setActiveTab('decks'); setSelectedDeckId(null); }} className={`flex flex-col items-center gap-1 transition-all ${activeTab === 'decks' ? 'text-blue-600 scale-110' : 'text-slate-400'}`}>
-              <Library className="w-6 h-6"/><span className="text-[10px] font-black">DECKS</span>
-            </button>
-            <button onClick={() => { setActiveTab('league'); setSelectedDeckId(null); }} className={`flex flex-col items-center gap-1 transition-all ${activeTab === 'league' ? 'text-blue-600 scale-110' : 'text-slate-400'}`}>
-              <Swords className="w-6 h-6"/><span className="text-[10px] font-black">LIGA</span>
-            </button>
-            <button onClick={() => { setActiveTab('collection'); setSelectedDeckId(null); }} className={`flex flex-col items-center gap-1 transition-all ${activeTab === 'collection' ? 'text-blue-600 scale-110' : 'text-slate-400'}`}>
-              <Archive className="w-6 h-6"/><span className="text-[10px] font-black">COLEÇÃO</span>
-            </button>
-          </nav>
+  if (state.showAddDeck) {
+    html += `<div class="card card-p mb-12" id="form-deck">
+      <h2 style="font-size:16px;font-weight:800;margin-bottom:12px">Importar Novo Deck</h2>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <input id="inp-deck-name" placeholder="Nome do Deck" value="${esc(state.newDeckName)}">
+        <input id="inp-deck-desc" placeholder="Descrição (opcional)" value="${esc(state.newDeckDesc)}" maxlength="120">
+        <textarea id="inp-deck-list" rows="5" placeholder="Cole a lista (ex: 4 Torchic DRI 040)">${esc(state.newDeckList)}</textarea>
+        <div class="flex" style="justify-content:flex-end;gap:8px">
+          <button class="btn btn-secondary" id="btn-cancel-deck">Cancelar</button>
+          <button class="btn btn-primary" id="btn-save-deck">Salvar Deck</button>
         </div>
-      );
-    }
+      </div>
+    </div>`;
+  }
 
-    const root = createRoot(document.getElementById('root'));
-    root.render(<App />);
-  </script>
+  if (!state.decks.length) {
+    html += `<div class="card"><div class="empty">Nenhum deck criado ainda.<br>Clique em "Novo Deck" para começar.</div></div>`;
+  } else {
+    html += `<div class="grid-2">`;
+    [...state.decks].sort((a,b)=>b.createdAt-a.createdAt).forEach(deck => {
+      const pct = calcProgress(deck.cards);
+      const isConfirm = state.confirmDeleteId === deck.id;
+      html += `<div class="card card-p" style="cursor:pointer" data-open-deck="${deck.id}">
+        <div class="flex-between mb-8">
+          <span style="font-size:16px;font-weight:800;flex:1" class="truncate">${esc(deck.name)}</span>
+          ${isConfirm
+            ? `<div class="flex gap-8" onclick="event.stopPropagation()">
+                <button class="btn btn-danger btn-sm" data-confirm-delete="${deck.id}">Excluir</button>
+                <button class="btn btn-secondary btn-sm" data-cancel-delete>Cancelar</button>
+               </div>`
+            : `<button class="btn btn-secondary btn-sm" style="padding:6px;color:#ef4444" data-ask-delete="${deck.id}" onclick="event.stopPropagation()">${ICONS.trash}</button>`
+          }
+        </div>
+        <p class="text-sm text-muted mb-12 truncate">${esc(deck.description||'Sem descrição')}</p>
+        <div class="flex-between text-sm mb-8">
+          <span class="text-muted font-bold">${pct}% completo</span>
+          <span class="tag tag-slate">${deck.cards.reduce((a,c)=>a+c.qty,0)} cartas</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill blue" style="width:${pct}%"></div></div>
+      </div>`;
+    });
+    html += `</div>`;
+  }
+  return html;
+}
+
+// ── LEAGUE TAB ───────────────────────────────
+function buildLeagueTab() {
+  const tabs = [['decks','⚔️ Decks'],['pool','📋 Pool da Liga'],['sets','📦 Coleções']];
+  let html = `<div class="sub-tabs mb-12">
+    ${tabs.map(([id,label])=>`<button class="sub-tab ${state.leagueTab===id?'active':''}" data-league-tab="${id}">${label}</button>`).join('')}
+  </div>`;
+
+  if (state.leagueTab === 'decks') html += buildLeagueDecks();
+  if (state.leagueTab === 'pool')  html += buildLeaguePool();
+  if (state.leagueTab === 'sets')  html += buildLeagueSets();
+  return html;
+}
+
+function buildLeagueDecks() {
+  return `<div class="grid-2">` +
+    PRESET_DECKS.map(deck => {
+      const pct = calcProgress(deck.cards);
+      return `<div class="card card-p" style="cursor:pointer" data-open-deck="${deck.id}">
+        <div class="flex mb-8" style="gap:8px;align-items:flex-start">
+          <div style="flex:1">
+            <div class="flex mb-4"><span style="font-size:16px;font-weight:800">${esc(deck.name)}</span></div>
+            <span class="tag tag-amber">Liga</span>
+          </div>
+        </div>
+        <p class="text-sm text-muted mb-12">${esc(deck.description||'')}</p>
+        <div class="flex-between text-sm mb-8">
+          <span class="font-bold text-muted">Progresso</span>
+          <span class="font-bold">${pct}%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill amber" style="width:${pct}%"></div></div>
+      </div>`;
+    }).join('') + `</div>`;
+}
+
+function buildLeaguePool() {
+  const typeClass = { Item:'tag-blue', Ferramenta:'tag-purple', Estádio:'tag-green', Energia:'tag-amber', 'Básicos EX':'tag-red' };
+  const filters = ['todos','Básicos EX','Item','Ferramenta','Estádio','Energia'];
+
+  const filtered = LEAGUE_POOL.filter(c => {
+    const ft = state.poolFilter==='todos' || c.type===state.poolFilter;
+    const fs = !state.poolSearch || c.name.toLowerCase().includes(state.poolSearch.toLowerCase());
+    return ft && fs;
+  });
+
+  let html = `<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:12px">
+    <input id="pool-search" placeholder="Buscar carta..." value="${esc(state.poolSearch)}" oninput="state.poolSearch=this.value;render()">
+    <div class="filters-row">
+      ${filters.map(f=>`<button class="filter-btn ${state.poolFilter===f?'active':''}" data-pool-filter="${f}">${f==='todos'?'Todos':f}</button>`).join('')}
+    </div>
+  </div>
+  <p class="text-xs text-muted mb-8">${filtered.length} carta${filtered.length!==1?'s':''}</p>
+  <div style="display:flex;flex-direction:column;gap:8px">`;
+
+  filtered.forEach(card => {
+    const owned = state.collection[card.id]?.qty || 0;
+    const collCard = { id: card.id, name: card.name, set: card.id.split('_')[0], number: card.id.split('_')[1] };
+    html += `<div class="card card-p ${owned>0?'':''}">
+      <div class="flex-between mb-8">
+        <div class="flex" style="flex:1;flex-wrap:wrap;gap:6px;min-width:0">
+          <span class="font-bold truncate">${esc(card.name)}</span>
+          <span class="tag ${typeClass[card.type]||'tag-slate'}">${esc(card.type)}</span>
+          ${card.hp?`<span class="text-xs text-muted">${card.hp} PS · ${esc(card.pokemonType)}</span>`:''}
+        </div>
+        <div class="counter" style="margin-left:8px">
+          <button ${owned<=0?'disabled':''} data-pool-card='${JSON.stringify(collCard)}' data-delta="-1">−</button>
+          <span style="${owned>0?'color:#2563eb':''}">${owned}</span>
+          <button data-pool-card='${JSON.stringify(collCard)}' data-delta="1">+</button>
+        </div>
+      </div>
+      <div class="flex" style="flex-wrap:wrap;gap:4px;margin-bottom:8px">
+        ${card.prints.map(p=>`<span class="mono tag tag-slate">${esc(p)}</span>`).join('')}
+      </div>
+      <p class="text-xs text-muted">${esc(card.desc)}</p>
+    </div>`;
+  });
+
+  if (!filtered.length) html += `<div class="card"><div class="empty">Nenhuma carta encontrada.</div></div>`;
+  html += `</div>`;
+  return html;
+}
+
+function buildLeagueSets() {
+  if (!state.selectedSet) {
+    let html = `<p class="text-sm text-muted mb-12">Selecione um set para rastrear suas cartas.</p>
+    <div class="grid-2">`;
+    SET_COLLECTIONS.forEach(s => {
+      const total = s.cards.length;
+      const owned = s.cards.filter(c=>(state.collection[c.id]?.qty||0)>0).length;
+      const pct = total===0?0:Math.floor((owned/total)*100);
+      html += `<div class="card card-p" style="cursor:pointer" data-open-set="${s.sigla}">
+        <div class="flex-between mb-4">
+          <span class="font-black">${esc(s.name)}</span>
+          <span class="tag tag-slate mono">${s.sigla}</span>
+        </div>
+        <div class="flex-between text-xs text-muted mb-8">
+          <span>${owned}/${total} coletadas</span>
+          <span>${pct}%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill green" style="width:${pct}%"></div></div>
+      </div>`;
+    });
+    return html + `</div>`;
+  }
+
+  const s = SET_COLLECTIONS.find(x=>x.sigla===state.selectedSet);
+  const filtered = s.cards.filter(c => !state.setSearch || c.name.toLowerCase().includes(state.setSearch.toLowerCase()));
+  const owned = s.cards.filter(c=>(state.collection[c.id]?.qty||0)>0).length;
+  const pct = Math.floor((owned/s.cards.length)*100);
+
+  let html = `<div class="flex mb-12" style="gap:12px;align-items:center">
+    <button class="btn btn-secondary btn-sm" id="btn-back-sets">${ICONS.back} Voltar</button>
+    <div style="flex:1">
+      <span class="font-black">${esc(s.name)}</span>
+      <span class="tag tag-slate mono" style="margin-left:6px">${s.sigla}</span>
+    </div>
+    <span class="text-xs text-muted font-bold">${owned}/${s.cards.length}</span>
+  </div>
+  <input id="set-search" placeholder="Buscar carta no set..." value="${esc(state.setSearch)}" oninput="state.setSearch=this.value;render()" style="margin-bottom:10px">
+  <div class="progress-bar mb-12"><div class="progress-fill green" style="width:${pct}%"></div></div>
+  <div class="card" style="overflow:hidden">`;
+
+  filtered.forEach(card => {
+    const qty = state.collection[card.id]?.qty || 0;
+    html += `<div class="list-item ${qty>0?'green':''}">
+      <div class="flex" style="flex:1;min-width:0;gap:10px">
+        <span style="color:${qty>0?'#16a34a':'#cbd5e1'};flex-shrink:0">${qty>0?ICONS.check:ICONS.square}</span>
+        <div style="min-width:0">
+          <p class="font-bold text-sm truncate ${qty>0?'text-green':''}">${esc(card.name)}</p>
+          <p class="mono">${card.set} #${card.number}</p>
+        </div>
+      </div>
+      <div class="counter" style="margin-left:8px;flex-shrink:0">
+        <button ${qty<=0?'disabled':''} data-set-card='${JSON.stringify(card)}' data-delta="-1">−</button>
+        <span style="${qty>0?'color:#16a34a':''}">${qty}</span>
+        <button data-set-card='${JSON.stringify(card)}' data-delta="1">+</button>
+      </div>
+    </div>`;
+  });
+
+  if (!filtered.length) html += `<div class="empty">Nenhuma carta encontrada.</div>`;
+  html += `</div>`;
+  return html;
+}
+
+// ── COLLECTION TAB ───────────────────────────
+function buildCollectionTab() {
+  let html = `<div class="card card-p mb-12">
+    <h2 style="font-size:15px;font-weight:800;margin-bottom:12px">${ICONS.plus} Adicionar à Coleção</h2>
+    <textarea id="manual-entry" rows="4" placeholder="Formato: Nome Sigla Número (ex: Torchic DRI 040 ou 4 Torchic DRI 040)">${esc(state.manualEntry)}</textarea>
+    <button class="btn btn-primary w100 mt-8" id="btn-add-collection">${ICONS.plus} Adicionar Cartas</button>
+  </div>`;
+
+  const allCards = Object.values(state.collection).sort((a,b)=>a.name.localeCompare(b.name));
+  const knownSets = [...new Set(allCards.map(c=>c.set).filter(Boolean))].sort();
+  const filtered = allCards.filter(card => {
+    const ms = !state.collSearch || card.name.toLowerCase().includes(state.collSearch.toLowerCase());
+    const mset = state.collSetFilter==='todos' || card.set===state.collSetFilter;
+    return ms && mset;
+  });
+
+  html += `<div class="card" style="overflow:hidden">
+    <div style="padding:14px;background:#f8fafc;border-bottom:1px solid #e2e8f0">
+      <div class="flex-between mb-10">
+        <span class="font-bold">Minha Coleção Global</span>
+        <div class="flex gap-8">
+          <button class="btn btn-secondary btn-sm" id="btn-update-pt">${ICONS.refresh} Atualizar PT</button>
+          <span class="tag tag-slate">${filtered.length}/${allCards.length}</span>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <input id="coll-search" placeholder="Buscar por nome..." value="${esc(state.collSearch)}" oninput="state.collSearch=this.value;render()">
+        <select id="coll-set-filter" onchange="state.collSetFilter=this.value;render()">
+          <option value="todos" ${state.collSetFilter==='todos'?'selected':''}>Todos os sets</option>
+          ${knownSets.map(s=>`<option value="${s}" ${state.collSetFilter===s?'selected':''}>${s}</option>`).join('')}
+        </select>
+      </div>
+    </div>
+    <div>`;
+
+  filtered.forEach(card => {
+    html += `<div class="list-item">
+      <div style="flex:1;min-width:0">
+        <p class="font-bold text-sm truncate">${esc(card.name)}</p>
+        <p class="mono">${esc(card.set)} — ${esc(card.number)}</p>
+      </div>
+      <div class="counter">
+        <button ${card.qty<=0?'disabled':''} data-coll-card='${JSON.stringify(card)}' data-delta="-1">−</button>
+        <span class="text-blue">${card.qty}</span>
+        <button data-coll-card='${JSON.stringify(card)}' data-delta="1">+</button>
+      </div>
+    </div>`;
+  });
+
+  if (!allCards.length) html += `<div class="empty">Nenhuma carta na coleção ainda.</div>`;
+  else if (!filtered.length) html += `<div class="empty">Nenhuma carta encontrada com esses filtros.</div>`;
+  html += `</div></div>`;
+  return html;
+}
+
+// ── DECK DETAIL ──────────────────────────────
+function buildDeckDetail(deck) {
+  const pct = calcProgress(deck.cards);
+  const isPreset = PRESET_DECKS.some(p=>p.id===deck.id);
+  let html = `<div class="card" style="overflow:hidden">
+    <div style="padding:16px;background:#f8fafc;border-bottom:1px solid #e2e8f0">
+      <button class="btn btn-secondary btn-sm mb-10" id="btn-back-deck">${ICONS.back} Voltar</button>
+      <div class="flex-between">
+        <div>
+          <h2 style="font-size:20px;font-weight:900">${esc(deck.name)}</h2>
+          ${isPreset?'<span class="tag tag-amber mt-4">Liga</span>':''}
+          ${deck.description?`<p class="text-sm text-muted mt-4">${esc(deck.description)}</p>`:''}
+        </div>
+        <button class="btn btn-secondary btn-sm" id="btn-copy-deck">${ICONS.copy} Copiar</button>
+      </div>
+      <div class="flex-between mt-12 text-sm">
+        <div class="flex gap-8">
+          <div class="progress-bar" style="width:80px"><div class="progress-fill blue" style="width:${pct}%"></div></div>
+          <span class="text-muted">${pct}% completo</span>
+        </div>
+        <span class="tag tag-slate">${deck.cards.reduce((a,c)=>a+c.qty,0)} cartas</span>
+      </div>
+    </div>
+    <div style="padding:12px;display:flex;flex-direction:column;gap:6px">`;
+
+  deck.cards.forEach((card, i) => {
+    const owned = state.collection[card.id]?.qty || 0;
+    const complete = owned >= card.qty;
+    html += `<div style="padding:10px 12px;border-radius:10px;border:1px solid ${complete?'#bbf7d0':'#f1f5f9'};background:${complete?'#f0fdf4':'#fff'};display:flex;align-items:center;justify-content:space-between;gap:10px">
+      <div class="flex" style="flex:1;min-width:0;gap:10px">
+        <span style="color:${complete?'#16a34a':'#cbd5e1'};flex-shrink:0;cursor:pointer" data-toggle-card='${JSON.stringify({...card, _complete: complete})}'>${complete?ICONS.check:ICONS.square}</span>
+        <div style="min-width:0">
+          <p style="font-weight:700;font-size:13px;${complete?'color:#166534':''}" class="truncate">${card.qty}x ${esc(card.name)}</p>
+          <p class="mono">${card.set} ${card.number}</p>
+        </div>
+      </div>
+      <div class="counter" style="flex-shrink:0">
+        <button ${owned<=0?'disabled':''} data-deck-card='${JSON.stringify(card)}' data-delta="-1">−</button>
+        <span style="color:${owned>=card.qty?'#16a34a':owned>0?'#d97706':'#94a3b8'};font-size:11px;width:36px">${owned}/${card.qty}</span>
+        <button data-deck-card='${JSON.stringify(card)}' data-delta="1">+</button>
+      </div>
+    </div>`;
+  });
+
+  html += `</div></div>`;
+  return html;
+}
+
+// ─────────────────────────────────────────────
+//  EVENTS
+// ─────────────────────────────────────────────
+function attachEvents() {
+  const app = document.getElementById('app');
+
+  // Navigation
+  app.querySelectorAll('[data-nav]').forEach(el => {
+    el.addEventListener('click', () => {
+      state.tab = el.dataset.nav;
+      state.selectedDeckId = null;
+      state.confirmDeleteId = null;
+      state.showAddDeck = false;
+      render();
+    });
+  });
+
+  // League sub-tabs
+  app.querySelectorAll('[data-league-tab]').forEach(el => {
+    el.addEventListener('click', () => {
+      state.leagueTab = el.dataset.leagueTab;
+      state.selectedSet = null;
+      state.setSearch = '';
+      render();
+    });
+  });
+
+  // Open deck
+  app.querySelectorAll('[data-open-deck]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      if (e.target.closest('[data-ask-delete],[data-confirm-delete],[data-cancel-delete]')) return;
+      state.selectedDeckId = el.dataset.openDeck;
+      render();
+    });
+  });
+
+  // Open set
+  app.querySelectorAll('[data-open-set]').forEach(el => {
+    el.addEventListener('click', () => { state.selectedSet = el.dataset.openSet; render(); });
+  });
+
+  // Back buttons
+  const backDeck = document.getElementById('btn-back-deck');
+  if (backDeck) backDeck.addEventListener('click', () => { state.selectedDeckId = null; render(); });
+
+  const backSets = document.getElementById('btn-back-sets');
+  if (backSets) backSets.addEventListener('click', () => { state.selectedSet = null; state.setSearch = ''; render(); });
+
+  // Add deck
+  const btnAddDeck = document.getElementById('btn-add-deck');
+  if (btnAddDeck) btnAddDeck.addEventListener('click', () => { state.showAddDeck = !state.showAddDeck; render(); });
+
+  const btnCancelDeck = document.getElementById('btn-cancel-deck');
+  if (btnCancelDeck) btnCancelDeck.addEventListener('click', () => {
+    state.showAddDeck = false; state.newDeckName=''; state.newDeckDesc=''; state.newDeckList=''; render();
+  });
+
+  const btnSaveDeck = document.getElementById('btn-save-deck');
+  if (btnSaveDeck) btnSaveDeck.addEventListener('click', () => {
+    const name = document.getElementById('inp-deck-name').value.trim();
+    const desc = document.getElementById('inp-deck-desc').value.trim();
+    const list = document.getElementById('inp-deck-list').value;
+    if (!name) return showToast('O deck precisa ter um nome.','error');
+    const { cards, invalidCount } = parseInput(list);
+    if (invalidCount) showToast(`${invalidCount} linha(s) ignoradas.`,'error');
+    if (!cards.length) return showToast('Adicione cartas válidas.','error');
+    if (cards.reduce((a,c)=>a+c.qty,0)>60) return showToast('Deck ultrapassa 60 cartas.','error');
+    state.decks.push({ id: genId(), name, description: desc, cards, createdAt: Date.now() });
+    state.showAddDeck = false; state.newDeckName=''; state.newDeckDesc=''; state.newDeckList='';
+    saveStorage(); showToast('Deck salvo!'); render();
+  });
+
+  // Keep form values while typing
+  ['inp-deck-name','inp-deck-desc','inp-deck-list'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', () => {
+      if (id==='inp-deck-name') state.newDeckName = el.value;
+      if (id==='inp-deck-desc') state.newDeckDesc = el.value;
+      if (id==='inp-deck-list') state.newDeckList = el.value;
+    });
+  });
+
+  // Delete deck
+  app.querySelectorAll('[data-ask-delete]').forEach(el => {
+    el.addEventListener('click', (e) => { e.stopPropagation(); state.confirmDeleteId = el.dataset.askDelete; render(); });
+  });
+  app.querySelectorAll('[data-confirm-delete]').forEach(el => {
+    el.addEventListener('click', (e) => { e.stopPropagation();
+      state.decks = state.decks.filter(d=>d.id!==el.dataset.confirmDelete);
+      state.confirmDeleteId = null; saveStorage(); showToast('Deck excluído.'); render();
+    });
+  });
+  const btnCancelDel = app.querySelector('[data-cancel-delete]');
+  if (btnCancelDel) btnCancelDel.addEventListener('click', (e) => { e.stopPropagation(); state.confirmDeleteId=null; render(); });
+
+  // Copy deck
+  const btnCopy = document.getElementById('btn-copy-deck');
+  if (btnCopy) btnCopy.addEventListener('click', () => { const d=selectedDeck(); if(d) copyDeck(d); });
+
+  // Toggle card complete in deck
+  app.querySelectorAll('[data-toggle-card]').forEach(el => {
+    el.addEventListener('click', (e) => { e.stopPropagation();
+      const card = JSON.parse(el.dataset.toggleCard);
+      updateCollectionQty(card, 0, card._complete ? 0 : card.qty);
+    });
+  });
+
+  // Counter buttons - deck cards
+  app.querySelectorAll('[data-deck-card]').forEach(el => {
+    el.addEventListener('click', () => {
+      const card = JSON.parse(el.dataset.deckCard);
+      updateCollectionQty(card, parseInt(el.dataset.delta));
+    });
+  });
+
+  // Counter buttons - pool cards
+  app.querySelectorAll('[data-pool-card]').forEach(el => {
+    el.addEventListener('click', () => {
+      const card = JSON.parse(el.dataset.poolCard);
+      updateCollectionQty(card, parseInt(el.dataset.delta));
+    });
+  });
+
+  // Counter buttons - set cards
+  app.querySelectorAll('[data-set-card]').forEach(el => {
+    el.addEventListener('click', () => {
+      const card = JSON.parse(el.dataset.setCard);
+      updateCollectionQty(card, parseInt(el.dataset.delta));
+    });
+  });
+
+  // Counter buttons - global collection
+  app.querySelectorAll('[data-coll-card]').forEach(el => {
+    el.addEventListener('click', () => {
+      const card = JSON.parse(el.dataset.collCard);
+      updateCollectionQty(card, parseInt(el.dataset.delta));
+    });
+  });
+
+  // Pool filter buttons
+  app.querySelectorAll('[data-pool-filter]').forEach(el => {
+    el.addEventListener('click', () => { state.poolFilter = el.dataset.poolFilter; render(); });
+  });
+
+  // Manual collection add
+  const manualEl = document.getElementById('manual-entry');
+  if (manualEl) manualEl.addEventListener('input', () => { state.manualEntry = manualEl.value; });
+
+  const btnAddColl = document.getElementById('btn-add-collection');
+  if (btnAddColl) btnAddColl.addEventListener('click', () => {
+    const text = document.getElementById('manual-entry').value;
+    if (!text.trim()) return;
+    const { cards, invalidCount } = parseInput(text);
+    if (invalidCount) showToast(`${invalidCount} linha(s) ignoradas.`,'error');
+    if (!cards.length) return;
+    cards.forEach(item => {
+      const existing = state.collection[item.id];
+      state.collection[item.id] = { ...item, qty: (existing?.qty||0) + item.qty };
+    });
+    state.manualEntry = '';
+    saveStorage(); showToast('Coleção atualizada!'); render();
+  });
+
+  // Update PT names
+  const btnPT = document.getElementById('btn-update-pt');
+  if (btnPT) btnPT.addEventListener('click', () => {
+    const ptMap = {};
+    allDecks().forEach(deck => deck.cards.forEach(card => {
+      if (card.id && card.name && !ptMap[card.id]) ptMap[card.id] = card.name;
+    }));
+    let count = 0;
+    Object.keys(state.collection).forEach(id => {
+      if (ptMap[id] && state.collection[id].name !== ptMap[id]) {
+        state.collection[id].name = ptMap[id]; count++;
+      }
+    });
+    if (!count) return showToast('Nenhuma carta para atualizar.','error');
+    saveStorage(); showToast(`${count} carta(s) atualizada(s)!`); render();
+  });
+
+  // Android back button support
+  window.onpopstate = () => {
+    if (state.selectedDeckId) { state.selectedDeckId=null; render(); }
+    else if (state.selectedSet) { state.selectedSet=null; render(); }
+  };
+}
+
+// ─────────────────────────────────────────────
+//  INIT
+// ─────────────────────────────────────────────
+loadStorage();
+render();
+
+// Service Worker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(()=>{});
+  });
+}
+-e 
+</script>
 </body>
 </html>
-
-
