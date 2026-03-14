@@ -160,6 +160,78 @@
       }
     ];
 
+
+    // --- Pool de Cartas da Liga ---
+    const TRAINER_POOL = [
+      { name: "Balão de Ar", type: "Ferramenta", prints: ["ASC #181","MEG #166","BLK #79"], desc: "O Custo de Recuo do Pokémon ao qual esta carta está ligada é [C][C] a menos." },
+      { name: "Poffin de Colega", type: "Item", prints: ["ASC #184","MEG #167"], desc: "Procure por até 2 Pokémon Básicos com 70 PS ou menos no seu baralho e coloque-os no seu Banco. Em seguida, embaralhe o seu baralho." },
+      { name: "Contra-ataque de Alcance", type: "Ferramenta", prints: ["ASC #186","ASC #259"], desc: "Se você tiver mais cartas de Prêmio restantes do que seu oponente, os ataques usados pelo Pokémon ao qual esta carta está ligada custarão [C] a menos." },
+      { name: "Gongo de Luta", type: "Item", prints: ["ASC #187","MEG #116","MEG #168"], desc: "Procure por uma carta de Energia [F] Básica ou por um Pokémon [F] Básico no seu baralho, revele-o e coloque-o na sua mão. Em seguida, embaralhe o seu baralho." },
+      { name: "Floresta da Vitalidade", type: "Estádio", prints: ["ASC #188","MEG #117"], desc: "Os Pokémon [G] de cada jogador poderão evoluir para Pokémon [G] durante o turno em que eles jogaram aqueles Pokémon, exceto durante os primeiros turnos deles." },
+      { name: "Trompete de Vidro", type: "Item", prints: ["ASC #189","ASC #260"], desc: "Você só pode usar esta carta se tiver algum Pokémon Tera em jogo. Escolha até 2 dos seus Pokémon [C] no Banco e ligue uma carta de Energia Básica da sua pilha de descarte a cada um deles." },
+      { name: "Esfera de Luz", type: "Ferramenta", prints: ["ASC #191"], desc: "Os ataques usados pelo Pikachu ex ao qual esta carta está ligada causam 50 pontos de dano a mais ao Pokémon ex Ativo do seu oponente (antes de aplicar Fraqueza e Resistência)." },
+      { name: "Megassinal", type: "Item", prints: ["ASC #193","MEG #121","MEG #171"], desc: "Procure por um Pokémon ex de Megaevolução no seu baralho, revele-o e coloque-o na sua mão. Em seguida, embaralhe o seu baralho." },
+      { name: "Jardim Misterioso", type: "Estádio", prints: ["ASC #194","MEG #122","MEG #172"], desc: "Uma vez durante o turno de cada jogador, aquele jogador poderá descartar uma carta de Energia da própria mão para comprar cartas até ter o mesmo número de cartas na própria mão do que os Pokémon [P] que ele tem em jogo." },
+      { name: "PP Up do N", type: "Item", prints: ["ASC #195","ASC #262"], desc: "Ligue uma carta de Energia Básica da sua pilha de descarte a 1 dos seus Pokémon do N no Banco." },
+      { name: "Maca Noturna", type: "Item", prints: ["ASC #196","MEG #173"], desc: "Coloque um Pokémon ou uma carta de Energia Básica da sua pilha de descarte na sua mão." },
+      { name: "Mina Noturna", type: "Estádio", prints: ["ASC #197"], desc: "Os ataques usados por cada Pokémon Tera em jogo (seus e do seu oponente) custam [C] a mais." },
+      { name: "Poké Tablet", type: "Item", prints: ["ASC #198"], desc: "Procure no seu baralho por um Pokémon que não tiver uma Caixa de Regras, revele-o e coloque-o na sua mão. Em seguida, embaralhe o seu baralho. (Pokémon ex, Pokémon V, etc. têm Caixas de Regras.)" },
+      { name: "Suplemento Premium Pro", type: "Item", prints: ["ASC #199","MEG #124","MEG #174"], desc: "Durante este turno, os ataques usados pelos seus Pokémon [F] causarão 30 pontos de dano a mais ao Pokémon Ativo do seu oponente (antes de aplicar Fraqueza e Resistência)." },
+      { name: "Fábrica da Equipe Rocket", type: "Estádio", prints: ["ASC #203","DRI #173"], desc: "Uma vez durante o turno de cada jogador, se ele jogou uma carta de Apoiador que tenha 'Equipe Rocket' em seu nome da própria mão neste turno, ele poderá comprar 2 cartas." },
+      { name: "Grande Bola da Equipe Rocket", type: "Item", prints: ["ASC #205","DRI #175"], desc: "Jogue uma moeda. Se sair cara, procure por um Pokémon da Equipe Rocket de Evolução no seu baralho, revele-o e coloque-o na sua mão. Se sair coroa, procure por um Pokémon da Equipe Rocket Básico." },
+      { name: "Hipnotizador da Equipe Rocket", type: "Ferramenta", prints: ["ASC #206"], desc: "Se o Pokémon da Equipe Rocket ao qual esta carta está ligada for danificado por um ataque do oponente, o Pokémon Atacante ficará Adormecido." },
+      { name: "Transmissor da Equipe Rocket", type: "Item", prints: ["ASC #209","DRI #178"], desc: "Procure por uma carta de Apoiador no seu baralho que tenha 'Equipe Rocket' em seu nome, revele-a e coloque-a na sua mão. Em seguida, embaralhe o seu baralho." },
+      { name: "Torre de Vigia da Equipe Rocket", type: "Estádio", prints: ["ASC #210","DRI #180"], desc: "Pokémon [C] em jogo (seus e do seu oponente) não têm Habilidades." },
+      { name: "Escama Espessa", type: "Ferramenta", prints: ["ASC #211"], desc: "O Pokémon [N] ao qual esta carta está ligada recebe 50 pontos de dano a menos de ataques dos Pokémon [G], [R], [W] ou [L] do seu oponente (depois de aplicar Fraqueza e Resistência)." },
+      { name: "Sucateador de Ferramentas", type: "Item", prints: ["ASC #212","WHT #85"], desc: "Escolha até 2 Ferramentas Pokémon ligadas a Pokémon (seus ou do seu oponente) e descarte-as." },
+      { name: "Ultra Bola", type: "Item", prints: ["ASC #213","MEG #131","ASC #264"], desc: "Você só pode usar esta carta se descartar outras 2 cartas da sua mão. Procure por um Pokémon no seu baralho, revele-o e coloque-o na sua mão. Em seguida, embaralhe o seu baralho." },
+      { name: "Torre de Interferência", type: "Estádio", prints: ["ASC #261","DRI #243"], desc: "Ferramentas Pokémon ligadas a cada Pokémon (seus e do seu oponente) não têm efeito." },
+      { name: "Energia de Prisma", type: "Energia", prints: ["ASC #216","BLK #86"], desc: "Enquanto ligada a um Pokémon, fornecerá Energia [C]. Se ligada a um Pokémon Básico, fornecerá todo tipo de Energia, mas apenas 1 por vez." },
+      { name: "Energia da Equipe Rocket", type: "Energia", prints: ["ASC #217","DRI #182"], desc: "Só pode ser ligada a um Pokémon da Equipe Rocket. Fornece 2 Energias em qualquer combinação de Energia [P] e Energia [D]." },
+      { name: "Jaula de Batalha", type: "Estádio", prints: ["PFL #85","PFL #116"], desc: "Previna todos os contadores de dano de serem colocados nos Pokémon no Banco pelos efeitos de ataques e Habilidades dos Pokémon do oponente. (O dano de ataques ainda é recebido.)" },
+      { name: "Maçarico", type: "Item", prints: ["PFL #86","PFL #117"], desc: "Você só pode usar esta carta se descartar uma carta de Energia [R] Básica da sua mão. Descarte uma Ferramenta Pokémon, Energia Especial de 1 Pokémon do oponente, ou descarte um Estádio em jogo." },
+      { name: "Vale Vertiginoso", type: "Estádio", prints: ["PFL #88"], desc: "Os Pokémon Confusos (seus e do seu oponente) não se recuperarão daquela Condição Especial quando eles evoluírem ou involuírem." },
+      { name: "Sorvetão Jumbo", type: "Item", prints: ["PFL #91"], desc: "Cure 80 pontos de dano do seu Pokémon Ativo que tiver 3 ou mais Energias ligadas a ele." },
+      { name: "Capacete Punk", type: "Ferramenta", prints: ["PFL #92","PFL #121"], desc: "Se o Pokémon [D] ao qual esta carta está ligada for danificado por um ataque do oponente, coloque 4 contadores de dano no Pokémon Atacante." },
+      { name: "Pingente Sagrado", type: "Ferramenta", prints: ["PFL #93","PFL #122"], desc: "O Pokémon ao qual esta carta está ligada recebe 30 pontos de dano a menos de ataques dos Pokémon do oponente que têm uma Habilidade (depois de aplicar Fraqueza e Resistência)." },
+      { name: "Fragmento Encantado", type: "Item", prints: ["PFL #94"], desc: "Ligue uma carta de Energia [P] Básica da sua pilha de descarte a 1 dos seus Pokémon [P] no Banco." },
+      { name: "Substituição", type: "Item", prints: ["PFL #123","MEG #130"], desc: "Troque o seu Pokémon Ativo por 1 dos seus Pokémon no Banco." },
+      { name: "Energia de Ignição", type: "Energia", prints: ["PFL #124","WHT #86"], desc: "Descarte-a no final do seu turno. Fornece Energia [C]. Se ligada a um Pokémon de Evolução, fornece Energia [C][C][C]." },
+      { name: "Substituição de Energia", type: "Item", prints: ["MEG #115"], desc: "Mova uma Energia Básica de 1 dos seus Pokémon para outro Pokémon seu." },
+      { name: "Defensor Férreo", type: "Item", prints: ["MEG #118"], desc: "Durante o próximo turno do seu oponente, todos os seus Pokémon [M] receberão 30 pontos de dano a menos de ataques (depois de aplicar Fraqueza e Resistência)." },
+      { name: "Doce Raro", type: "Item", prints: ["MEG #125","MEG #175"], desc: "Escolha 1 dos seus Pokémon Básicos em jogo. Se você tiver uma carta de Estágio 2 que evolua daquele Pokémon, coloque-a sobre o Pokémon Básico para evoluí-lo, pulando o Estágio 1." },
+      { name: "Repelente", type: "Item", prints: ["MEG #126"], desc: "Mande o Pokémon Ativo do seu oponente para o Banco. (O seu oponente escolhe o novo Pokémon Ativo.)" },
+      { name: "Ruínas Arriscadas", type: "Estádio", prints: ["MEG #127"], desc: "Sempre que algum jogador colocar um Pokémon Básico que não seja de tipo [D] no próprio Banco durante o próprio turno, coloque 2 contadores de dano naquele Pokémon." },
+      { name: "Relógio Insólito", type: "Item", prints: ["MEG #128"], desc: "Involua 1 dos seus Pokémon [P] evoluídos colocando qualquer número de cartas de Evolução sobre ele na sua mão. (Aquele Pokémon não pode evoluir neste turno.)" },
+      { name: "Praia de Surfista", type: "Estádio", prints: ["MEG #129"], desc: "Uma vez durante o turno de cada jogador, aquele jogador poderá trocar o Pokémon [W] Ativo dele por 1 dos Pokémon [W] no Banco dele." },
+      { name: "Fóssil Casca Arcaico", type: "Item", prints: ["BLK #80"], desc: "Jogue como Pokémon Básico com PS 60. Habilidade Casca Protetora: Previna todos os efeitos de ataques (exceto dano). Pode ser descartado a qualquer momento." },
+      { name: "Moeda Energética", type: "Item", prints: ["BLK #81"], desc: "Jogue 2 moedas. Se as duas saírem cara, procure por uma carta de Energia Básica no seu baralho e ligue-a a 1 dos seus Pokémon." },
+      { name: "Pokégear 3.0", type: "Item", prints: ["BLK #84"], desc: "Olhe as 7 cartas de cima do seu baralho. Você poderá revelar uma carta de Apoiador que encontrar lá e colocá-la na sua mão." },
+      { name: "Fóssil Pluma Arcaico", type: "Item", prints: ["WHT #79"], desc: "Jogue como Pokémon Básico com PS 60. Habilidade Proteção Plumosa: Enquanto no Banco, previne todo o dano de ataques do oponente." },
+      { name: "Bracelete Bravio", type: "Ferramenta", prints: ["WHT #80"], desc: "Se o Pokémon ao qual esta carta está ligada não tiver Caixa de Regras, seus ataques causam 30 pontos de dano a mais ao Pokémon ex Ativo do oponente." },
+      { name: "Recuperação de Energia", type: "Item", prints: ["WHT #82"], desc: "Coloque até 2 cartas de Energia Básica da sua pilha de descarte na sua mão." },
+      { name: "Sanduíche do Arven", type: "Item", prints: ["DRI #161"], desc: "Cure 30 pontos de dano do seu Pokémon Ativo. Se aquele Pokémon for um Pokémon do Arven, cure 100 pontos de dano dele ao invés de 30." },
+      { name: "Peso de Poder da Cíntia", type: "Ferramenta", prints: ["DRI #162"], desc: "O Pokémon da Cíntia ao qual esta carta está ligada recebe 70 PS a mais." },
+      { name: "Reciclador de Energia", type: "Item", prints: ["DRI #164"], desc: "Embaralhe até 5 cartas de Energia Básica da sua pilha de descarte no seu baralho." },
+      { name: "Caverna de Granito", type: "Estádio", prints: ["DRI #166"], desc: "Os Pokémon do Steven (seus e do seu oponente) recebem 30 pontos de dano a menos de ataques do oponente (depois de aplicar Fraqueza e Resistência)." },
+      { name: "Cinza Sagrada", type: "Item", prints: ["DRI #168"], desc: "Embaralhe até 5 Pokémon da sua pilha de descarte no seu baralho." },
+      { name: "Ginásio de Spikemuth", type: "Estádio", prints: ["DRI #169"], desc: "Uma vez durante o turno de cada jogador, aquele jogador poderá procurar no próprio baralho por um Pokémon da Marine, revelá-lo e colocá-lo na própria mão." },
+      { name: "Azucrinabot da Equipe Rocket", type: "Item", prints: ["DRI #172"], desc: "Vire 1 carta de Prêmio do oponente e escolha uma carta aleatória da mão do oponente. Você pode fazer com que o oponente troque aquelas cartas." },
+      { name: "Bomba de Risco da Equipe Rocket", type: "Item", prints: ["DRI #179"], desc: "Jogue uma moeda. Se sair cara, coloque 2 contadores de dano em 1 dos Pokémon do seu oponente. Se sair coroa, coloque 2 contadores de dano no seu Pokémon Ativo." },
+      { name: "Máquina de MT", type: "Item", prints: ["DRI #181"], desc: "Procure por até 3 cartas de Ferramenta Pokémon no seu baralho que tenham 'Máquina Técnica' em seu nome, revele-as e coloque-as na sua mão." },
+      { name: "Levincia", type: "Estádio", prints: ["DRI #244"], desc: "Uma vez durante o turno de cada jogador, aquele jogador poderá colocar até 2 cartas de Energia [L] Básica da própria pilha de descarte na própria mão." },
+      { name: "Fanfarra de Celebração", type: "Estádio", prints: ["MEP #28"], desc: "Uma vez durante o turno de cada jogador, aquele jogador poderá curar 10 pontos de dano de cada um dos seus próprios Pokémon. Se curou qualquer dano desta forma, o turno dele acabará." },
+      { name: "Energia Planta", type: "Energia", prints: ["MEE #1"], desc: "Energia Básica [G]." },
+      { name: "Energia Fogo", type: "Energia", prints: ["MEE #2"], desc: "Energia Básica [R]." },
+      { name: "Energia Água", type: "Energia", prints: ["MEE #3"], desc: "Energia Básica [W]." },
+      { name: "Energia Raio", type: "Energia", prints: ["MEE #4"], desc: "Energia Básica [L]." },
+      { name: "Energia Psíquica", type: "Energia", prints: ["MEE #5"], desc: "Energia Básica [P]." },
+      { name: "Energia Luta", type: "Energia", prints: ["MEE #6"], desc: "Energia Básica [F]." },
+      { name: "Energia Escuridão", type: "Energia", prints: ["MEE #7"], desc: "Energia Básica [D]." },
+      { name: "Energia Metal", type: "Energia", prints: ["MEE #8"], desc: "Energia Básica [M]." },
+    ];
+
+
     function App() {
       const [decks, setDecks] = useState([]);
       const [collection, setCollection] = useState({});
@@ -181,6 +253,9 @@
       const [manualCollectionEntry, setManualCollectionEntry] = useState('');
 
       const [isLoading, setIsLoading] = useState(true);
+      const [leagueView, setLeagueView] = useState('decks');
+      const [poolFilter, setPoolFilter] = useState('todos');
+      const [poolSearch, setPoolSearch] = useState('');
 
       const isPortuguese = (name) => {
         if (!name) return false;
@@ -466,26 +541,90 @@
             {/* VIEW: LIGA */}
             {activeTab === 'league' && !selectedDeck && (
               <div className="space-y-4 animate-in fade-in">
-                <h2 className="text-2xl font-bold text-slate-800">Decks Batalha de Liga</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {PRESET_DECKS.map(deck => (
-                    <div key={deck.id} onClick={() => setSelectedDeckId(deck.id)} className="bg-white p-6 rounded-xl border border-slate-200 cursor-pointer hover:shadow-lg transition-all flex flex-col justify-between group">
-                      <div>
-                        <h3 className="font-bold text-xl flex items-center gap-2 group-hover:text-blue-600 transition-colors"><Swords className="w-5 h-5 text-amber-500"/> {deck.name}</h3>
-                        <p className="text-sm text-slate-500 mt-2">{deck.description}</p>
+                {/* Sub-tabs */}
+                <div className="flex gap-2 bg-white p-1.5 rounded-xl border border-slate-200 shadow-sm">
+                  <button onClick={() => setLeagueView('decks')} className={`flex-1 py-2 rounded-lg text-sm font-bold transition-all flex items-center justify-center gap-2 ${leagueView === 'decks' ? 'bg-blue-600 text-white shadow' : 'text-slate-500 hover:bg-slate-100'}`}>
+                    <Swords className="w-4 h-4"/> Decks
+                  </button>
+                  <button onClick={() => setLeagueView('pool')} className={`flex-1 py-2 rounded-lg text-sm font-bold transition-all flex items-center justify-center gap-2 ${leagueView === 'pool' ? 'bg-blue-600 text-white shadow' : 'text-slate-500 hover:bg-slate-100'}`}>
+                    <FileText className="w-4 h-4"/> Pool de Cartas
+                  </button>
+                </div>
+
+                {/* Decks view */}
+                {leagueView === 'decks' && (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {PRESET_DECKS.map(deck => (
+                      <div key={deck.id} onClick={() => setSelectedDeckId(deck.id)} className="bg-white p-6 rounded-xl border border-slate-200 cursor-pointer hover:shadow-lg transition-all flex flex-col justify-between group">
+                        <div>
+                          <h3 className="font-bold text-xl flex items-center gap-2 group-hover:text-blue-600 transition-colors"><Swords className="w-5 h-5 text-amber-500"/> {deck.name}</h3>
+                          <p className="text-sm text-slate-500 mt-2">{deck.description}</p>
+                        </div>
+                        <div className="mt-6">
+                          <div className="flex justify-between text-sm font-bold mb-1.5 text-slate-700">
+                            <span>Progresso de Coleção</span>
+                            <span>{deckProgress[deck.id]}%</span>
+                          </div>
+                          <div className="mt-2 bg-slate-100 h-2.5 rounded-full overflow-hidden">
+                            <div className="bg-amber-500 h-full transition-all duration-500 shadow-[0_0_8px_rgba(245,158,11,0.5)]" style={{ width: `${deckProgress[deck.id]}%` }} />
+                          </div>
+                        </div>
                       </div>
-                      <div className="mt-6">
-                        <div className="flex justify-between text-sm font-bold mb-1.5 text-slate-700">
-                          <span>Progresso de Coleção</span>
-                          <span>{deckProgress[deck.id]}%</span>
+                    ))}
+                  </div>
+                )}
+
+                {/* Pool view */}
+                {leagueView === 'pool' && (() => {
+                  const typeColors = { Item: 'bg-blue-100 text-blue-700', Ferramenta: 'bg-purple-100 text-purple-700', Estádio: 'bg-green-100 text-green-700', Energia: 'bg-amber-100 text-amber-700' };
+                  const filtered = TRAINER_POOL.filter(c => {
+                    const matchType = poolFilter === 'todos' || c.type === poolFilter;
+                    const matchSearch = poolSearch === '' || c.name.toLowerCase().includes(poolSearch.toLowerCase());
+                    return matchType && matchSearch;
+                  });
+                  return (
+                    <div className="space-y-3">
+                      <div className="flex flex-col sm:flex-row gap-2">
+                        <input
+                          className="flex-1 p-2.5 border rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500"
+                          placeholder="Buscar carta..."
+                          value={poolSearch}
+                          onChange={e => setPoolSearch(e.target.value)}
+                        />
+                        <div className="flex gap-1.5 flex-wrap">
+                          {['todos','Item','Ferramenta','Estádio','Energia'].map(f => (
+                            <button key={f} onClick={() => setPoolFilter(f)}
+                              className={`px-3 py-2 rounded-lg text-xs font-bold transition-all border ${poolFilter === f ? 'bg-blue-600 text-white border-blue-600' : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'}`}>
+                              {f === 'todos' ? 'Todos' : f}
+                            </button>
+                          ))}
                         </div>
-                        <div className="mt-2 bg-slate-100 h-2.5 rounded-full overflow-hidden">
-                          <div className="bg-amber-500 h-full transition-all duration-500 shadow-[0_0_8px_rgba(245,158,11,0.5)]" style={{ width: `${deckProgress[deck.id]}%` }} />
-                        </div>
+                      </div>
+                      <p className="text-xs text-slate-400 font-medium">{filtered.length} carta{filtered.length !== 1 ? 's' : ''}</p>
+                      <div className="space-y-2">
+                        {filtered.map((card, i) => (
+                          <div key={i} className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+                            <div className="flex items-start justify-between gap-3 mb-2">
+                              <div className="flex items-center gap-2 flex-wrap">
+                                <span className="font-bold text-slate-800">{card.name}</span>
+                                <span className={`text-[10px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider ${typeColors[card.type]}`}>{card.type}</span>
+                              </div>
+                              <div className="flex gap-1 flex-wrap justify-end shrink-0">
+                                {card.prints.map((p, j) => (
+                                  <span key={j} className="text-[10px] font-mono bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded border border-slate-200">{p}</span>
+                                ))}
+                              </div>
+                            </div>
+                            <p className="text-xs text-slate-600 leading-relaxed">{card.desc}</p>
+                          </div>
+                        ))}
+                        {filtered.length === 0 && (
+                          <div className="p-12 text-center text-slate-400 border-2 border-dashed rounded-xl border-slate-200">Nenhuma carta encontrada.</div>
+                        )}
                       </div>
                     </div>
-                  ))}
-                </div>
+                  );
+                })()}
               </div>
             )}
 
