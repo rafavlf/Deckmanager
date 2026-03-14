@@ -23,7 +23,7 @@
     .bottom-nav{display:flex;position:fixed;bottom:0;width:100%;background:#fff;border-top:1px solid #e2e8f0;z-index:30;padding:8px 0 calc(8px + env(safe-area-inset-bottom));}
     .bottom-nav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;font-size:10px;font-weight:800;color:#94a3b8;cursor:pointer;padding:4px 0;letter-spacing:.5px;}
     .bottom-nav button.active{color:#2563eb;}
-    .bottom-nav button svg{width:22px;height:22px;}
+    .bottom-nav button .nav-icon{font-size:20px;line-height:1;}
     @media(min-width:768px){.bottom-nav{display:none;}}
     /* ---- CARDS / UI ---- */
     .card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;}
@@ -445,17 +445,18 @@ function fallbackCopy(txt, name) {
 // ─────────────────────────────────────────────
 //  SVG ICONS
 // ─────────────────────────────────────────────
+// Unicode icons — work reliably in all WebViews
 const ICONS = {
-  decks: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/><line x1="12" y1="12" x2="12" y2="16"/></svg>`,
-  league: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 9H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5S16.33 9 15.5 9z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 15H10v-1.5c0-.83-.67-1.5-1.5-1.5S7 12.67 7 13.5 7.67 15 8.5 15z"/></svg>`,
-  collection: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>`,
-  plus: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>`,
-  back: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>`,
-  trash: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>`,
-  copy: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`,
-  check: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>`,
-  square: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>`,
-  refresh: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>`,
+  decks:      '🃏',
+  league:     '⚔️',
+  collection: '📦',
+  plus:       '+',
+  back:       '←',
+  trash:      '🗑',
+  copy:       '📋',
+  check:      '✓',
+  square:     '○',
+  refresh:    '↺',
 };
 
 // ─────────────────────────────────────────────
@@ -486,9 +487,9 @@ function buildHeader() {
 
 function buildBottomNav() {
   return `<nav class="bottom-nav">
-    <button class="${state.tab==='decks'?'active':''}" data-nav="decks">${ICONS.decks}<span>DECKS</span></button>
-    <button class="${state.tab==='league'?'active':''}" data-nav="league">${ICONS.league}<span>LIGA</span></button>
-    <button class="${state.tab==='collection'?'active':''}" data-nav="collection">${ICONS.collection}<span>COLEÇÃO</span></button>
+    <button class="${state.tab==='decks'?'active':''}" data-nav="decks"><span class="nav-icon">🃏</span><span>DECKS</span></button>
+    <button class="${state.tab==='league'?'active':''}" data-nav="league"><span class="nav-icon">⚔️</span><span>LIGA</span></button>
+    <button class="${state.tab==='collection'?'active':''}" data-nav="collection"><span class="nav-icon">📦</span><span>COLEÇÃO</span></button>
   </nav>`;
 }
 
@@ -505,7 +506,7 @@ function buildMain() {
 function buildDecksTab() {
   let html = `<div class="flex-between mb-12">
     <span class="section-title" style="margin:0">Meus Decks</span>
-    <button class="btn btn-primary btn-sm" id="btn-add-deck">${ICONS.plus} Novo Deck</button>
+    <button class="btn btn-primary btn-sm" id="btn-add-deck">+ Novo Deck</button>
   </div>`;
 
   if (state.showAddDeck) {
@@ -679,7 +680,7 @@ function buildLeagueSets() {
     const qty = state.collection[card.id]?.qty || 0;
     html += `<div class="list-item ${qty>0?'green':''}">
       <div class="flex" style="flex:1;min-width:0;gap:10px">
-        <span style="color:${qty>0?'#16a34a':'#cbd5e1'};flex-shrink:0">${qty>0?ICONS.check:ICONS.square}</span>
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:4px;border:2px solid ${qty>0?'#16a34a':'#cbd5e1'};background:${qty>0?'#16a34a':'transparent'};color:#fff;font-size:13px;font-weight:900;flex-shrink:0">${qty>0?'✓':''}</span>
         <div style="min-width:0">
           <p class="font-bold text-sm truncate ${qty>0?'text-green':''}">${esc(card.name)}</p>
           <p class="mono">${card.set} #${card.number}</p>
@@ -701,9 +702,9 @@ function buildLeagueSets() {
 // ── COLLECTION TAB ───────────────────────────
 function buildCollectionTab() {
   let html = `<div class="card card-p mb-12">
-    <h2 style="font-size:15px;font-weight:800;margin-bottom:12px">${ICONS.plus} Adicionar à Coleção</h2>
+    <h2 style="font-size:15px;font-weight:800;margin-bottom:12px">Adicionar à Coleção</h2>
     <textarea id="manual-entry" rows="4" placeholder="Formato: Nome Sigla Número (ex: Torchic DRI 040 ou 4 Torchic DRI 040)">${esc(state.manualEntry)}</textarea>
-    <button class="btn btn-primary w100 mt-8" id="btn-add-collection">${ICONS.plus} Adicionar Cartas</button>
+    <button class="btn btn-primary w100 mt-8" id="btn-add-collection">Adicionar Cartas</button>
   </div>`;
 
   const allCards = Object.values(state.collection).sort((a,b)=>a.name.localeCompare(b.name));
@@ -783,7 +784,7 @@ function buildDeckDetail(deck) {
     const complete = owned >= card.qty;
     html += `<div style="padding:10px 12px;border-radius:10px;border:1px solid ${complete?'#bbf7d0':'#f1f5f9'};background:${complete?'#f0fdf4':'#fff'};display:flex;align-items:center;justify-content:space-between;gap:10px">
       <div class="flex" style="flex:1;min-width:0;gap:10px">
-        <span style="color:${complete?'#16a34a':'#cbd5e1'};flex-shrink:0;cursor:pointer" data-toggle-card='${JSON.stringify({...card, _complete: complete})}'>${complete?ICONS.check:ICONS.square}</span>
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:5px;border:2px solid ${complete?'#16a34a':'#cbd5e1'};background:${complete?'#16a34a':'transparent'};color:#fff;font-size:14px;font-weight:900;flex-shrink:0;cursor:pointer" data-toggle-card='${JSON.stringify({...card, _complete: complete})}'>${complete?'✓':''}</span>
         <div style="min-width:0">
           <p style="font-weight:700;font-size:13px;${complete?'color:#166534':''}" class="truncate">${card.qty}x ${esc(card.name)}</p>
           <p class="mono">${card.set} ${card.number}</p>
@@ -791,7 +792,7 @@ function buildDeckDetail(deck) {
       </div>
       <div class="counter" style="flex-shrink:0">
         <button ${owned<=0?'disabled':''} data-deck-card='${JSON.stringify(card)}' data-delta="-1">−</button>
-        <span style="color:${owned>=card.qty?'#16a34a':owned>0?'#d97706':'#94a3b8'};font-size:11px;width:36px">${owned}/${card.qty}</span>
+        <span style="color:${owned>=card.qty?'#16a34a':owned>0?'#d97706':'#94a3b8'};font-size:11px;min-width:36px;text-align:center">${owned}/${card.qty}</span>
         <button data-deck-card='${JSON.stringify(card)}' data-delta="1">+</button>
       </div>
     </div>`;
