@@ -619,9 +619,9 @@ function buildLeaguePool() {
           ${card.hp?`<span class="text-xs text-muted">${card.hp} PS · ${esc(card.pokemonType)}</span>`:''}
         </div>
         <div class="counter" style="margin-left:8px">
-          <button ${owned<=0?'disabled':''} data-pool-card='${JSON.stringify(collCard)}' data-delta="-1">−</button>
+          <button ${owned<=0?'disabled':''} data-pool-card="${encodeURIComponent(JSON.stringify(collCard))}" data-delta="-1">−</button>
           <span style="${owned>0?'color:#2563eb':''}">${owned}</span>
-          <button data-pool-card='${JSON.stringify(collCard)}' data-delta="1">+</button>
+          <button data-pool-card="${encodeURIComponent(JSON.stringify(collCard))}" data-delta="1">+</button>
         </div>
       </div>
       <div class="flex" style="flex-wrap:wrap;gap:4px;margin-bottom:8px">
@@ -687,9 +687,9 @@ function buildLeagueSets() {
         </div>
       </div>
       <div class="counter" style="margin-left:8px;flex-shrink:0">
-        <button ${qty<=0?'disabled':''} data-set-card='${JSON.stringify(card)}' data-delta="-1">−</button>
+        <button ${qty<=0?'disabled':''} data-set-card="${encodeURIComponent(JSON.stringify(card))}" data-delta="-1">−</button>
         <span style="${qty>0?'color:#16a34a':''}">${qty}</span>
-        <button data-set-card='${JSON.stringify(card)}' data-delta="1">+</button>
+        <button data-set-card="${encodeURIComponent(JSON.stringify(card))}" data-delta="1">+</button>
       </div>
     </div>`;
   });
@@ -741,9 +741,9 @@ function buildCollectionTab() {
         <p class="mono">${esc(card.set)} — ${esc(card.number)}</p>
       </div>
       <div class="counter">
-        <button ${card.qty<=0?'disabled':''} data-coll-card='${JSON.stringify(card)}' data-delta="-1">−</button>
+        <button ${card.qty<=0?'disabled':''} data-coll-card="${encodeURIComponent(JSON.stringify(card))}" data-delta="-1">−</button>
         <span class="text-blue">${card.qty}</span>
-        <button data-coll-card='${JSON.stringify(card)}' data-delta="1">+</button>
+        <button data-coll-card="${encodeURIComponent(JSON.stringify(card))}" data-delta="1">+</button>
       </div>
     </div>`;
   });
@@ -784,16 +784,16 @@ function buildDeckDetail(deck) {
     const complete = owned >= card.qty;
     html += `<div style="padding:10px 12px;border-radius:10px;border:1px solid ${complete?'#bbf7d0':'#f1f5f9'};background:${complete?'#f0fdf4':'#fff'};display:flex;align-items:center;justify-content:space-between;gap:10px">
       <div class="flex" style="flex:1;min-width:0;gap:10px">
-        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:5px;border:2px solid ${complete?'#16a34a':'#cbd5e1'};background:${complete?'#16a34a':'transparent'};color:#fff;font-size:14px;font-weight:900;flex-shrink:0;cursor:pointer" data-toggle-card='${JSON.stringify({...card, _complete: complete})}'>${complete?'✓':''}</span>
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:5px;border:2px solid ${complete?'#16a34a':'#cbd5e1'};background:${complete?'#16a34a':'transparent'};color:#fff;font-size:14px;font-weight:900;flex-shrink:0;cursor:pointer" data-toggle-card="${encodeURIComponent(JSON.stringify({...card, _complete: complete}))}">${complete?'✓':''}</span>
         <div style="min-width:0">
           <p style="font-weight:700;font-size:13px;${complete?'color:#166534':''}" class="truncate">${card.qty}x ${esc(card.name)}</p>
           <p class="mono">${card.set} ${card.number}</p>
         </div>
       </div>
       <div class="counter" style="flex-shrink:0">
-        <button ${owned<=0?'disabled':''} data-deck-card='${JSON.stringify(card)}' data-delta="-1">−</button>
+        <button ${owned<=0?'disabled':''} data-deck-card="${encodeURIComponent(JSON.stringify(card))}" data-delta="-1">−</button>
         <span style="color:${owned>=card.qty?'#16a34a':owned>0?'#d97706':'#94a3b8'};font-size:11px;min-width:36px;text-align:center">${owned}/${card.qty}</span>
-        <button data-deck-card='${JSON.stringify(card)}' data-delta="1">+</button>
+        <button data-deck-card="${encodeURIComponent(JSON.stringify(card))}" data-delta="1">+</button>
       </div>
     </div>`;
   });
@@ -904,7 +904,7 @@ function attachEvents() {
   // Toggle card complete in deck
   app.querySelectorAll('[data-toggle-card]').forEach(el => {
     el.addEventListener('click', (e) => { e.stopPropagation();
-      const card = JSON.parse(el.dataset.toggleCard);
+      const card = JSON.parse(decodeURIComponent(el.dataset.toggleCard));
       updateCollectionQty(card, 0, card._complete ? 0 : card.qty);
     });
   });
@@ -912,7 +912,7 @@ function attachEvents() {
   // Counter buttons - deck cards
   app.querySelectorAll('[data-deck-card]').forEach(el => {
     el.addEventListener('click', () => {
-      const card = JSON.parse(el.dataset.deckCard);
+      const card = JSON.parse(decodeURIComponent(el.dataset.deckCard));
       updateCollectionQty(card, parseInt(el.dataset.delta));
     });
   });
@@ -920,7 +920,7 @@ function attachEvents() {
   // Counter buttons - pool cards
   app.querySelectorAll('[data-pool-card]').forEach(el => {
     el.addEventListener('click', () => {
-      const card = JSON.parse(el.dataset.poolCard);
+      const card = JSON.parse(decodeURIComponent(el.dataset.poolCard));
       updateCollectionQty(card, parseInt(el.dataset.delta));
     });
   });
@@ -928,7 +928,7 @@ function attachEvents() {
   // Counter buttons - set cards
   app.querySelectorAll('[data-set-card]').forEach(el => {
     el.addEventListener('click', () => {
-      const card = JSON.parse(el.dataset.setCard);
+      const card = JSON.parse(decodeURIComponent(el.dataset.setCard));
       updateCollectionQty(card, parseInt(el.dataset.delta));
     });
   });
@@ -936,7 +936,7 @@ function attachEvents() {
   // Counter buttons - global collection
   app.querySelectorAll('[data-coll-card]').forEach(el => {
     el.addEventListener('click', () => {
-      const card = JSON.parse(el.dataset.collCard);
+      const card = JSON.parse(decodeURIComponent(el.dataset.collCard));
       updateCollectionQty(card, parseInt(el.dataset.delta));
     });
   });
