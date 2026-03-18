@@ -337,6 +337,8 @@ let state = {
   collection: {},
   selectedDeckId: null,
   confirmDeleteId: null,
+  // deck detail
+  showMissingOnly: false,
   // deck form
   showAddDeck: false,
   newDeckName: '', newDeckDesc: '', newDeckList: '',
@@ -351,20 +353,59 @@ let state = {
 };
 
 // ─────────────────────────────────────────────
-//  STORAGE
+//  STORAGE — usa ponte nativa Android se disponível,
+//  com fallback para localStorage e migração automática
 // ─────────────────────────────────────────────
+function hasNativeBridge() {
+  return typeof window.AndroidStorage !== 'undefined';
+}
+
+function nativeGet(key) {
+  try { return window.AndroidStorage.load(key); } catch(e) { return null; }
+}
+
+function nativeSet(key, value) {
+  try { window.AndroidStorage.save(key, value); } catch(e) {}
+}
+
 function loadStorage() {
   try {
-    const d = localStorage.getItem('tcg_decks');
-    const c = localStorage.getItem('tcg_collection');
-    if (d) state.decks = JSON.parse(d);
-    if (c) state.collection = JSON.parse(c);
-  } catch(e) { console.error(e); }
+    if (hasNativeBridge()) {
+      // Tenta carregar do armazenamento nativo
+      const d = nativeGet('tcg_decks');
+      const c = nativeGet('tcg_collection');
+
+      if (d) state.decks = JSON.parse(d);
+      if (c) state.collection = JSON.parse(c);
+
+      // Migração: se não há dados nativos mas há dados no localStorage, migra
+      if (!d && !c) {
+        const ld = localStorage.getItem('tcg_decks');
+        const lc = localStorage.getItem('tcg_collection');
+        if (ld) { state.decks = JSON.parse(ld); nativeSet('tcg_decks', ld); }
+        if (lc) { state.collection = JSON.parse(lc); nativeSet('tcg_collection', lc); }
+      }
+    } else {
+      // Fallback: localStorage (browser / PWA)
+      const d = localStorage.getItem('tcg_decks');
+      const c = localStorage.getItem('tcg_collection');
+      if (d) state.decks = JSON.parse(d);
+      if (c) state.collection = JSON.parse(c);
+    }
+  } catch(e) { console.error('loadStorage error:', e); }
 }
+
 function saveStorage() {
   try {
-    localStorage.setItem('tcg_decks', JSON.stringify(state.decks));
-    localStorage.setItem('tcg_collection', JSON.stringify(state.collection));
+    const decksJson = JSON.stringify(state.decks);
+    const collJson  = JSON.stringify(state.collection);
+    if (hasNativeBridge()) {
+      nativeSet('tcg_decks', decksJson);
+      nativeSet('tcg_collection', collJson);
+    } else {
+      localStorage.setItem('tcg_decks', decksJson);
+      localStorage.setItem('tcg_collection', collJson);
+    }
   } catch(e) { showToast('Falha ao salvar dados.', 'error'); }
 }
 
@@ -413,6 +454,10 @@ function calcProgress(deckCards) {
   const owned = deckCards.reduce((a,c)=>a+Math.min(state.collection[c.id]?.qty||0, c.qty),0);
   return total===0?0:Math.floor((owned/total)*100);
 }
+function calcMissing(deckCards) {
+  if (!deckCards || !deckCards.length) return 0;
+  return deckCards.reduce((a,c)=>a+Math.max(0, c.qty-(state.collection[c.id]?.qty||0)), 0);
+}
 function updateCollectionQty(card, delta, exact=null) {
   const cur = state.collection[card.id]?.qty || 0;
   let next = exact !== null ? exact : cur + delta;
@@ -427,6 +472,19 @@ function selectedDeck() {
   if (!state.selectedDeckId) return null;
   return allDecks().find(d => d.id === state.selectedDeckId) || null;
 }
+function openCardPage(set, number) {
+  // Remove leading zeros for the URL (ASC/1 not ASC/001)
+  const num = parseInt(number, 10) || number;
+  const url = 'https://limitlesstcg.com/cards/pt/' + set + '/' + num;
+  // On Android WebView: opens in external browser via MainActivity
+  // On PWA/browser: opens in new tab
+  if (window.AndroidBrowser) {
+    window.AndroidBrowser.open(url);
+  } else {
+    window.open(url, '_blank');
+  }
+}
+
 function copyDeck(deck) {
   const txt = deck.cards.map(c=>`${c.qty} ${c.name} ${c.set} ${c.number}`).join('\n');
   if (navigator.clipboard) {
@@ -547,7 +605,8 @@ function buildDecksTab() {
           <span class="text-muted font-bold">${pct}% completo</span>
           <span class="tag tag-slate">${deck.cards.reduce((a,c)=>a+c.qty,0)} cartas</span>
         </div>
-        <div class="progress-bar"><div class="progress-fill blue" style="width:${pct}%"></div></div>
+        <div class="progress-bar mb-8"><div class="progress-fill blue" style="width:${pct}%"></div></div>
+        ${(()=>{const m=calcMissing(deck.cards);return m>0?`<span style="font-size:11px;font-weight:700;color:#ef4444">Faltam ${m} carta${m!==1?'s':''}</span>`:`<span style="font-size:11px;font-weight:700;color:#16a34a">✓ Deck completo</span>`;})()}
       </div>`;
     });
     html += `</div>`;
@@ -584,7 +643,8 @@ function buildLeagueDecks() {
           <span class="font-bold text-muted">Progresso</span>
           <span class="font-bold">${pct}%</span>
         </div>
-        <div class="progress-bar"><div class="progress-fill amber" style="width:${pct}%"></div></div>
+        <div class="progress-bar mb-8"><div class="progress-fill amber" style="width:${pct}%"></div></div>
+        ${(()=>{const m=calcMissing(deck.cards);return m>0?`<span style="font-size:11px;font-weight:700;color:#ef4444">Faltam ${m} carta${m!==1?'s':''}</span>`:`<span style="font-size:11px;font-weight:700;color:#16a34a">✓ Deck completo</span>`;})()}
       </div>`;
     }).join('') + `</div>`;
 }
@@ -625,7 +685,7 @@ function buildLeaguePool() {
         </div>
       </div>
       <div class="flex" style="flex-wrap:wrap;gap:4px;margin-bottom:8px">
-        ${card.prints.map(p=>`<span class="mono tag tag-slate">${esc(p)}</span>`).join('')}
+        ${card.prints.map(p=>{ const parts=p.split(' '); const s=parts[0]; const n=(parts[1]||'').replace('#',''); return `<span class="mono tag tag-slate" onclick="openCardPage('${s}','${n}')" style="cursor:pointer;border-bottom:1px dashed #93c5fd">${esc(p)}</span>`;}).join('')}
       </div>
       <p class="text-xs text-muted">${esc(card.desc)}</p>
     </div>`;
@@ -683,7 +743,7 @@ function buildLeagueSets() {
         <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:4px;border:2px solid ${qty>0?'#16a34a':'#cbd5e1'};background:${qty>0?'#16a34a':'transparent'};color:#fff;font-size:13px;font-weight:900;flex-shrink:0">${qty>0?'✓':''}</span>
         <div style="min-width:0">
           <p class="font-bold text-sm truncate ${qty>0?'text-green':''}">${esc(card.name)}</p>
-          <p class="mono">${card.set} #${card.number}</p>
+          <p class="mono" style="display:flex;align-items:center;gap:6px">${card.set} #${card.number}<span onclick="openCardPage('${card.set}','${card.number}')" style="color:#2563eb;cursor:pointer;font-size:10px;font-weight:700;border:1px solid #bfdbfe;border-radius:4px;padding:1px 5px;background:#eff6ff">🔍 Ver</span></p>
         </div>
       </div>
       <div class="counter" style="margin-left:8px;flex-shrink:0">
@@ -719,10 +779,15 @@ function buildCollectionTab() {
     <div style="padding:14px;background:#f8fafc;border-bottom:1px solid #e2e8f0">
       <div class="flex-between mb-10">
         <span class="font-bold">Minha Coleção Global</span>
-        <div class="flex gap-8">
-          <button class="btn btn-secondary btn-sm" id="btn-update-pt">${ICONS.refresh} Atualizar PT</button>
-          <span class="tag tag-slate">${filtered.length}/${allCards.length}</span>
-        </div>
+        <span class="tag tag-slate">${filtered.length}/${allCards.length}</span>
+      </div>
+      <div class="flex" style="gap:6px;flex-wrap:wrap;margin-bottom:10px">
+        <button class="btn btn-secondary btn-sm" id="btn-update-pt">${ICONS.refresh} PT</button>
+        <button class="btn btn-secondary btn-sm" id="btn-export-csv">⬇ Exportar</button>
+        <label class="btn btn-secondary btn-sm" style="cursor:pointer;margin:0">
+          ⬆ Importar
+          <input type="file" id="inp-import-csv" accept=".csv" style="display:none">
+        </label>
       </div>
       <div style="display:flex;flex-direction:column;gap:8px">
         <input id="coll-search" placeholder="Buscar por nome..." value="${esc(state.collSearch)}" oninput="state.collSearch=this.value;render()">
@@ -738,7 +803,7 @@ function buildCollectionTab() {
     html += `<div class="list-item">
       <div style="flex:1;min-width:0">
         <p class="font-bold text-sm truncate">${esc(card.name)}</p>
-        <p class="mono">${esc(card.set)} — ${esc(card.number)}</p>
+        <p class="mono" style="display:flex;align-items:center;gap:6px">${esc(card.set)} — ${esc(card.number)}<span onclick="openCardPage('${card.set}','${card.number}')" style="color:#2563eb;cursor:pointer;font-size:10px;font-weight:700;border:1px solid #bfdbfe;border-radius:4px;padding:1px 5px;background:#eff6ff">🔍 Ver</span></p>
       </div>
       <div class="counter">
         <button ${card.qty<=0?'disabled':''} data-coll-card="${encodeURIComponent(JSON.stringify(card))}" data-delta="-1">−</button>
@@ -750,7 +815,7 @@ function buildCollectionTab() {
 
   if (!allCards.length) html += `<div class="empty">Nenhuma carta na coleção ainda.</div>`;
   else if (!filtered.length) html += `<div class="empty">Nenhuma carta encontrada com esses filtros.</div>`;
-  html += `</div></div>`;
+  html += `</div></div></div>`;
   return html;
 }
 
@@ -774,12 +839,27 @@ function buildDeckDetail(deck) {
           <div class="progress-bar" style="width:80px"><div class="progress-fill blue" style="width:${pct}%"></div></div>
           <span class="text-muted">${pct}% completo</span>
         </div>
-        <span class="tag tag-slate">${deck.cards.reduce((a,c)=>a+c.qty,0)} cartas</span>
+        <div class="flex gap-8">
+          ${(()=>{const m=calcMissing(deck.cards);return m>0?`<span style="font-size:11px;font-weight:700;color:#ef4444">Faltam ${m}</span>`:`<span style="font-size:11px;font-weight:700;color:#16a34a">✓ Completo</span>`;})()}
+          <span class="tag tag-slate">${deck.cards.reduce((a,c)=>a+c.qty,0)} cartas</span>
+        </div>
       </div>
     </div>
-    <div style="padding:12px;display:flex;flex-direction:column;gap:6px">`;
+    <div style="padding:12px">
+      <button id="btn-toggle-missing" style="width:100%;margin-bottom:10px;padding:8px;border-radius:8px;border:1px solid ${state.showMissingOnly?'#2563eb':'#e2e8f0'};background:${state.showMissingOnly?'#eff6ff':'#f8fafc'};color:${state.showMissingOnly?'#2563eb':'#64748b'};font-weight:700;font-size:13px;cursor:pointer;">
+        ${state.showMissingOnly ? '👁 Mostrar todas as cartas' : '🔍 Mostrar apenas o que falta'}
+      </button>
+      <div style="display:flex;flex-direction:column;gap:6px">`;
 
-  deck.cards.forEach((card, i) => {
+  const cardsToShow = state.showMissingOnly
+    ? deck.cards.filter(card => (state.collection[card.id]?.qty||0) < card.qty)
+    : deck.cards;
+
+  if (state.showMissingOnly && cardsToShow.length === 0) {
+    html += `<div class="empty" style="padding:32px">✓ Você tem todas as cartas deste deck!</div>`;
+  }
+
+  cardsToShow.forEach((card, i) => {
     const owned = state.collection[card.id]?.qty || 0;
     const complete = owned >= card.qty;
     html += `<div style="padding:10px 12px;border-radius:10px;border:1px solid ${complete?'#bbf7d0':'#f1f5f9'};background:${complete?'#f0fdf4':'#fff'};display:flex;align-items:center;justify-content:space-between;gap:10px">
@@ -787,7 +867,7 @@ function buildDeckDetail(deck) {
         <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:5px;border:2px solid ${complete?'#16a34a':'#cbd5e1'};background:${complete?'#16a34a':'transparent'};color:#fff;font-size:14px;font-weight:900;flex-shrink:0;cursor:pointer" data-toggle-card="${encodeURIComponent(JSON.stringify({...card, _complete: complete}))}">${complete?'✓':''}</span>
         <div style="min-width:0">
           <p style="font-weight:700;font-size:13px;${complete?'color:#166534':''}" class="truncate">${card.qty}x ${esc(card.name)}</p>
-          <p class="mono">${card.set} ${card.number}</p>
+          <p class="mono" style="display:flex;align-items:center;gap:6px">${card.set} ${card.number}<span onclick="openCardPage('${card.set}','${card.number}')" style="color:#2563eb;cursor:pointer;font-size:10px;font-weight:700;border:1px solid #bfdbfe;border-radius:4px;padding:1px 5px;background:#eff6ff">🔍 Ver</span></p>
         </div>
       </div>
       <div class="counter" style="flex-shrink:0">
@@ -800,6 +880,90 @@ function buildDeckDetail(deck) {
 
   html += `</div></div>`;
   return html;
+}
+
+
+// ─────────────────────────────────────────────
+//  EXPORT / IMPORT CSV
+// ─────────────────────────────────────────────
+function exportCollectionCSV() {
+  const cards = Object.values(state.collection).sort((a,b)=>a.name.localeCompare(b.name));
+  if (!cards.length) return showToast('Coleção vazia, nada para exportar.', 'error');
+
+  const header = 'id,name,set,number,qty';
+  const rows = cards.map(c =>
+    [c.id, `"${(c.name||'').replace(/"/g,'""')}"`, c.set, c.number, c.qty].join(',')
+  );
+  const csv = [header, ...rows].join('\n');
+
+  // Download via blob
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'ptcg-colecao-' + new Date().toISOString().slice(0,10) + '.csv';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  showToast(`${cards.length} cartas exportadas!`);
+}
+
+function importCollectionCSV(file) {
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    try {
+      const lines = e.target.result.split(/\r?\n/).filter(l => l.trim());
+      if (!lines.length) return showToast('Arquivo vazio.', 'error');
+
+      // Skip header row if present
+      const start = lines[0].toLowerCase().startsWith('id,') ? 1 : 0;
+      let imported = 0, skipped = 0;
+
+      const newCollection = { ...state.collection };
+
+      lines.slice(start).forEach(line => {
+        // Parse CSV line (handle quoted fields)
+        const cols = [];
+        let cur = '', inQuote = false;
+        for (let i = 0; i < line.length; i++) {
+          const ch = line[i];
+          if (ch === '"') { inQuote = !inQuote; }
+          else if (ch === ',' && !inQuote) { cols.push(cur); cur = ''; }
+          else { cur += ch; }
+        }
+        cols.push(cur);
+
+        if (cols.length < 5) { skipped++; return; }
+        const [id, name, set, number, qtyRaw] = cols;
+        const qty = parseInt(qtyRaw, 10);
+
+        if (!id || !name || !set || !number || isNaN(qty) || qty < 1) { skipped++; return; }
+
+        // Merge: if card already exists, take the higher qty
+        const existing = newCollection[id];
+        newCollection[id] = {
+          id: id.trim(),
+          name: name.trim(),
+          set: set.trim(),
+          number: number.trim(),
+          qty: existing ? Math.max(existing.qty, qty) : qty
+        };
+        imported++;
+      });
+
+      if (!imported) return showToast('Nenhuma carta válida encontrada.', 'error');
+
+      state.collection = newCollection;
+      saveStorage();
+      showToast(`${imported} carta${imported!==1?'s':''} importada${imported!==1?'s':''}${skipped>0?' ('+skipped+' ignoradas)':''}!`);
+      render();
+    } catch(err) {
+      showToast('Erro ao ler o arquivo.', 'error');
+    }
+  };
+  reader.readAsText(file, 'utf-8');
 }
 
 // ─────────────────────────────────────────────
@@ -815,6 +979,7 @@ function attachEvents() {
       state.selectedDeckId = null;
       state.confirmDeleteId = null;
       state.showAddDeck = false;
+      state.showMissingOnly = false;
       render();
     });
   });
@@ -845,7 +1010,7 @@ function attachEvents() {
 
   // Back buttons
   const backDeck = document.getElementById('btn-back-deck');
-  if (backDeck) backDeck.addEventListener('click', () => { state.selectedDeckId = null; render(); });
+  if (backDeck) backDeck.addEventListener('click', () => { state.selectedDeckId = null; state.showMissingOnly = false; render(); });
 
   const backSets = document.getElementById('btn-back-sets');
   if (backSets) backSets.addEventListener('click', () => { state.selectedSet = null; state.setSearch = ''; render(); });
@@ -900,6 +1065,9 @@ function attachEvents() {
   // Copy deck
   const btnCopy = document.getElementById('btn-copy-deck');
   if (btnCopy) btnCopy.addEventListener('click', () => { const d=selectedDeck(); if(d) copyDeck(d); });
+
+  const btnToggleMissing = document.getElementById('btn-toggle-missing');
+  if (btnToggleMissing) btnToggleMissing.addEventListener('click', () => { state.showMissingOnly = !state.showMissingOnly; render(); });
 
   // Toggle card complete in deck
   app.querySelectorAll('[data-toggle-card]').forEach(el => {
@@ -966,6 +1134,15 @@ function attachEvents() {
   });
 
   // Update PT names
+  const btnExport = document.getElementById('btn-export-csv');
+  if (btnExport) btnExport.addEventListener('click', exportCollectionCSV);
+
+  const inpImport = document.getElementById('inp-import-csv');
+  if (inpImport) inpImport.addEventListener('change', (e) => {
+    importCollectionCSV(e.target.files[0]);
+    e.target.value = ''; // reset so same file can be re-imported
+  });
+
   const btnPT = document.getElementById('btn-update-pt');
   if (btnPT) btnPT.addEventListener('click', () => {
     const ptMap = {};
