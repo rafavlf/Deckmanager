@@ -784,10 +784,7 @@ function buildCollectionTab() {
       <div class="flex" style="gap:6px;flex-wrap:wrap;margin-bottom:10px">
         <button class="btn btn-secondary btn-sm" id="btn-update-pt">${ICONS.refresh} PT</button>
         <button class="btn btn-secondary btn-sm" id="btn-export-csv">⬇ Exportar</button>
-        <label class="btn btn-secondary btn-sm" style="cursor:pointer;margin:0">
-          ⬆ Importar
-          <input type="file" id="inp-import-csv" accept=".csv" style="display:none">
-        </label>
+        <button class="btn btn-secondary btn-sm" id="btn-import-csv">⬆ Importar</button>
       </div>
       <div style="display:flex;flex-direction:column;gap:8px">
         <input id="coll-search" placeholder="Buscar por nome..." value="${esc(state.collSearch)}" oninput="state.collSearch=this.value;render()">
@@ -892,77 +889,88 @@ function exportCollectionCSV() {
 
   const header = 'id,name,set,number,qty';
   const rows = cards.map(c =>
-    [c.id, `"${(c.name||'').replace(/"/g,'""')}"`, c.set, c.number, c.qty].join(',')
+    [c.id, '"' + (c.name||'').replace(/"/g,'""') + '"', c.set, c.number, c.qty].join(',')
   );
   const csv = [header, ...rows].join('\n');
+  const filename = 'ptcg-colecao-' + new Date().toISOString().slice(0,10) + '.csv';
 
-  // Download via blob
-  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'ptcg-colecao-' + new Date().toISOString().slice(0,10) + '.csv';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-  showToast(`${cards.length} cartas exportadas!`);
+  if (typeof window.AndroidExport !== 'undefined') {
+    // Android WebView: usa ponte nativa para compartilhar/salvar
+    window.AndroidExport.shareCSV(filename, csv);
+    showToast(cards.length + ' cartas exportadas!');
+  } else {
+    // Navegador/PWA: download normal via blob
+    try {
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = filename;
+      document.body.appendChild(a); a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast(cards.length + ' cartas exportadas!');
+    } catch(e) {
+      showToast('Erro ao exportar: ' + e.message, 'error');
+    }
+  }
 }
+
+function processCSVText(csvText) {
+  try {
+    const lines = csvText.split(/\r?\n/).filter(l => l.trim());
+    if (!lines.length) return showToast('Arquivo vazio.', 'error');
+
+    const start = lines[0].toLowerCase().startsWith('id,') ? 1 : 0;
+    let imported = 0, skipped = 0;
+    const newCollection = { ...state.collection };
+
+    lines.slice(start).forEach(line => {
+      const cols = [];
+      let cur = '', inQuote = false;
+      for (let i = 0; i < line.length; i++) {
+        const ch = line[i];
+        if (ch === '"') { inQuote = !inQuote; }
+        else if (ch === ',' && !inQuote) { cols.push(cur); cur = ''; }
+        else { cur += ch; }
+      }
+      cols.push(cur);
+
+      if (cols.length < 5) { skipped++; return; }
+      const id = cols[0].trim(), name = cols[1].trim(),
+            set = cols[2].trim(), number = cols[3].trim();
+      const qty = parseInt(cols[4], 10);
+      if (!id || !name || !set || !number || isNaN(qty) || qty < 1) { skipped++; return; }
+
+      const existing = newCollection[id];
+      newCollection[id] = {
+        id, name, set, number,
+        qty: existing ? Math.max(existing.qty, qty) : qty
+      };
+      imported++;
+    });
+
+    if (!imported) return showToast('Nenhuma carta válida encontrada.', 'error');
+
+    state.collection = newCollection;
+    saveStorage();
+    const msg = imported + ' carta' + (imported!==1?'s':'') + ' importada' +
+                (imported!==1?'s':'') + (skipped>0?' ('+skipped+' ignoradas)':'') + '!';
+    showToast(msg);
+    render();
+  } catch(err) {
+    showToast('Erro ao processar arquivo.', 'error');
+  }
+}
+
+// Chamado pela ponte Android após o usuário escolher o arquivo
+window.onCSVImported = function(csvText) {
+  processCSVText(csvText);
+};
 
 function importCollectionCSV(file) {
   if (!file) return;
   const reader = new FileReader();
-  reader.onload = (e) => {
-    try {
-      const lines = e.target.result.split(/\r?\n/).filter(l => l.trim());
-      if (!lines.length) return showToast('Arquivo vazio.', 'error');
-
-      // Skip header row if present
-      const start = lines[0].toLowerCase().startsWith('id,') ? 1 : 0;
-      let imported = 0, skipped = 0;
-
-      const newCollection = { ...state.collection };
-
-      lines.slice(start).forEach(line => {
-        // Parse CSV line (handle quoted fields)
-        const cols = [];
-        let cur = '', inQuote = false;
-        for (let i = 0; i < line.length; i++) {
-          const ch = line[i];
-          if (ch === '"') { inQuote = !inQuote; }
-          else if (ch === ',' && !inQuote) { cols.push(cur); cur = ''; }
-          else { cur += ch; }
-        }
-        cols.push(cur);
-
-        if (cols.length < 5) { skipped++; return; }
-        const [id, name, set, number, qtyRaw] = cols;
-        const qty = parseInt(qtyRaw, 10);
-
-        if (!id || !name || !set || !number || isNaN(qty) || qty < 1) { skipped++; return; }
-
-        // Merge: if card already exists, take the higher qty
-        const existing = newCollection[id];
-        newCollection[id] = {
-          id: id.trim(),
-          name: name.trim(),
-          set: set.trim(),
-          number: number.trim(),
-          qty: existing ? Math.max(existing.qty, qty) : qty
-        };
-        imported++;
-      });
-
-      if (!imported) return showToast('Nenhuma carta válida encontrada.', 'error');
-
-      state.collection = newCollection;
-      saveStorage();
-      showToast(`${imported} carta${imported!==1?'s':''} importada${imported!==1?'s':''}${skipped>0?' ('+skipped+' ignoradas)':''}!`);
-      render();
-    } catch(err) {
-      showToast('Erro ao ler o arquivo.', 'error');
-    }
-  };
+  reader.onload = (e) => processCSVText(e.target.result);
   reader.readAsText(file, 'utf-8');
 }
 
@@ -1137,10 +1145,18 @@ function attachEvents() {
   const btnExport = document.getElementById('btn-export-csv');
   if (btnExport) btnExport.addEventListener('click', exportCollectionCSV);
 
-  const inpImport = document.getElementById('inp-import-csv');
-  if (inpImport) inpImport.addEventListener('change', (e) => {
-    importCollectionCSV(e.target.files[0]);
-    e.target.value = ''; // reset so same file can be re-imported
+  const btnImport = document.getElementById('btn-import-csv');
+  if (btnImport) btnImport.addEventListener('click', () => {
+    if (typeof window.AndroidExport !== 'undefined') {
+      // Android: trigger native file picker via bridge
+      window.AndroidExport.pickCSV();
+    } else {
+      // Browser/PWA: use hidden file input
+      const inp = document.createElement('input');
+      inp.type = 'file'; inp.accept = '.csv';
+      inp.onchange = (e) => { if (e.target.files[0]) importCollectionCSV(e.target.files[0]); };
+      inp.click();
+    }
   });
 
   const btnPT = document.getElementById('btn-update-pt');
