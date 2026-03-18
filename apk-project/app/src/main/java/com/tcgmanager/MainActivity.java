@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Base64;
 import android.webkit.JavascriptInterface;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
@@ -15,13 +16,14 @@ import android.view.WindowManager;
 import android.graphics.Color;
 import androidx.core.content.FileProvider;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 public class MainActivity extends Activity {
 
     private WebView webView;
     private ValueCallback<Uri[]> filePathCallback;
     private static final int FILE_CHOOSER_REQUEST = 1001;
-    private static final int IMPORT_REQUEST = 1002;
+    private static final int IMPORT_REQUEST       = 1002;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,11 +70,15 @@ public class MainActivity extends Activity {
             @JavascriptInterface
             public void shareCSV(String filename, String csvContent) {
                 try {
-                    // Salva temporariamente e abre o share sheet nativo
+                    // ── Salva com UTF-8 explícito ──────────────────────────
                     File tempFile = new File(getCacheDir(), filename);
-                    FileWriter fw = new FileWriter(tempFile);
-                    fw.write(csvContent);
-                    fw.close();
+                    OutputStreamWriter osw = new OutputStreamWriter(
+                        new FileOutputStream(tempFile), StandardCharsets.UTF_8
+                    );
+                    // Adiciona BOM UTF-8 para Excel reconhecer acentos
+                    osw.write('\uFEFF');
+                    osw.write(csvContent);
+                    osw.close();
 
                     Uri uri = FileProvider.getUriForFile(
                         activity,
@@ -86,14 +92,11 @@ public class MainActivity extends Activity {
                     shareIntent.putExtra(Intent.EXTRA_SUBJECT, filename);
                     shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                     activity.startActivity(Intent.createChooser(shareIntent, "Salvar / Compartilhar CSV"));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                } catch (Exception e) { e.printStackTrace(); }
             }
 
             @JavascriptInterface
             public void pickCSV() {
-                // Abre o file picker nativo para .csv
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
                 intent.setType("*/*");
                 intent.addCategory(Intent.CATEGORY_OPENABLE);
@@ -139,8 +142,8 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
         if (requestCode == FILE_CHOOSER_REQUEST) {
-            // File input do WebView (fallback)
             if (filePathCallback == null) return;
             Uri[] results = null;
             if (resultCode == RESULT_OK && data != null) {
@@ -150,30 +153,34 @@ public class MainActivity extends Activity {
             filePathCallback = null;
 
         } else if (requestCode == IMPORT_REQUEST && resultCode == RESULT_OK && data != null) {
-            // Import CSV via ponte nativa
             Uri uri = data.getData();
             try {
+                // ── Lê como UTF-8 e envia como Base64 (evita problemas de escaping no JS) ──
                 InputStream is = getContentResolver().openInputStream(uri);
-                BufferedReader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
-                StringBuilder sb = new StringBuilder();
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    sb.append(line).append("\n");
-                }
-                reader.close();
-                final String csvText = sb.toString()
-                    .replace("\\", "\\\\")
-                    .replace("'", "\\'")
-                    .replace("\r", "");
+                ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                byte[] buf = new byte[4096];
+                int n;
+                while ((n = is.read(buf)) != -1) bos.write(buf, 0, n);
+                is.close();
 
-                // Passa o CSV para o JS
+                // Remove BOM UTF-8 se presente
+                byte[] bytes = bos.toByteArray();
+                int start = (bytes.length >= 3 &&
+                             bytes[0] == (byte)0xEF &&
+                             bytes[1] == (byte)0xBB &&
+                             bytes[2] == (byte)0xBF) ? 3 : 0;
+
+                final String base64 = Base64.encodeToString(
+                    bytes, start, bytes.length - start, Base64.NO_WRAP
+                );
+
                 webView.post(() -> webView.evaluateJavascript(
-                    "window.onCSVImported('" + csvText + "')", null
+                    "window.onCSVImported('" + base64 + "')", null
                 ));
             } catch (Exception e) {
                 e.printStackTrace();
                 webView.post(() -> webView.evaluateJavascript(
-                    "window.showToast('Erro ao ler arquivo.','error')", null
+                    "showToast('Erro ao ler arquivo.','error')", null
                 ));
             }
         }
