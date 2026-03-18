@@ -521,8 +521,24 @@ const ICONS = {
 //  RENDER
 // ─────────────────────────────────────────────
 function render() {
+  // Save focus state before re-render
+  const activeId    = document.activeElement ? document.activeElement.id : null;
+  const activeStart = document.activeElement ? document.activeElement.selectionStart : null;
+  const activeEnd   = document.activeElement ? document.activeElement.selectionEnd   : null;
+
   document.getElementById('app').innerHTML = buildApp();
   attachEvents();
+
+  // Restore focus and cursor position after re-render
+  if (activeId) {
+    const el = document.getElementById(activeId);
+    if (el) {
+      el.focus();
+      if (activeStart !== null && el.setSelectionRange) {
+        try { el.setSelectionRange(activeStart, activeEnd); } catch(e) {}
+      }
+    }
+  }
 }
 
 function buildApp() {
