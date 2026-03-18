@@ -783,8 +783,8 @@ function buildCollectionTab() {
       </div>
       <div class="flex" style="gap:6px;flex-wrap:wrap;margin-bottom:10px">
         <button class="btn btn-secondary btn-sm" id="btn-update-pt">${ICONS.refresh} PT</button>
-        <button class="btn btn-secondary btn-sm" id="btn-export-csv">⬇ Exportar</button>
-        <button class="btn btn-secondary btn-sm" id="btn-import-csv">⬆ Importar</button>
+        <button class="btn btn-secondary btn-sm" id="btn-export-csv">⬆ Exportar</button>
+        <button class="btn btn-secondary btn-sm" id="btn-import-csv">⬇ Importar</button>
       </div>
       <div style="display:flex;flex-direction:column;gap:8px">
         <input id="coll-search" placeholder="Buscar por nome..." value="${esc(state.collSearch)}" oninput="state.collSearch=this.value;render()">
@@ -888,9 +888,10 @@ function exportCollectionCSV() {
   if (!cards.length) return showToast('Coleção vazia, nada para exportar.', 'error');
 
   const header = 'id,name,set,number,qty';
-  const rows = cards.map(c =>
-    [c.id, '"' + (c.name||'').replace(/"/g,'""') + '"', c.set, c.number, c.qty].join(',')
-  );
+  const rows = cards.map(c => {
+    const num = c.number || (c.id ? c.id.split('_').slice(1).join('_') : '');
+    return [c.id, '"' + (c.name||'').replace(/"/g,'""') + '"', c.set, num, c.qty].join(',');
+  });
   const csv = [header, ...rows].join('\n');
   const filename = 'ptcg-colecao-' + new Date().toISOString().slice(0,10) + '.csv';
 
@@ -962,9 +963,15 @@ function processCSVText(csvText) {
   }
 }
 
-// Chamado pela ponte Android após o usuário escolher o arquivo
-window.onCSVImported = function(csvText) {
-  processCSVText(csvText);
+// Chamado pela ponte Android — recebe CSV em Base64 para evitar problemas de encoding
+window.onCSVImported = function(base64) {
+  try {
+    const csvText = decodeURIComponent(escape(atob(base64)));
+    processCSVText(csvText);
+  } catch(e) {
+    // fallback: tenta usar diretamente se não for base64
+    processCSVText(base64);
+  }
 };
 
 function importCollectionCSV(file) {
