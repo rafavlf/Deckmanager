@@ -28,5 +28,5 @@ android {
 }
 
 dependencies {
-    // Sem dependências externas — app puro WebView
+    implementation 'androidx.core:core:1.12.0'
 }
