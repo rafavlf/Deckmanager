@@ -1,0 +1,174 @@
+﻿id,name,number
+WHT_001,"Sewaddle",001
+WHT_002,"Swadloon",002
+WHT_003,"Leavanny",003
+WHT_004,"Cottonee",004
+WHT_005,"Whimsicott ex",005
+WHT_006,"Deerling",006
+WHT_007,"Sawsbuck",007
+WHT_008,"Shelmet",008
+WHT_009,"Accelgor",009
+WHT_010,"Virizion",010
+WHT_011,"Tepig",011
+WHT_012,"Pignite",012
+WHT_013,"Emboar",013
+WHT_014,"Pansear",014
+WHT_015,"Simisear",015
+WHT_016,"Litwick",016
+WHT_017,"Lampent",017
+WHT_018,"Chandelure",018
+WHT_019,"Heatmor",019
+WHT_020,"Reshiram ex",020
+WHT_021,"Oshawott",021
+WHT_022,"Dewott",022
+WHT_023,"Samurott",023
+WHT_024,"Basculin",024
+WHT_025,"Ducklett",025
+WHT_026,"Swanna",026
+WHT_027,"Vanillite",027
+WHT_028,"Vanillish",028
+WHT_029,"Vanilluxe",029
+WHT_030,"Keldeo ex",030
+WHT_031,"Blitzle",031
+WHT_032,"Zebstrika",032
+WHT_033,"Joltik",033
+WHT_034,"Galvantula",034
+WHT_035,"Stunfisk",035
+WHT_036,"Woobat",036
+WHT_037,"Swoobat",037
+WHT_038,"Sigilyph",038
+WHT_039,"Yamask",039
+WHT_040,"Cofagrigus",040
+WHT_041,"Gothita",041
+WHT_042,"Gothorita",042
+WHT_043,"Gothitelle",043
+WHT_044,"Frillish",044
+WHT_045,"Jellicent ex",045
+WHT_046,"Roggenrola",046
+WHT_047,"Boldore",047
+WHT_048,"Gigalith",048
+WHT_049,"Sawk",049
+WHT_050,"Archen",050
+WHT_051,"Archeops",051
+WHT_052,"Mienfoo",052
+WHT_053,"Mienshao",053
+WHT_054,"Terrakion",054
+WHT_055,"Purrloin",055
+WHT_056,"Liepard",056
+WHT_057,"Scraggy",057
+WHT_058,"Scrafty",058
+WHT_059,"Trubbish",059
+WHT_060,"Garbodor",060
+WHT_061,"Zorua",061
+WHT_062,"Zoroark",062
+WHT_063,"Vullaby",063
+WHT_064,"Mandibuzz",064
+WHT_065,"Deino",065
+WHT_066,"Zweilous",066
+WHT_067,"Hydreigon ex",067
+WHT_068,"Ferroseed",068
+WHT_069,"Ferrothorn",069
+WHT_070,"Durant",070
+WHT_071,"Druddigon",071
+WHT_072,"Patrat",072
+WHT_073,"Watchog",073
+WHT_074,"Lillipup",074
+WHT_075,"Herdier",075
+WHT_076,"Stoutland",076
+WHT_077,"Bouffalant ex",077
+WHT_078,"Tornadus",078
+WHT_079,"Fóssil Pluma Arcaico",079
+WHT_080,"Bracelete Bravio",080
+WHT_081,"Cheren",081
+WHT_082,"Recuperação de Energia",082
+WHT_083,"Arlequim",083
+WHT_084,"Hilda",084
+WHT_085,"Sucateador de Ferramentas",085
+WHT_086,"Energia de Ignição",086
+WHT_087,"Sewaddle",087
+WHT_088,"Swadloon",088
+WHT_089,"Leavanny",089
+WHT_090,"Cottonee",090
+WHT_091,"Deerling",091
+WHT_092,"Sawsbuck",092
+WHT_093,"Shelmet",093
+WHT_094,"Accelgor",094
+WHT_095,"Virizion",095
+WHT_096,"Tepig",096
+WHT_097,"Pignite",097
+WHT_098,"Emboar",098
+WHT_099,"Pansear",099
+WHT_100,"Simisear",100
+WHT_101,"Litwick",101
+WHT_102,"Lampent",102
+WHT_103,"Chandelure",103
+WHT_104,"Heatmor",104
+WHT_105,"Oshawott",105
+WHT_106,"Dewott",106
+WHT_107,"Samurott",107
+WHT_108,"Basculin",108
+WHT_109,"Ducklett",109
+WHT_110,"Swanna",110
+WHT_111,"Vanillite",111
+WHT_112,"Vanillish",112
+WHT_113,"Vanilluxe",113
+WHT_114,"Blitzle",114
+WHT_115,"Zebstrika",115
+WHT_116,"Joltik",116
+WHT_117,"Galvantula",117
+WHT_118,"Stunfisk",118
+WHT_119,"Woobat",119
+WHT_120,"Swoobat",120
+WHT_121,"Sigilyph",121
+WHT_122,"Yamask",122
+WHT_123,"Cofagrigus",123
+WHT_124,"Gothita",124
+WHT_125,"Gothorita",125
+WHT_126,"Frillish",126
+WHT_127,"Roggenrola",127
+WHT_128,"Boldore",128
+WHT_129,"Gigalith",129
+WHT_130,"Sawk",130
+WHT_131,"Archen",131
+WHT_132,"Archeops",132
+WHT_133,"Mienfoo",133
+WHT_134,"Mienshao",134
+WHT_135,"Terrakion",135
+WHT_136,"Purrloin",136
+WHT_137,"Liepard",137
+WHT_138,"Scraggy",138
+WHT_139,"Scrafty",139
+WHT_140,"Trubbish",140
+WHT_141,"Garbodor",141
+WHT_142,"Zorua",142
+WHT_143,"Zoroark",143
+WHT_144,"Vullaby",144
+WHT_145,"Mandibuzz",145
+WHT_146,"Deino",146
+WHT_147,"Zweilous",147
+WHT_148,"Ferroseed",148
+WHT_149,"Ferrothorn",149
+WHT_150,"Durant",150
+WHT_151,"Druddigon",151
+WHT_152,"Patrat",152
+WHT_153,"Watchog",153
+WHT_154,"Lillipup",154
+WHT_155,"Herdier",155
+WHT_156,"Stoutland",156
+WHT_157,"Whimsicott ex",157
+WHT_158,"Reshiram ex",158
+WHT_159,"Keldeo ex",159
+WHT_160,"Jellicent ex",160
+WHT_161,"Hydreigon ex",161
+WHT_162,"Bouffalant ex",162
+WHT_163,"Arlequim",163
+WHT_164,"Hilda",164
+WHT_165,"Whimsicott ex",165
+WHT_166,"Reshiram ex",166
+WHT_167,"Keldeo ex",167
+WHT_168,"Jellicent ex",168
+WHT_169,"Hydreigon ex",169
+WHT_170,"Bouffalant ex",170
+WHT_171,"Hilda",171
+WHT_172,"Victini",172
+WHT_173,"Reshiram ex",173

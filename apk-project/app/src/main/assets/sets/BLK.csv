@@ -1,0 +1,172 @@
+﻿id,name,number
+BLK_001,"Snivy",001
+BLK_002,"Servine",002
+BLK_003,"Serperior ex",003
+BLK_004,"Pansage",004
+BLK_005,"Simisage",005
+BLK_006,"Petilil",006
+BLK_007,"Lilligant",007
+BLK_008,"Maractus",008
+BLK_009,"Karrablast",009
+BLK_010,"Foongus",010
+BLK_011,"Amoonguss",011
+BLK_012,"Victini",012
+BLK_013,"Darumaka",013
+BLK_014,"Darmanitan",014
+BLK_015,"Larvesta",015
+BLK_016,"Volcarona",016
+BLK_017,"Panpour",017
+BLK_018,"Simipour",018
+BLK_019,"Tympole",019
+BLK_020,"Palpitoad",020
+BLK_021,"Seismitoad",021
+BLK_022,"Tirtouga",022
+BLK_023,"Carracosta",023
+BLK_024,"Alomomola",024
+BLK_025,"Cubchoo",025
+BLK_026,"Beartic",026
+BLK_027,"Cryogonal",027
+BLK_028,"Kyurem ex",028
+BLK_029,"Emolga",029
+BLK_030,"Tynamo",030
+BLK_031,"Eelektrik",031
+BLK_032,"Eelektross",032
+BLK_033,"Thundurus",033
+BLK_034,"Zekrom ex",034
+BLK_035,"Munna",035
+BLK_036,"Musharna",036
+BLK_037,"Solosis",037
+BLK_038,"Duosion",038
+BLK_039,"Reuniclus",039
+BLK_040,"Elgyem",040
+BLK_041,"Beheeyem",041
+BLK_042,"Golett",042
+BLK_043,"Golurk",043
+BLK_044,"Meloetta ex",044
+BLK_045,"Drilbur",045
+BLK_046,"Excadrill ex",046
+BLK_047,"Timburr",047
+BLK_048,"Gurdurr",048
+BLK_049,"Conkeldurr",049
+BLK_050,"Throh",050
+BLK_051,"Dwebble",051
+BLK_052,"Crustle",052
+BLK_053,"Landorus",053
+BLK_054,"Venipede",054
+BLK_055,"Whirlipede",055
+BLK_056,"Scolipede",056
+BLK_057,"Sandile",057
+BLK_058,"Krokorok",058
+BLK_059,"Krookodile",059
+BLK_060,"Escavalier",060
+BLK_061,"Klink",061
+BLK_062,"Klang",062
+BLK_063,"Klinklang",063
+BLK_064,"Pawniard",064
+BLK_065,"Bisharp",065
+BLK_066,"Cobalion",066
+BLK_067,"Genesect ex",067
+BLK_068,"Axew",068
+BLK_069,"Fraxure",069
+BLK_070,"Haxorus",070
+BLK_071,"Pidove",071
+BLK_072,"Tranquill",072
+BLK_073,"Unfezant",073
+BLK_074,"Audino",074
+BLK_075,"Minccino",075
+BLK_076,"Cinccino",076
+BLK_077,"Rufflet",077
+BLK_078,"Braviary",078
+BLK_079,"Balão de Ar",079
+BLK_080,"Fóssil Casca Arcaico",080
+BLK_081,"Moeda Energética",081
+BLK_082,"Fennel",082
+BLK_083,"Plano do N",083
+BLK_084,"Pokégear 3.0",084
+BLK_086,"Energia de Prisma",086
+BLK_087,"Snivy",087
+BLK_088,"Servine",088
+BLK_089,"Pansage",089
+BLK_090,"Simisage",090
+BLK_091,"Petilil",091
+BLK_092,"Lilligant",092
+BLK_093,"Maractus",093
+BLK_094,"Karrablast",094
+BLK_095,"Foongus",095
+BLK_096,"Amoonguss",096
+BLK_097,"Darumaka",097
+BLK_098,"Darmanitan",098
+BLK_099,"Larvesta",099
+BLK_100,"Volcarona",100
+BLK_101,"Panpour",101
+BLK_102,"Simipour",102
+BLK_103,"Tympole",103
+BLK_104,"Palpitoad",104
+BLK_105,"Seismitoad",105
+BLK_106,"Tirtouga",106
+BLK_107,"Carracosta",107
+BLK_108,"Alomomola",108
+BLK_109,"Cubchoo",109
+BLK_110,"Beartic",110
+BLK_111,"Cryogonal",111
+BLK_112,"Emolga",112
+BLK_113,"Tynamo",113
+BLK_114,"Eelektrik",114
+BLK_115,"Eelektross",115
+BLK_116,"Munna",116
+BLK_117,"Musharna",117
+BLK_118,"Solosis",118
+BLK_119,"Duosion",119
+BLK_120,"Elgyem",120
+BLK_121,"Beheeyem",121
+BLK_122,"Golett",122
+BLK_123,"Golurk",123
+BLK_124,"Drilbur",124
+BLK_125,"Timburr",125
+BLK_126,"Gurdurr",126
+BLK_127,"Conkeldurr",127
+BLK_128,"Throh",128
+BLK_129,"Dwebble",129
+BLK_130,"Crustle",130
+BLK_131,"Landorus",131
+BLK_132,"Venipede",132
+BLK_133,"Whirlipede",133
+BLK_134,"Scolipede",134
+BLK_135,"Sandile",135
+BLK_136,"Krokorok",136
+BLK_137,"Krookodile",137
+BLK_138,"Escavalier",138
+BLK_139,"Klink",139
+BLK_140,"Klang",140
+BLK_141,"Klinklang",141
+BLK_142,"Pawniard",142
+BLK_143,"Bisharp",143
+BLK_144,"Cobalion",144
+BLK_145,"Axew",145
+BLK_146,"Fraxure",146
+BLK_147,"Haxorus",147
+BLK_148,"Pidove",148
+BLK_149,"Tranquill",149
+BLK_150,"Unfezant",150
+BLK_151,"Audino",151
+BLK_152,"Minccino",152
+BLK_153,"Cinccino",153
+BLK_154,"Rufflet",154
+BLK_155,"Braviary",155
+BLK_156,"Serperior ex",156
+BLK_157,"Kyurem ex",157
+BLK_158,"Zekrom ex",158
+BLK_159,"Meloetta ex",159
+BLK_160,"Excadrill ex",160
+BLK_161,"Genesect ex",161
+BLK_162,"Fennel",162
+BLK_163,"Plano do N",163
+BLK_164,"Serperior ex",164
+BLK_165,"Kyurem ex",165
+BLK_166,"Zekrom ex",166
+BLK_167,"Meloetta ex",167
+BLK_168,"Excadrill ex",168
+BLK_169,"Genesect ex",169
+BLK_170,"Plano do N",170
+BLK_171,"Victini",171
+BLK_172,"Zekrom ex",172

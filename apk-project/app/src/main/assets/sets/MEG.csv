@@ -1,0 +1,189 @@
+id,name,number
+MEG_001,"Bulbasaur",001
+MEG_002,"Ivysaur",002
+MEG_003,"Mega Venusaur ex",003
+MEG_004,"Exeggcute",004
+MEG_005,"Exeggutor",005
+MEG_006,"Tangela",006
+MEG_007,"Tangrowth",007
+MEG_008,"Chikorita",008
+MEG_009,"Bayleef",009
+MEG_010,"Meganium",010
+MEG_011,"Shuckle",011
+MEG_012,"Celebi",012
+MEG_013,"Seedot",013
+MEG_014,"Nuzleaf",014
+MEG_015,"Shiftry",015
+MEG_016,"Nincada",016
+MEG_017,"Ninjask",017
+MEG_018,"Dhelmise",018
+MEG_019,"Vulpix",019
+MEG_020,"Ninetales",020
+MEG_021,"Numel",021
+MEG_022,"Mega Camerupt ex",022
+MEG_023,"Litleo",023
+MEG_024,"Pyroar",024
+MEG_025,"Volcanion",025
+MEG_026,"Scorbunny",026
+MEG_027,"Raboot",027
+MEG_028,"Cinderace",028
+MEG_029,"Sizzlipede",029
+MEG_030,"Centiskorch",030
+MEG_031,"Chi-Yu",031
+MEG_032,"Mantine",032
+MEG_033,"Corphish",033
+MEG_034,"Kyogre",034
+MEG_035,"Snover",035
+MEG_036,"Mega Abomasnow ex",036
+MEG_037,"Clauncher",037
+MEG_038,"Clawitzer",038
+MEG_039,"Sobble",039
+MEG_040,"Drizzile",040
+MEG_041,"Inteleon",041
+MEG_042,"Snom",042
+MEG_043,"Frosmoth",043
+MEG_044,"Eiscue",044
+MEG_045,"Magnemite",045
+MEG_046,"Magneton",046
+MEG_047,"Magnezone",047
+MEG_048,"Raikou",048
+MEG_049,"Electrike",049
+MEG_050,"Mega Manectric ex",050
+MEG_051,"Pachirisu",051
+MEG_052,"Helioptile",052
+MEG_053,"Heliolisk",053
+MEG_054,"Abra",054
+MEG_055,"Kadabra",055
+MEG_056,"Alakazam",056
+MEG_057,"Jynx",057
+MEG_058,"Ralts",058
+MEG_059,"Kirlia",059
+MEG_060,"Mega Gardevoir ex",060
+MEG_061,"Shedinja",061
+MEG_062,"Spoink",062
+MEG_063,"Grumpig",063
+MEG_064,"Xerneas",064
+MEG_065,"Greavard",065
+MEG_066,"Houndstone",066
+MEG_067,"Gimmighoul",067
+MEG_068,"Sandshrew",068
+MEG_069,"Sandslash",069
+MEG_070,"Onix",070
+MEG_071,"Tyrogue",071
+MEG_072,"Makuhita",072
+MEG_073,"Hariyama",073
+MEG_074,"Lunatone",074
+MEG_075,"Solrock",075
+MEG_076,"Riolu",076
+MEG_077,"Mega Lucario ex",077
+MEG_078,"Croagunk",078
+MEG_079,"Toxicroak",079
+MEG_080,"Marshadow",080
+MEG_081,"Stonjourner",081
+MEG_082,"Nacli",082
+MEG_083,"Naclstack",083
+MEG_084,"Garganacl",084
+MEG_085,"Crawdaunt",085
+MEG_086,"Mega Absol ex",086
+MEG_087,"Spiritomb",087
+MEG_088,"Yveltal",088
+MEG_089,"Nickit",089
+MEG_090,"Thievul",090
+MEG_091,"Shroodle",091
+MEG_092,"Grafaiai",092
+MEG_093,"Steelix",093
+MEG_094,"Mega Mawile ex",094
+MEG_095,"Dialga",095
+MEG_096,"Tinkatink",096
+MEG_097,"Tinkatuff",097
+MEG_098,"Tinkaton",098
+MEG_099,"Gholdengo",099
+MEG_100,"Mega Latias ex",100
+MEG_101,"Latios",101
+MEG_102,"Spearow",102
+MEG_103,"Fearow",103
+MEG_104,"Mega Kangaskhan ex",104
+MEG_105,"Delibird",105
+MEG_106,"Miltank",106
+MEG_107,"Buneary",107
+MEG_108,"Lopunny",108
+MEG_109,"Yungoos",109
+MEG_110,"Gumshoos",110
+MEG_111,"Stufful",111
+MEG_112,"Bewear",112
+MEG_113,"Traquinagem da Acerola",113
+MEG_114,"Ordem da Chefia",114
+MEG_115,"Substituição de Energia",115
+MEG_116,"Gongo de Luta",116
+MEG_117,"Floresta da Vitalidade",117
+MEG_118,"Defensor Férreo",118
+MEG_119,"Determinação da Lílian",119
+MEG_120,"Barganha do Ten. Surge",120
+MEG_121,"Megassinal",121
+MEG_122,"Jardim Misterioso",122
+MEG_123,"Dama do Centro Pokémon",123
+MEG_124,"Suplemento Premium Pro",124
+MEG_125,"Doce Raro",125
+MEG_126,"Repelente",126
+MEG_127,"Ruínas Arriscadas",127
+MEG_128,"Relógio Insólito",128
+MEG_129,"Praia de Surfista",129
+MEG_130,"Substituição",130
+MEG_131,"Ultra Bola",131
+MEG_132,"Compaixão do Wally",132
+MEG_133,"Bulbasaur",133
+MEG_134,"Ivysaur",134
+MEG_135,"Exeggutor",135
+MEG_136,"Shuckle",136
+MEG_137,"Ninjask",137
+MEG_138,"Vulpix",138
+MEG_139,"Litleo",139
+MEG_140,"Snover",140
+MEG_141,"Clawitzer",141
+MEG_142,"Inteleon",142
+MEG_143,"Helioptile",143
+MEG_144,"Shedinja",144
+MEG_145,"Houndstone",145
+MEG_146,"Marshadow",146
+MEG_147,"Garganacl",147
+MEG_148,"Spiritomb",148
+MEG_149,"Shroodle",149
+MEG_150,"Steelix",150
+MEG_151,"Spearow",151
+MEG_152,"Delibird",152
+MEG_153,"Gumshoos",153
+MEG_154,"Stufful",154
+MEG_155,"Mega Venusaur ex",155
+MEG_156,"Mega Camerupt ex",156
+MEG_157,"Mega Abomasnow ex",157
+MEG_158,"Mega Manectric ex",158
+MEG_159,"Mega Gardevoir ex",159
+MEG_160,"Mega Lucario ex",160
+MEG_161,"Mega Absol ex",161
+MEG_162,"Mega Mawile ex",162
+MEG_163,"Mega Latias ex",163
+MEG_164,"Mega Kangaskhan ex",164
+MEG_165,"Traquinagem da Acerola",165
+MEG_166,"Balão de Ar",166
+MEG_167,"Poffin de Colega",167
+MEG_168,"Gongo de Luta",168
+MEG_169,"Determinação da Lílian",169
+MEG_170,"Barganha do Ten. Surge",170
+MEG_171,"Megassinal",171
+MEG_172,"Jardim Misterioso",172
+MEG_173,"Maca Noturna",173
+MEG_174,"Suplemento Premium Pro",174
+MEG_175,"Doce Raro",175
+MEG_176,"Compaixão do Wally",176
+MEG_177,"Mega Venusaur ex",177
+MEG_178,"Mega Gardevoir ex",178
+MEG_179,"Mega Lucario ex",179
+MEG_180,"Mega Absol ex",180
+MEG_181,"Mega Latias ex",181
+MEG_182,"Mega Kangaskhan ex",182
+MEG_183,"Traquinagem da Acerola",183
+MEG_184,"Determinação da Lílian",184
+MEG_185,"Barganha do Ten. Surge",185
+MEG_186,"Compaixão do Wally",186
+MEG_187,"Mega Gardevoir ex",187
+MEG_188,"Mega Lucario ex",188

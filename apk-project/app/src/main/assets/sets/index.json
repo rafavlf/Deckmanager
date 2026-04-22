@@ -1,0 +1,18 @@
+[
+  {"sigla":"SSP","name":"Fagulhas Impetuosas","date":"2024-11-08","thresholds":{"basic":182,"complete":209}},
+  {"sigla":"SCR","name":"Coroa Estelar","date":"2024-09-13","thresholds":{"basic":142,"complete":172}},
+  {"sigla":"SFA","name":"Fábulas Nebulosas","date":"2024-08-02","thresholds":{"basic":64,"complete":91}},
+  {"sigla":"PRE","name":"Evoluções Prismáticas","date":"2024-08-01","thresholds":{"basic":125,"complete":162}},
+  {"sigla":"DRI","name":"Rivais Predestinados","date":"2024-06-01","thresholds":{"basic":160,"complete":215}},
+  {"sigla":"TWM","name":"Máscaras do Crepúsculo","date":"2024-05-24","thresholds":{"basic":166,"complete":206}},
+  {"sigla":"JTG","name":"Amigos de Jornada","date":"2024-05-10","thresholds":{"basic":130,"complete":165}},
+  {"sigla":"POR","name":"Equilíbrio Perfeito","date":"2024-03-25","thresholds":{"basic":88,"complete":117}},
+  {"sigla":"TEF","name":"Forças Temporais","date":"2024-03-22","thresholds":{"basic":157,"complete":162}},
+  {"sigla":"PAF","name":"Destinos de Paldea","date":"2024-01-26","thresholds":{"basic":91,"complete":245}},
+  {"sigla":"BLK","name":"Raio Preto","date":"2023-12-15","thresholds":{"basic":115,"complete":155}},
+  {"sigla":"WHT","name":"Fogo Branco","date":"2023-12-15","thresholds":{"basic":115,"complete":157}},
+  {"sigla":"ASC","name":"Heróis Excelsos","date":"2023-09-22","thresholds":{"basic":217,"complete":264}},
+  {"sigla":"MEG","name":"Megaevolução","date":"2023-01-01","thresholds":{"basic":132,"complete":165}},
+  {"sigla":"MEP","name":"Mega Evolution Promos","thresholds":{"basic":31,"complete":31}},
+  {"sigla":"PFL","name":"Fogo Fantasmagórico","date":"2014-11-05","thresholds":{"basic":84,"complete":124}}
+]

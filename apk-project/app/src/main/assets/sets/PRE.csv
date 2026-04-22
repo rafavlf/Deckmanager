@@ -1,0 +1,181 @@
+﻿id,name,number
+PRE_001,"Exeggcute",001
+PRE_002,"Exeggutor",002
+PRE_003,"Pinsir",003
+PRE_004,"Budew",004
+PRE_005,"Leafeon",005
+PRE_006,"Leafeon ex",006
+PRE_007,"Cottonee",007
+PRE_008,"Whimsicott",008
+PRE_009,"Applin",009
+PRE_010,"Dipplin",010
+PRE_011,"Hydrapple ex",011
+PRE_012,"Ogerpon Máscara Turquesa ex",012
+PRE_013,"Flareon",013
+PRE_014,"Flareon ex",014
+PRE_015,"Litleo",015
+PRE_016,"Pyroar",016
+PRE_017,"Ogerpon Máscara Fornalha ex",017
+PRE_018,"Slowpoke",018
+PRE_019,"Slowking",019
+PRE_020,"Goldeen",020
+PRE_021,"Seaking",021
+PRE_022,"Vaporeon",022
+PRE_023,"Vaporeon ex",023
+PRE_024,"Suicune",024
+PRE_025,"Glaceon",025
+PRE_026,"Glaceon ex",026
+PRE_027,"Ogerpon Máscara Nascente ex",027
+PRE_028,"Pikachu ex",028
+PRE_029,"Jolteon",029
+PRE_030,"Jolteon ex",030
+PRE_031,"Mãos Férreas ex",031
+PRE_032,"Espinhos Férreos ex",032
+PRE_033,"Espeon",033
+PRE_034,"Espeon ex",034
+PRE_035,"Duskull",035
+PRE_036,"Dusclops",036
+PRE_037,"Dusknoir",037
+PRE_038,"Spritzee",038
+PRE_039,"Aromatisse",039
+PRE_040,"Sylveon",040
+PRE_041,"Sylveon ex",041
+PRE_042,"Cauda Brado",042
+PRE_043,"Juba Sopro",043
+PRE_044,"Munkidori",044
+PRE_045,"Fezandipiti",045
+PRE_046,"Rocha Férrea",046
+PRE_047,"Larvitar",047
+PRE_048,"Pupitar",048
+PRE_049,"Groudon",049
+PRE_050,"Riolu",050
+PRE_051,"Lucario ex",051
+PRE_052,"Hippopotas",052
+PRE_053,"Hippowdon",053
+PRE_054,"Ursaluna Lua Sangrenta",054
+PRE_055,"Presa Grande",055
+PRE_056,"Choque Areia ex",056
+PRE_057,"Okidogi",057
+PRE_058,"Ogerpon Máscara Alicerce ex",058
+PRE_059,"Umbreon",059
+PRE_060,"Umbreon ex",060
+PRE_061,"Sneasel",061
+PRE_062,"Houndour",062
+PRE_063,"Houndoom",063
+PRE_064,"Tyranitar ex",064
+PRE_065,"Lua Estrondo",065
+PRE_066,"Bronzor",066
+PRE_067,"Bronzong",067
+PRE_068,"Heatran",068
+PRE_069,"Duraludon",069
+PRE_070,"Archaludon",070
+PRE_071,"Dreepy",071
+PRE_072,"Drakloak",072
+PRE_073,"Dragapult ex",073
+PRE_074,"Eevee",074
+PRE_075,"Eevee ex",075
+PRE_076,"Snorlax ex",076
+PRE_077,"Hoothoot",077
+PRE_078,"Noctowl",078
+PRE_079,"Dunsparce",079
+PRE_080,"Dudunsparce",080
+PRE_081,"Miltank",081
+PRE_082,"Lugia ex",082
+PRE_083,"Buneary",083
+PRE_084,"Lopunny",084
+PRE_085,"Rotom Ventilador",085
+PRE_086,"Regigigas",086
+PRE_087,"Shaymin",087
+PRE_088,"Furfrou",088
+PRE_089,"Hawlucha",089
+PRE_090,"Noibat",090
+PRE_091,"Noivern ex",091
+PRE_092,"Terapagos ex",092
+PRE_093,"Amarílis",093
+PRE_094,"Abismo da Área Zero",094
+PRE_095,"Moti Vinculante",095
+PRE_096,"Treino de Faixa Preta",096
+PRE_097,"Treino de Faixa Preta",097
+PRE_098,"Treino de Faixa Preta",098
+PRE_099,"Treino de Faixa Preta",099
+PRE_100,"Urzy",100
+PRE_101,"Poffin de Colega",101
+PRE_102,"Kit Caça-inseto",102
+PRE_103,"Carmine",103
+PRE_104,"Decodificação da Criptomaníaca",104
+PRE_105,"Plínio",105
+PRE_106,"Recipiente Terrestre",106
+PRE_107,"Liderança do Explorador",107
+PRE_108,"Praça de Festas",108
+PRE_109,"Amigos em Paldea",109
+PRE_110,"Trompete de Vidro",110
+PRE_111,"Fruta Meraçá",111
+PRE_112,"Dom Secreto da Janine",112
+PRE_113,"Kiran",113
+PRE_114,"Tarsila",114
+PRE_115,"Talento do Lauro",115
+PRE_116,"Vara de Pescar Max",116
+PRE_117,"Cinturão Máximo",117
+PRE_118,"Máscara do Ogro",118
+PRE_119,"Pegador Superior",119
+PRE_120,"Vitalidade da Professora Arka",120
+PRE_121,"Hipótese do Professor Turo",121
+PRE_122,"Pesquisa de Professores",122
+PRE_123,"Pesquisa de Professores",123
+PRE_124,"Pesquisa de Professores",124
+PRE_125,"Pesquisa de Professores",125
+PRE_126,"Skate de Resgate",126
+PRE_127,"Roto-bastão",127
+PRE_128,"Recolhida Ciclone",128
+PRE_129,"Cristal Cintilante",129
+PRE_130,"Radar Tecnológico",130
+PRE_131,"Rastreador de Tesouros",131
+PRE_132,"Amarílis",132
+PRE_133,"Érico",133
+PRE_134,"Érico",134
+PRE_135,"Brás",135
+PRE_136,"Êri",136
+PRE_137,"Amigos em Paldea",137
+PRE_138,"Giacomo",138
+PRE_139,"Talento do Lauro",139
+PRE_140,"Mélia",140
+PRE_141,"Ortega",141
+PRE_142,"Moira",142
+PRE_143,"Tomila",143
+PRE_144,"Leafeon ex",144
+PRE_145,"Ogerpon Máscara Turquesa ex",145
+PRE_146,"Flareon ex",146
+PRE_147,"Ceruledge ex",147
+PRE_148,"Ogerpon Máscara Fornalha ex",148
+PRE_149,"Vaporeon ex",149
+PRE_150,"Glaceon ex",150
+PRE_151,"Palafin ex",151
+PRE_152,"Ogerpon Máscara Nascente ex",152
+PRE_153,"Jolteon ex",153
+PRE_154,"Mãos Férreas ex",154
+PRE_155,"Espeon ex",155
+PRE_156,"Sylveon ex",156
+PRE_157,"Valentia Férrea ex",157
+PRE_158,"Chifres Férreos ex",158
+PRE_159,"Choque Areia ex",159
+PRE_160,"Ogerpon Máscara Alicerce ex",160
+PRE_161,"Umbreon ex",161
+PRE_162,"Lua Estrondo ex",162
+PRE_163,"Pecharunt ex",163
+PRE_164,"Gholdengo ex",164
+PRE_165,"Dragapult ex",165
+PRE_166,"Raio Fúria ex",166
+PRE_167,"Eevee ex",167
+PRE_168,"Ursaluna Lua Sangrenta ex",168
+PRE_169,"Terapagos ex",169
+PRE_170,"Amarílis",170
+PRE_171,"Plínio",171
+PRE_172,"Drayton",172
+PRE_173,"Dom Secreto da Janine",173
+PRE_174,"Kiran",174
+PRE_175,"Tarsila",175
+PRE_176,"Folhas Férreas ex",176
+PRE_177,"Ogerpon Máscara Turquesa ex",177
+PRE_178,"Onda Ando ex",178
+PRE_179,"Pikachu ex",179
+PRE_180,"Terapagos ex",180

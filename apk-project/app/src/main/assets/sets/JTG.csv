@@ -1,0 +1,191 @@
+﻿id,name,number
+JTG_001,"Caterpie",001
+JTG_002,"Metapod",002
+JTG_003,"Butterfree",003
+JTG_004,"Paras",004
+JTG_005,"Parasect",005
+JTG_006,"Petilil",006
+JTG_007,"Lilligant",007
+JTG_008,"Maractus",008
+JTG_009,"Karrablast",009
+JTG_010,"Foongus",010
+JTG_011,"Amoonguss ex",011
+JTG_012,"Shelmet",012
+JTG_013,"Accelgor",013
+JTG_014,"Durant",014
+JTG_015,"Virizion",015
+JTG_016,"Sprigatito",016
+JTG_017,"Floragato",017
+JTG_018,"Meowscarada",018
+JTG_019,"Nymble",019
+JTG_020,"Magmar",020
+JTG_021,"Magmortar",021
+JTG_022,"Torchic",022
+JTG_023,"Combusken",023
+JTG_024,"Blaziken ex",024
+JTG_025,"Torkoal",025
+JTG_026,"Darumaka do N",026
+JTG_027,"Darmanitan do N",027
+JTG_028,"Larvesta",028
+JTG_029,"Volcarona",029
+JTG_030,"Reshiram ex",030
+JTG_031,"Volcanion ex",031
+JTG_032,"Articuno",032
+JTG_033,"Remoraid",033
+JTG_034,"Octillery",034
+JTG_035,"Lotad",035
+JTG_036,"Lombre",036
+JTG_037,"Ludicolo",037
+JTG_038,"Wingull",038
+JTG_039,"Pelipper",039
+JTG_040,"Wailmer",040
+JTG_041,"Wailord",041
+JTG_042,"Regice",042
+JTG_043,"Veluza ex",043
+JTG_044,"Geodude de Alola",044
+JTG_045,"Graveler de Alola",045
+JTG_046,"Golem de Alola",046
+JTG_047,"Voltorb da Kissera",047
+JTG_048,"Electrode da Kissera",048
+JTG_049,"Joltik do N",049
+JTG_050,"Togedemaru",050
+JTG_051,"Tapu Koko ex",051
+JTG_052,"Tadbulb da Kissera",052
+JTG_053,"Bellibolt ex da Kissera",053
+JTG_054,"Wattrel da Kissera",054
+JTG_055,"Kilowattrel da Kissera",055
+JTG_056,"Clefairy ex da Lílian",056
+JTG_057,"Marowak de Alola",057
+JTG_058,"Mr. Mime",058
+JTG_059,"Shuppet",059
+JTG_060,"Banette",060
+JTG_061,"Beldum",061
+JTG_062,"Metang",062
+JTG_063,"Metagross",063
+JTG_064,"Sigilyph do N",064
+JTG_065,"Oricorio",065
+JTG_066,"Cutiefly da Lílian",066
+JTG_067,"Ribombee da Lílian",067
+JTG_068,"Comfey da Lílian",068
+JTG_069,"Mimikyu ex",069
+JTG_070,"Dhelmise",070
+JTG_071,"Impidimp",071
+JTG_072,"Morgrem",072
+JTG_073,"Grimmsnarl",073
+JTG_074,"Milcery",074
+JTG_075,"Alcremie ex",075
+JTG_076,"Cubone",076
+JTG_077,"Swinub",077
+JTG_078,"Piloswine",078
+JTG_079,"Mamoswine ex",079
+JTG_080,"Larvitar",080
+JTG_081,"Pupitar",081
+JTG_082,"Regirock",082
+JTG_083,"Pancham",083
+JTG_084,"Rockruff",084
+JTG_085,"Lycanroc",085
+JTG_086,"Silicobra do Lupo",086
+JTG_087,"Sandaconda do Lupo",087
+JTG_088,"Toedscool",088
+JTG_089,"Toedscruel",089
+JTG_090,"Klawf",090
+JTG_091,"Koffing",091
+JTG_092,"Weezing",092
+JTG_093,"Wooper de Paldea",093
+JTG_094,"Clodsire de Paldea ex",094
+JTG_095,"Tyranitar",095
+JTG_096,"Purrloin do N",096
+JTG_097,"Zorua do N",097
+JTG_098,"Zoroark ex do N",098
+JTG_099,"Pangoro",099
+JTG_100,"Lokix",100
+JTG_101,"Bombirdier",101
+JTG_102,"Escavalier",102
+JTG_103,"Klink do N",103
+JTG_104,"Klang do N",104
+JTG_105,"Klinklang do N",105
+JTG_106,"Stunfisk de Galar",106
+JTG_107,"Magearna",107
+JTG_108,"Corviknight do Lupo",108
+JTG_109,"Cufant",109
+JTG_110,"Copperajah",110
+JTG_111,"Zacian ex do Lupo",111
+JTG_112,"Bagon",112
+JTG_113,"Shelgon",113
+JTG_114,"Salamence ex",114
+JTG_115,"Druddigon",115
+JTG_116,"Reshiram do N",116
+JTG_117,"Snorlax do Lupo",117
+JTG_118,"Sentret",118
+JTG_119,"Furret",119
+JTG_120,"Dunsparce",120
+JTG_121,"Dudunsparce ex",121
+JTG_122,"Kecleon",122
+JTG_123,"Tropius",123
+JTG_124,"Audino",124
+JTG_125,"Minccino",125
+JTG_126,"Cinccino",126
+JTG_127,"Noibat",127
+JTG_128,"Noivern",128
+JTG_129,"Komala",129
+JTG_130,"Drampa",130
+JTG_131,"Skwovet",131
+JTG_132,"Greedent",132
+JTG_133,"Rookidee do Lupo",133
+JTG_134,"Corvisquire do Lupo",134
+JTG_135,"Wooloo do Lupo",135
+JTG_136,"Dubwool do Lupo",136
+JTG_137,"Cramorant",137
+JTG_138,"Cramorant do Lupo",138
+JTG_139,"Lechonk",139
+JTG_140,"Oinkologne",140
+JTG_141,"Squawkabilly",141
+JTG_142,"Abílio e Onara",142
+JTG_143,"Treino de Faixa Preta",143
+JTG_144,"Treino de Faixa Preta",144
+JTG_145,"Treino de Faixa Preta",145
+JTG_146,"Busca do Brock",146
+JTG_147,"Bolsa do Lupo",147
+JTG_148,"Faixa da Escolha do Lupo",148
+JTG_149,"Espírito de Luta da Iris",149
+JTG_150,"Levincia",150
+JTG_151,"Pérola da Lílian",151
+JTG_152,"Castelo do N",152
+JTG_153,"PP Up do N",153
+JTG_154,"Postwick",154
+JTG_155,"Pesquisa de Professores",155
+JTG_156,"Ingresso Resgatável",156
+JTG_157,"Baderneiro",157
+JTG_158,"Superpoção",158
+JTG_159,"Energia Espinhosa",159
+JTG_160,"Maractus",160
+JTG_161,"Articuno",161
+JTG_162,"Wailord",162
+JTG_163,"Kilowattrel da Kissera",163
+JTG_164,"Ribombee da Lílian",164
+JTG_165,"Swinub",165
+JTG_166,"Lycanroc",166
+JTG_167,"Reshiram do N",167
+JTG_168,"Furret",168
+JTG_169,"Noibat",169
+JTG_170,"Wooloo do Lupo",170
+JTG_171,"Volcanion ex",171
+JTG_172,"Bellibolt ex da Kissera",172
+JTG_173,"Clefairy ex da Lílian",173
+JTG_174,"Mamoswine ex",174
+JTG_175,"Zoroark ex do N",175
+JTG_176,"Zacian ex do Lupo",176
+JTG_177,"Salamence ex",177
+JTG_178,"Dudunsparce ex",178
+JTG_179,"Busca do Brock",179
+JTG_180,"Espírito de Luta da Iris",180
+JTG_181,"Baderneiro",181
+JTG_182,"Volcanion ex",182
+JTG_183,"Bellibolt ex da Kissera",183
+JTG_184,"Clefairy ex da Lílian",184
+JTG_185,"Zoroark ex do N",185
+JTG_186,"Zacian ex do Lupo",186
+JTG_187,"Salamence ex",187
+JTG_188,"Bellibolt ex da Kissera",188
+JTG_189,"Zoroark ex do N",189
+JTG_190,"Energia Espinhosa",190

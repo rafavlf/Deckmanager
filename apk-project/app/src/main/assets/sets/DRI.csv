@@ -1,0 +1,243 @@
+id,name,number
+DRI_001,"Pinsir do Ethan",001
+DRI_002,"Yanma",002
+DRI_003,"Yanmega ex",003
+DRI_004,"Pineco",004
+DRI_005,"Shroomish",005
+DRI_006,"Breloom",006
+DRI_007,"Roselia da Cíntia",007
+DRI_008,"Roserade da Cíntia",008
+DRI_009,"Rotom Corte",009
+DRI_010,"Shaymin",010
+DRI_011,"Dwebble",011
+DRI_012,"Crustle",012
+DRI_013,"Fomantis",013
+DRI_014,"Lurantis",014
+DRI_015,"Blipbug da Equipe Rocket",015
+DRI_016,"Applin",016
+DRI_017,"Dipplin",017
+DRI_018,"Hydrapple",018
+DRI_019,"Tarountula da Equipe Rocket",019
+DRI_020,"Spidops da Equipe Rocket",020
+DRI_021,"Smoliv",021
+DRI_022,"Dolliv",022
+DRI_023,"Arboliva ex",023
+DRI_024,"Rellor",024
+DRI_025,"Rabsca ex",025
+DRI_026,"Ogerpon Máscara Turquesa",026
+DRI_027,"Growlithe",027
+DRI_028,"Arcanine",028
+DRI_029,"Ponyta",029
+DRI_030,"Rapidash",030
+DRI_031,"Moltres ex da Equipe Rocket",031
+DRI_032,"Cyndaquil do Ethan",032
+DRI_033,"Quilava do Ethan",033
+DRI_034,"Typhlosion do Ethan",034
+DRI_035,"Slugma do Ethan",035
+DRI_036,"Magcargo do Ethan",036
+DRI_037,"Houndour da Equipe Rocket",037
+DRI_038,"Houndoom da Equipe Rocket",038
+DRI_039,"Ho-Oh ex do Ethan",039
+DRI_040,"Torchic",040
+DRI_041,"Combusken",041
+DRI_042,"Blaziken",042
+DRI_043,"Rotom Calor",043
+DRI_044,"Ogerpon Máscara Fornalha",044
+DRI_045,"Psyduck da Misty",045
+DRI_046,"Staryu da Misty",046
+DRI_047,"Starmie da Misty",047
+DRI_048,"Magikarp da Misty",048
+DRI_049,"Gyarados da Misty",049
+DRI_050,"Lapras da Misty",050
+DRI_051,"Articuno da Equipe Rocket",051
+DRI_052,"Feebas da Cíntia",052
+DRI_053,"Milotic da Cíntia",053
+DRI_054,"Clamperl",054
+DRI_055,"Huntail",055
+DRI_056,"Gorebyss",056
+DRI_057,"Buizel",057
+DRI_058,"Floatzel",058
+DRI_059,"Snover",059
+DRI_060,"Abomasnow",060
+DRI_061,"Rotom Lavagem",061
+DRI_062,"Arrokuda",062
+DRI_063,"Barraskewda",063
+DRI_064,"Cetoddle",064
+DRI_065,"Cetitan ex",065
+DRI_066,"Dondozo ex",066
+DRI_067,"Ogerpon Máscara Nascente",067
+DRI_068,"Electabuzz",068
+DRI_069,"Electivire ex",069
+DRI_070,"Zapdos da Equipe Rocket",070
+DRI_071,"Pichu do Ethan",071
+DRI_072,"Mareep da Equipe Rocket",072
+DRI_073,"Flaaffy da Equipe Rocket",073
+DRI_074,"Ampharos da Equipe Rocket",074
+DRI_075,"Electrike",075
+DRI_076,"Manectric",076
+DRI_077,"Rotom",077
+DRI_078,"Zeraora",078
+DRI_079,"Drowzee da Equipe Rocket",079
+DRI_080,"Hypno da Equipe Rocket",080
+DRI_081,"Mewtwo ex da Equipe Rocket",081
+DRI_082,"Wobbuffet da Equipe Rocket",082
+DRI_083,"Baltoy do Steven",083
+DRI_084,"Claydol do Steven",084
+DRI_085,"Chingling da Equipe Rocket",085
+DRI_086,"Carbink do Steven",086
+DRI_087,"Mimikyu da Equipe Rocket",087
+DRI_088,"Dottler da Equipe Rocket",088
+DRI_089,"Orbeetle da Equipe Rocket",089
+DRI_090,"Mankey",090
+DRI_091,"Primeape",091
+DRI_092,"Annihilape",092
+DRI_093,"Sudowoodo do Ethan",093
+DRI_094,"Larvitar da Equipe Rocket",094
+DRI_095,"Pupitar da Equipe Rocket",095
+DRI_096,"Tyranitar da Equipe Rocket",096
+DRI_097,"Nosepass",097
+DRI_098,"Probopass",098
+DRI_099,"Meditite",099
+DRI_100,"Medicham",100
+DRI_101,"Regirock ex",101
+DRI_102,"Gible da Cíntia",102
+DRI_103,"Gabite da Cíntia",103
+DRI_104,"Garchomp ex da Cíntia",104
+DRI_105,"Hippopotas",105
+DRI_106,"Hippowdon",106
+DRI_107,"Mudbray",107
+DRI_108,"Mudsdale",108
+DRI_109,"Toedscool do Arven",109
+DRI_110,"Toedscruel do Arven",110
+DRI_111,"Ogerpon Máscara Alicerce",111
+DRI_112,"Ekans da Equipe Rocket",112
+DRI_113,"Arbok da Equipe Rocket",113
+DRI_114,"Nidoran♀ da Equipe Rocket",114
+DRI_115,"Nidorina da Equipe Rocket",115
+DRI_116,"Nidoqueen da Equipe Rocket",116
+DRI_117,"Nidoran♂ da Equipe Rocket",117
+DRI_118,"Nidorino da Equipe Rocket",118
+DRI_119,"Nidoking ex da Equipe Rocket",119
+DRI_120,"Zubat da Equipe Rocket",120
+DRI_121,"Golbat da Equipe Rocket",121
+DRI_122,"Crobat ex da Equipe Rocket",122
+DRI_123,"Grimer da Equipe Rocket",123
+DRI_124,"Muk da Equipe Rocket",124
+DRI_125,"Koffing da Equipe Rocket",125
+DRI_126,"Weezing da Equipe Rocket",126
+DRI_127,"Murkrow da Equipe Rocket",127
+DRI_128,"Sneasel da Equipe Rocket",128
+DRI_129,"Spiritomb da Cíntia",129
+DRI_130,"Purrloin da Marine",130
+DRI_131,"Liepard da Marine",131
+DRI_132,"Scraggy da Marine",132
+DRI_133,"Scrafty da Marine",133
+DRI_134,"Impidimp da Marine",134
+DRI_135,"Morgrem da Marine",135
+DRI_136,"Grimmsnarl ex da Marine",136
+DRI_137,"Morpeko da Marine",137
+DRI_138,"Maschiff do Arven",138
+DRI_139,"Mabosstiff ex do Arven",139
+DRI_140,"Forretress",140
+DRI_141,"Skarmory",141
+DRI_142,"Skarmory do Steven",142
+DRI_143,"Beldum do Steven",143
+DRI_144,"Metang do Steven",144
+DRI_145,"Metagross ex do Steven",145
+DRI_146,"Zamazenta",146
+DRI_147,"Rattata da Equipe Rocket",147
+DRI_148,"Raticate da Equipe Rocket",148
+DRI_149,"Meowth da Equipe Rocket",149
+DRI_150,"Persian ex da Equipe Rocket",150
+DRI_151,"Kangaskhan",151
+DRI_152,"Tauros",152
+DRI_153,"Porygon da Equipe Rocket",153
+DRI_154,"Porygon2 da Equipe Rocket",154
+DRI_155,"Porygon-Z da Equipe Rocket",155
+DRI_156,"Taillow",156
+DRI_157,"Swellow",157
+DRI_158,"Skwovet do Arven",158
+DRI_159,"Greedent do Arven",159
+DRI_160,"Squawkabilly",160
+DRI_161,"Sanduíche do Arven",161
+DRI_162,"Peso de Poder da Cíntia",162
+DRI_163,"Hype da Emcee",163
+DRI_164,"Reciclador de Energia",164
+DRI_165,"Aventura do Ethan",165
+DRI_166,"Caverna de Granito",166
+DRI_168,"Cinza Sagrada",168
+DRI_169,"Ginásio de Spikemuth",169
+DRI_170,"Apollo da Equipe Rocket",170
+DRI_171,"Athena da Equipe Rocket",171
+DRI_172,"Azucrinabot da Equipe Rocket",172
+DRI_173,"Fábrica da Equipe Rocket",173
+DRI_174,"Giovanni da Equipe Rocket",174
+DRI_175,"Grande Bola da Equipe Rocket",175
+DRI_176,"Petrel da Equipe Rocket",176
+DRI_177,"Próton da Equipe Rocket",177
+DRI_178,"Transmissor da Equipe Rocket",178
+DRI_179,"Bomba de Risco da Equipe Rocket",179
+DRI_180,"Torre de Vigia da Equipe Rocket",180
+DRI_181,"Máquina de MT",181
+DRI_182,"Energia da Equipe Rocket",182
+DRI_183,"Yanma",183
+DRI_184,"Roserade da Cíntia",184
+DRI_185,"Shaymin",185
+DRI_186,"Crustle",186
+DRI_187,"Spidops da Equipe Rocket",187
+DRI_188,"Hydrapple",188
+DRI_189,"Rapidash",189
+DRI_190,"Typhlosion do Ethan",190
+DRI_191,"Houndoom da Equipe Rocket",191
+DRI_192,"Blaziken",192
+DRI_193,"Psyduck da Misty",193
+DRI_194,"Lapras da Misty",194
+DRI_195,"Clamperl",195
+DRI_196,"Electrike",196
+DRI_197,"Rotom",197
+DRI_198,"Orbeetle da Equipe Rocket",198
+DRI_199,"Weezing da Equipe Rocket",199
+DRI_200,"Murkrow da Equipe Rocket",200
+DRI_201,"Zamazenta",201
+DRI_202,"Raticate da Equipe Rocket",202
+DRI_203,"Meowth da Equipe Rocket",203
+DRI_204,"Kangaskhan",204
+DRI_205,"Greedent do Arven",205
+DRI_206,"Yanmega ex",206
+DRI_207,"Arboliva ex",207
+DRI_208,"Moltres ex da Equipe Rocket",208
+DRI_209,"Ho-Oh ex do Ethan",209
+DRI_210,"Cetitan ex",210
+DRI_211,"Dondozo ex",211
+DRI_212,"Electivire ex",212
+DRI_213,"Mewtwo ex da Equipe Rocket",213
+DRI_214,"Regirock ex",214
+DRI_215,"Garchomp ex da Cíntia",215
+DRI_216,"Nidoking ex da Equipe Rocket",216
+DRI_217,"Crobat ex da Equipe Rocket",217
+DRI_218,"Mabosstiff ex do Arven",218
+DRI_219,"Persian ex da Equipe Rocket",219
+DRI_220,"Hype da Emcee",220
+DRI_221,"Aventura do Ethan",221
+DRI_223,"Apollo da Equipe Rocket",223
+DRI_224,"Athena da Equipe Rocket",224
+DRI_225,"Giovanni da Equipe Rocket",225
+DRI_226,"Petrel da Equipe Rocket",226
+DRI_227,"Próton da Equipe Rocket",227
+DRI_228,"Yanmega ex",228
+DRI_229,"Moltres ex da Equipe Rocket",229
+DRI_230,"Ho-Oh ex do Ethan",230
+DRI_231,"Mewtwo ex da Equipe Rocket",231
+DRI_232,"Garchomp ex da Cíntia",232
+DRI_233,"Nidoking ex da Equipe Rocket",233
+DRI_234,"Crobat ex da Equipe Rocket",234
+DRI_235,"Mabosstiff ex do Arven",235
+DRI_236,"Aventura do Ethan",236
+DRI_237,"Athena da Equipe Rocket",237
+DRI_238,"Giovanni da Equipe Rocket",238
+DRI_239,"Ho-Oh ex do Ethan",239
+DRI_240,"Mewtwo ex da Equipe Rocket",240
+DRI_241,"Garchomp ex da Cíntia",241
+DRI_242,"Crobat ex da Equipe Rocket",242
+DRI_243,"Torre de Interferência",243
+DRI_244,"Levincia",244

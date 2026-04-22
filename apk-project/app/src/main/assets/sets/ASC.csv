@@ -1,0 +1,296 @@
+id,name,number
+ASC_001,"Oddish da Érica",001
+ASC_002,"Gloom da Érica",002
+ASC_003,"Vileplume ex da Érica",003
+ASC_004,"Bellsprout da Érica",004
+ASC_005,"Weepinbell da Érica",005
+ASC_006,"Victreebel da Érica",006
+ASC_007,"Tangela da Érica",007
+ASC_008,"Chikorita",008
+ASC_009,"Bayleef",009
+ASC_010,"Mega Meganium ex",010
+ASC_011,"Wurmple",011
+ASC_012,"Silcoon",012
+ASC_013,"Beautifly",013
+ASC_014,"Cascoon",014
+ASC_015,"Dustox",015
+ASC_016,"Budew",016
+ASC_017,"Grubbin",017
+ASC_018,"Tarountula da Equipe Rocket",018
+ASC_019,"Spidops da Equipe Rocket",019
+ASC_020,"Charmander",020
+ASC_021,"Charmeleon",021
+ASC_022,"Mega Charizard Y ex",022
+ASC_023,"Slugma do Ethan",023
+ASC_024,"Magcargo do Ethan",024
+ASC_025,"Entei",025
+ASC_026,"Ho-Oh ex do Ethan",026
+ASC_027,"Numel",027
+ASC_028,"Camerupt",028
+ASC_029,"Tepig",029
+ASC_030,"Pignite",030
+ASC_031,"Mega Emboar ex",031
+ASC_032,"Darumaka do N",032
+ASC_033,"Darmanitan do N",033
+ASC_034,"Salandit",034
+ASC_035,"Salazzle",035
+ASC_036,"Scorbunny",036
+ASC_037,"Raboot",037
+ASC_038,"Cinderace ex",038
+ASC_039,"Psyduck",039
+ASC_040,"Golduck",040
+ASC_041,"Totodile",041
+ASC_042,"Croconaw",042
+ASC_043,"Mega Feraligatr ex",043
+ASC_044,"Sneasel",044
+ASC_045,"Weavile",045
+ASC_046,"Snorunt",046
+ASC_047,"Mega Froslass ex",047
+ASC_048,"Regice ex",048
+ASC_049,"Vanillite do N",049
+ASC_050,"Vanillish do N",050
+ASC_051,"Vanilluxe do N",051
+ASC_052,"Snom",052
+ASC_053,"Frosmoth",053
+ASC_054,"Glastrier",054
+ASC_055,"Pikachu",055
+ASC_056,"Raichu",056
+ASC_057,"Pikachu ex",057
+ASC_058,"Voltorb ex",058
+ASC_059,"Tynamo",059
+ASC_060,"Eelektrik",060
+ASC_061,"Mega Eelektross ex",061
+ASC_062,"Stunfisk",062
+ASC_063,"Helioptile",063
+ASC_064,"Heliolisk",064
+ASC_065,"Charjabug",065
+ASC_066,"Vikavolt",066
+ASC_067,"Tapu Koko",067
+ASC_068,"Pincurchin ex do Lupo",068
+ASC_069,"Tadbulb da Kissera",069
+ASC_070,"Bellibolt ex da Kissera",070
+ASC_071,"Wattrel da Kissera",071
+ASC_072,"Kilowattrel da Kissera",072
+ASC_073,"Miraidon ex",073
+ASC_074,"Clefairy",074
+ASC_075,"Clefable",075
+ASC_076,"Clefairy ex da Lílian",076
+ASC_077,"Exeggcute da Equipe Rocket",077
+ASC_078,"Exeggutor da Equipe Rocket",078
+ASC_079,"Mewtwo ex da Equipe Rocket",079
+ASC_080,"Togepi",080
+ASC_081,"Togetic",081
+ASC_082,"Togekiss",082
+ASC_083,"Marill",083
+ASC_084,"Azumarill ex",084
+ASC_085,"Misdreavus",085
+ASC_086,"Mismagius",086
+ASC_087,"Ralts",087
+ASC_088,"Kirlia",088
+ASC_089,"Mega Gardevoir ex",089
+ASC_090,"Shuppet",090
+ASC_091,"Banette",091
+ASC_092,"Rotom",092
+ASC_093,"Swirlix",093
+ASC_094,"Slurpuff",094
+ASC_095,"Phantump do Lupo",095
+ASC_096,"Trevenant do Lupo",096
+ASC_097,"Mimikyu da Equipe Rocket",097
+ASC_098,"Spectrier",098
+ASC_099,"Munkidori",099
+ASC_100,"Diglett da Equipe Rocket",100
+ASC_101,"Dugtrio da Equipe Rocket",101
+ASC_102,"Hitmontop",102
+ASC_103,"Meditite",103
+ASC_104,"Medicham",104
+ASC_105,"Lunatone",105
+ASC_106,"Solrock",106
+ASC_107,"Regirock ex",107
+ASC_108,"Groudon",108
+ASC_109,"Gible da Cíntia",109
+ASC_110,"Gabite da Cíntia",110
+ASC_111,"Garchomp ex da Cíntia",111
+ASC_112,"Riolu",112
+ASC_113,"Mega Lucario ex",113
+ASC_114,"Stunfisk ex",114
+ASC_115,"Pancham",115
+ASC_116,"Mega Hawlucha ex",116
+ASC_117,"Carbink",117
+ASC_118,"Rolycoly",118
+ASC_119,"Carkol",119
+ASC_120,"Coalossal",120
+ASC_121,"Koraidon ex",121
+ASC_122,"Okidogi",122
+ASC_123,"Gastly",123
+ASC_124,"Haunter",124
+ASC_125,"Mega Gengar ex",125
+ASC_126,"Murkrow da Equipe Rocket",126
+ASC_127,"Honchkrow da Equipe Rocket",127
+ASC_128,"Poochyena",128
+ASC_129,"Mightyena",129
+ASC_130,"Zigzagoon de Galar",130
+ASC_131,"Linoone de Galar",131
+ASC_132,"Obstagoon de Galar",132
+ASC_133,"Spiritomb da Cíntia",133
+ASC_134,"Scraggy",134
+ASC_135,"Mega Scrafty ex",135
+ASC_136,"Zorua do N",136
+ASC_137,"Zoroark ex do N",137
+ASC_138,"Vullaby",138
+ASC_139,"Mandibuzz ex",139
+ASC_140,"Pangoro",140
+ASC_141,"Hoopa",141
+ASC_142,"Fezandipiti ex",142
+ASC_143,"Pecharunt",143
+ASC_144,"Mawile",144
+ASC_145,"Registeel ex",145
+ASC_146,"Pawniard",146
+ASC_147,"Bisharp",147
+ASC_148,"Kingambit",148
+ASC_149,"Togedemaru ex",149
+ASC_150,"Dratini",150
+ASC_151,"Dragonair",151
+ASC_152,"Mega Dragonite ex",152
+ASC_153,"Rayquaza",153
+ASC_154,"Reshiram do N",154
+ASC_155,"Zekrom do N",155
+ASC_156,"Noibat",156
+ASC_157,"Noivern",157
+ASC_158,"Dreepy",158
+ASC_159,"Drakloak",159
+ASC_160,"Dragapult ex",160
+ASC_161,"Meowth da Equipe Rocket",161
+ASC_162,"Kangaskhan ex da Equipe Rocket",162
+ASC_163,"Dunsparce do Lauro",163
+ASC_164,"Dudunsparce ex do Lauro",164
+ASC_165,"Skitty",165
+ASC_166,"Delcatty",166
+ASC_167,"Zangoose ex",167
+ASC_168,"Starly do Lauro",168
+ASC_169,"Staravia do Lauro",169
+ASC_170,"Staraptor do Lauro",170
+ASC_171,"Rotom Ventilador",171
+ASC_172,"Mega Audino ex",172
+ASC_173,"Rufflet do Lauro",173
+ASC_174,"Braviary do Lauro",174
+ASC_175,"Komala do Lauro",175
+ASC_176,"Drampa",176
+ASC_177,"Cramorant do Lupo",177
+ASC_178,"Terapagos",178
+ASC_179,"Terapagos ex",179
+ASC_180,"Traquinagem da Acerola",180
+ASC_181,"Balão de Ar",181
+ASC_182,"Amor e Paz",182
+ASC_183,"Ordem da Chefia",183
+ASC_184,"Poffin de Colega",184
+ASC_185,"Canari",185
+ASC_186,"Contra-ataque de Alcance",186
+ASC_187,"Gongo de Luta",187
+ASC_188,"Floresta da Vitalidade",188
+ASC_189,"Trompete de Vidro",189
+ASC_190,"Espírito de Luta da Iris",190
+ASC_191,"Esfera de Luz",191
+ASC_192,"Determinação da Lílian",192
+ASC_193,"Megassinal",193
+ASC_194,"Jardim Misterioso",194
+ASC_195,"PP Up do N",195
+ASC_196,"Maca Noturna",196
+ASC_197,"Mina Noturna",197
+ASC_198,"Poké Tablet",198
+ASC_199,"Suplemento Premium Pro",199
+ASC_200,"Surfista",200
+ASC_201,"Apollo da Equipe Rocket",201
+ASC_202,"Athena da Equipe Rocket",202
+ASC_203,"Fábrica da Equipe Rocket",203
+ASC_204,"Giovanni da Equipe Rocket",204
+ASC_205,"Grande Bola da Equipe Rocket",205
+ASC_206,"Hipnotizador da Equipe Rocket",206
+ASC_207,"Petrel da Equipe Rocket",207
+ASC_208,"Próton da Equipe Rocket",208
+ASC_209,"Transmissor da Equipe Rocket",209
+ASC_210,"Torre de Vigia da Equipe Rocket",210
+ASC_211,"Escama Espessa",211
+ASC_212,"Sucateador de Ferramentas",212
+ASC_213,"Ultra Bola",213
+ASC_214,"Urbano",214
+ASC_215,"Garçonete",215
+ASC_216,"Energia de Prisma",216
+ASC_217,"Energia da Equipe Rocket",217
+ASC_218,"Tangela da Érica",218
+ASC_219,"Beautifly",219
+ASC_220,"Dustox",220
+ASC_221,"Budew",221
+ASC_222,"Magcargo do Ethan",222
+ASC_223,"Numel",223
+ASC_224,"Salazzle",224
+ASC_225,"Scorbunny",225
+ASC_226,"Psyduck",226
+ASC_227,"Snorunt",227
+ASC_228,"Weavile",228
+ASC_229,"Heliolisk",229
+ASC_230,"Vikavolt",230
+ASC_231,"Wattrel da Kissera",231
+ASC_232,"Marill",232
+ASC_233,"Misdreavus",233
+ASC_234,"Banette",234
+ASC_235,"Togekiss",235
+ASC_236,"Slurpuff",236
+ASC_237,"Trevenant do Lupo",237
+ASC_238,"Mimikyu da Equipe Rocket",238
+ASC_239,"Dugtrio da Equipe Rocket",239
+ASC_240,"Hitmontop",240
+ASC_241,"Medicham",241
+ASC_242,"Carbink",242
+ASC_243,"Mightyena",243
+ASC_244,"Spiritomb da Cíntia",244
+ASC_245,"Obstagoon de Galar",245
+ASC_246,"Mawile",246
+ASC_247,"Dreepy",247
+ASC_248,"Drakloak",248
+ASC_249,"Staraptor do Lauro",249
+ASC_250,"Rotom Ventilador",250
+ASC_251,"Sprigatito ex",251
+ASC_252,"Stunfisk ex",252
+ASC_253,"Mega Audino ex",253
+ASC_254,"Amor e Paz",254
+ASC_255,"Treino de Faixa Preta",255
+ASC_256,"Ordem da Chefia",256
+ASC_257,"Canari",257
+ASC_258,"Cheren",258
+ASC_259,"Contra-ataque de Alcance",259
+ASC_260,"Trompete de Vidro",260
+ASC_261,"Torre de Interferência",261
+ASC_262,"PP Up do N",262
+ASC_263,"Transmissor da Equipe Rocket",263
+ASC_264,"Ultra Bola",264
+ASC_265,"Mega Froslass ex",265
+ASC_266,"Mega Eelektross ex",266
+ASC_267,"Mega Diancie ex",267
+ASC_268,"Mega Hawlucha ex",268
+ASC_269,"Mega Gengar ex",269
+ASC_270,"Mega Scrafty ex",270
+ASC_271,"Mega Dragonite ex",271
+ASC_272,"Mega Meganium ex",272
+ASC_273,"Mega Emboar ex",273
+ASC_274,"Mega Feraligatr ex",274
+ASC_275,"Mega Froslass ex",275
+ASC_276,"Pikachu ex",276
+ASC_277,"Pikachu ex",277
+ASC_278,"Mega Eelektross ex",278
+ASC_279,"Bellibolt ex da Kissera",279
+ASC_280,"Clefairy ex da Lílian",280
+ASC_281,"Mewtwo ex da Equipe Rocket",281
+ASC_282,"Mega Diancie ex",282
+ASC_283,"Mega Hawlucha ex",283
+ASC_284,"Mega Gengar ex",284
+ASC_285,"Mega Scrafty ex",285
+ASC_286,"Zoroark ex do N",286
+ASC_287,"Grimmsnarl ex da Marine",287
+ASC_288,"Fezandipiti ex",288
+ASC_289,"Metagross ex do Steven",289
+ASC_290,"Mega Dragonite ex",290
+ASC_291,"Canari",291
+ASC_292,"Espírito de Luta da Iris",292
+ASC_293,"Surfista",293
+ASC_294,"Mega Charizard Y ex",294
+ASC_295,"Mega Dragonite ex",295

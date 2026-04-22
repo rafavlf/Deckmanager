@@ -1,0 +1,194 @@
+﻿id,name,number
+SSP_001,"Exeggcute",001
+SSP_002,"Exeggcute",002
+SSP_003,"Exeggutor",003
+SSP_004,"Durant ex",004
+SSP_005,"Scatterbug",005
+SSP_006,"Spewpa",006
+SSP_007,"Vivillon",007
+SSP_008,"Morelull",008
+SSP_009,"Shiinotic",009
+SSP_010,"Dhelmise",010
+SSP_011,"Zarude",011
+SSP_012,"Capsakid",012
+SSP_013,"Rellor",013
+SSP_014,"Rabsca",014
+SSP_015,"Wo-Chien",015
+SSP_016,"Vulpix",016
+SSP_017,"Ninetales",017
+SSP_018,"Tauros de Paldea",018
+SSP_019,"Ho-Oh",019
+SSP_020,"Castform Forma Ensolarada",020
+SSP_021,"Victini",021
+SSP_022,"Pansear",022
+SSP_023,"Simisear",023
+SSP_024,"Larvesta",024
+SSP_025,"Volcarona",025
+SSP_026,"Oricorio",026
+SSP_027,"Sizzlipede",027
+SSP_028,"Centiskorch",028
+SSP_029,"Fuecoco",029
+SSP_030,"Crocalor",030
+SSP_031,"Skeledirge",031
+SSP_032,"Charcadet",032
+SSP_033,"Charcadet",033
+SSP_034,"Armarouge",034
+SSP_035,"Ceruledge",035
+SSP_036,"Ceruledge ex",036
+SSP_037,"Scovillain ex",037
+SSP_038,"Fogo Corrosão",038
+SSP_039,"Tauros de Paldea",039
+SSP_040,"Mantine",040
+SSP_041,"Feebas",041
+SSP_042,"Milotic ex",042
+SSP_043,"Spheal",043
+SSP_044,"Sealeo",044
+SSP_045,"Walrein",045
+SSP_046,"Shellos",046
+SSP_047,"Cryogonal",047
+SSP_048,"Kyurem Preto ex",048
+SSP_049,"Bruxish",049
+SSP_050,"Quaxly",050
+SSP_051,"Quaxwell",051
+SSP_052,"Quaquaval",052
+SSP_053,"Cetoddle",053
+SSP_054,"Cetitan",054
+SSP_055,"Pacote Férreo",055
+SSP_056,"Chien-Pao",056
+SSP_057,"Pikachu ex",057
+SSP_058,"Magnemite",058
+SSP_059,"Magneton",059
+SSP_060,"Magnezone",060
+SSP_061,"Rotom",061
+SSP_062,"Blitzle",062
+SSP_063,"Zebstrika",063
+SSP_064,"Stunfisk",064
+SSP_065,"Tapu Koko",065
+SSP_066,"Wattrel",066
+SSP_067,"Kilowattrel",067
+SSP_068,"Kilowattrel ex",068
+SSP_069,"Miraidon",069
+SSP_070,"Togepi",070
+SSP_071,"Togetic",071
+SSP_072,"Togekiss",072
+SSP_073,"Marill",073
+SSP_074,"Azumarill",074
+SSP_075,"Smoochum",075
+SSP_076,"Latias ex",076
+SSP_077,"Latios",077
+SSP_078,"Uxie",078
+SSP_079,"Mesprit",079
+SSP_080,"Azelf",080
+SSP_081,"Sigilyph",081
+SSP_082,"Yamask",082
+SSP_083,"Cofagrigus",083
+SSP_084,"Espurr",084
+SSP_085,"Meowstic",085
+SSP_086,"Sylveon ex",086
+SSP_087,"Dedenne",087
+SSP_088,"Xerneas",088
+SSP_089,"Oricorio",089
+SSP_090,"Sandygast",090
+SSP_091,"Palossand ex",091
+SSP_092,"Tapu Lele",092
+SSP_093,"Indeedee",093
+SSP_094,"Flittle",094
+SSP_095,"Espathra",095
+SSP_096,"Juba Sopro",096
+SSP_097,"Gimmighoul",097
+SSP_098,"Mankey",098
+SSP_099,"Primeape",099
+SSP_100,"Annihilape",100
+SSP_101,"Tauros de Paldea",101
+SSP_102,"Phanpy",102
+SSP_103,"Donphan",103
+SSP_104,"Trapinch",104
+SSP_105,"Vibrava",105
+SSP_106,"Flygon ex",106
+SSP_107,"Gastrodon",107
+SSP_108,"Drilbur",108
+SSP_109,"Excadrill",109
+SSP_110,"Landorus",110
+SSP_111,"Passimian",111
+SSP_112,"Clobbopus",112
+SSP_113,"Grapploct",113
+SSP_114,"Glimmet",114
+SSP_115,"Glimmora",115
+SSP_116,"Koraidon",116
+SSP_117,"Deino",117
+SSP_118,"Zweilous",118
+SSP_119,"Hydreigon ex",119
+SSP_120,"Shroodle",120
+SSP_121,"Grafaiai",121
+SSP_122,"Diglett de Alola",122
+SSP_123,"Dugtrio de Alola",123
+SSP_124,"Skarmory",124
+SSP_125,"Registeel",125
+SSP_126,"Bronzor",126
+SSP_127,"Bronzong",127
+SSP_128,"Klefki",128
+SSP_129,"Duraludon",129
+SSP_130,"Archaludon ex",130
+SSP_131,"Gholdengo",131
+SSP_132,"Chifres Férreos",132
+SSP_133,"Exeggutor de Alola ex",133
+SSP_134,"Altaria",134
+SSP_135,"Dialga",135
+SSP_136,"Palkia",136
+SSP_137,"Turtonator",137
+SSP_138,"Applin",138
+SSP_139,"Flapple",139
+SSP_140,"Appletun",140
+SSP_141,"Eternatus",141
+SSP_142,"Tatsugiri ex",142
+SSP_143,"Eevee",143
+SSP_144,"Snorlax",144
+SSP_145,"Slakoth",145
+SSP_146,"Vigoroth",146
+SSP_147,"Slaking ex",147
+SSP_148,"Swablu",148
+SSP_149,"Zangoose",149
+SSP_150,"Kecleon",150
+SSP_151,"Bouffalant",151
+SSP_152,"Rufflet",152
+SSP_153,"Braviary",153
+SSP_154,"Helioptile",154
+SSP_155,"Heliolisk",155
+SSP_156,"Oranguru",156
+SSP_157,"Tandemaus",157
+SSP_158,"Maushold",158
+SSP_159,"Cyclizar ex",159
+SSP_160,"Flamigo ex",160
+SSP_161,"Terapagos",161
+SSP_162,"Amuleto da Esperança",162
+SSP_163,"Fruta Babiri",163
+SSP_164,"Liquidificador Perfeito",164
+SSP_165,"Sininho de Mesa",165
+SSP_166,"Varinha Relaxante",166
+SSP_167,"Sagacidade do Clemont",167
+SSP_168,"Fruta Capicho",168
+SSP_169,"Contra-ataque de Alcance",169
+SSP_170,"Cyrano",170
+SSP_171,"Kit de Investigação",171
+SSP_172,"Elixir do Dragão",172
+SSP_173,"Drasna",173
+SSP_174,"Drayton",174
+SSP_175,"Bola de Penumbra",175
+SSP_176,"Busca de Energia Profissional",176
+SSP_177,"Montanha da Gravidade",177
+SSP_178,"Olhar da Jasmine",178
+SSP_179,"Apelo da Elisia",179
+SSP_180,"Estádio Animado",180
+SSP_181,"Memorando Intrometido",181
+SSP_182,"Ventilador Megaton",182
+SSP_183,"Fone de Ouvido Milagroso",183
+SSP_184,"Fruta Passho",184
+SSP_185,"Carrinho Precioso",185
+SSP_186,"Chave de Embaralhamento",186
+SSP_187,"Surfista",187
+SSP_188,"Máquina Técnica: Fluorita",188
+SSP_189,"Orbe Tera",189
+SSP_190,"Tomila",190
+SSP_191,"Energia Enriquecedora",191
+SSP_251,"Maca Noturna",251
+SSP_252,"Energia a Jato",252

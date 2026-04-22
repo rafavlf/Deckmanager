@@ -1,0 +1,246 @@
+﻿id,name,number
+PAF_001,"Pineco",001
+PAF_002,"Forretress ex",002
+PAF_003,"Maractus",003
+PAF_004,"Toedscool",004
+PAF_005,"Toedscruel ex",005
+PAF_006,"Espathra ex",006
+PAF_007,"Charmander",007
+PAF_008,"Charmeleon",008
+PAF_009,"Magmar",009
+PAF_010,"Magmortar",010
+PAF_011,"Numel",011
+PAF_012,"Camerupt",012
+PAF_013,"Rotom Calor",013
+PAF_014,"Charcadet",014
+PAF_015,"Armarouge",015
+PAF_016,"Lapras",016
+PAF_017,"Frigibax",017
+PAF_018,"Pikachu",018
+PAF_019,"Raichu",019
+PAF_020,"Chinchou",020
+PAF_021,"Lanturn",021
+PAF_022,"Kilowattrel",022
+PAF_023,"Exeggcute",023
+PAF_024,"Exeggutor",024
+PAF_025,"Natu",025
+PAF_026,"Xatu",026
+PAF_027,"Ralts",027
+PAF_028,"Kirlia",028
+PAF_029,"Gardevoir ex",029
+PAF_030,"Chimecho",030
+PAF_031,"Mime Jr.",031
+PAF_032,"Woobat",032
+PAF_033,"Swoobat",033
+PAF_034,"Cottonee",034
+PAF_035,"Whimsicott",035
+PAF_036,"Dedenne",036
+PAF_037,"Mimikyu",037
+PAF_038,"Fidough",038
+PAF_039,"Dachsbun",039
+PAF_040,"Ceruledge",040
+PAF_041,"Flittle",041
+PAF_042,"Greavard",042
+PAF_043,"Houndstone",043
+PAF_044,"Gimmighoul",044
+PAF_045,"Mankey",045
+PAF_046,"Primeape",046
+PAF_047,"Annihilape",047
+PAF_048,"Phanpy",048
+PAF_049,"Donphan",049
+PAF_050,"Barboach",050
+PAF_051,"Clobbopus",051
+PAF_052,"Grapploct",052
+PAF_053,"Presa Grande ex",053
+PAF_054,"Charizard ex",054
+PAF_055,"Gastly",055
+PAF_056,"Haunter",056
+PAF_057,"Gengar",057
+PAF_058,"Wooper de Paldea",058
+PAF_059,"Clodsire de Paldea ex",059
+PAF_060,"Scraggy",060
+PAF_061,"Scrafty",061
+PAF_062,"Maschiff",062
+PAF_063,"Mabosstiff",063
+PAF_064,"Varoom",064
+PAF_065,"Revavroom",065
+PAF_066,"Trilho Férreo ex",066
+PAF_067,"Gholdengo",067
+PAF_068,"Noibat",068
+PAF_069,"Noivern ex",069
+PAF_070,"Cyclizar",070
+PAF_071,"Lechonk",071
+PAF_072,"Oinkologne",072
+PAF_073,"Tandemaus",073
+PAF_074,"Maushold",074
+PAF_075,"Squawkabilly ex",075
+PAF_076,"Artazon",076
+PAF_077,"Érico",077
+PAF_078,"Clive",078
+PAF_079,"Gerador Elétrico",079
+PAF_080,"Kissera",080
+PAF_081,"Monte Enluarado",081
+PAF_082,"Noêmia",082
+PAF_083,"Mochila da Noêmia",083
+PAF_084,"Bola de Ninho",084
+PAF_085,"Estudante de Paldea",085
+PAF_086,"Estudante de Paldea",086
+PAF_087,"Pesquisa de Professores",087
+PAF_088,"Pesquisa de Professores",088
+PAF_089,"Doce Raro",089
+PAF_090,"Máquina Técnica: Socão Crítico",090
+PAF_091,"Ultra Bola",091
+PAF_092,"Oddish",092
+PAF_093,"Gloom",093
+PAF_094,"Vileplume",094
+PAF_095,"Scyther",095
+PAF_096,"Hoppip",096
+PAF_097,"Skiploom",097
+PAF_098,"Jumpluff",098
+PAF_099,"Pineco",099
+PAF_100,"Snover",100
+PAF_101,"Abomasnow",101
+PAF_102,"Smoliv",102
+PAF_103,"Dolliv",103
+PAF_104,"Arboliva",104
+PAF_105,"Toedscool",105
+PAF_106,"Capsakid",106
+PAF_107,"Scovillain",107
+PAF_108,"Rellor",108
+PAF_109,"Charmander",109
+PAF_110,"Charmeleon",110
+PAF_111,"Tauros de Paldea",111
+PAF_112,"Entei",112
+PAF_113,"Oricorio",113
+PAF_114,"Charcadet",114
+PAF_115,"Armarouge",115
+PAF_116,"Slowpoke",116
+PAF_117,"Slowbro",117
+PAF_118,"Staryu",118
+PAF_119,"Starmie",119
+PAF_120,"Tauros de Paldea",120
+PAF_121,"Wiglett",121
+PAF_122,"Wugtrio",122
+PAF_123,"Finizen",123
+PAF_124,"Palafin",124
+PAF_125,"Veluza",125
+PAF_126,"Dondozo",126
+PAF_127,"Tatsugiri",127
+PAF_128,"Frigibax",128
+PAF_129,"Arctibax",129
+PAF_130,"Baxcalibur",130
+PAF_131,"Pikachu",131
+PAF_132,"Raichu",132
+PAF_133,"Voltorb",133
+PAF_134,"Electrode",134
+PAF_135,"Shinx",135
+PAF_136,"Luxio",136
+PAF_137,"Luxray",137
+PAF_138,"Pachirisu",138
+PAF_139,"Thundurus",139
+PAF_140,"Toxel",140
+PAF_141,"Toxtricity",141
+PAF_142,"Pawmi",142
+PAF_143,"Pawmo",143
+PAF_144,"Pawmot",144
+PAF_145,"Wattrel",145
+PAF_146,"Kilowattrel",146
+PAF_147,"Wigglytuff",147
+PAF_148,"Abra",148
+PAF_149,"Kadabra",149
+PAF_150,"Cleffa",150
+PAF_151,"Natu",151
+PAF_152,"Xatu",152
+PAF_153,"Ralts",153
+PAF_154,"Kirlia",154
+PAF_155,"Drifloon",155
+PAF_156,"Drifblim",156
+PAF_157,"Mime Jr.",157
+PAF_158,"Spiritomb",158
+PAF_159,"Klefki",159
+PAF_160,"Mimikyu",160
+PAF_161,"Dachsbun",161
+PAF_162,"Ceruledge",162
+PAF_163,"Rabsca",163
+PAF_164,"Flittle",164
+PAF_165,"Tinkatink",165
+PAF_166,"Tinkatuff",166
+PAF_167,"Tinkaton",167
+PAF_168,"Houndstone",168
+PAF_169,"Mankey",169
+PAF_170,"Primeape",170
+PAF_171,"Annihilape",171
+PAF_172,"Tauros de Paldea",172
+PAF_173,"Riolu",173
+PAF_174,"Lucario",174
+PAF_175,"Hawlucha",175
+PAF_176,"Nacli",176
+PAF_177,"Naclstack",177
+PAF_178,"Garganacl",178
+PAF_179,"Glimmet",179
+PAF_180,"Wooper de Paldea",180
+PAF_181,"Murkrow",181
+PAF_182,"Sneasel",182
+PAF_183,"Weavile",183
+PAF_184,"Sableye",184
+PAF_185,"Pawniard",185
+PAF_186,"Bisharp",186
+PAF_187,"Kingambit",187
+PAF_188,"Mabosstiff",188
+PAF_189,"Shroodle",189
+PAF_190,"Grafaiai",190
+PAF_191,"Scizor",191
+PAF_192,"Varoom",192
+PAF_193,"Revavroom",193
+PAF_194,"Noibat",194
+PAF_195,"Cyclizar",195
+PAF_196,"Pidgey",196
+PAF_197,"Pidgeotto",197
+PAF_198,"Jigglypuff",198
+PAF_199,"Doduo",199
+PAF_200,"Dodrio",200
+PAF_201,"Ditto",201
+PAF_202,"Snorlax",202
+PAF_203,"Wingull",203
+PAF_204,"Pelipper",204
+PAF_205,"Skwovet",205
+PAF_206,"Greedent",206
+PAF_207,"Lechonk",207
+PAF_208,"Oinkologne",208
+PAF_209,"Tandemaus",209
+PAF_210,"Maushold",210
+PAF_211,"Flamigo",211
+PAF_212,"Forretress ex",212
+PAF_213,"Toedscruel ex",213
+PAF_214,"Espathra ex",214
+PAF_215,"Alakazam ex",215
+PAF_216,"Mew ex",216
+PAF_217,"Gardevoir ex",217
+PAF_218,"Glimmora ex",218
+PAF_219,"Clodsire de Paldea ex",219
+PAF_220,"Noivern ex",220
+PAF_221,"Pidgeot ex",221
+PAF_222,"Wigglytuff ex",222
+PAF_223,"Squawkabilly ex",223
+PAF_224,"Wugtrio",224
+PAF_225,"Palafin",225
+PAF_226,"Pawmi",226
+PAF_227,"Clive",227
+PAF_228,"Juiz",228
+PAF_229,"Noêmia",229
+PAF_230,"Estudante de Paldea",230
+PAF_231,"Estudante de Paldea",231
+PAF_232,"Mew ex",232
+PAF_233,"Gardevoir ex",233
+PAF_234,"Charizard ex",234
+PAF_235,"Arven",235
+PAF_236,"Clive",236
+PAF_237,"Kissera",237
+PAF_238,"Noêmia",238
+PAF_239,"Penélope",239
+PAF_240,"Wo-Chien ex",240
+PAF_241,"Chi-Yu ex",241
+PAF_242,"Chien-Pao ex",242
+PAF_243,"Miraidon ex",243
+PAF_244,"Ting-Lu ex",244
+PAF_245,"Koraidon ex",245
