@@ -38,10 +38,9 @@ captures/
 *.iml
 .idea/
 
-# Keystore files
-# Uncomment the following lines if you do not want to version control your keystore files.
-# *.jks
-# *.keystore
+# Keystore files (NEVER commit signing keys)
+*.jks
+*.keystore
 
 # External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild
@@ -60,3 +59,23 @@ Desktop.ini
 
 # VS Code
 .vscode/
+
+# Gemini/Antigravity local workspace config
+.gem/
+
+# Gradle temp build directories
+gradle-temp/
+apk-project/gradle-temp/
+
+# Backup and utility/dev-only files
+*.backup
+index-backup.html
+gabarito.html
+extract_sets.js
+extract_sets.ps1
+
+# Random media files
+*.jpeg
+*.jpg
+*.png
+!apk-project/app/src/main/res/**/*.png
