@@ -1,0 +1,532 @@
+{
+  "code": "PFL",
+  "name": "Fogo Fantasmagórico",
+  "series": "Mega",
+  "releaseDate": "2025-11-14",
+  "counts": {
+    "numbered": 94,
+    "complete": 124
+  },
+  "cards": [
+    {
+      "number": "001",
+      "name": "Oddish"
+    },
+    {
+      "number": "002",
+      "name": "Gloom"
+    },
+    {
+      "number": "003",
+      "name": "Vileplume"
+    },
+    {
+      "number": "004",
+      "name": "Mega Heracross ex"
+    },
+    {
+      "number": "005",
+      "name": "Lotad"
+    },
+    {
+      "number": "006",
+      "name": "Lombre"
+    },
+    {
+      "number": "007",
+      "name": "Ludicolo"
+    },
+    {
+      "number": "008",
+      "name": "Genesect"
+    },
+    {
+      "number": "009",
+      "name": "Nymble"
+    },
+    {
+      "number": "010",
+      "name": "Lokix"
+    },
+    {
+      "number": "011",
+      "name": "Charmander"
+    },
+    {
+      "number": "012",
+      "name": "Charmeleon"
+    },
+    {
+      "number": "013",
+      "name": "Mega Charizard X ex"
+    },
+    {
+      "number": "014",
+      "name": "Moltres"
+    },
+    {
+      "number": "015",
+      "name": "Darumaka"
+    },
+    {
+      "number": "016",
+      "name": "Darmanitan"
+    },
+    {
+      "number": "017",
+      "name": "Reshiram"
+    },
+    {
+      "number": "018",
+      "name": "Oricorio ex"
+    },
+    {
+      "number": "019",
+      "name": "Charcadet"
+    },
+    {
+      "number": "020",
+      "name": "Ceruledge"
+    },
+    {
+      "number": "021",
+      "name": "Seel"
+    },
+    {
+      "number": "022",
+      "name": "Dewgong"
+    },
+    {
+      "number": "023",
+      "name": "Swinub"
+    },
+    {
+      "number": "024",
+      "name": "Piloswine"
+    },
+    {
+      "number": "025",
+      "name": "Mamoswine"
+    },
+    {
+      "number": "026",
+      "name": "Suicune"
+    },
+    {
+      "number": "027",
+      "name": "Piplup"
+    },
+    {
+      "number": "028",
+      "name": "Prinplup"
+    },
+    {
+      "number": "029",
+      "name": "Rotom ex"
+    },
+    {
+      "number": "030",
+      "name": "Yamper"
+    },
+    {
+      "number": "031",
+      "name": "Boltund"
+    },
+    {
+      "number": "032",
+      "name": "Pawmi"
+    },
+    {
+      "number": "033",
+      "name": "Pawmo"
+    },
+    {
+      "number": "034",
+      "name": "Pawmot"
+    },
+    {
+      "number": "035",
+      "name": "Misdreavus"
+    },
+    {
+      "number": "036",
+      "name": "Mismagius ex"
+    },
+    {
+      "number": "037",
+      "name": "Snubbull"
+    },
+    {
+      "number": "038",
+      "name": "Granbull"
+    },
+    {
+      "number": "039",
+      "name": "Cresselia"
+    },
+    {
+      "number": "040",
+      "name": "Meloetta"
+    },
+    {
+      "number": "041",
+      "name": "Mega Diancie ex"
+    },
+    {
+      "number": "042",
+      "name": "Mimikyu"
+    },
+    {
+      "number": "043",
+      "name": "Milcery"
+    },
+    {
+      "number": "044",
+      "name": "Alcremie"
+    },
+    {
+      "number": "045",
+      "name": "Zacian"
+    },
+    {
+      "number": "046",
+      "name": "Bramblin"
+    },
+    {
+      "number": "047",
+      "name": "Brambleghast"
+    },
+    {
+      "number": "048",
+      "name": "Tauros de Paldea"
+    },
+    {
+      "number": "049",
+      "name": "Gligar"
+    },
+    {
+      "number": "050",
+      "name": "Gliscor"
+    },
+    {
+      "number": "051",
+      "name": "Trapinch"
+    },
+    {
+      "number": "052",
+      "name": "Vibrava"
+    },
+    {
+      "number": "053",
+      "name": "Flygon"
+    },
+    {
+      "number": "054",
+      "name": "Gastly"
+    },
+    {
+      "number": "055",
+      "name": "Haunter"
+    },
+    {
+      "number": "056",
+      "name": "Mega Gengar ex"
+    },
+    {
+      "number": "057",
+      "name": "Murkrow"
+    },
+    {
+      "number": "058",
+      "name": "Honchkrow"
+    },
+    {
+      "number": "059",
+      "name": "Sableye"
+    },
+    {
+      "number": "060",
+      "name": "Carvanha"
+    },
+    {
+      "number": "061",
+      "name": "Mega Sharpedo ex"
+    },
+    {
+      "number": "062",
+      "name": "Seviper"
+    },
+    {
+      "number": "063",
+      "name": "Absol"
+    },
+    {
+      "number": "064",
+      "name": "Sandile"
+    },
+    {
+      "number": "065",
+      "name": "Krokorok"
+    },
+    {
+      "number": "066",
+      "name": "Krookodile"
+    },
+    {
+      "number": "067",
+      "name": "Toxel"
+    },
+    {
+      "number": "068",
+      "name": "Toxtricity"
+    },
+    {
+      "number": "069",
+      "name": "Eternatus"
+    },
+    {
+      "number": "070",
+      "name": "Empoleon ex"
+    },
+    {
+      "number": "071",
+      "name": "Bronzor"
+    },
+    {
+      "number": "072",
+      "name": "Bronzong"
+    },
+    {
+      "number": "073",
+      "name": "Togedemaru"
+    },
+    {
+      "number": "074",
+      "name": "Duraludon"
+    },
+    {
+      "number": "075",
+      "name": "Archaludon"
+    },
+    {
+      "number": "076",
+      "name": "Jigglypuff"
+    },
+    {
+      "number": "077",
+      "name": "Wigglytuff"
+    },
+    {
+      "number": "078",
+      "name": "Aipom"
+    },
+    {
+      "number": "079",
+      "name": "Ambipom"
+    },
+    {
+      "number": "080",
+      "name": "Smeargle"
+    },
+    {
+      "number": "081",
+      "name": "Zigzagoon"
+    },
+    {
+      "number": "082",
+      "name": "Linoone"
+    },
+    {
+      "number": "083",
+      "name": "Buneary"
+    },
+    {
+      "number": "084",
+      "name": "Mega Lopunny ex"
+    },
+    {
+      "number": "085",
+      "name": "Jaula de Batalha"
+    },
+    {
+      "number": "086",
+      "name": "Maçarico"
+    },
+    {
+      "number": "087",
+      "name": "Dawn"
+    },
+    {
+      "number": "088",
+      "name": "Vale Vertiginoso"
+    },
+    {
+      "number": "089",
+      "name": "Cuspidor de Fogo"
+    },
+    {
+      "number": "090",
+      "name": "Artimanha do Funesto"
+    },
+    {
+      "number": "091",
+      "name": "Sorvetão Jumbo"
+    },
+    {
+      "number": "092",
+      "name": "Capacete Punk"
+    },
+    {
+      "number": "093",
+      "name": "Pingente Sagrado"
+    },
+    {
+      "number": "094",
+      "name": "Fragmento Encantado"
+    },
+    {
+      "number": "095",
+      "name": "Ludicolo"
+    },
+    {
+      "number": "096",
+      "name": "Nymble"
+    },
+    {
+      "number": "097",
+      "name": "Dewgong"
+    },
+    {
+      "number": "098",
+      "name": "Piplup"
+    },
+    {
+      "number": "099",
+      "name": "Yamper"
+    },
+    {
+      "number": "100",
+      "name": "Zacian"
+    },
+    {
+      "number": "101",
+      "name": "Flygon"
+    },
+    {
+      "number": "102",
+      "name": "Wooper de Paldea"
+    },
+    {
+      "number": "103",
+      "name": "Toxtricity"
+    },
+    {
+      "number": "104",
+      "name": "Togedemaru"
+    },
+    {
+      "number": "105",
+      "name": "Wigglytuff"
+    },
+    {
+      "number": "106",
+      "name": "Meowth"
+    },
+    {
+      "number": "107",
+      "name": "Ambipom"
+    },
+    {
+      "number": "108",
+      "name": "Mega Heracross ex"
+    },
+    {
+      "number": "109",
+      "name": "Mega Charizard X ex"
+    },
+    {
+      "number": "110",
+      "name": "Oricorio ex"
+    },
+    {
+      "number": "111",
+      "name": "Rotom ex"
+    },
+    {
+      "number": "112",
+      "name": "Mismagius ex"
+    },
+    {
+      "number": "113",
+      "name": "Mega Sharpedo ex"
+    },
+    {
+      "number": "114",
+      "name": "Empoleon ex"
+    },
+    {
+      "number": "115",
+      "name": "Mega Lopunny ex"
+    },
+    {
+      "number": "116",
+      "name": "Jaula de Batalha"
+    },
+    {
+      "number": "117",
+      "name": "Maçarico"
+    },
+    {
+      "number": "118",
+      "name": "Dawn"
+    },
+    {
+      "number": "119",
+      "name": "Cuspidor de Fogo"
+    },
+    {
+      "number": "120",
+      "name": "Artimanha do Funesto"
+    },
+    {
+      "number": "121",
+      "name": "Capacete Punk"
+    },
+    {
+      "number": "122",
+      "name": "Pingente Sagrado"
+    },
+    {
+      "number": "123",
+      "name": "Substituição"
+    },
+    {
+      "number": "124",
+      "name": "Energia de Ignição"
+    },
+    {
+      "number": "125",
+      "name": "Mega Charizard X ex"
+    },
+    {
+      "number": "126",
+      "name": "Rotom ex"
+    },
+    {
+      "number": "127",
+      "name": "Mega Sharpedo ex"
+    },
+    {
+      "number": "128",
+      "name": "Mega Lopunny ex"
+    },
+    {
+      "number": "129",
+      "name": "Dawn"
+    },
+    {
+      "number": "130",
+      "name": "Mega Charizard X ex"
+    }
+  ]
+}

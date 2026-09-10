@@ -1,0 +1,660 @@
+{
+  "code": "TEF",
+  "name": "Forças Temporais",
+  "series": "Scarlet & Violet",
+  "releaseDate": "2024-03-22",
+  "counts": {
+    "numbered": 162,
+    "complete": 162
+  },
+  "cards": [
+    {
+      "number": "001",
+      "name": "Scyther"
+    },
+    {
+      "number": "002",
+      "name": "Pineco"
+    },
+    {
+      "number": "003",
+      "name": "Seedot"
+    },
+    {
+      "number": "004",
+      "name": "Nuzleaf"
+    },
+    {
+      "number": "005",
+      "name": "Shiftry"
+    },
+    {
+      "number": "006",
+      "name": "Shroomish"
+    },
+    {
+      "number": "007",
+      "name": "Breloom"
+    },
+    {
+      "number": "008",
+      "name": "Roselia"
+    },
+    {
+      "number": "009",
+      "name": "Roserade"
+    },
+    {
+      "number": "010",
+      "name": "Turtwig"
+    },
+    {
+      "number": "011",
+      "name": "Grotle"
+    },
+    {
+      "number": "012",
+      "name": "Torterra ex"
+    },
+    {
+      "number": "013",
+      "name": "Shaymin"
+    },
+    {
+      "number": "014",
+      "name": "Cottonee"
+    },
+    {
+      "number": "015",
+      "name": "Whimsicott"
+    },
+    {
+      "number": "016",
+      "name": "Deerling"
+    },
+    {
+      "number": "017",
+      "name": "Sawsbuck"
+    },
+    {
+      "number": "018",
+      "name": "Grubbin"
+    },
+    {
+      "number": "019",
+      "name": "Dhelmise"
+    },
+    {
+      "number": "020",
+      "name": "Bramblin"
+    },
+    {
+      "number": "021",
+      "name": "Brambleghast"
+    },
+    {
+      "number": "022",
+      "name": "Scovillain ex"
+    },
+    {
+      "number": "023",
+      "name": "Rellor"
+    },
+    {
+      "number": "024",
+      "name": "Rabsca"
+    },
+    {
+      "number": "025",
+      "name": "Folhas Férreas ex"
+    },
+    {
+      "number": "026",
+      "name": "Ponyta"
+    },
+    {
+      "number": "027",
+      "name": "Rapidash"
+    },
+    {
+      "number": "028",
+      "name": "Slugma"
+    },
+    {
+      "number": "029",
+      "name": "Magcargo"
+    },
+    {
+      "number": "030",
+      "name": "Victini"
+    },
+    {
+      "number": "031",
+      "name": "Heatmor"
+    },
+    {
+      "number": "032",
+      "name": "Litten"
+    },
+    {
+      "number": "033",
+      "name": "Torracat"
+    },
+    {
+      "number": "034",
+      "name": "Incineroar ex"
+    },
+    {
+      "number": "035",
+      "name": "Turtonator"
+    },
+    {
+      "number": "036",
+      "name": "Sizzlipede"
+    },
+    {
+      "number": "037",
+      "name": "Centiskorch"
+    },
+    {
+      "number": "038",
+      "name": "Fogo Corrosão ex"
+    },
+    {
+      "number": "039",
+      "name": "Totodile"
+    },
+    {
+      "number": "040",
+      "name": "Croconaw"
+    },
+    {
+      "number": "041",
+      "name": "Feraligatr"
+    },
+    {
+      "number": "042",
+      "name": "Carvanha"
+    },
+    {
+      "number": "043",
+      "name": "Sharpedo"
+    },
+    {
+      "number": "044",
+      "name": "Keldeo"
+    },
+    {
+      "number": "045",
+      "name": "Snom"
+    },
+    {
+      "number": "046",
+      "name": "Frosmoth"
+    },
+    {
+      "number": "047",
+      "name": "Wiglett"
+    },
+    {
+      "number": "048",
+      "name": "Finizen"
+    },
+    {
+      "number": "049",
+      "name": "Palafin"
+    },
+    {
+      "number": "050",
+      "name": "Onda Ando ex"
+    },
+    {
+      "number": "051",
+      "name": "Pikachu"
+    },
+    {
+      "number": "052",
+      "name": "Raichu"
+    },
+    {
+      "number": "053",
+      "name": "Electabuzz"
+    },
+    {
+      "number": "054",
+      "name": "Electivire"
+    },
+    {
+      "number": "055",
+      "name": "Charjabug"
+    },
+    {
+      "number": "056",
+      "name": "Vikavolt"
+    },
+    {
+      "number": "057",
+      "name": "Zeraora"
+    },
+    {
+      "number": "058",
+      "name": "Yamper"
+    },
+    {
+      "number": "059",
+      "name": "Boltund"
+    },
+    {
+      "number": "060",
+      "name": "Wugtrio ex"
+    },
+    {
+      "number": "061",
+      "name": "Mãos Férreas"
+    },
+    {
+      "number": "062",
+      "name": "Espinhos Férreos"
+    },
+    {
+      "number": "063",
+      "name": "Mr. Mime"
+    },
+    {
+      "number": "064",
+      "name": "Marill"
+    },
+    {
+      "number": "065",
+      "name": "Azumarill"
+    },
+    {
+      "number": "066",
+      "name": "Girafarig"
+    },
+    {
+      "number": "067",
+      "name": "Latias"
+    },
+    {
+      "number": "068",
+      "name": "Bronzor"
+    },
+    {
+      "number": "069",
+      "name": "Bronzong"
+    },
+    {
+      "number": "070",
+      "name": "Solosis"
+    },
+    {
+      "number": "071",
+      "name": "Duosion"
+    },
+    {
+      "number": "072",
+      "name": "Reuniclus"
+    },
+    {
+      "number": "073",
+      "name": "Elgyem"
+    },
+    {
+      "number": "074",
+      "name": "Beheeyem"
+    },
+    {
+      "number": "075",
+      "name": "Cutiefly"
+    },
+    {
+      "number": "076",
+      "name": "Ribombee"
+    },
+    {
+      "number": "077",
+      "name": "Cauda Brado"
+    },
+    {
+      "number": "078",
+      "name": "Juba Sopro"
+    },
+    {
+      "number": "079",
+      "name": "Valentia Férrea"
+    },
+    {
+      "number": "080",
+      "name": "Valentia Férrea"
+    },
+    {
+      "number": "081",
+      "name": "Chifres Férreos ex"
+    },
+    {
+      "number": "082",
+      "name": "Meditite"
+    },
+    {
+      "number": "083",
+      "name": "Medicham"
+    },
+    {
+      "number": "084",
+      "name": "Relicanth"
+    },
+    {
+      "number": "085",
+      "name": "Drilbur"
+    },
+    {
+      "number": "086",
+      "name": "Excadrill"
+    },
+    {
+      "number": "087",
+      "name": "Golett"
+    },
+    {
+      "number": "088",
+      "name": "Golurk"
+    },
+    {
+      "number": "089",
+      "name": "Rockruff"
+    },
+    {
+      "number": "090",
+      "name": "Lycanroc"
+    },
+    {
+      "number": "091",
+      "name": "Mudbray"
+    },
+    {
+      "number": "092",
+      "name": "Mudsdale"
+    },
+    {
+      "number": "093",
+      "name": "Rolycoly"
+    },
+    {
+      "number": "094",
+      "name": "Carkol"
+    },
+    {
+      "number": "095",
+      "name": "Coalossal"
+    },
+    {
+      "number": "096",
+      "name": "Presa Grande"
+    },
+    {
+      "number": "097",
+      "name": "Presa Grande"
+    },
+    {
+      "number": "098",
+      "name": "Choque Areia"
+    },
+    {
+      "number": "099",
+      "name": "Rocha Férrea ex"
+    },
+    {
+      "number": "100",
+      "name": "Ekans"
+    },
+    {
+      "number": "101",
+      "name": "Arbok"
+    },
+    {
+      "number": "102",
+      "name": "Gastly"
+    },
+    {
+      "number": "103",
+      "name": "Haunter"
+    },
+    {
+      "number": "104",
+      "name": "Gengar ex"
+    },
+    {
+      "number": "105",
+      "name": "Poochyena"
+    },
+    {
+      "number": "106",
+      "name": "Mightyena"
+    },
+    {
+      "number": "107",
+      "name": "Sableye"
+    },
+    {
+      "number": "108",
+      "name": "Farigiraf ex"
+    },
+    {
+      "number": "109",
+      "name": "Lua Estrondo"
+    },
+    {
+      "number": "110",
+      "name": "Forretress"
+    },
+    {
+      "number": "111",
+      "name": "Scizor ex"
+    },
+    {
+      "number": "112",
+      "name": "Mawile"
+    },
+    {
+      "number": "113",
+      "name": "Beldum"
+    },
+    {
+      "number": "114",
+      "name": "Metang"
+    },
+    {
+      "number": "115",
+      "name": "Metagross"
+    },
+    {
+      "number": "116",
+      "name": "Meltan"
+    },
+    {
+      "number": "117",
+      "name": "Melmetal"
+    },
+    {
+      "number": "118",
+      "name": "Trilho Férreo"
+    },
+    {
+      "number": "119",
+      "name": "Koraidon"
+    },
+    {
+      "number": "120",
+      "name": "Koraidon ex"
+    },
+    {
+      "number": "121",
+      "name": "Miraidon"
+    },
+    {
+      "number": "122",
+      "name": "Miraidon ex"
+    },
+    {
+      "number": "123",
+      "name": "Raio Fúria ex"
+    },
+    {
+      "number": "124",
+      "name": "Lickitung"
+    },
+    {
+      "number": "125",
+      "name": "Lickilicky"
+    },
+    {
+      "number": "126",
+      "name": "Hoothoot"
+    },
+    {
+      "number": "127",
+      "name": "Noctowl"
+    },
+    {
+      "number": "128",
+      "name": "Dunsparce"
+    },
+    {
+      "number": "129",
+      "name": "Dudunsparce"
+    },
+    {
+      "number": "130",
+      "name": "Skitty"
+    },
+    {
+      "number": "131",
+      "name": "Delcatty"
+    },
+    {
+      "number": "132",
+      "name": "Chatot"
+    },
+    {
+      "number": "133",
+      "name": "Pidove"
+    },
+    {
+      "number": "134",
+      "name": "Tranquill"
+    },
+    {
+      "number": "135",
+      "name": "Unfezant"
+    },
+    {
+      "number": "136",
+      "name": "Minccino"
+    },
+    {
+      "number": "137",
+      "name": "Cinccino"
+    },
+    {
+      "number": "138",
+      "name": "Drampa"
+    },
+    {
+      "number": "139",
+      "name": "Jugulares Férreas"
+    },
+    {
+      "number": "140",
+      "name": "Cápsula Energética de Melhoria Ancestral"
+    },
+    {
+      "number": "141",
+      "name": "Tambor do Despertar"
+    },
+    {
+      "number": "142",
+      "name": "Dedicação da Bianca"
+    },
+    {
+      "number": "143",
+      "name": "Pedido Encaixotado"
+    },
+    {
+      "number": "144",
+      "name": "Poffin de Colega"
+    },
+    {
+      "number": "145",
+      "name": "Decodificação da Criptomaníaca"
+    },
+    {
+      "number": "146",
+      "name": "Êri"
+    },
+    {
+      "number": "147",
+      "name": "Liderança do Explorador"
+    },
+    {
+      "number": "148",
+      "name": "Laboratório Metálico"
+    },
+    {
+      "number": "149",
+      "name": "Cápsula Energética de Melhoria Futurista"
+    },
+    {
+      "number": "150",
+      "name": "Aparador de Mão"
+    },
+    {
+      "number": "151",
+      "name": "Bastão Pesado"
+    },
+    {
+      "number": "152",
+      "name": "Capa de Herói"
+    },
+    {
+      "number": "153",
+      "name": "Bola Mestra"
+    },
+    {
+      "number": "154",
+      "name": "Cinturão Máximo"
+    },
+    {
+      "number": "155",
+      "name": "Convicção do Morty"
+    },
+    {
+      "number": "156",
+      "name": "Selva Perigosa"
+    },
+    {
+      "number": "157",
+      "name": "Pegador Superior"
+    },
+    {
+      "number": "158",
+      "name": "Cápsula do Reinício"
+    },
+    {
+      "number": "159",
+      "name": "Skate de Resgate"
+    },
+    {
+      "number": "160",
+      "name": "Salvatore"
+    },
+    {
+      "number": "161",
+      "name": "Energia Nebulosa"
+    },
+    {
+      "number": "162",
+      "name": "Energia Neossuperior"
+    }
+  ]
+}

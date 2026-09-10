@@ -79,3 +79,7 @@ extract_sets.ps1
 *.jpg
 *.png
 !apk-project/app/src/main/res/**/*.png
+
+# Python
+__pycache__/
+*.py[cod]
