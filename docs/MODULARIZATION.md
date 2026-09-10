@@ -43,3 +43,26 @@ O objetivo aqui é somente separar os dados das coleções sem alterar as regras
 - Os estilos agora vivem em `web-src/css/app.css`.
 - O build copia o CSS para `apk-project/app/src/main/assets/css/app.css`.
 - Nenhuma regra funcional ou chave de persistência foi alterada.
+
+## Etapa 4 — Núcleo JavaScript
+
+Foram extraídos do HTML os primeiros componentes de infraestrutura:
+
+```text
+web-src/js/core/
+├── helpers.js
+├── state.js
+├── android-bridge.js
+└── storage.js
+```
+
+Responsabilidades:
+
+- `helpers.js`: utilitários puros compartilhados (`fmtDate`, `genId`, `esc`);
+- `state.js`: estado global, mantendo o schema atual;
+- `android-bridge.js`: bridge mínimo de `AndroidStorage`;
+- `storage.js`: `loadStorage` e `saveStorage`, mantendo todas as chaves `tcg_*`.
+
+As bridges de navegador/exportação continuam temporariamente nas features para reduzir o risco da migração.
+
+Nenhuma chave de persistência foi renomeada.

@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SETS_DIR = ROOT / "web-src" / "data" / "sets"
 WEB_INDEX = ROOT / "web-src" / "index.html"
 WEB_CSS = ROOT / "web-src" / "css" / "app.css"
+WEB_CORE_DIR = ROOT / "web-src" / "js" / "core"
 WEB_GENERATED = ROOT / "web-src" / "data" / "sets.generated.js"
 ASSETS_DIR = ROOT / "apk-project" / "app" / "src" / "main" / "assets"
 ASSETS_DATA = ASSETS_DIR / "data"
@@ -69,11 +70,16 @@ def main():
     shutil.copy2(WEB_INDEX, ASSETS_DIR / "index.html")
     (ASSETS_DIR / "css").mkdir(parents=True, exist_ok=True)
     shutil.copy2(WEB_CSS, ASSETS_DIR / "css" / "app.css")
+    core_target = ASSETS_DIR / "js" / "core"
+    core_target.mkdir(parents=True, exist_ok=True)
+    for core_file in WEB_CORE_DIR.glob("*.js"):
+        shutil.copy2(core_file, core_target / core_file.name)
 
     print("\nBuild web concluido.")
     print(f"Index: {ASSETS_DIR / 'index.html'}")
     print(f"Sets:  {ASSETS_DATA / 'sets.generated.js'}")
     print(f"CSS:   {ASSETS_DIR / 'css' / 'app.css'}")
+    print(f"Core:  {ASSETS_DIR / 'js' / 'core'}")
 
 if __name__ == "__main__":
     main()
