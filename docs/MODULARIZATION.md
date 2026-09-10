@@ -66,3 +66,31 @@ Responsabilidades:
 As bridges de navegador/exportação continuam temporariamente nas features para reduzir o risco da migração.
 
 Nenhuma chave de persistência foi renomeada.
+
+## Etapa 5 — Features de coleção e sets
+
+Foram criados:
+
+```text
+web-src/js/features/
+├── collection.js
+└── sets.js
+```
+
+`collection.js` concentra:
+
+- parsing de entrada manual;
+- resolução de nomes de cartas;
+- consulta e atualização de quantidade;
+- backup/restauração da coleção;
+- renderização da aba "Minha Coleção".
+
+`sets.js` concentra:
+
+- aba de coleções principais;
+- pool;
+- grade e detalhe das coleções/sets.
+
+O `attachEvents()` permanece temporariamente no script principal. Isso evita mover, na mesma etapa, lógica de eventos de várias features ainda acopladas.
+
+O build agora copia `web-src/js/features/*.js` para `apk-project/app/src/main/assets/js/features/`.
