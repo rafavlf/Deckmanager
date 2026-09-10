@@ -94,3 +94,23 @@ web-src/js/features/
 O `attachEvents()` permanece temporariamente no script principal. Isso evita mover, na mesma etapa, lógica de eventos de várias features ainda acopladas.
 
 O build agora copia `web-src/js/features/*.js` para `apk-project/app/src/main/assets/js/features/`.
+
+## Etapas 6–7 — Decks, Shopping e Pokédex
+
+Foram criados:
+
+```text
+web-src/js/features/
+├── decks.js
+├── shopping.js
+└── pokedex.js
+```
+
+Funções extraídas nesta etapa:
+
+- Decks: calcProgress, calcMissing, buildDecksTab, buildDeckEditorModal
+- Shopping: buildShoppingList, formatLigaPokemon, copyShoppingList, exportShoppingList, buildShoppingTab
+- Pokédex: buildPokedexModal
+
+Os dados brutos das gerações do Pokédex permanecem no `index.html` por enquanto.
+Isso reduz o risco da migração; a separação dos dados ficará para uma etapa posterior.

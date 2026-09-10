@@ -22,6 +22,9 @@
   <script src="js/core/storage.js"></script>
   <script src="js/features/collection.js"></script>
   <script src="js/features/sets.js"></script>
+  <script src="js/features/decks.js"></script>
+  <script src="js/features/shopping.js"></script>
+  <script src="js/features/pokedex.js"></script>
 <script>
 // ─────────────────────────────────────────────
 //  PRESET DECKS (Liga)
@@ -972,16 +975,6 @@ function showToast(msg, type='success') {
 // ─────────────────────────────────────────────
 
 
-function calcProgress(deckCards) {
-  if (!deckCards || !deckCards.length) return 0;
-  const total = deckCards.reduce((a,c)=>a+c.qty,0);
-  const owned = deckCards.reduce((a,c)=>a+Math.min(getOwnedQty(c), c.qty),0);
-  return total===0?0:Math.floor((owned/total)*100);
-}
-function calcMissing(deckCards) {
-  if (!deckCards || !deckCards.length) return 0;
-  return deckCards.reduce((a,c)=>a+Math.max(0, c.qty-getOwnedQty(c)), 0);
-}
 function allDecks() { return [...state.decks, ...PRESET_DECKS]; }
 function selectedDeck() {
   if (!state.selectedDeckId) return null;
@@ -1402,73 +1395,6 @@ function autoLinkGen2FromJohto() { /* manual only - user links via UI */ }
 // ─────────────────────────────────────────────
 //  SHOPPING LIST
 // ─────────────────────────────────────────────
-function buildShoppingList() {
-  var source = state.shoppingSource || 'decks';
-
-  if (source === 'decks') {
-    // Consolidate missing cards across selected decks
-    var deckFilter = state.shoppingDeckFilter || 'all';
-    var decksToCheck = allDecks().filter(function(d){ return deckFilter === 'all' || d.id === deckFilter; });
-    var cardMap = {};
-    decksToCheck.forEach(function(deck) {
-      deck.cards.forEach(function(card) {
-        var owned = getOwnedQty(card);
-        var missing = Math.max(0, card.qty - owned);
-        if (missing <= 0) return;
-        if (!cardMap[card.id]) cardMap[card.id] = { card: Object.assign({}, card), needed: 0, have: owned, missing: 0 };
-        cardMap[card.id].missing += missing;
-        cardMap[card.id].needed  += card.qty;
-      });
-    });
-    return Object.values(cardMap).sort(function(a,b){ return a.card.name.localeCompare(b.card.name); });
-
-  } else {
-    // Set missing cards
-    var setFilter = state.shoppingSetFilter || 'all';
-    var typeFilter = state.shoppingSetTypeFilter || 'master';
-    var setsToCheck = SET_COLLECTIONS.filter(function(s){ return setFilter === 'all' || s.sigla === setFilter; });
-    var items = [];
-    setsToCheck.forEach(function(s) {
-      var thresh = SET_THRESHOLDS[s.sigla] || { basic: s.cards.length, complete: s.cards.length };
-      var limit = typeFilter === 'basic' ? thresh.basic : s.cards.length;
-      s.cards.forEach(function(card) {
-        if (parseInt(card.number, 10) > limit) return;
-        var qty = (state.collection[card.id] && state.collection[card.id].qty) || 0;
-        if (qty > 0) return; // already have it
-        items.push({ card: Object.assign({}, card), needed: 1, have: 0, missing: 1 });
-      });
-    });
-    return items.sort(function(a,b){ return a.card.set.localeCompare(b.card.set) || parseInt(a.card.number,10) - parseInt(b.card.number,10); });
-  }
-}
-
-function formatLigaPokemon(items, quality, lang) {
-  var q = quality || 'nm';
-  var l = lang    || 'pt';
-  return items.map(function(item) {
-    var c = item.card;
-    // Number: always zero-padded to 3 digits
-    var numPad = String(parseInt(c.number,10) || 0).padStart(3,'0');
-    // Total: use basic threshold (the canonical set size for Liga Pokémon)
-    var thresh = SET_THRESHOLDS[c.set];
-    var setTotal = thresh ? String(thresh.basic) : String((SET_COLLECTIONS.find(function(s){ return s.sigla===c.set; })||{cards:[]}).cards.length);
-    return item.missing + ' ' + c.name.toLowerCase()
-      + ' (' + numPad + '/' + setTotal + ')'
-      + ' [qualidade=' + q + '] [idioma=' + l + ']';
-  }).join('\n');
-}
-
-function copyShoppingList() {
-  const items = buildShoppingList();
-  if (!items.length) return showToast('Nenhuma carta faltando!', 'error');
-  const text = formatLigaPokemon(items, state.shoppingQuality, state.shoppingLang);
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(text)
-      .then(() => showToast(items.length + ' itens copiados!'))
-      .catch(() => fallbackCopyText(text));
-  } else { fallbackCopyText(text); }
-}
-
 function fallbackCopyText(text) {
   const el = document.createElement('textarea');
   el.value = text; el.style.cssText = 'position:fixed;opacity:0';
@@ -1476,26 +1402,6 @@ function fallbackCopyText(text) {
   try { document.execCommand('copy'); showToast('Copiado!'); }
   catch { showToast('Erro ao copiar.','error'); }
   document.body.removeChild(el);
-}
-
-function exportShoppingList() {
-  const items = buildShoppingList();
-  if (!items.length) return showToast('Nenhuma carta faltando!', 'error');
-  const text = formatLigaPokemon(items, state.shoppingQuality, state.shoppingLang);
-  const filename = 'lista-compras-' + new Date().toISOString().slice(0,10) + '.txt';
-  if (typeof window.AndroidExport !== 'undefined') {
-    window.AndroidExport.shareCSV(filename, text);
-    showToast(items.length + ' itens exportados!');
-  } else {
-    const blob = new Blob([text], { type: 'text/plain;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url; a.download = filename;
-    document.body.appendChild(a); a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-    showToast(items.length + ' itens exportados!');
-  }
 }
 
 // ─────────────────────────────────────────────
@@ -1624,152 +1530,6 @@ function buildDashboardTab() {
   return html;
 }
 
-function buildShoppingTab() {
-  var quality  = state.shoppingQuality  || 'nm';
-  var lang     = state.shoppingLang     || 'pt';
-  var source   = state.shoppingSource   || 'decks';
-  var deckFilter    = state.shoppingDeckFilter    || 'all';
-  var setFilter     = state.shoppingSetFilter     || 'all';
-  var setTypeFilter = state.shoppingSetTypeFilter || 'master';
-  var items = buildShoppingList();
-  var allDecksList = allDecks();
-
-  var qualityOpts = [
-    { v:'nm', label:'NM — Near Mint' },
-    { v:'sp', label:'SP — Slightly Played' },
-    { v:'mp', label:'MP — Moderately Played' },
-    { v:'hp', label:'HP — Heavily Played' },
-    { v:'dm', label:'DM — Damaged' },
-  ];
-  var langOpts = [
-    { v:'pt', label:'PT — Português' },
-    { v:'en', label:'EN — Inglês' },
-    { v:'jp', label:'JP — Japonês' },
-  ];
-
-  // Header
-  var html = '<div class="page-header">'
-    + '<h1 class="page-title">Lista de Compras</h1>'
-    + '<div style="display:flex;gap:6px">'
-    + '<button class="btn-pill btn-ghost btn-xs" onclick="copyShoppingList()">' + icon('copy',13) + ' Copiar</button>'
-    + '<button class="btn-pill btn-primary btn-xs" onclick="exportShoppingList()">' + icon('upload',13) + ' Exportar</button>'
-    + '</div></div>';
-
-  // Liga notice
-  html += '<div class="surface-card mb-12" style="border-color:rgba(245,158,11,.3);background:var(--gold-dim)">'
-    + '<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">'
-    + icon('external',15)
-    + '<span style="font-size:13px;font-weight:800;color:var(--gold)">Compatível com Liga Pokémon BR</span>'
-    + '</div>'
-    + '<p style="font-size:11px;color:var(--text-2);line-height:1.6">'
-    + 'Formato aceito por <b>www.ligapokemon.com.br</b><br>'
-    + '<code style="font-family:var(--font-mono);font-size:10px;background:var(--surface-3);padding:1px 5px;border-radius:4px">'
-    + 'N nome (nº/total) [qualidade=X] [idioma=X]</code>'
-    + '</p></div>';
-
-  // Source tabs
-  html += '<div class="sub-tabs mb-12">'
-    + '<button class="sub-tab ' + (source==='decks'?'active':'') + '" onclick="state.shoppingSource=\'decks\';render()">Decks</button>'
-    + '<button class="sub-tab ' + (source==='sets'?'active':'') + '" onclick="state.shoppingSource=\'sets\';render()">Coleções</button>'
-    + '</div>';
-
-  // Filters card
-  var qualityOptions = qualityOpts.map(function(o){
-    return '<option value="' + o.v + '" ' + (quality===o.v?'selected':'') + '>' + o.label + '</option>';
-  }).join('');
-  var langOptions = langOpts.map(function(o){
-    return '<option value="' + o.v + '" ' + (lang===o.v?'selected':'') + '>' + o.label + '</option>';
-  }).join('');
-
-  html += '<div class="surface-card mb-12"><h2 class="card-title mb-10">Configurações</h2><div class="form-stack">';
-
-  if (source === 'decks') {
-    var deckOptions = '<option value="all" ' + (deckFilter==='all'?'selected':'') + '>Todos os decks</option>'
-      + allDecksList.map(function(d){
-          return '<option value="' + d.id + '" ' + (deckFilter===d.id?'selected':'') + '>' + esc(d.name) + '</option>';
-        }).join('');
-    html += '<div><p class="count-label mb-6">Deck(s)</p>'
-      + '<select class="inp select-inp" onchange="state.shoppingDeckFilter=this.value;render()">'
-      + deckOptions + '</select></div>';
-  } else {
-    var sortedForShop = [...SET_COLLECTIONS].sort(function(a,b){
-      var da = SET_RELEASE_DATES[a.sigla]||'0000';
-      var db = SET_RELEASE_DATES[b.sigla]||'0000';
-      return db.localeCompare(da);
-    });
-    var setOptions = '<option value="all" ' + (setFilter==='all'?'selected':'') + '>Todos os sets</option>'
-      + sortedForShop.map(function(s){
-          var relDate = fmtDate(SET_RELEASE_DATES[s.sigla]);
-          return '<option value="' + s.sigla + '" ' + (setFilter===s.sigla?'selected':'') + '>' + esc(s.name) + (relDate?' ('+relDate+')':'') + '</option>';
-        }).join('');
-    html += '<div><p class="count-label mb-6">Set(s)</p>'
-      + '<select class="inp select-inp" onchange="state.shoppingSetFilter=this.value;render()">'
-      + setOptions + '</select></div>';
-    html += '<div class="type-filter-row mt-8">'
-      + '<button onclick="state.shoppingSetTypeFilter=\'basic\';render()" class="type-btn ' + (setTypeFilter==='basic'?'active-purple':'') + '">'
-      + icon('circle',13) + ' Completo<br><span class="type-sub">cartas numeradas</span></button>'
-      + '<button onclick="state.shoppingSetTypeFilter=\'master\';render()" class="type-btn ' + (setTypeFilter==='master'?'active-gold':'') + '">'
-      + icon('crown',13) + ' Master Set<br><span class="type-sub">todas as Full Arts</span></button>'
-      + '</div>';
-  }
-
-  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">'
-    + '<div><p class="count-label mb-6">Qualidade mínima</p>'
-    + '<select class="inp select-inp" onchange="state.shoppingQuality=this.value;render()">' + qualityOptions + '</select></div>'
-    + '<div><p class="count-label mb-6">Idioma</p>'
-    + '<select class="inp select-inp" onchange="state.shoppingLang=this.value;render()">' + langOptions + '</select></div>'
-    + '</div></div></div>';
-
-  if (!items.length) {
-    html += '<div class="empty-state">'
-      + '<div class="empty-icon">' + icon('check-sq',40) + '</div>'
-      + '<p class="empty-title">' + (source==='decks'?'Coleção completa!':'Tudo completo!') + '</p>'
-      + '<p class="empty-sub">Nenhuma carta faltando.</p>'
-      + '</div>';
-    return html;
-  }
-
-  var totalCopies = items.reduce(function(a,i){ return a+i.missing; }, 0);
-  var listRows = '';
-  items.forEach(function(item) {
-    var c = item.card;
-    var setData = SET_COLLECTIONS.find(function(s){ return s.sigla === c.set; });
-    var thresh2 = SET_THRESHOLDS[c.set];
-    var setTotal = thresh2 ? String(thresh2.basic) : (setData ? String(setData.cards.length) : '?');
-    var numClean = String(parseInt(c.number,10)||0).padStart(3,'0');
-    var previewLine = item.missing + ' ' + c.name.toLowerCase()
-      + ' (' + numClean + '/' + setTotal + ')'
-      + ' [qualidade=' + quality + '] [idioma=' + lang + ']';
-    listRows += '<div class="set-row" style="flex-direction:column;align-items:flex-start;gap:4px;padding:10px 12px">'
-      + '<div style="display:flex;align-items:center;gap:8px;width:100%">'
-      + '<span class="badge badge-red" style="min-width:28px;justify-content:center">' + item.missing + '×</span>'
-      + '<div style="flex:1;min-width:0">'
-      + '<span class="set-row-name">' + esc(c.name) + '</span>'
-      + '<span class="set-row-code mono-sm"> ' + c.set + ' #' + c.number
-      + ' <span onclick="openCardPage(\'' + c.set.replace(/[^A-Za-z0-9]/g,'') + '\',\'' + String(parseInt(c.number,10)||0) + '\')" class="ver-link">' + icon('external',11) + '</span>'
-      + '</span></div>'
-      + (source==='decks' ? '<span class="badge badge-dim">possuí ' + item.have + '</span>' : '')
-      + '</div>'
-      + '<code style="font-family:var(--font-mono);font-size:9px;color:var(--text-3);word-break:break-all;padding-left:36px">' + esc(previewLine) + '</code>'
-      + '</div>';
-  });
-
-  var previewText = esc(formatLigaPokemon(items, quality, lang));
-  html += '<div class="surface-card">'
-    + '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">'
-    + '<span class="card-title">' + items.length + ' carta' + (items.length!==1?'s':'') + ' faltando</span>'
-    + '<span class="badge badge-red">' + totalCopies + ' cop.</span>'
-    + '</div>'
-    + '<div class="set-card-list">' + listRows + '</div>'
-    + '<div style="margin-top:16px;padding:12px;background:var(--surface-3);border-radius:var(--radius-sm);border:1px solid var(--border-2)">'
-    + '<p class="count-label mb-6">Preview — formato Liga Pokémon</p>'
-    + '<pre style="font-family:var(--font-mono);font-size:10px;color:var(--text-2);white-space:pre-wrap;line-height:1.6;max-height:140px;overflow-y:auto">'
-    + previewText + '</pre>'
-    + '</div></div>';
-
-  return html;
-}
-
 // ─────────────────────────────────────────────
 //  DECK EDITOR MODAL
 // ─────────────────────────────────────────────
@@ -1827,121 +1587,6 @@ function deckEditorRemoveCard(deckId, cardId) {
   render();
 }
 
-function buildDeckEditorModal() {
-  if (!state.deckEditorId) return '';
-  const deckId = state.deckEditorId;
-  const deck = state.decks.find(d => d.id === deckId);
-  if (!deck) return '';
-
-  const search = (state.deckEditorSearch || '').toLowerCase();
-  const addSearch = (state.deckEditorAddSearch || '').toLowerCase();
-
-  // Filtered current cards
-  const filteredCards = deck.cards.filter(c =>
-    !search || c.name.toLowerCase().includes(search) || c.set.toLowerCase().includes(search)
-  );
-
-  // Total qty
-  const totalQty = deck.cards.reduce((a, c) => a + c.qty, 0);
-  const overLimit = totalQty > 60;
-
-  // Search for cards to add from collection + pool
-  let addResults = [];
-  if (addSearch.length >= 2) {
-    const seen = new Set(deck.cards.map(c => c.id));
-    // Search collection
-    Object.values(state.collection).forEach(c => {
-      if (!c.name) return;
-      if (c.name.toLowerCase().includes(addSearch) && !seen.has(c.id)) {
-        addResults.push(c);
-        seen.add(c.id);
-      }
-    });
-    // Search all set collections
-    for (const s of SET_COLLECTIONS) {
-      for (const c of s.cards) {
-        if (c.name.toLowerCase().includes(addSearch) && !seen.has(c.id)) {
-          addResults.push(c);
-          seen.add(c.id);
-          if (addResults.length >= 20) break;
-        }
-      }
-      if (addResults.length >= 20) break;
-    }
-    addResults = addResults.slice(0, 20);
-  }
-
-  let html = '<div class="modal-overlay" id="deck-editor-overlay">'
-    + '<div class="modal-sheet" style="max-height:92vh">'
-    + '<div class="modal-header">'
-    + '<div>'
-    + '<span class="modal-title">' + esc(deck.name) + '</span>'
-    + (deck.isCustomized ? '<span class="badge badge-amber" style="margin-left:8px;font-size:9px">EDITADO</span>' : '')
-    + '</div>'
-    + '<div class="modal-actions">'
-    + '<span class="badge ' + (overLimit ? 'badge-red' : 'badge-green') + '" style="font-size:11px">' + totalQty + '/60</span>'
-    + '<button class="btn-pill btn-primary btn-xs" onclick="saveDeckEditorModal(\'' + deckId + '\')">' + icon('check',13) + ' Salvar</button>'
-    + '<button class="btn-pill btn-ghost btn-xs" onclick="closeDeckEditorModal()">Fechar</button>'
-    + '</div></div>'
-
-    // Add card search
-    + '<div class="modal-search" style="border-bottom:1px solid var(--border)">'
-    + '<p class="count-label mb-6">Adicionar carta</p>'
-    + '<input class="inp inp-search" id="deck-editor-add-search" placeholder="Buscar carta para adicionar..." value="' + esc(state.deckEditorAddSearch) + '" oninput="state.deckEditorAddSearch=this.value;render()">'
-    + (addResults.length ? '<div style="max-height:140px;overflow-y:auto;margin-top:6px;border:1px solid var(--border);border-radius:var(--radius-sm)">'
-      + addResults.map(c => {
-          const inColl = (state.collection[c.id] && state.collection[c.id].qty > 0);
-          return '<div onclick="deckEditorAddCard(\'' + deckId + '\',' + JSON.stringify({id:c.id,name:c.name,set:c.set,number:c.number}).replace(/"/g,'&quot;') + ')" class="modal-card">'
-            + '<div class="modal-card-info">'
-            + '<span class="modal-card-name">' + esc(c.name) + '</span>'
-            + '<span class="mono-sm text-muted">' + c.set + ' #' + c.number + '</span>'
-            + '</div>'
-            + (inColl ? '<span class="badge badge-blue">Coleção</span>' : '')
-            + icon('plus',14)
-            + '</div>';
-        }).join('')
-      + '</div>' : '')
-    + '</div>'
-
-    // Search existing cards
-    + '<div class="modal-search">'
-    + '<input class="inp inp-search" id="deck-editor-search" placeholder="Filtrar cartas do deck..." value="' + esc(state.deckEditorSearch) + '" oninput="state.deckEditorSearch=this.value;render()">'
-    + '<span class="count-label mt-6">' + filteredCards.length + ' carta' + (filteredCards.length!==1?'s':'') + ' · ' + filteredCards.reduce((a,c)=>a+c.qty,0) + ' cópias</span>'
-    + '</div>'
-
-    // Card list
-    + '<div class="modal-list">';
-
-  filteredCards.forEach(card => {
-    const owned = getOwnedQty(card);
-    const complete = owned >= card.qty;
-    html += '<div class="modal-card" style="justify-content:space-between">'
-      + '<div class="flex-gap" style="min-width:0;flex:1">'
-      + '<div class="checkbox sm ' + (complete?'checked':'') + '">' + (complete?icon('check',11):'') + '</div>'
-      + '<div style="min-width:0">'
-      + '<span class="modal-card-name">' + esc(card.name) + '</span>'
-      + '<span class="mono-sm text-muted"> ' + card.set + ' #' + card.number
-      + ' <span onclick="openCardPage(\'' + card.set.replace(/[^A-Za-z0-9]/g,'') + '\',\'' + (parseInt(card.number,10)||card.number) + '\')" class="ver-link">' + icon('external',11) + '</span>'
-      + '</span></div></div>'
-      + '<div class="flex-gap">'
-      + '<span class="mono-sm" style="color:var(--text-3)">possuí ' + owned + '</span>'
-      + '<div class="counter-group">'
-      + '<button class="counter-btn" ' + (card.qty<=1?'disabled':'') + ' onclick="deckEditorChangeQty(\'' + deckId + '\',\'' + card.id + '\',-1)">−</button>'
-      + '<span class="counter-val ' + (complete?'green':card.qty>0?'amber':'dim') + '">' + card.qty + '</span>'
-      + '<button class="counter-btn" onclick="deckEditorChangeQty(\'' + deckId + '\',\'' + card.id + '\',1)">+</button>'
-      + '</div>'
-      + '<button class="icon-btn danger" onclick="deckEditorRemoveCard(\'' + deckId + '\',\'' + card.id + '\')" title="Remover">' + icon('x',12) + '</button>'
-      + '</div>'
-      + '</div>';
-  });
-
-  if (!filteredCards.length) {
-    html += '<div class="empty-state compact"><p class="empty-sub">Nenhuma carta encontrada.</p></div>';
-  }
-
-  html += '</div></div></div>';
-  return html;
-}
 // ─────────────────────────────────────────────
 //  RENDER
 // ─────────────────────────────────────────────
@@ -2014,101 +1659,6 @@ function buildMain() {
 }
 
 // ── DECKS TAB ──────────────────────────────────
-function buildDecksTab() {
-  let html = `<div class="page-header">
-    <h1 class="page-title">Meus Decks</h1>
-    <button class="btn-pill btn-primary" id="btn-add-deck">${icon("plus",15)} Novo Deck</button>
-  </div>`;
-
-  if (state.showAddDeck) {
-    html += `<div class="surface-card mb-16" id="form-deck">
-      <h2 class="card-title mb-12">Importar Deck</h2>
-      <div class="form-stack">
-        <input class="inp" id="inp-deck-name" placeholder="Nome do Deck" value="${esc(state.newDeckName)}">
-        <input class="inp" id="inp-deck-desc" placeholder="Descrição (opcional)" value="${esc(state.newDeckDesc)}" maxlength="120">
-        <textarea class="inp inp-mono" id="inp-deck-list" rows="6" placeholder="Cole a lista (ex: 4 Torchic DRI 040)\n\nCompatível com exportação do Pokémon TCG Live">${esc(state.newDeckList)}</textarea>
-        <div class="btn-row">
-          <button class="btn-pill btn-ghost" id="btn-cancel-deck">Cancelar</button>
-          <button class="btn-pill btn-primary" id="btn-save-deck">Salvar Deck</button>
-        </div>
-      </div>
-    </div>`;
-  }
-
-  if (!state.decks.length) {
-    html += `<div class="empty-state">
-      <div class="empty-icon">${icon("cards",40)}</div>
-      <p class="empty-title">Nenhum deck ainda</p>
-      <p class="empty-sub">Clique em "Novo Deck" para importar sua lista</p>
-    </div>`;
-    return html;
-  }
-
-  // ── Search bar ────────────────────────────────
-  html += `<input class="inp inp-search mb-8" id="deck-search-inp"
-    placeholder="Buscar deck..." value="${esc(state.deckSearch)}"
-    oninput="state.deckSearch=this.value;render()">`;
-
-  // ── Sort chips ────────────────────────────────
-  const sorts = [['recent','🕐 Recentes'],['name','A–Z'],['progress','% Progresso']];
-  html += `<div class="chip-row mb-12">
-    ${sorts.map(([val,label])=>`<button class="chip ${state.deckSort===val?'active':''}" onclick="state.deckSort='${val}';render()">${label}</button>`).join('')}
-  </div>`;
-
-  // ── Filter + sort ─────────────────────────────
-  const search = state.deckSearch.toLowerCase();
-  let deckList = [...state.decks];
-  if (search) deckList = deckList.filter(d => d.name.toLowerCase().includes(search));
-
-  if (state.deckSort === 'name')     deckList.sort((a,b)=>a.name.localeCompare(b.name,'pt'));
-  else if (state.deckSort === 'progress') deckList.sort((a,b)=>calcProgress(b.cards)-calcProgress(a.cards));
-  else deckList.sort((a,b)=>b.createdAt-a.createdAt);
-
-  if (!deckList.length) {
-    html += `<div class="empty-state compact"><p>Nenhum deck encontrado para "${esc(state.deckSearch)}".</p></div>`;
-    return html;
-  }
-
-  html += `<div class="deck-grid">`;
-  deckList.forEach(deck => {
-    const pct = calcProgress(deck.cards);
-    const missing = calcMissing(deck.cards);
-    const isConfirm = state.confirmDeleteId === deck.id;
-    html += `<div class="deck-card" data-open-deck="${deck.id}">
-      <div class="deck-card-top">
-        <div class="deck-card-name">
-          ${esc(deck.name)}
-          ${deck.isCustomized ? '<span class="badge badge-amber" style="margin-left:6px;font-size:9px">EDITADO</span>' : ''}
-        </div>
-        ${isConfirm
-          ? `<div class="confirm-row" onclick="event.stopPropagation()">
-              <button class="btn-pill btn-danger btn-xs" data-confirm-delete="${deck.id}">Excluir</button>
-              <button class="btn-pill btn-ghost btn-xs" data-cancel-delete>Não</button>
-             </div>`
-          : `<div class="flex-gap" onclick="event.stopPropagation()">
-              <button class="icon-btn" data-dupe-deck="${deck.id}" title="Duplicar deck">${icon("copy",14)}</button>
-              <button class="icon-btn" data-edit-deck="${deck.id}" title="Editar deck">${icon("edit",14)}</button>
-              <button class="icon-btn danger" data-ask-delete="${deck.id}">${icon("trash",14)}</button>
-             </div>`
-        }
-      </div>
-      <p class="deck-card-desc">${esc(deck.description||'')}</p>
-      <div class="progress-row">
-        <div class="progress-track"><div class="progress-fill blue" style="width:${pct}%"></div></div>
-        <span class="progress-pct">${pct}%</span>
-      </div>
-      <div class="deck-card-footer">
-        ${missing > 0
-          ? `<span class="badge badge-red">Faltam ${missing}</span>`
-          : `<span class="badge badge-green">${icon('check',10)} Completo</span>`}
-        <span class="badge badge-dim">${deck.cards.reduce((a,c)=>a+c.qty,0)} cartas</span>
-      </div>
-    </div>`;
-  });
-  html += `</div>`;
-  return html;
-}
-
 // ── DECK DETAIL ────────────────────────────────
 function buildDeckDetail(deck) {
   const pct = calcProgress(deck.cards);
@@ -2389,55 +1939,6 @@ function _buildPokedexModalInner(pk, linkedId, linkFn, unlinkFn, genLabel) {
       </div>
     </div>
   </div>`;
-}
-
-function buildPokedexModal() {
-  if (state.pokedexModal !== null) {
-    const pk = POKEDEX_151.find(p=>p.no===state.pokedexModal);
-    if (!pk) return '';
-    return _buildPokedexModalInner(pk, state.pokedex151[pk.no]||null, 'linkPokedexSlot', 'unlinkPokedexSlot', 'Gen I');
-  }
-  if (state.pokedexModalG2 !== null && state.pokedexModalG2 !== undefined) {
-    const pk = POKEDEX_JOHTO.find(p=>p.no===state.pokedexModalG2);
-    if (!pk) return '';
-    return _buildPokedexModalInner(pk, (state.pokedexJohto||{})[pk.no]||null, 'linkPokedexSlotG2', 'unlinkPokedexSlotG2', 'Gen II');
-  }
-  if (state.pokedexModalG3 !== null && state.pokedexModalG3 !== undefined) {
-    const pk = POKEDEX_HOENN.find(p=>p.no===state.pokedexModalG3);
-    if (!pk) return '';
-    return _buildPokedexModalInner(pk, (state.pokedexHoenn||{})[pk.no]||null, 'linkPokedexSlotG3', 'unlinkPokedexSlotG3', 'Gen III');
-  }
-  if (state.pokedexModalG4 !== null && state.pokedexModalG4 !== undefined) {
-    const pk = POKEDEX_SINNOH.find(p=>p.no===state.pokedexModalG4);
-    if (!pk) return '';
-    return _buildPokedexModalInner(pk, (state.pokedexSinnoh||{})[pk.no]||null, 'linkPokedexSlotG4', 'unlinkPokedexSlotG4', 'Gen IV');
-  }
-  if (state.pokedexModalG5 !== null && state.pokedexModalG5 !== undefined) {
-    const pk = POKEDEX_UNOVA.find(p=>p.no===state.pokedexModalG5);
-    if (!pk) return '';
-    return _buildPokedexModalInner(pk, (state.pokedexUnova||{})[pk.no]||null, 'linkPokedexSlotG5', 'unlinkPokedexSlotG5', 'Gen V');
-  }
-  if (state.pokedexModalG6 !== null && state.pokedexModalG6 !== undefined) {
-    const pk = POKEDEX_KALOS.find(p=>p.no===state.pokedexModalG6);
-    if (!pk) return '';
-    return _buildPokedexModalInner(pk, (state.pokedexKalos||{})[pk.no]||null, 'linkPokedexSlotG6', 'unlinkPokedexSlotG6', 'Gen VI');
-  }
-  if (state.pokedexModalG7 !== null && state.pokedexModalG7 !== undefined) {
-    const pk = POKEDEX_ALOLA.find(p=>p.no===state.pokedexModalG7);
-    if (!pk) return '';
-    return _buildPokedexModalInner(pk, (state.pokedexAlola||{})[pk.no]||null, 'linkPokedexSlotG7', 'unlinkPokedexSlotG7', 'Gen VII');
-  }
-  if (state.pokedexModalG8 !== null && state.pokedexModalG8 !== undefined) {
-    const pk = POKEDEX_GALAR.find(p=>p.no===state.pokedexModalG8);
-    if (!pk) return '';
-    return _buildPokedexModalInner(pk, (state.pokedexGalar||{})[pk.no]||null, 'linkPokedexSlotG8', 'unlinkPokedexSlotG8', 'Gen VIII');
-  }
-  if (state.pokedexModalG9 !== null && state.pokedexModalG9 !== undefined) {
-    const pk = POKEDEX_PALDEA.find(p=>p.no===state.pokedexModalG9);
-    if (!pk) return '';
-    return _buildPokedexModalInner(pk, (state.pokedexPaldea||{})[pk.no]||null, 'linkPokedexSlotG9', 'unlinkPokedexSlotG9', 'Gen IX');
-  }
-  return '';
 }
 
 // ─────────────────────────────────────────────
