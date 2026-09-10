@@ -11,6 +11,7 @@ WEB_INDEX = ROOT / "web-src" / "index.html"
 WEB_CSS = ROOT / "web-src" / "css" / "app.css"
 WEB_CORE_DIR = ROOT / "web-src" / "js" / "core"
 WEB_FEATURES_DIR = ROOT / "web-src" / "js" / "features"
+WEB_UI_DIR = ROOT / "web-src" / "js" / "ui"
 WEB_GENERATED = ROOT / "web-src" / "data" / "sets.generated.js"
 ASSETS_DIR = ROOT / "apk-project" / "app" / "src" / "main" / "assets"
 ASSETS_DATA = ASSETS_DIR / "data"
@@ -79,6 +80,10 @@ def main():
     features_target.mkdir(parents=True, exist_ok=True)
     for feature_file in WEB_FEATURES_DIR.glob("*.js"):
         shutil.copy2(feature_file, features_target / feature_file.name)
+    ui_target = ASSETS_DIR / "js" / "ui"
+    ui_target.mkdir(parents=True, exist_ok=True)
+    for ui_file in WEB_UI_DIR.glob("*.js"):
+        shutil.copy2(ui_file, ui_target / ui_file.name)
 
     print("\nBuild web concluido.")
     print(f"Index: {ASSETS_DIR / 'index.html'}")
@@ -86,6 +91,7 @@ def main():
     print(f"CSS:   {ASSETS_DIR / 'css' / 'app.css'}")
     print(f"Core:  {ASSETS_DIR / 'js' / 'core'}")
     print(f"Features: {ASSETS_DIR / 'js' / 'features'}")
+    print(f"UI:    {ASSETS_DIR / 'js' / 'ui'}")
 
 if __name__ == "__main__":
     main()

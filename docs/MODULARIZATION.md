@@ -114,3 +114,9 @@ Funções extraídas nesta etapa:
 
 Os dados brutos das gerações do Pokédex permanecem no `index.html` por enquanto.
 Isso reduz o risco da migração; a separação dos dados ficará para uma etapa posterior.
+
+## Etapa 8 — Dashboard e UI compartilhada
+
+Foram extraídos `dashboard.js` e `ui/layout.js`. Também foi concluída a extração do runtime restante de Decks e Pokédex, mantendo apenas os dados brutos do Pokédex inline.
+
+`attachEvents()` permanece no `index.html` e será tratado isoladamente na próxima etapa de maior risco.
