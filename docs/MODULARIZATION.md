@@ -36,3 +36,10 @@ python -m unittest discover -s tests -v
 
 Nenhuma chave de persistência (`tcg_decks`, `tcg_collection`, `tcg_pokedex*`) foi alterada nesta etapa.
 O objetivo aqui é somente separar os dados das coleções sem alterar as regras funcionais.
+
+## Etapa 3 — CSS externo
+
+- O bloco `<style>` foi removido de `web-src/index.html`.
+- Os estilos agora vivem em `web-src/css/app.css`.
+- O build copia o CSS para `apk-project/app/src/main/assets/css/app.css`.
+- Nenhuma regra funcional ou chave de persistência foi alterada.
