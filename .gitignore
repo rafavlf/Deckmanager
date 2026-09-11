@@ -4,3 +4,7 @@
 __pycache__/
 *.py[cod]
 .pytest_cache/
+
+apk-project/.gradle/
+apk-project/app/build/
+apk-project/build/
