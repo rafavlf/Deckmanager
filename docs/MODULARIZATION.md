@@ -120,3 +120,11 @@ Isso reduz o risco da migração; a separação dos dados ficará para uma etapa
 Foram extraídos `dashboard.js` e `ui/layout.js`. Também foi concluída a extração do runtime restante de Decks e Pokédex, mantendo apenas os dados brutos do Pokédex inline.
 
 `attachEvents()` permanece no `index.html` e será tratado isoladamente na próxima etapa de maior risco.
+
+## Etapa 9 — Eventos globais
+
+`attachEvents()` foi movido integralmente para `web-src/js/ui/events.js`.
+
+O conteúdo interno da função foi preservado. Nesta etapa não houve separação
+dos listeners por feature; isso será feito somente depois que esta versão for
+validada no APK instalado.

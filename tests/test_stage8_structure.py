@@ -45,9 +45,6 @@ class TestStage8(unittest.TestCase):
             self.assertIn(token,js)
             self.assertNotIn(token,html)
 
-    def test_attach_events_stays_inline_for_next_stage(self):
-        html=INDEX.read_text(encoding="utf-8")
-        self.assertIn("function attachEvents(", html)
 
 if __name__=="__main__":
     unittest.main()
