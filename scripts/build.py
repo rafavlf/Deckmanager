@@ -12,6 +12,7 @@ WEB_CSS = ROOT / "web-src" / "css" / "app.css"
 WEB_CORE_DIR = ROOT / "web-src" / "js" / "core"
 WEB_FEATURES_DIR = ROOT / "web-src" / "js" / "features"
 WEB_UI_DIR = ROOT / "web-src" / "js" / "ui"
+WEB_JS_DIR = ROOT / "web-src" / "js"
 WEB_GENERATED = ROOT / "web-src" / "data" / "sets.generated.js"
 ASSETS_DIR = ROOT / "apk-project" / "app" / "src" / "main" / "assets"
 ASSETS_DATA = ASSETS_DIR / "data"
@@ -84,6 +85,13 @@ def main():
     ui_target.mkdir(parents=True, exist_ok=True)
     for ui_file in WEB_UI_DIR.glob("*.js"):
         shutil.copy2(ui_file, ui_target / ui_file.name)
+    # Sync recursivo do JavaScript: inclui app.js e futuras subpastas automaticamente.
+    js_target = ASSETS_DIR / "js"
+    for source in WEB_JS_DIR.rglob("*.js"):
+        relative = source.relative_to(WEB_JS_DIR)
+        target = js_target / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, target)
 
     print("\nBuild web concluido.")
     print(f"Index: {ASSETS_DIR / 'index.html'}")

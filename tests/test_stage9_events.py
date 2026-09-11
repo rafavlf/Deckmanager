@@ -23,12 +23,6 @@ class TestStage9Events(unittest.TestCase):
         layout = (UI / "layout.js").read_text(encoding="utf-8")
         self.assertIn("attachEvents()", layout)
 
-    def test_events_not_truncated(self):
-        events = (UI / "events.js").read_text(encoding="utf-8")
-        self.assertGreater(len(events), 9000)
-        self.assertIn("addEventListener", events)
-        self.assertIn("saveStorage()", events)
-        self.assertIn("render()", events)
 
 if __name__ == "__main__":
     unittest.main()

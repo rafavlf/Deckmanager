@@ -47,9 +47,9 @@ class TestFeatureStructure(unittest.TestCase):
             self.assertNotIn(token, html)
 
     def test_collection_backup_callback_still_present(self):
-        html = INDEX.read_text(encoding="utf-8")
-        self.assertIn("window.onCSVImported", html)
-        self.assertIn("processCSVText", html)
+        app = (ROOT / "web-src" / "js" / "app.js").read_text(encoding="utf-8")
+        self.assertIn("window.onCSVImported", app)
+        self.assertIn("processCSVText", app)
 
 if __name__ == "__main__":
     unittest.main()

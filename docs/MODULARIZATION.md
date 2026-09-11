@@ -128,3 +128,21 @@ Foram extraídos `dashboard.js` e `ui/layout.js`. Também foi concluída a extra
 O conteúdo interno da função foi preservado. Nesta etapa não houve separação
 dos listeners por feature; isso será feito somente depois que esta versão for
 validada no APK instalado.
+
+## Etapas 10–11 — app.js e eventos por responsabilidade
+
+O último script inline foi movido para `web-src/js/app.js`, preservando os dados do Pokédex e a inicialização atual.
+
+`attachEvents()` passou a ser um agregador pequeno e os handlers foram separados, sem reescrever a lógica, em:
+
+```text
+web-src/js/ui/
+├── events-navigation.js
+├── events-interactions.js
+├── events-decks.js
+├── events-collection.js
+├── events-history.js
+└── events.js
+```
+
+O build ganhou cópia recursiva de `web-src/js/**/*.js`, reduzindo manutenção manual para novos módulos.
