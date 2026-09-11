@@ -1,0 +1,732 @@
+{
+  "code": "PRE",
+  "name": "Evoluções Prismáticas",
+  "series": "Mega",
+  "releaseDate": "2025-01-17",
+  "counts": {
+    "numbered": 131,
+    "complete": 162
+  },
+  "cards": [
+    {
+      "number": "001",
+      "name": "Exeggcute"
+    },
+    {
+      "number": "002",
+      "name": "Exeggutor"
+    },
+    {
+      "number": "003",
+      "name": "Pinsir"
+    },
+    {
+      "number": "004",
+      "name": "Budew"
+    },
+    {
+      "number": "005",
+      "name": "Leafeon"
+    },
+    {
+      "number": "006",
+      "name": "Leafeon ex"
+    },
+    {
+      "number": "007",
+      "name": "Cottonee"
+    },
+    {
+      "number": "008",
+      "name": "Whimsicott"
+    },
+    {
+      "number": "009",
+      "name": "Applin"
+    },
+    {
+      "number": "010",
+      "name": "Dipplin"
+    },
+    {
+      "number": "011",
+      "name": "Hydrapple ex"
+    },
+    {
+      "number": "012",
+      "name": "Ogerpon Máscara Turquesa ex"
+    },
+    {
+      "number": "013",
+      "name": "Flareon"
+    },
+    {
+      "number": "014",
+      "name": "Flareon ex"
+    },
+    {
+      "number": "015",
+      "name": "Litleo"
+    },
+    {
+      "number": "016",
+      "name": "Pyroar"
+    },
+    {
+      "number": "017",
+      "name": "Ogerpon Máscara Fornalha ex"
+    },
+    {
+      "number": "018",
+      "name": "Slowpoke"
+    },
+    {
+      "number": "019",
+      "name": "Slowking"
+    },
+    {
+      "number": "020",
+      "name": "Goldeen"
+    },
+    {
+      "number": "021",
+      "name": "Seaking"
+    },
+    {
+      "number": "022",
+      "name": "Vaporeon"
+    },
+    {
+      "number": "023",
+      "name": "Vaporeon ex"
+    },
+    {
+      "number": "024",
+      "name": "Suicune"
+    },
+    {
+      "number": "025",
+      "name": "Glaceon"
+    },
+    {
+      "number": "026",
+      "name": "Glaceon ex"
+    },
+    {
+      "number": "027",
+      "name": "Ogerpon Máscara Nascente ex"
+    },
+    {
+      "number": "028",
+      "name": "Pikachu ex"
+    },
+    {
+      "number": "029",
+      "name": "Jolteon"
+    },
+    {
+      "number": "030",
+      "name": "Jolteon ex"
+    },
+    {
+      "number": "031",
+      "name": "Mãos Férreas ex"
+    },
+    {
+      "number": "032",
+      "name": "Espinhos Férreos ex"
+    },
+    {
+      "number": "033",
+      "name": "Espeon"
+    },
+    {
+      "number": "034",
+      "name": "Espeon ex"
+    },
+    {
+      "number": "035",
+      "name": "Duskull"
+    },
+    {
+      "number": "036",
+      "name": "Dusclops"
+    },
+    {
+      "number": "037",
+      "name": "Dusknoir"
+    },
+    {
+      "number": "038",
+      "name": "Spritzee"
+    },
+    {
+      "number": "039",
+      "name": "Aromatisse"
+    },
+    {
+      "number": "040",
+      "name": "Sylveon"
+    },
+    {
+      "number": "041",
+      "name": "Sylveon ex"
+    },
+    {
+      "number": "042",
+      "name": "Cauda Brado"
+    },
+    {
+      "number": "043",
+      "name": "Juba Sopro"
+    },
+    {
+      "number": "044",
+      "name": "Munkidori"
+    },
+    {
+      "number": "045",
+      "name": "Fezandipiti"
+    },
+    {
+      "number": "046",
+      "name": "Rocha Férrea"
+    },
+    {
+      "number": "047",
+      "name": "Larvitar"
+    },
+    {
+      "number": "048",
+      "name": "Pupitar"
+    },
+    {
+      "number": "049",
+      "name": "Groudon"
+    },
+    {
+      "number": "050",
+      "name": "Riolu"
+    },
+    {
+      "number": "051",
+      "name": "Lucario ex"
+    },
+    {
+      "number": "052",
+      "name": "Hippopotas"
+    },
+    {
+      "number": "053",
+      "name": "Hippowdon"
+    },
+    {
+      "number": "054",
+      "name": "Ursaluna Lua Sangrenta"
+    },
+    {
+      "number": "055",
+      "name": "Presa Grande"
+    },
+    {
+      "number": "056",
+      "name": "Choque Areia ex"
+    },
+    {
+      "number": "057",
+      "name": "Okidogi"
+    },
+    {
+      "number": "058",
+      "name": "Ogerpon Máscara Alicerce ex"
+    },
+    {
+      "number": "059",
+      "name": "Umbreon"
+    },
+    {
+      "number": "060",
+      "name": "Umbreon ex"
+    },
+    {
+      "number": "061",
+      "name": "Sneasel"
+    },
+    {
+      "number": "062",
+      "name": "Houndour"
+    },
+    {
+      "number": "063",
+      "name": "Houndoom"
+    },
+    {
+      "number": "064",
+      "name": "Tyranitar ex"
+    },
+    {
+      "number": "065",
+      "name": "Lua Estrondo"
+    },
+    {
+      "number": "066",
+      "name": "Bronzor"
+    },
+    {
+      "number": "067",
+      "name": "Bronzong"
+    },
+    {
+      "number": "068",
+      "name": "Heatran"
+    },
+    {
+      "number": "069",
+      "name": "Duraludon"
+    },
+    {
+      "number": "070",
+      "name": "Archaludon"
+    },
+    {
+      "number": "071",
+      "name": "Dreepy"
+    },
+    {
+      "number": "072",
+      "name": "Drakloak"
+    },
+    {
+      "number": "073",
+      "name": "Dragapult ex"
+    },
+    {
+      "number": "074",
+      "name": "Eevee"
+    },
+    {
+      "number": "075",
+      "name": "Eevee ex"
+    },
+    {
+      "number": "076",
+      "name": "Snorlax ex"
+    },
+    {
+      "number": "077",
+      "name": "Hoothoot"
+    },
+    {
+      "number": "078",
+      "name": "Noctowl"
+    },
+    {
+      "number": "079",
+      "name": "Dunsparce"
+    },
+    {
+      "number": "080",
+      "name": "Dudunsparce"
+    },
+    {
+      "number": "081",
+      "name": "Miltank"
+    },
+    {
+      "number": "082",
+      "name": "Lugia ex"
+    },
+    {
+      "number": "083",
+      "name": "Buneary"
+    },
+    {
+      "number": "084",
+      "name": "Lopunny"
+    },
+    {
+      "number": "085",
+      "name": "Rotom Ventilador"
+    },
+    {
+      "number": "086",
+      "name": "Regigigas"
+    },
+    {
+      "number": "087",
+      "name": "Shaymin"
+    },
+    {
+      "number": "088",
+      "name": "Furfrou"
+    },
+    {
+      "number": "089",
+      "name": "Hawlucha"
+    },
+    {
+      "number": "090",
+      "name": "Noibat"
+    },
+    {
+      "number": "091",
+      "name": "Noivern ex"
+    },
+    {
+      "number": "092",
+      "name": "Terapagos ex"
+    },
+    {
+      "number": "093",
+      "name": "Amarílis"
+    },
+    {
+      "number": "094",
+      "name": "Abismo da Área Zero"
+    },
+    {
+      "number": "095",
+      "name": "Moti Vinculante"
+    },
+    {
+      "number": "096",
+      "name": "Treino de Faixa Preta"
+    },
+    {
+      "number": "097",
+      "name": "Treino de Faixa Preta"
+    },
+    {
+      "number": "098",
+      "name": "Treino de Faixa Preta"
+    },
+    {
+      "number": "099",
+      "name": "Treino de Faixa Preta"
+    },
+    {
+      "number": "100",
+      "name": "Urzy"
+    },
+    {
+      "number": "101",
+      "name": "Poffin de Colega"
+    },
+    {
+      "number": "102",
+      "name": "Kit Caça-inseto"
+    },
+    {
+      "number": "103",
+      "name": "Carmine"
+    },
+    {
+      "number": "104",
+      "name": "Decodificação da Criptomaníaca"
+    },
+    {
+      "number": "105",
+      "name": "Plínio"
+    },
+    {
+      "number": "106",
+      "name": "Recipiente Terrestre"
+    },
+    {
+      "number": "107",
+      "name": "Liderança do Explorador"
+    },
+    {
+      "number": "108",
+      "name": "Praça de Festas"
+    },
+    {
+      "number": "109",
+      "name": "Amigos em Paldea"
+    },
+    {
+      "number": "110",
+      "name": "Trompete de Vidro"
+    },
+    {
+      "number": "111",
+      "name": "Fruta Meraçá"
+    },
+    {
+      "number": "112",
+      "name": "Dom Secreto da Janine"
+    },
+    {
+      "number": "113",
+      "name": "Kiran"
+    },
+    {
+      "number": "114",
+      "name": "Tarsila"
+    },
+    {
+      "number": "115",
+      "name": "Talento do Lauro"
+    },
+    {
+      "number": "116",
+      "name": "Vara de Pescar Max"
+    },
+    {
+      "number": "117",
+      "name": "Cinturão Máximo"
+    },
+    {
+      "number": "118",
+      "name": "Máscara do Ogro"
+    },
+    {
+      "number": "119",
+      "name": "Pegador Superior"
+    },
+    {
+      "number": "120",
+      "name": "Vitalidade da Professora Arka"
+    },
+    {
+      "number": "121",
+      "name": "Hipótese do Professor Turo"
+    },
+    {
+      "number": "122",
+      "name": "Pesquisa de Professores"
+    },
+    {
+      "number": "123",
+      "name": "Pesquisa de Professores"
+    },
+    {
+      "number": "124",
+      "name": "Pesquisa de Professores"
+    },
+    {
+      "number": "125",
+      "name": "Pesquisa de Professores"
+    },
+    {
+      "number": "126",
+      "name": "Skate de Resgate"
+    },
+    {
+      "number": "127",
+      "name": "Roto-bastão"
+    },
+    {
+      "number": "128",
+      "name": "Recolhida Ciclone"
+    },
+    {
+      "number": "129",
+      "name": "Cristal Cintilante"
+    },
+    {
+      "number": "130",
+      "name": "Radar Tecnológico"
+    },
+    {
+      "number": "131",
+      "name": "Rastreador de Tesouros"
+    },
+    {
+      "number": "132",
+      "name": "Amarílis"
+    },
+    {
+      "number": "133",
+      "name": "Érico"
+    },
+    {
+      "number": "134",
+      "name": "Érico"
+    },
+    {
+      "number": "135",
+      "name": "Brás"
+    },
+    {
+      "number": "136",
+      "name": "Êri"
+    },
+    {
+      "number": "137",
+      "name": "Amigos em Paldea"
+    },
+    {
+      "number": "138",
+      "name": "Giacomo"
+    },
+    {
+      "number": "139",
+      "name": "Talento do Lauro"
+    },
+    {
+      "number": "140",
+      "name": "Mélia"
+    },
+    {
+      "number": "141",
+      "name": "Ortega"
+    },
+    {
+      "number": "142",
+      "name": "Moira"
+    },
+    {
+      "number": "143",
+      "name": "Tomila"
+    },
+    {
+      "number": "144",
+      "name": "Leafeon ex"
+    },
+    {
+      "number": "145",
+      "name": "Ogerpon Máscara Turquesa ex"
+    },
+    {
+      "number": "146",
+      "name": "Flareon ex"
+    },
+    {
+      "number": "147",
+      "name": "Ceruledge ex"
+    },
+    {
+      "number": "148",
+      "name": "Ogerpon Máscara Fornalha ex"
+    },
+    {
+      "number": "149",
+      "name": "Vaporeon ex"
+    },
+    {
+      "number": "150",
+      "name": "Glaceon ex"
+    },
+    {
+      "number": "151",
+      "name": "Palafin ex"
+    },
+    {
+      "number": "152",
+      "name": "Ogerpon Máscara Nascente ex"
+    },
+    {
+      "number": "153",
+      "name": "Jolteon ex"
+    },
+    {
+      "number": "154",
+      "name": "Mãos Férreas ex"
+    },
+    {
+      "number": "155",
+      "name": "Espeon ex"
+    },
+    {
+      "number": "156",
+      "name": "Sylveon ex"
+    },
+    {
+      "number": "157",
+      "name": "Valentia Férrea ex"
+    },
+    {
+      "number": "158",
+      "name": "Chifres Férreos ex"
+    },
+    {
+      "number": "159",
+      "name": "Choque Areia ex"
+    },
+    {
+      "number": "160",
+      "name": "Ogerpon Máscara Alicerce ex"
+    },
+    {
+      "number": "161",
+      "name": "Umbreon ex"
+    },
+    {
+      "number": "162",
+      "name": "Lua Estrondo ex"
+    },
+    {
+      "number": "163",
+      "name": "Pecharunt ex"
+    },
+    {
+      "number": "164",
+      "name": "Gholdengo ex"
+    },
+    {
+      "number": "165",
+      "name": "Dragapult ex"
+    },
+    {
+      "number": "166",
+      "name": "Raio Fúria ex"
+    },
+    {
+      "number": "167",
+      "name": "Eevee ex"
+    },
+    {
+      "number": "168",
+      "name": "Ursaluna Lua Sangrenta ex"
+    },
+    {
+      "number": "169",
+      "name": "Terapagos ex"
+    },
+    {
+      "number": "170",
+      "name": "Amarílis"
+    },
+    {
+      "number": "171",
+      "name": "Plínio"
+    },
+    {
+      "number": "172",
+      "name": "Drayton"
+    },
+    {
+      "number": "173",
+      "name": "Dom Secreto da Janine"
+    },
+    {
+      "number": "174",
+      "name": "Kiran"
+    },
+    {
+      "number": "175",
+      "name": "Tarsila"
+    },
+    {
+      "number": "176",
+      "name": "Folhas Férreas ex"
+    },
+    {
+      "number": "177",
+      "name": "Ogerpon Máscara Turquesa ex"
+    },
+    {
+      "number": "178",
+      "name": "Onda Ando ex"
+    },
+    {
+      "number": "179",
+      "name": "Pikachu ex"
+    },
+    {
+      "number": "180",
+      "name": "Terapagos ex"
+    }
+  ]
+}

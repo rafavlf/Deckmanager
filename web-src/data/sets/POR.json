@@ -1,0 +1,508 @@
+{
+  "code": "POR",
+  "name": "Equilíbrio Perfeito",
+  "series": "Mega",
+  "releaseDate": "2026-03-27",
+  "counts": {
+    "numbered": 88,
+    "complete": 117
+  },
+  "cards": [
+    {
+      "number": "001",
+      "name": "Spinarak"
+    },
+    {
+      "number": "002",
+      "name": "Ariados"
+    },
+    {
+      "number": "003",
+      "name": "Shaymin"
+    },
+    {
+      "number": "004",
+      "name": "Snivy"
+    },
+    {
+      "number": "005",
+      "name": "Servine"
+    },
+    {
+      "number": "006",
+      "name": "Serperior"
+    },
+    {
+      "number": "007",
+      "name": "Scatterbug"
+    },
+    {
+      "number": "008",
+      "name": "Spewpa"
+    },
+    {
+      "number": "009",
+      "name": "Vivillon"
+    },
+    {
+      "number": "010",
+      "name": "Rowlet"
+    },
+    {
+      "number": "011",
+      "name": "Dartrix"
+    },
+    {
+      "number": "012",
+      "name": "Decidueye ex"
+    },
+    {
+      "number": "013",
+      "name": "Fletchinder"
+    },
+    {
+      "number": "014",
+      "name": "Talonflame"
+    },
+    {
+      "number": "015",
+      "name": "Salandit"
+    },
+    {
+      "number": "016",
+      "name": "Salazzle ex"
+    },
+    {
+      "number": "017",
+      "name": "Turtonator"
+    },
+    {
+      "number": "018",
+      "name": "Seel"
+    },
+    {
+      "number": "019",
+      "name": "Dewgong"
+    },
+    {
+      "number": "020",
+      "name": "Staryu"
+    },
+    {
+      "number": "021",
+      "name": "Mega Starmie ex"
+    },
+    {
+      "number": "022",
+      "name": "Lapras ex"
+    },
+    {
+      "number": "023",
+      "name": "Amaura"
+    },
+    {
+      "number": "024",
+      "name": "Aurorus"
+    },
+    {
+      "number": "025",
+      "name": "Volcanion"
+    },
+    {
+      "number": "026",
+      "name": "Shinx"
+    },
+    {
+      "number": "027",
+      "name": "Luxio"
+    },
+    {
+      "number": "028",
+      "name": "Luxray"
+    },
+    {
+      "number": "029",
+      "name": "Dedenne"
+    },
+    {
+      "number": "030",
+      "name": "Clefairy"
+    },
+    {
+      "number": "031",
+      "name": "Mega Clefable ex"
+    },
+    {
+      "number": "032",
+      "name": "Mawile"
+    },
+    {
+      "number": "033",
+      "name": "Espurr"
+    },
+    {
+      "number": "034",
+      "name": "Meowstic"
+    },
+    {
+      "number": "035",
+      "name": "Spritzee"
+    },
+    {
+      "number": "036",
+      "name": "Aromatisse"
+    },
+    {
+      "number": "037",
+      "name": "Nosepass"
+    },
+    {
+      "number": "038",
+      "name": "Probopass"
+    },
+    {
+      "number": "039",
+      "name": "Hippopotas"
+    },
+    {
+      "number": "040",
+      "name": "Hippowdon"
+    },
+    {
+      "number": "041",
+      "name": "Landorus"
+    },
+    {
+      "number": "042",
+      "name": "Binacle"
+    },
+    {
+      "number": "043",
+      "name": "Barbaracle"
+    },
+    {
+      "number": "044",
+      "name": "Tyrunt"
+    },
+    {
+      "number": "045",
+      "name": "Tyrantrum"
+    },
+    {
+      "number": "046",
+      "name": "Hawlucha"
+    },
+    {
+      "number": "047",
+      "name": "Mega Zygarde ex"
+    },
+    {
+      "number": "048",
+      "name": "Gastly"
+    },
+    {
+      "number": "049",
+      "name": "Haunter"
+    },
+    {
+      "number": "050",
+      "name": "Gengar"
+    },
+    {
+      "number": "051",
+      "name": "Skorupi"
+    },
+    {
+      "number": "052",
+      "name": "Drapion"
+    },
+    {
+      "number": "053",
+      "name": "Yveltal ex"
+    },
+    {
+      "number": "054",
+      "name": "Chien-Pao"
+    },
+    {
+      "number": "055",
+      "name": "Mega Skarmory ex"
+    },
+    {
+      "number": "056",
+      "name": "Honedge"
+    },
+    {
+      "number": "057",
+      "name": "Doublade"
+    },
+    {
+      "number": "058",
+      "name": "Aegislash"
+    },
+    {
+      "number": "059",
+      "name": "Klefki"
+    },
+    {
+      "number": "060",
+      "name": "Rattata"
+    },
+    {
+      "number": "061",
+      "name": "Raticate"
+    },
+    {
+      "number": "062",
+      "name": "Meowth ex"
+    },
+    {
+      "number": "063",
+      "name": "Snorlax"
+    },
+    {
+      "number": "064",
+      "name": "Bunnelby"
+    },
+    {
+      "number": "065",
+      "name": "Diggersby"
+    },
+    {
+      "number": "066",
+      "name": "Fletchling"
+    },
+    {
+      "number": "067",
+      "name": "Furfrou"
+    },
+    {
+      "number": "068",
+      "name": "Fóssil de Mandíbula Arcaico"
+    },
+    {
+      "number": "069",
+      "name": "Fóssil de Vela Arcaico"
+    },
+    {
+      "number": "070",
+      "name": "Núcleo de Memória"
+    },
+    {
+      "number": "071",
+      "name": "Martelo Esmagador"
+    },
+    {
+      "number": "072",
+      "name": "Busca de Energia"
+    },
+    {
+      "number": "073",
+      "name": "Mata-Energia"
+    },
+    {
+      "number": "074",
+      "name": "Pá de Cavar"
+    },
+    {
+      "number": "075",
+      "name": "Jaci"
+    },
+    {
+      "number": "076",
+      "name": "Juiz"
+    },
+    {
+      "number": "077",
+      "name": "Cidade de Lumiose"
+    },
+    {
+      "number": "078",
+      "name": "Crepe de Lumiose"
+    },
+    {
+      "number": "079",
+      "name": "Naveen"
+    },
+    {
+      "number": "080",
+      "name": "Poké Bola"
+    },
+    {
+      "number": "081",
+      "name": "Poké Tablet"
+    },
+    {
+      "number": "082",
+      "name": "Pegador de Pokémon"
+    },
+    {
+      "number": "083",
+      "name": "Poção"
+    },
+    {
+      "number": "084",
+      "name": "Encorajamento da Rose"
+    },
+    {
+      "number": "085",
+      "name": "Tarragon"
+    },
+    {
+      "number": "086",
+      "name": "Energia Grama Crescente"
+    },
+    {
+      "number": "087",
+      "name": "Energia Luta Rochosa"
+    },
+    {
+      "number": "088",
+      "name": "Energia Psíquico Telepática"
+    },
+    {
+      "number": "089",
+      "name": "Spewpa"
+    },
+    {
+      "number": "090",
+      "name": "Rowlet"
+    },
+    {
+      "number": "091",
+      "name": "Talonflame"
+    },
+    {
+      "number": "092",
+      "name": "Aurorus"
+    },
+    {
+      "number": "093",
+      "name": "Dedenne"
+    },
+    {
+      "number": "094",
+      "name": "Clefairy"
+    },
+    {
+      "number": "095",
+      "name": "Espurr"
+    },
+    {
+      "number": "096",
+      "name": "Probopass"
+    },
+    {
+      "number": "097",
+      "name": "Drapion"
+    },
+    {
+      "number": "098",
+      "name": "Doublade"
+    },
+    {
+      "number": "099",
+      "name": "Raticate"
+    },
+    {
+      "number": "100",
+      "name": "Decidueye ex"
+    },
+    {
+      "number": "101",
+      "name": "Salazzle ex"
+    },
+    {
+      "number": "102",
+      "name": "Mega Starmie ex"
+    },
+    {
+      "number": "103",
+      "name": "Mega Clefable ex"
+    },
+    {
+      "number": "104",
+      "name": "Mega Zygarde ex"
+    },
+    {
+      "number": "105",
+      "name": "Yveltal ex"
+    },
+    {
+      "number": "106",
+      "name": "Mega Skarmory ex"
+    },
+    {
+      "number": "107",
+      "name": "Meowth ex"
+    },
+    {
+      "number": "108",
+      "name": "Reciclador de Energia"
+    },
+    {
+      "number": "109",
+      "name": "Floresta da Vitalidade"
+    },
+    {
+      "number": "110",
+      "name": "Jaci"
+    },
+    {
+      "number": "111",
+      "name": "Cidade de Lumiose"
+    },
+    {
+      "number": "112",
+      "name": "Naveen"
+    },
+    {
+      "number": "113",
+      "name": "Poké Tablet"
+    },
+    {
+      "number": "114",
+      "name": "Encorajamento da Rose"
+    },
+    {
+      "number": "115",
+      "name": "Cinza Sagrada"
+    },
+    {
+      "number": "116",
+      "name": "Tarragon"
+    },
+    {
+      "number": "117",
+      "name": "Fragmento Encantado"
+    },
+    {
+      "number": "118",
+      "name": "Mega Starmie ex"
+    },
+    {
+      "number": "119",
+      "name": "Mega Clefable ex"
+    },
+    {
+      "number": "120",
+      "name": "Mega Zygarde ex"
+    },
+    {
+      "number": "121",
+      "name": "Meowth ex"
+    },
+    {
+      "number": "122",
+      "name": "Jaci"
+    },
+    {
+      "number": "123",
+      "name": "Encorajamento da Rose"
+    },
+    {
+      "number": "124",
+      "name": "Mega Zygarde ex"
+    }
+  ]
+}

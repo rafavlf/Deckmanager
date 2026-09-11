@@ -1,0 +1,696 @@
+{
+  "code": "BLK",
+  "name": "Raio Preto",
+  "series": "Mega",
+  "releaseDate": "2025-07-18",
+  "counts": {
+    "numbered": 86,
+    "complete": 155
+  },
+  "cards": [
+    {
+      "number": "001",
+      "name": "Snivy"
+    },
+    {
+      "number": "002",
+      "name": "Servine"
+    },
+    {
+      "number": "003",
+      "name": "Serperior ex"
+    },
+    {
+      "number": "004",
+      "name": "Pansage"
+    },
+    {
+      "number": "005",
+      "name": "Simisage"
+    },
+    {
+      "number": "006",
+      "name": "Petilil"
+    },
+    {
+      "number": "007",
+      "name": "Lilligant"
+    },
+    {
+      "number": "008",
+      "name": "Maractus"
+    },
+    {
+      "number": "009",
+      "name": "Karrablast"
+    },
+    {
+      "number": "010",
+      "name": "Foongus"
+    },
+    {
+      "number": "011",
+      "name": "Amoonguss"
+    },
+    {
+      "number": "012",
+      "name": "Victini"
+    },
+    {
+      "number": "013",
+      "name": "Darumaka"
+    },
+    {
+      "number": "014",
+      "name": "Darmanitan"
+    },
+    {
+      "number": "015",
+      "name": "Larvesta"
+    },
+    {
+      "number": "016",
+      "name": "Volcarona"
+    },
+    {
+      "number": "017",
+      "name": "Panpour"
+    },
+    {
+      "number": "018",
+      "name": "Simipour"
+    },
+    {
+      "number": "019",
+      "name": "Tympole"
+    },
+    {
+      "number": "020",
+      "name": "Palpitoad"
+    },
+    {
+      "number": "021",
+      "name": "Seismitoad"
+    },
+    {
+      "number": "022",
+      "name": "Tirtouga"
+    },
+    {
+      "number": "023",
+      "name": "Carracosta"
+    },
+    {
+      "number": "024",
+      "name": "Alomomola"
+    },
+    {
+      "number": "025",
+      "name": "Cubchoo"
+    },
+    {
+      "number": "026",
+      "name": "Beartic"
+    },
+    {
+      "number": "027",
+      "name": "Cryogonal"
+    },
+    {
+      "number": "028",
+      "name": "Kyurem ex"
+    },
+    {
+      "number": "029",
+      "name": "Emolga"
+    },
+    {
+      "number": "030",
+      "name": "Tynamo"
+    },
+    {
+      "number": "031",
+      "name": "Eelektrik"
+    },
+    {
+      "number": "032",
+      "name": "Eelektross"
+    },
+    {
+      "number": "033",
+      "name": "Thundurus"
+    },
+    {
+      "number": "034",
+      "name": "Zekrom ex"
+    },
+    {
+      "number": "035",
+      "name": "Munna"
+    },
+    {
+      "number": "036",
+      "name": "Musharna"
+    },
+    {
+      "number": "037",
+      "name": "Solosis"
+    },
+    {
+      "number": "038",
+      "name": "Duosion"
+    },
+    {
+      "number": "039",
+      "name": "Reuniclus"
+    },
+    {
+      "number": "040",
+      "name": "Elgyem"
+    },
+    {
+      "number": "041",
+      "name": "Beheeyem"
+    },
+    {
+      "number": "042",
+      "name": "Golett"
+    },
+    {
+      "number": "043",
+      "name": "Golurk"
+    },
+    {
+      "number": "044",
+      "name": "Meloetta ex"
+    },
+    {
+      "number": "045",
+      "name": "Drilbur"
+    },
+    {
+      "number": "046",
+      "name": "Excadrill ex"
+    },
+    {
+      "number": "047",
+      "name": "Timburr"
+    },
+    {
+      "number": "048",
+      "name": "Gurdurr"
+    },
+    {
+      "number": "049",
+      "name": "Conkeldurr"
+    },
+    {
+      "number": "050",
+      "name": "Throh"
+    },
+    {
+      "number": "051",
+      "name": "Dwebble"
+    },
+    {
+      "number": "052",
+      "name": "Crustle"
+    },
+    {
+      "number": "053",
+      "name": "Landorus"
+    },
+    {
+      "number": "054",
+      "name": "Venipede"
+    },
+    {
+      "number": "055",
+      "name": "Whirlipede"
+    },
+    {
+      "number": "056",
+      "name": "Scolipede"
+    },
+    {
+      "number": "057",
+      "name": "Sandile"
+    },
+    {
+      "number": "058",
+      "name": "Krokorok"
+    },
+    {
+      "number": "059",
+      "name": "Krookodile"
+    },
+    {
+      "number": "060",
+      "name": "Escavalier"
+    },
+    {
+      "number": "061",
+      "name": "Klink"
+    },
+    {
+      "number": "062",
+      "name": "Klang"
+    },
+    {
+      "number": "063",
+      "name": "Klinklang"
+    },
+    {
+      "number": "064",
+      "name": "Pawniard"
+    },
+    {
+      "number": "065",
+      "name": "Bisharp"
+    },
+    {
+      "number": "066",
+      "name": "Cobalion"
+    },
+    {
+      "number": "067",
+      "name": "Genesect ex"
+    },
+    {
+      "number": "068",
+      "name": "Axew"
+    },
+    {
+      "number": "069",
+      "name": "Fraxure"
+    },
+    {
+      "number": "070",
+      "name": "Haxorus"
+    },
+    {
+      "number": "071",
+      "name": "Pidove"
+    },
+    {
+      "number": "072",
+      "name": "Tranquill"
+    },
+    {
+      "number": "073",
+      "name": "Unfezant"
+    },
+    {
+      "number": "074",
+      "name": "Audino"
+    },
+    {
+      "number": "075",
+      "name": "Minccino"
+    },
+    {
+      "number": "076",
+      "name": "Cinccino"
+    },
+    {
+      "number": "077",
+      "name": "Rufflet"
+    },
+    {
+      "number": "078",
+      "name": "Braviary"
+    },
+    {
+      "number": "079",
+      "name": "Balão de Ar"
+    },
+    {
+      "number": "080",
+      "name": "Fóssil Casca Arcaico"
+    },
+    {
+      "number": "081",
+      "name": "Moeda Energética"
+    },
+    {
+      "number": "082",
+      "name": "Fennel"
+    },
+    {
+      "number": "083",
+      "name": "Plano do N"
+    },
+    {
+      "number": "084",
+      "name": "Pokégear 3.0"
+    },
+    {
+      "number": "086",
+      "name": "Energia de Prisma"
+    },
+    {
+      "number": "087",
+      "name": "Snivy"
+    },
+    {
+      "number": "088",
+      "name": "Servine"
+    },
+    {
+      "number": "089",
+      "name": "Pansage"
+    },
+    {
+      "number": "090",
+      "name": "Simisage"
+    },
+    {
+      "number": "091",
+      "name": "Petilil"
+    },
+    {
+      "number": "092",
+      "name": "Lilligant"
+    },
+    {
+      "number": "093",
+      "name": "Maractus"
+    },
+    {
+      "number": "094",
+      "name": "Karrablast"
+    },
+    {
+      "number": "095",
+      "name": "Foongus"
+    },
+    {
+      "number": "096",
+      "name": "Amoonguss"
+    },
+    {
+      "number": "097",
+      "name": "Darumaka"
+    },
+    {
+      "number": "098",
+      "name": "Darmanitan"
+    },
+    {
+      "number": "099",
+      "name": "Larvesta"
+    },
+    {
+      "number": "100",
+      "name": "Volcarona"
+    },
+    {
+      "number": "101",
+      "name": "Panpour"
+    },
+    {
+      "number": "102",
+      "name": "Simipour"
+    },
+    {
+      "number": "103",
+      "name": "Tympole"
+    },
+    {
+      "number": "104",
+      "name": "Palpitoad"
+    },
+    {
+      "number": "105",
+      "name": "Seismitoad"
+    },
+    {
+      "number": "106",
+      "name": "Tirtouga"
+    },
+    {
+      "number": "107",
+      "name": "Carracosta"
+    },
+    {
+      "number": "108",
+      "name": "Alomomola"
+    },
+    {
+      "number": "109",
+      "name": "Cubchoo"
+    },
+    {
+      "number": "110",
+      "name": "Beartic"
+    },
+    {
+      "number": "111",
+      "name": "Cryogonal"
+    },
+    {
+      "number": "112",
+      "name": "Emolga"
+    },
+    {
+      "number": "113",
+      "name": "Tynamo"
+    },
+    {
+      "number": "114",
+      "name": "Eelektrik"
+    },
+    {
+      "number": "115",
+      "name": "Eelektross"
+    },
+    {
+      "number": "116",
+      "name": "Munna"
+    },
+    {
+      "number": "117",
+      "name": "Musharna"
+    },
+    {
+      "number": "118",
+      "name": "Solosis"
+    },
+    {
+      "number": "119",
+      "name": "Duosion"
+    },
+    {
+      "number": "120",
+      "name": "Elgyem"
+    },
+    {
+      "number": "121",
+      "name": "Beheeyem"
+    },
+    {
+      "number": "122",
+      "name": "Golett"
+    },
+    {
+      "number": "123",
+      "name": "Golurk"
+    },
+    {
+      "number": "124",
+      "name": "Drilbur"
+    },
+    {
+      "number": "125",
+      "name": "Timburr"
+    },
+    {
+      "number": "126",
+      "name": "Gurdurr"
+    },
+    {
+      "number": "127",
+      "name": "Conkeldurr"
+    },
+    {
+      "number": "128",
+      "name": "Throh"
+    },
+    {
+      "number": "129",
+      "name": "Dwebble"
+    },
+    {
+      "number": "130",
+      "name": "Crustle"
+    },
+    {
+      "number": "131",
+      "name": "Landorus"
+    },
+    {
+      "number": "132",
+      "name": "Venipede"
+    },
+    {
+      "number": "133",
+      "name": "Whirlipede"
+    },
+    {
+      "number": "134",
+      "name": "Scolipede"
+    },
+    {
+      "number": "135",
+      "name": "Sandile"
+    },
+    {
+      "number": "136",
+      "name": "Krokorok"
+    },
+    {
+      "number": "137",
+      "name": "Krookodile"
+    },
+    {
+      "number": "138",
+      "name": "Escavalier"
+    },
+    {
+      "number": "139",
+      "name": "Klink"
+    },
+    {
+      "number": "140",
+      "name": "Klang"
+    },
+    {
+      "number": "141",
+      "name": "Klinklang"
+    },
+    {
+      "number": "142",
+      "name": "Pawniard"
+    },
+    {
+      "number": "143",
+      "name": "Bisharp"
+    },
+    {
+      "number": "144",
+      "name": "Cobalion"
+    },
+    {
+      "number": "145",
+      "name": "Axew"
+    },
+    {
+      "number": "146",
+      "name": "Fraxure"
+    },
+    {
+      "number": "147",
+      "name": "Haxorus"
+    },
+    {
+      "number": "148",
+      "name": "Pidove"
+    },
+    {
+      "number": "149",
+      "name": "Tranquill"
+    },
+    {
+      "number": "150",
+      "name": "Unfezant"
+    },
+    {
+      "number": "151",
+      "name": "Audino"
+    },
+    {
+      "number": "152",
+      "name": "Minccino"
+    },
+    {
+      "number": "153",
+      "name": "Cinccino"
+    },
+    {
+      "number": "154",
+      "name": "Rufflet"
+    },
+    {
+      "number": "155",
+      "name": "Braviary"
+    },
+    {
+      "number": "156",
+      "name": "Serperior ex"
+    },
+    {
+      "number": "157",
+      "name": "Kyurem ex"
+    },
+    {
+      "number": "158",
+      "name": "Zekrom ex"
+    },
+    {
+      "number": "159",
+      "name": "Meloetta ex"
+    },
+    {
+      "number": "160",
+      "name": "Excadrill ex"
+    },
+    {
+      "number": "161",
+      "name": "Genesect ex"
+    },
+    {
+      "number": "162",
+      "name": "Fennel"
+    },
+    {
+      "number": "163",
+      "name": "Plano do N"
+    },
+    {
+      "number": "164",
+      "name": "Serperior ex"
+    },
+    {
+      "number": "165",
+      "name": "Kyurem ex"
+    },
+    {
+      "number": "166",
+      "name": "Zekrom ex"
+    },
+    {
+      "number": "167",
+      "name": "Meloetta ex"
+    },
+    {
+      "number": "168",
+      "name": "Excadrill ex"
+    },
+    {
+      "number": "169",
+      "name": "Genesect ex"
+    },
+    {
+      "number": "170",
+      "name": "Plano do N"
+    },
+    {
+      "number": "171",
+      "name": "Victini"
+    },
+    {
+      "number": "172",
+      "name": "Zekrom ex"
+    }
+  ]
+}
