@@ -1,2 +1,55 @@
 # Deckmanager
-\n\n## Arquitetura modular\n\nO código web do aplicativo é mantido em `web-src/` e copiado para os assets Android pelo build auxiliar.\n\n```text\nweb-src/\n├── index.html\n├── css/app.css\n├── data/\n│   ├── sets/\n│   ├── sets.generated.js\n│   └── pokedex/pokedex.generated.js\n└── js/\n    ├── core/\n    ├── features/\n    ├── ui/\n    └── app.js\n```\n\n### Build e regressão\n\n```bash\npython scripts/validate_data.py\npython scripts/build.py\npython -m unittest discover -s tests -v\npython scripts/regression_check.py\n```\n\nDepois gere o APK:\n\n```powershell\ncd apk-project\n.\\gradlew.bat assembleDebug\n```\n\n### Adicionar uma coleção\n\nO CSV deve conter `number,name`.\n\n```bash\npython scripts/add_set.py --code NOV --name "Nova Coleção" --series "Mega" --release-date 2026-10-01 --numbered 100 --complete 130 --input nova-colecao.csv --build\n```\n\nA fonte principal para alterações web é `web-src/`. Os arquivos em `apk-project/app/src/main/assets/` são gerados/copiados pelo build web.\n
+
+Gerenciador de coleção e decks de Pokémon TCG, com suporte a controle de cartas, progresso por coleção, Pokédex, decks, lista de compras e dashboard.
+
+O projeto utiliza uma interface web embarcada em um aplicativo Android.
+
+## Funcionalidades
+
+- Controle de cartas por coleção
+- Progresso individual de cada set
+- Dashboard com estatísticas da coleção
+- Gerenciamento de decks
+- Cálculo de cartas faltantes
+- Lista de compras
+- Pokédex por geração
+- Importação e exportação de dados
+- Persistência local no Android
+- Tema claro e escuro
+
+## Arquitetura
+
+O código web principal fica em:
+
+```text
+web-src/
+├── index.html
+├── css/
+│   └── app.css
+├── data/
+│   ├── sets/
+│   ├── sets.generated.js
+│   └── pokedex/
+│       └── pokedex.generated.js
+└── js/
+    ├── core/
+    │   ├── helpers.js
+    │   ├── state.js
+    │   ├── android-bridge.js
+    │   └── storage.js
+    ├── features/
+    │   ├── collection.js
+    │   ├── dashboard.js
+    │   ├── decks.js
+    │   ├── pokedex.js
+    │   ├── sets.js
+    │   └── shopping.js
+    ├── ui/
+    │   ├── layout.js
+    │   ├── events.js
+    │   ├── events-navigation.js
+    │   ├── events-interactions.js
+    │   ├── events-decks.js
+    │   ├── events-collection.js
+    │   └── events-history.js
+    └── app.js
