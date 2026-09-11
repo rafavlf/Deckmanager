@@ -1,0 +1,692 @@
+{
+  "code": "TWM",
+  "name": "Máscaras do Crepúsculo",
+  "series": "Scarlet & Violet",
+  "releaseDate": "2024-05-24",
+  "counts": {
+    "numbered": 167,
+    "complete": 206
+  },
+  "cards": [
+    {
+      "number": "001",
+      "name": "Tangela"
+    },
+    {
+      "number": "002",
+      "name": "Tangrowth"
+    },
+    {
+      "number": "003",
+      "name": "Pinsir"
+    },
+    {
+      "number": "004",
+      "name": "Spinarak"
+    },
+    {
+      "number": "005",
+      "name": "Ariados"
+    },
+    {
+      "number": "006",
+      "name": "Sunkern"
+    },
+    {
+      "number": "007",
+      "name": "Sunflora"
+    },
+    {
+      "number": "008",
+      "name": "Heracross"
+    },
+    {
+      "number": "009",
+      "name": "Volbeat"
+    },
+    {
+      "number": "010",
+      "name": "Illumise"
+    },
+    {
+      "number": "011",
+      "name": "Leafeon"
+    },
+    {
+      "number": "012",
+      "name": "Phantump"
+    },
+    {
+      "number": "013",
+      "name": "Trevenant"
+    },
+    {
+      "number": "014",
+      "name": "Grookey"
+    },
+    {
+      "number": "015",
+      "name": "Thwackey"
+    },
+    {
+      "number": "016",
+      "name": "Rillaboom"
+    },
+    {
+      "number": "017",
+      "name": "Applin"
+    },
+    {
+      "number": "018",
+      "name": "Dipplin"
+    },
+    {
+      "number": "019",
+      "name": "Folhas Férreas"
+    },
+    {
+      "number": "020",
+      "name": "Poltchageist"
+    },
+    {
+      "number": "021",
+      "name": "Poltchageist"
+    },
+    {
+      "number": "022",
+      "name": "Sinistcha"
+    },
+    {
+      "number": "023",
+      "name": "Sinistcha ex"
+    },
+    {
+      "number": "024",
+      "name": "Ogerpon Máscara Turquesa"
+    },
+    {
+      "number": "025",
+      "name": "Ogerpon Máscara Turquesa ex"
+    },
+    {
+      "number": "026",
+      "name": "Vulpix"
+    },
+    {
+      "number": "027",
+      "name": "Ninetales"
+    },
+    {
+      "number": "028",
+      "name": "Slugma"
+    },
+    {
+      "number": "029",
+      "name": "Magcargo ex"
+    },
+    {
+      "number": "030",
+      "name": "Torkoal"
+    },
+    {
+      "number": "031",
+      "name": "Chimchar"
+    },
+    {
+      "number": "032",
+      "name": "Monferno"
+    },
+    {
+      "number": "033",
+      "name": "Infernape"
+    },
+    {
+      "number": "034",
+      "name": "Darumaka"
+    },
+    {
+      "number": "035",
+      "name": "Darmanitan"
+    },
+    {
+      "number": "036",
+      "name": "Litwick"
+    },
+    {
+      "number": "037",
+      "name": "Lampent"
+    },
+    {
+      "number": "038",
+      "name": "Chandelure"
+    },
+    {
+      "number": "039",
+      "name": "Chi-Yu"
+    },
+    {
+      "number": "040",
+      "name": "Ogerpon Máscara Fornalha ex"
+    },
+    {
+      "number": "041",
+      "name": "Poliwag"
+    },
+    {
+      "number": "042",
+      "name": "Poliwhirl"
+    },
+    {
+      "number": "043",
+      "name": "Poliwrath"
+    },
+    {
+      "number": "044",
+      "name": "Goldeen"
+    },
+    {
+      "number": "045",
+      "name": "Seaking"
+    },
+    {
+      "number": "046",
+      "name": "Jynx"
+    },
+    {
+      "number": "047",
+      "name": "Corphish"
+    },
+    {
+      "number": "048",
+      "name": "Crawdaunt"
+    },
+    {
+      "number": "049",
+      "name": "Feebas"
+    },
+    {
+      "number": "050",
+      "name": "Milotic"
+    },
+    {
+      "number": "051",
+      "name": "Snorunt"
+    },
+    {
+      "number": "052",
+      "name": "Glalie"
+    },
+    {
+      "number": "053",
+      "name": "Froslass"
+    },
+    {
+      "number": "054",
+      "name": "Glaceon"
+    },
+    {
+      "number": "055",
+      "name": "Phione"
+    },
+    {
+      "number": "056",
+      "name": "Froakie"
+    },
+    {
+      "number": "057",
+      "name": "Frogadier"
+    },
+    {
+      "number": "058",
+      "name": "Cramorant"
+    },
+    {
+      "number": "059",
+      "name": "Finizen"
+    },
+    {
+      "number": "060",
+      "name": "Palafin"
+    },
+    {
+      "number": "061",
+      "name": "Palafin ex"
+    },
+    {
+      "number": "062",
+      "name": "Pacote Férreo"
+    },
+    {
+      "number": "063",
+      "name": "Onda Ando"
+    },
+    {
+      "number": "064",
+      "name": "Ogerpon Máscara Nascente ex"
+    },
+    {
+      "number": "065",
+      "name": "Zapdos"
+    },
+    {
+      "number": "066",
+      "name": "Shinx"
+    },
+    {
+      "number": "067",
+      "name": "Luxio"
+    },
+    {
+      "number": "068",
+      "name": "Luxray ex"
+    },
+    {
+      "number": "069",
+      "name": "Emolga"
+    },
+    {
+      "number": "070",
+      "name": "Helioptile"
+    },
+    {
+      "number": "071",
+      "name": "Heliolisk"
+    },
+    {
+      "number": "072",
+      "name": "Morpeko"
+    },
+    {
+      "number": "073",
+      "name": "Tadbulb"
+    },
+    {
+      "number": "074",
+      "name": "Bellibolt"
+    },
+    {
+      "number": "075",
+      "name": "Wattrel"
+    },
+    {
+      "number": "076",
+      "name": "Kilowattrel"
+    },
+    {
+      "number": "077",
+      "name": "Espinhos Férreos ex"
+    },
+    {
+      "number": "078",
+      "name": "Clefairy"
+    },
+    {
+      "number": "079",
+      "name": "Clefable"
+    },
+    {
+      "number": "080",
+      "name": "Abra"
+    },
+    {
+      "number": "081",
+      "name": "Kadabra"
+    },
+    {
+      "number": "082",
+      "name": "Alakazam"
+    },
+    {
+      "number": "083",
+      "name": "Girafarig"
+    },
+    {
+      "number": "084",
+      "name": "Farigiraf"
+    },
+    {
+      "number": "085",
+      "name": "Chimecho"
+    },
+    {
+      "number": "086",
+      "name": "Flabébé"
+    },
+    {
+      "number": "087",
+      "name": "Floette"
+    },
+    {
+      "number": "088",
+      "name": "Florges"
+    },
+    {
+      "number": "089",
+      "name": "Swirlix"
+    },
+    {
+      "number": "090",
+      "name": "Slurpuff"
+    },
+    {
+      "number": "091",
+      "name": "Sandygast"
+    },
+    {
+      "number": "092",
+      "name": "Palossand"
+    },
+    {
+      "number": "093",
+      "name": "Enamorus"
+    },
+    {
+      "number": "094",
+      "name": "Cauda Brado ex"
+    },
+    {
+      "number": "095",
+      "name": "Munkidori"
+    },
+    {
+      "number": "096",
+      "name": "Fezandipiti"
+    },
+    {
+      "number": "097",
+      "name": "Sandshrew"
+    },
+    {
+      "number": "098",
+      "name": "Sandslash"
+    },
+    {
+      "number": "099",
+      "name": "Growlithe de Hisui"
+    },
+    {
+      "number": "100",
+      "name": "Arcanine de Hisui"
+    },
+    {
+      "number": "101",
+      "name": "Nosepass"
+    },
+    {
+      "number": "102",
+      "name": "Probopass"
+    },
+    {
+      "number": "103",
+      "name": "Timburr"
+    },
+    {
+      "number": "104",
+      "name": "Gurdurr"
+    },
+    {
+      "number": "105",
+      "name": "Conkeldurr"
+    },
+    {
+      "number": "106",
+      "name": "Greninja ex"
+    },
+    {
+      "number": "107",
+      "name": "Hawlucha"
+    },
+    {
+      "number": "108",
+      "name": "Glimmet"
+    },
+    {
+      "number": "109",
+      "name": "Glimmora"
+    },
+    {
+      "number": "110",
+      "name": "Ting-Lu"
+    },
+    {
+      "number": "111",
+      "name": "Okidogi"
+    },
+    {
+      "number": "112",
+      "name": "Ogerpon Máscara Alicerce ex"
+    },
+    {
+      "number": "113",
+      "name": "Poochyena"
+    },
+    {
+      "number": "114",
+      "name": "Mightyena"
+    },
+    {
+      "number": "115",
+      "name": "Venipede"
+    },
+    {
+      "number": "116",
+      "name": "Whirlipede"
+    },
+    {
+      "number": "117",
+      "name": "Scolipede"
+    },
+    {
+      "number": "118",
+      "name": "Capuz Bruto"
+    },
+    {
+      "number": "119",
+      "name": "Skarmory"
+    },
+    {
+      "number": "120",
+      "name": "Aron"
+    },
+    {
+      "number": "121",
+      "name": "Lairon"
+    },
+    {
+      "number": "122",
+      "name": "Aggron"
+    },
+    {
+      "number": "123",
+      "name": "Heatran"
+    },
+    {
+      "number": "124",
+      "name": "Varoom"
+    },
+    {
+      "number": "125",
+      "name": "Revavroom"
+    },
+    {
+      "number": "126",
+      "name": "Applin"
+    },
+    {
+      "number": "127",
+      "name": "Dipplin"
+    },
+    {
+      "number": "128",
+      "name": "Dreepy"
+    },
+    {
+      "number": "129",
+      "name": "Drakloak"
+    },
+    {
+      "number": "130",
+      "name": "Dragapult ex"
+    },
+    {
+      "number": "131",
+      "name": "Tatsugiri"
+    },
+    {
+      "number": "132",
+      "name": "Farfetch'd"
+    },
+    {
+      "number": "133",
+      "name": "Chansey"
+    },
+    {
+      "number": "134",
+      "name": "Blissey ex"
+    },
+    {
+      "number": "135",
+      "name": "Eevee"
+    },
+    {
+      "number": "136",
+      "name": "Snorlax"
+    },
+    {
+      "number": "137",
+      "name": "Aipom"
+    },
+    {
+      "number": "138",
+      "name": "Ambipom"
+    },
+    {
+      "number": "139",
+      "name": "Ducklett"
+    },
+    {
+      "number": "140",
+      "name": "Swanna"
+    },
+    {
+      "number": "141",
+      "name": "Ursaluna Lua Sangrenta ex"
+    },
+    {
+      "number": "142",
+      "name": "Flauta de Acompanhamento"
+    },
+    {
+      "number": "143",
+      "name": "Kit Caça-inseto"
+    },
+    {
+      "number": "144",
+      "name": "Zelador"
+    },
+    {
+      "number": "145",
+      "name": "Carmine"
+    },
+    {
+      "number": "146",
+      "name": "Centro Comunitário"
+    },
+    {
+      "number": "147",
+      "name": "Chef"
+    },
+    {
+      "number": "148",
+      "name": "Martelo Avançado"
+    },
+    {
+      "number": "149",
+      "name": "Praça de Festas"
+    },
+    {
+      "number": "150",
+      "name": "Ventilador Portátil"
+    },
+    {
+      "number": "151",
+      "name": "Oranzo"
+    },
+    {
+      "number": "152",
+      "name": "Hiperaroma"
+    },
+    {
+      "number": "153",
+      "name": "Torre de Interferência"
+    },
+    {
+      "number": "154",
+      "name": "Kiran"
+    },
+    {
+      "number": "155",
+      "name": "Ajuda da Vitória"
+    },
+    {
+      "number": "156",
+      "name": "Bola Amor"
+    },
+    {
+      "number": "157",
+      "name": "Lucian"
+    },
+    {
+      "number": "158",
+      "name": "Capacete da Sorte"
+    },
+    {
+      "number": "159",
+      "name": "Máscara do Ogro"
+    },
+    {
+      "number": "160",
+      "name": "Drita"
+    },
+    {
+      "number": "161",
+      "name": "Moira"
+    },
+    {
+      "number": "162",
+      "name": "Recolhida Ciclone"
+    },
+    {
+      "number": "163",
+      "name": "Caixa Secreta"
+    },
+    {
+      "number": "164",
+      "name": "Cinta de Sobrevivência"
+    },
+    {
+      "number": "165",
+      "name": "Carimbo da Injustiça"
+    },
+    {
+      "number": "166",
+      "name": "Energia Bumerangue"
+    },
+    {
+      "number": "167",
+      "name": "Energia Legado"
+    },
+    {
+      "number": "223",
+      "name": "Poffin de Colega"
+    },
+    {
+      "number": "225",
+      "name": "Skate de Resgate"
+    },
+    {
+      "number": "226",
+      "name": "Energia Luminosa"
+    }
+  ]
+}

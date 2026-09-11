@@ -1,0 +1,492 @@
+{
+  "code": "PBL",
+  "name": "Escuridão Absoluta",
+  "series": "Mega",
+  "releaseDate": "2026-07-17",
+  "counts": {
+    "numbered": 84,
+    "complete": null
+  },
+  "cards": [
+    {
+      "number": "001",
+      "name": "Tropius"
+    },
+    {
+      "number": "002",
+      "name": "Grubbin"
+    },
+    {
+      "number": "003",
+      "name": "Fomantis"
+    },
+    {
+      "number": "004",
+      "name": "Lurantis ex"
+    },
+    {
+      "number": "005",
+      "name": "Poltchageist"
+    },
+    {
+      "number": "006",
+      "name": "Sinistcha"
+    },
+    {
+      "number": "007",
+      "name": "Heatran"
+    },
+    {
+      "number": "008",
+      "name": "Mega Delphox ex"
+    },
+    {
+      "number": "009",
+      "name": "Sizzlipede"
+    },
+    {
+      "number": "010",
+      "name": "Centiskorch"
+    },
+    {
+      "number": "011",
+      "name": "Charcadet"
+    },
+    {
+      "number": "012",
+      "name": "Armarouge"
+    },
+    {
+      "number": "013",
+      "name": "Goldeen"
+    },
+    {
+      "number": "014",
+      "name": "Seaking"
+    },
+    {
+      "number": "015",
+      "name": "Wailmer"
+    },
+    {
+      "number": "016",
+      "name": "Wailord ex"
+    },
+    {
+      "number": "017",
+      "name": "Relicanth"
+    },
+    {
+      "number": "018",
+      "name": "Popplio"
+    },
+    {
+      "number": "019",
+      "name": "Brionne"
+    },
+    {
+      "number": "020",
+      "name": "Primarina"
+    },
+    {
+      "number": "021",
+      "name": "Finizen"
+    },
+    {
+      "number": "022",
+      "name": "Palafin"
+    },
+    {
+      "number": "023",
+      "name": "Electrike"
+    },
+    {
+      "number": "024",
+      "name": "Manectric"
+    },
+    {
+      "number": "025",
+      "name": "Charjabug"
+    },
+    {
+      "number": "026",
+      "name": "Vikavolt"
+    },
+    {
+      "number": "027",
+      "name": "Mega Zeraora ex"
+    },
+    {
+      "number": "028",
+      "name": "Miraidon"
+    },
+    {
+      "number": "029",
+      "name": "Slowpoke"
+    },
+    {
+      "number": "030",
+      "name": "Slowbro"
+    },
+    {
+      "number": "031",
+      "name": "Mega Slowbro ex"
+    },
+    {
+      "number": "032",
+      "name": "Jynx"
+    },
+    {
+      "number": "033",
+      "name": "Shuppet"
+    },
+    {
+      "number": "034",
+      "name": "Banette"
+    },
+    {
+      "number": "035",
+      "name": "Spiritomb"
+    },
+    {
+      "number": "036",
+      "name": "Litwick"
+    },
+    {
+      "number": "037",
+      "name": "Lampent"
+    },
+    {
+      "number": "038",
+      "name": "Mega Chandelure ex"
+    },
+    {
+      "number": "039",
+      "name": "Dhelmise"
+    },
+    {
+      "number": "040",
+      "name": "Marshadow"
+    },
+    {
+      "number": "041",
+      "name": "Annihilape"
+    },
+    {
+      "number": "042",
+      "name": "Mankey"
+    },
+    {
+      "number": "043",
+      "name": "Primeape"
+    },
+    {
+      "number": "044",
+      "name": "Cranidos"
+    },
+    {
+      "number": "045",
+      "name": "Rampardos ex"
+    },
+    {
+      "number": "046",
+      "name": "Drilbur"
+    },
+    {
+      "number": "047",
+      "name": "Koraidon"
+    },
+    {
+      "number": "048",
+      "name": "Mega Darkrai ex"
+    },
+    {
+      "number": "049",
+      "name": "Vullaby"
+    },
+    {
+      "number": "050",
+      "name": "Mandibuzz"
+    },
+    {
+      "number": "051",
+      "name": "Inkay"
+    },
+    {
+      "number": "052",
+      "name": "Malamar"
+    },
+    {
+      "number": "053",
+      "name": "Nickit"
+    },
+    {
+      "number": "054",
+      "name": "Thievul"
+    },
+    {
+      "number": "055",
+      "name": "Morpeko ex"
+    },
+    {
+      "number": "056",
+      "name": "Zarude"
+    },
+    {
+      "number": "057",
+      "name": "Maschiff"
+    },
+    {
+      "number": "058",
+      "name": "Mabosstiff"
+    },
+    {
+      "number": "059",
+      "name": "Chi-Yu"
+    },
+    {
+      "number": "060",
+      "name": "Skarmory"
+    },
+    {
+      "number": "061",
+      "name": "Shieldon"
+    },
+    {
+      "number": "062",
+      "name": "Bastiodon"
+    },
+    {
+      "number": "063",
+      "name": "Bronzor"
+    },
+    {
+      "number": "064",
+      "name": "Bronzong"
+    },
+    {
+      "number": "065",
+      "name": "Mega Excadrill ex"
+    },
+    {
+      "number": "066",
+      "name": "Pikipek"
+    },
+    {
+      "number": "067",
+      "name": "Trumbeak"
+    },
+    {
+      "number": "068",
+      "name": "Toucannon"
+    },
+    {
+      "number": "069",
+      "name": "Tipo Nulo"
+    },
+    {
+      "number": "070",
+      "name": "Silvally"
+    },
+    {
+      "number": "071",
+      "name": "Bombirdier"
+    },
+    {
+      "number": "072",
+      "name": "Fóssil Armadura Arcaico"
+    },
+    {
+      "number": "073",
+      "name": "Fóssil Crânio Arcaico"
+    },
+    {
+      "number": "074",
+      "name": "Distintivo de Recomeço"
+    },
+    {
+      "number": "075",
+      "name": "Sino Sombrio"
+    },
+    {
+      "number": "076",
+      "name": "Pedreira de Fóssil"
+    },
+    {
+      "number": "077",
+      "name": "Batalha Decisiva do Gladio"
+    },
+    {
+      "number": "078",
+      "name": "Clarita"
+    },
+    {
+      "number": "079",
+      "name": "Jett"
+    },
+    {
+      "number": "080",
+      "name": "Vitalidade da Misty"
+    },
+    {
+      "number": "081",
+      "name": "Recruta do Clã Corrosão"
+    },
+    {
+      "number": "082",
+      "name": "Bombona"
+    },
+    {
+      "number": "083",
+      "name": "Energia Escuridão Sombria"
+    },
+    {
+      "number": "084",
+      "name": "Energia Raio Voltaica"
+    },
+    {
+      "number": "085",
+      "name": "Fomantis"
+    },
+    {
+      "number": "086",
+      "name": "Armarouge"
+    },
+    {
+      "number": "087",
+      "name": "Goldeen"
+    },
+    {
+      "number": "088",
+      "name": "Primarina"
+    },
+    {
+      "number": "089",
+      "name": "Manectric"
+    },
+    {
+      "number": "090",
+      "name": "Slowbro"
+    },
+    {
+      "number": "091",
+      "name": "Dhelmise"
+    },
+    {
+      "number": "092",
+      "name": "Thievul"
+    },
+    {
+      "number": "093",
+      "name": "Bastiodon"
+    },
+    {
+      "number": "094",
+      "name": "Toucannon"
+    },
+    {
+      "number": "095",
+      "name": "Silvally"
+    },
+    {
+      "number": "096",
+      "name": "Lurantis ex"
+    },
+    {
+      "number": "097",
+      "name": "Wailord ex"
+    },
+    {
+      "number": "098",
+      "name": "Mega Zeraora ex"
+    },
+    {
+      "number": "099",
+      "name": "Mega Chandelure ex"
+    },
+    {
+      "number": "100",
+      "name": "Rampardos ex"
+    },
+    {
+      "number": "101",
+      "name": "Mega Darkrai ex"
+    },
+    {
+      "number": "102",
+      "name": "Morpeko ex"
+    },
+    {
+      "number": "103",
+      "name": "Mega Excadrill ex"
+    },
+    {
+      "number": "104",
+      "name": "Bracelete Bravio"
+    },
+    {
+      "number": "105",
+      "name": "Martelo Esmagador"
+    },
+    {
+      "number": "106",
+      "name": "Sino Sombrio"
+    },
+    {
+      "number": "107",
+      "name": "Substituição de Energia"
+    },
+    {
+      "number": "108",
+      "name": "Batalha Decisiva do Gladio"
+    },
+    {
+      "number": "109",
+      "name": "Clarita"
+    },
+    {
+      "number": "110",
+      "name": "Defensor Férreo"
+    },
+    {
+      "number": "111",
+      "name": "Vitalidade da Misty"
+    },
+    {
+      "number": "112",
+      "name": "Recruta do Clã Corrosão"
+    },
+    {
+      "number": "113",
+      "name": "Bombona"
+    },
+    {
+      "number": "114",
+      "name": "Mega Zeraora ex"
+    },
+    {
+      "number": "115",
+      "name": "Mega Chandelure ex"
+    },
+    {
+      "number": "116",
+      "name": "Mega Darkrai ex"
+    },
+    {
+      "number": "117",
+      "name": "Morpeko ex"
+    },
+    {
+      "number": "118",
+      "name": "Batalha Decisiva do Gladio"
+    },
+    {
+      "number": "119",
+      "name": "Clarita"
+    },
+    {
+      "number": "120",
+      "name": "Mega Darkrai ex"
+    }
+  ]
+}

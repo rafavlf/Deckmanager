@@ -146,3 +146,21 @@ web-src/js/ui/
 ```
 
 O build ganhou cópia recursiva de `web-src/js/**/*.js`, reduzindo manutenção manual para novos módulos.
+
+## Etapas 12–13 — Dados do Pokédex, build e fluxo de novos sets
+
+- Os arrays `POKEDEX_*` saíram de `app.js` e foram para `web-src/data/pokedex/pokedex.generated.js`.
+- `build.py` passou a copiar recursivamente `css/`, `data/` e `js/`.
+- `validate_data.py` ganhou validação de datas, counts e consistência estrutural.
+- `add_set.py` passou a validar CSV, código, datas, counts e números duplicados.
+- As divergências legadas `complete > cardsInFile` continuam como avisos; não foram corrigidas automaticamente nesta etapa.
+
+
+## Etapas 14–15 — Regressão e fechamento
+
+- Adicionado `scripts/regression_check.py`.
+- Adicionado `tests/test_final_architecture.py`.
+- Adicionado `docs/REGRESSION_CHECKLIST.md`.
+- Adicionado `.gitattributes` e reforçado `.gitignore`.
+- Atualizado `README.md` com arquitetura, build e fluxo de novos sets.
+- Divergências legadas de contagem continuam como avisos; nenhuma informação funcional foi alterada automaticamente.

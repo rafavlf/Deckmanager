@@ -7,15 +7,10 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 SETS_DIR = ROOT / "web-src" / "data" / "sets"
-WEB_INDEX = ROOT / "web-src" / "index.html"
-WEB_CSS = ROOT / "web-src" / "css" / "app.css"
-WEB_CORE_DIR = ROOT / "web-src" / "js" / "core"
-WEB_FEATURES_DIR = ROOT / "web-src" / "js" / "features"
-WEB_UI_DIR = ROOT / "web-src" / "js" / "ui"
-WEB_JS_DIR = ROOT / "web-src" / "js"
-WEB_GENERATED = ROOT / "web-src" / "data" / "sets.generated.js"
+WEB_DIR = ROOT / "web-src"
+WEB_INDEX = WEB_DIR / "index.html"
+WEB_GENERATED = WEB_DIR / "data" / "sets.generated.js"
 ASSETS_DIR = ROOT / "apk-project" / "app" / "src" / "main" / "assets"
-ASSETS_DATA = ASSETS_DIR / "data"
 
 def generate_sets():
     collections = []
@@ -61,6 +56,17 @@ def generate_sets():
         + "const SET_SERIES=" + json.dumps(series, ensure_ascii=False, separators=(",", ":")) + ";\n"
     )
 
+def copy_tree(source: Path, target: Path):
+    if not source.exists():
+        return
+    for item in source.rglob("*"):
+        if not item.is_file():
+            continue
+        rel = item.relative_to(source)
+        dest = target / rel
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(item, dest)
+
 def main():
     subprocess.run([sys.executable, str(ROOT / "scripts" / "validate_data.py")], check=True)
 
@@ -68,38 +74,15 @@ def main():
     WEB_GENERATED.parent.mkdir(parents=True, exist_ok=True)
     WEB_GENERATED.write_text(generated, encoding="utf-8")
 
-    ASSETS_DATA.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(WEB_GENERATED, ASSETS_DATA / "sets.generated.js")
+    ASSETS_DIR.mkdir(parents=True, exist_ok=True)
     shutil.copy2(WEB_INDEX, ASSETS_DIR / "index.html")
-    (ASSETS_DIR / "css").mkdir(parents=True, exist_ok=True)
-    shutil.copy2(WEB_CSS, ASSETS_DIR / "css" / "app.css")
-    core_target = ASSETS_DIR / "js" / "core"
-    core_target.mkdir(parents=True, exist_ok=True)
-    for core_file in WEB_CORE_DIR.glob("*.js"):
-        shutil.copy2(core_file, core_target / core_file.name)
-    features_target = ASSETS_DIR / "js" / "features"
-    features_target.mkdir(parents=True, exist_ok=True)
-    for feature_file in WEB_FEATURES_DIR.glob("*.js"):
-        shutil.copy2(feature_file, features_target / feature_file.name)
-    ui_target = ASSETS_DIR / "js" / "ui"
-    ui_target.mkdir(parents=True, exist_ok=True)
-    for ui_file in WEB_UI_DIR.glob("*.js"):
-        shutil.copy2(ui_file, ui_target / ui_file.name)
-    # Sync recursivo do JavaScript: inclui app.js e futuras subpastas automaticamente.
-    js_target = ASSETS_DIR / "js"
-    for source in WEB_JS_DIR.rglob("*.js"):
-        relative = source.relative_to(WEB_JS_DIR)
-        target = js_target / relative
-        target.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(source, target)
+
+    for folder in ("css", "data", "js"):
+        copy_tree(WEB_DIR / folder, ASSETS_DIR / folder)
 
     print("\nBuild web concluido.")
     print(f"Index: {ASSETS_DIR / 'index.html'}")
-    print(f"Sets:  {ASSETS_DATA / 'sets.generated.js'}")
-    print(f"CSS:   {ASSETS_DIR / 'css' / 'app.css'}")
-    print(f"Core:  {ASSETS_DIR / 'js' / 'core'}")
-    print(f"Features: {ASSETS_DIR / 'js' / 'features'}")
-    print(f"UI:    {ASSETS_DIR / 'js' / 'ui'}")
+    print(f"Assets modulares: {ASSETS_DIR}")
 
 if __name__ == "__main__":
     main()

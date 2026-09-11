@@ -1,0 +1,1192 @@
+{
+  "code": "ASC",
+  "name": "Heróis Excelsos",
+  "series": "Mega",
+  "releaseDate": "2026-01-30",
+  "counts": {
+    "numbered": 217,
+    "complete": 264
+  },
+  "cards": [
+    {
+      "number": "001",
+      "name": "Oddish da Érica"
+    },
+    {
+      "number": "002",
+      "name": "Gloom da Érica"
+    },
+    {
+      "number": "003",
+      "name": "Vileplume ex da Érica"
+    },
+    {
+      "number": "004",
+      "name": "Bellsprout da Érica"
+    },
+    {
+      "number": "005",
+      "name": "Weepinbell da Érica"
+    },
+    {
+      "number": "006",
+      "name": "Victreebel da Érica"
+    },
+    {
+      "number": "007",
+      "name": "Tangela da Érica"
+    },
+    {
+      "number": "008",
+      "name": "Chikorita"
+    },
+    {
+      "number": "009",
+      "name": "Bayleef"
+    },
+    {
+      "number": "010",
+      "name": "Mega Meganium ex"
+    },
+    {
+      "number": "011",
+      "name": "Wurmple"
+    },
+    {
+      "number": "012",
+      "name": "Silcoon"
+    },
+    {
+      "number": "013",
+      "name": "Beautifly"
+    },
+    {
+      "number": "014",
+      "name": "Cascoon"
+    },
+    {
+      "number": "015",
+      "name": "Dustox"
+    },
+    {
+      "number": "016",
+      "name": "Budew"
+    },
+    {
+      "number": "017",
+      "name": "Grubbin"
+    },
+    {
+      "number": "018",
+      "name": "Tarountula da Equipe Rocket"
+    },
+    {
+      "number": "019",
+      "name": "Spidops da Equipe Rocket"
+    },
+    {
+      "number": "020",
+      "name": "Charmander"
+    },
+    {
+      "number": "021",
+      "name": "Charmeleon"
+    },
+    {
+      "number": "022",
+      "name": "Mega Charizard Y ex"
+    },
+    {
+      "number": "023",
+      "name": "Slugma do Ethan"
+    },
+    {
+      "number": "024",
+      "name": "Magcargo do Ethan"
+    },
+    {
+      "number": "025",
+      "name": "Entei"
+    },
+    {
+      "number": "026",
+      "name": "Ho-Oh ex do Ethan"
+    },
+    {
+      "number": "027",
+      "name": "Numel"
+    },
+    {
+      "number": "028",
+      "name": "Camerupt"
+    },
+    {
+      "number": "029",
+      "name": "Tepig"
+    },
+    {
+      "number": "030",
+      "name": "Pignite"
+    },
+    {
+      "number": "031",
+      "name": "Mega Emboar ex"
+    },
+    {
+      "number": "032",
+      "name": "Darumaka do N"
+    },
+    {
+      "number": "033",
+      "name": "Darmanitan do N"
+    },
+    {
+      "number": "034",
+      "name": "Salandit"
+    },
+    {
+      "number": "035",
+      "name": "Salazzle"
+    },
+    {
+      "number": "036",
+      "name": "Scorbunny"
+    },
+    {
+      "number": "037",
+      "name": "Raboot"
+    },
+    {
+      "number": "038",
+      "name": "Cinderace ex"
+    },
+    {
+      "number": "039",
+      "name": "Psyduck"
+    },
+    {
+      "number": "040",
+      "name": "Golduck"
+    },
+    {
+      "number": "041",
+      "name": "Totodile"
+    },
+    {
+      "number": "042",
+      "name": "Croconaw"
+    },
+    {
+      "number": "043",
+      "name": "Mega Feraligatr ex"
+    },
+    {
+      "number": "044",
+      "name": "Sneasel"
+    },
+    {
+      "number": "045",
+      "name": "Weavile"
+    },
+    {
+      "number": "046",
+      "name": "Snorunt"
+    },
+    {
+      "number": "047",
+      "name": "Mega Froslass ex"
+    },
+    {
+      "number": "048",
+      "name": "Regice ex"
+    },
+    {
+      "number": "049",
+      "name": "Vanillite do N"
+    },
+    {
+      "number": "050",
+      "name": "Vanillish do N"
+    },
+    {
+      "number": "051",
+      "name": "Vanilluxe do N"
+    },
+    {
+      "number": "052",
+      "name": "Snom"
+    },
+    {
+      "number": "053",
+      "name": "Frosmoth"
+    },
+    {
+      "number": "054",
+      "name": "Glastrier"
+    },
+    {
+      "number": "055",
+      "name": "Pikachu"
+    },
+    {
+      "number": "056",
+      "name": "Raichu"
+    },
+    {
+      "number": "057",
+      "name": "Pikachu ex"
+    },
+    {
+      "number": "058",
+      "name": "Voltorb ex"
+    },
+    {
+      "number": "059",
+      "name": "Tynamo"
+    },
+    {
+      "number": "060",
+      "name": "Eelektrik"
+    },
+    {
+      "number": "061",
+      "name": "Mega Eelektross ex"
+    },
+    {
+      "number": "062",
+      "name": "Stunfisk"
+    },
+    {
+      "number": "063",
+      "name": "Helioptile"
+    },
+    {
+      "number": "064",
+      "name": "Heliolisk"
+    },
+    {
+      "number": "065",
+      "name": "Charjabug"
+    },
+    {
+      "number": "066",
+      "name": "Vikavolt"
+    },
+    {
+      "number": "067",
+      "name": "Tapu Koko"
+    },
+    {
+      "number": "068",
+      "name": "Pincurchin ex do Lupo"
+    },
+    {
+      "number": "069",
+      "name": "Tadbulb da Kissera"
+    },
+    {
+      "number": "070",
+      "name": "Bellibolt ex da Kissera"
+    },
+    {
+      "number": "071",
+      "name": "Wattrel da Kissera"
+    },
+    {
+      "number": "072",
+      "name": "Kilowattrel da Kissera"
+    },
+    {
+      "number": "073",
+      "name": "Miraidon ex"
+    },
+    {
+      "number": "074",
+      "name": "Clefairy"
+    },
+    {
+      "number": "075",
+      "name": "Clefable"
+    },
+    {
+      "number": "076",
+      "name": "Clefairy ex da Lílian"
+    },
+    {
+      "number": "077",
+      "name": "Exeggcute da Equipe Rocket"
+    },
+    {
+      "number": "078",
+      "name": "Exeggutor da Equipe Rocket"
+    },
+    {
+      "number": "079",
+      "name": "Mewtwo ex da Equipe Rocket"
+    },
+    {
+      "number": "080",
+      "name": "Togepi"
+    },
+    {
+      "number": "081",
+      "name": "Togetic"
+    },
+    {
+      "number": "082",
+      "name": "Togekiss"
+    },
+    {
+      "number": "083",
+      "name": "Marill"
+    },
+    {
+      "number": "084",
+      "name": "Azumarill ex"
+    },
+    {
+      "number": "085",
+      "name": "Misdreavus"
+    },
+    {
+      "number": "086",
+      "name": "Mismagius"
+    },
+    {
+      "number": "087",
+      "name": "Ralts"
+    },
+    {
+      "number": "088",
+      "name": "Kirlia"
+    },
+    {
+      "number": "089",
+      "name": "Mega Gardevoir ex"
+    },
+    {
+      "number": "090",
+      "name": "Shuppet"
+    },
+    {
+      "number": "091",
+      "name": "Banette"
+    },
+    {
+      "number": "092",
+      "name": "Rotom"
+    },
+    {
+      "number": "093",
+      "name": "Swirlix"
+    },
+    {
+      "number": "094",
+      "name": "Slurpuff"
+    },
+    {
+      "number": "095",
+      "name": "Phantump do Lupo"
+    },
+    {
+      "number": "096",
+      "name": "Trevenant do Lupo"
+    },
+    {
+      "number": "097",
+      "name": "Mimikyu da Equipe Rocket"
+    },
+    {
+      "number": "098",
+      "name": "Spectrier"
+    },
+    {
+      "number": "099",
+      "name": "Munkidori"
+    },
+    {
+      "number": "100",
+      "name": "Diglett da Equipe Rocket"
+    },
+    {
+      "number": "101",
+      "name": "Dugtrio da Equipe Rocket"
+    },
+    {
+      "number": "102",
+      "name": "Hitmontop"
+    },
+    {
+      "number": "103",
+      "name": "Meditite"
+    },
+    {
+      "number": "104",
+      "name": "Medicham"
+    },
+    {
+      "number": "105",
+      "name": "Lunatone"
+    },
+    {
+      "number": "106",
+      "name": "Solrock"
+    },
+    {
+      "number": "107",
+      "name": "Regirock ex"
+    },
+    {
+      "number": "108",
+      "name": "Groudon"
+    },
+    {
+      "number": "109",
+      "name": "Gible da Cíntia"
+    },
+    {
+      "number": "110",
+      "name": "Gabite da Cíntia"
+    },
+    {
+      "number": "111",
+      "name": "Garchomp ex da Cíntia"
+    },
+    {
+      "number": "112",
+      "name": "Riolu"
+    },
+    {
+      "number": "113",
+      "name": "Mega Lucario ex"
+    },
+    {
+      "number": "114",
+      "name": "Stunfisk ex"
+    },
+    {
+      "number": "115",
+      "name": "Pancham"
+    },
+    {
+      "number": "116",
+      "name": "Mega Hawlucha ex"
+    },
+    {
+      "number": "117",
+      "name": "Carbink"
+    },
+    {
+      "number": "118",
+      "name": "Rolycoly"
+    },
+    {
+      "number": "119",
+      "name": "Carkol"
+    },
+    {
+      "number": "120",
+      "name": "Coalossal"
+    },
+    {
+      "number": "121",
+      "name": "Koraidon ex"
+    },
+    {
+      "number": "122",
+      "name": "Okidogi"
+    },
+    {
+      "number": "123",
+      "name": "Gastly"
+    },
+    {
+      "number": "124",
+      "name": "Haunter"
+    },
+    {
+      "number": "125",
+      "name": "Mega Gengar ex"
+    },
+    {
+      "number": "126",
+      "name": "Murkrow da Equipe Rocket"
+    },
+    {
+      "number": "127",
+      "name": "Honchkrow da Equipe Rocket"
+    },
+    {
+      "number": "128",
+      "name": "Poochyena"
+    },
+    {
+      "number": "129",
+      "name": "Mightyena"
+    },
+    {
+      "number": "130",
+      "name": "Zigzagoon de Galar"
+    },
+    {
+      "number": "131",
+      "name": "Linoone de Galar"
+    },
+    {
+      "number": "132",
+      "name": "Obstagoon de Galar"
+    },
+    {
+      "number": "133",
+      "name": "Spiritomb da Cíntia"
+    },
+    {
+      "number": "134",
+      "name": "Scraggy"
+    },
+    {
+      "number": "135",
+      "name": "Mega Scrafty ex"
+    },
+    {
+      "number": "136",
+      "name": "Zorua do N"
+    },
+    {
+      "number": "137",
+      "name": "Zoroark ex do N"
+    },
+    {
+      "number": "138",
+      "name": "Vullaby"
+    },
+    {
+      "number": "139",
+      "name": "Mandibuzz ex"
+    },
+    {
+      "number": "140",
+      "name": "Pangoro"
+    },
+    {
+      "number": "141",
+      "name": "Hoopa"
+    },
+    {
+      "number": "142",
+      "name": "Fezandipiti ex"
+    },
+    {
+      "number": "143",
+      "name": "Pecharunt"
+    },
+    {
+      "number": "144",
+      "name": "Mawile"
+    },
+    {
+      "number": "145",
+      "name": "Registeel ex"
+    },
+    {
+      "number": "146",
+      "name": "Pawniard"
+    },
+    {
+      "number": "147",
+      "name": "Bisharp"
+    },
+    {
+      "number": "148",
+      "name": "Kingambit"
+    },
+    {
+      "number": "149",
+      "name": "Togedemaru ex"
+    },
+    {
+      "number": "150",
+      "name": "Dratini"
+    },
+    {
+      "number": "151",
+      "name": "Dragonair"
+    },
+    {
+      "number": "152",
+      "name": "Mega Dragonite ex"
+    },
+    {
+      "number": "153",
+      "name": "Rayquaza"
+    },
+    {
+      "number": "154",
+      "name": "Reshiram do N"
+    },
+    {
+      "number": "155",
+      "name": "Zekrom do N"
+    },
+    {
+      "number": "156",
+      "name": "Noibat"
+    },
+    {
+      "number": "157",
+      "name": "Noivern"
+    },
+    {
+      "number": "158",
+      "name": "Dreepy"
+    },
+    {
+      "number": "159",
+      "name": "Drakloak"
+    },
+    {
+      "number": "160",
+      "name": "Dragapult ex"
+    },
+    {
+      "number": "161",
+      "name": "Meowth da Equipe Rocket"
+    },
+    {
+      "number": "162",
+      "name": "Kangaskhan ex da Equipe Rocket"
+    },
+    {
+      "number": "163",
+      "name": "Dunsparce do Lauro"
+    },
+    {
+      "number": "164",
+      "name": "Dudunsparce ex do Lauro"
+    },
+    {
+      "number": "165",
+      "name": "Skitty"
+    },
+    {
+      "number": "166",
+      "name": "Delcatty"
+    },
+    {
+      "number": "167",
+      "name": "Zangoose ex"
+    },
+    {
+      "number": "168",
+      "name": "Starly do Lauro"
+    },
+    {
+      "number": "169",
+      "name": "Staravia do Lauro"
+    },
+    {
+      "number": "170",
+      "name": "Staraptor do Lauro"
+    },
+    {
+      "number": "171",
+      "name": "Rotom Ventilador"
+    },
+    {
+      "number": "172",
+      "name": "Mega Audino ex"
+    },
+    {
+      "number": "173",
+      "name": "Rufflet do Lauro"
+    },
+    {
+      "number": "174",
+      "name": "Braviary do Lauro"
+    },
+    {
+      "number": "175",
+      "name": "Komala do Lauro"
+    },
+    {
+      "number": "176",
+      "name": "Drampa"
+    },
+    {
+      "number": "177",
+      "name": "Cramorant do Lupo"
+    },
+    {
+      "number": "178",
+      "name": "Terapagos"
+    },
+    {
+      "number": "179",
+      "name": "Terapagos ex"
+    },
+    {
+      "number": "180",
+      "name": "Traquinagem da Acerola"
+    },
+    {
+      "number": "181",
+      "name": "Balão de Ar"
+    },
+    {
+      "number": "182",
+      "name": "Amor e Paz"
+    },
+    {
+      "number": "183",
+      "name": "Ordem da Chefia"
+    },
+    {
+      "number": "184",
+      "name": "Poffin de Colega"
+    },
+    {
+      "number": "185",
+      "name": "Canari"
+    },
+    {
+      "number": "186",
+      "name": "Contra-ataque de Alcance"
+    },
+    {
+      "number": "187",
+      "name": "Gongo de Luta"
+    },
+    {
+      "number": "188",
+      "name": "Floresta da Vitalidade"
+    },
+    {
+      "number": "189",
+      "name": "Trompete de Vidro"
+    },
+    {
+      "number": "190",
+      "name": "Espírito de Luta da Iris"
+    },
+    {
+      "number": "191",
+      "name": "Esfera de Luz"
+    },
+    {
+      "number": "192",
+      "name": "Determinação da Lílian"
+    },
+    {
+      "number": "193",
+      "name": "Megassinal"
+    },
+    {
+      "number": "194",
+      "name": "Jardim Misterioso"
+    },
+    {
+      "number": "195",
+      "name": "PP Up do N"
+    },
+    {
+      "number": "196",
+      "name": "Maca Noturna"
+    },
+    {
+      "number": "197",
+      "name": "Mina Noturna"
+    },
+    {
+      "number": "198",
+      "name": "Poké Tablet"
+    },
+    {
+      "number": "199",
+      "name": "Suplemento Premium Pro"
+    },
+    {
+      "number": "200",
+      "name": "Surfista"
+    },
+    {
+      "number": "201",
+      "name": "Apollo da Equipe Rocket"
+    },
+    {
+      "number": "202",
+      "name": "Athena da Equipe Rocket"
+    },
+    {
+      "number": "203",
+      "name": "Fábrica da Equipe Rocket"
+    },
+    {
+      "number": "204",
+      "name": "Giovanni da Equipe Rocket"
+    },
+    {
+      "number": "205",
+      "name": "Grande Bola da Equipe Rocket"
+    },
+    {
+      "number": "206",
+      "name": "Hipnotizador da Equipe Rocket"
+    },
+    {
+      "number": "207",
+      "name": "Petrel da Equipe Rocket"
+    },
+    {
+      "number": "208",
+      "name": "Próton da Equipe Rocket"
+    },
+    {
+      "number": "209",
+      "name": "Transmissor da Equipe Rocket"
+    },
+    {
+      "number": "210",
+      "name": "Torre de Vigia da Equipe Rocket"
+    },
+    {
+      "number": "211",
+      "name": "Escama Espessa"
+    },
+    {
+      "number": "212",
+      "name": "Sucateador de Ferramentas"
+    },
+    {
+      "number": "213",
+      "name": "Ultra Bola"
+    },
+    {
+      "number": "214",
+      "name": "Urbano"
+    },
+    {
+      "number": "215",
+      "name": "Garçonete"
+    },
+    {
+      "number": "216",
+      "name": "Energia de Prisma"
+    },
+    {
+      "number": "217",
+      "name": "Energia da Equipe Rocket"
+    },
+    {
+      "number": "218",
+      "name": "Tangela da Érica"
+    },
+    {
+      "number": "219",
+      "name": "Beautifly"
+    },
+    {
+      "number": "220",
+      "name": "Dustox"
+    },
+    {
+      "number": "221",
+      "name": "Budew"
+    },
+    {
+      "number": "222",
+      "name": "Magcargo do Ethan"
+    },
+    {
+      "number": "223",
+      "name": "Numel"
+    },
+    {
+      "number": "224",
+      "name": "Salazzle"
+    },
+    {
+      "number": "225",
+      "name": "Scorbunny"
+    },
+    {
+      "number": "226",
+      "name": "Psyduck"
+    },
+    {
+      "number": "227",
+      "name": "Snorunt"
+    },
+    {
+      "number": "228",
+      "name": "Weavile"
+    },
+    {
+      "number": "229",
+      "name": "Heliolisk"
+    },
+    {
+      "number": "230",
+      "name": "Vikavolt"
+    },
+    {
+      "number": "231",
+      "name": "Wattrel da Kissera"
+    },
+    {
+      "number": "232",
+      "name": "Marill"
+    },
+    {
+      "number": "233",
+      "name": "Misdreavus"
+    },
+    {
+      "number": "234",
+      "name": "Banette"
+    },
+    {
+      "number": "235",
+      "name": "Togekiss"
+    },
+    {
+      "number": "236",
+      "name": "Slurpuff"
+    },
+    {
+      "number": "237",
+      "name": "Trevenant do Lupo"
+    },
+    {
+      "number": "238",
+      "name": "Mimikyu da Equipe Rocket"
+    },
+    {
+      "number": "239",
+      "name": "Dugtrio da Equipe Rocket"
+    },
+    {
+      "number": "240",
+      "name": "Hitmontop"
+    },
+    {
+      "number": "241",
+      "name": "Medicham"
+    },
+    {
+      "number": "242",
+      "name": "Carbink"
+    },
+    {
+      "number": "243",
+      "name": "Mightyena"
+    },
+    {
+      "number": "244",
+      "name": "Spiritomb da Cíntia"
+    },
+    {
+      "number": "245",
+      "name": "Obstagoon de Galar"
+    },
+    {
+      "number": "246",
+      "name": "Mawile"
+    },
+    {
+      "number": "247",
+      "name": "Dreepy"
+    },
+    {
+      "number": "248",
+      "name": "Drakloak"
+    },
+    {
+      "number": "249",
+      "name": "Staraptor do Lauro"
+    },
+    {
+      "number": "250",
+      "name": "Rotom Ventilador"
+    },
+    {
+      "number": "251",
+      "name": "Sprigatito ex"
+    },
+    {
+      "number": "252",
+      "name": "Stunfisk ex"
+    },
+    {
+      "number": "253",
+      "name": "Mega Audino ex"
+    },
+    {
+      "number": "254",
+      "name": "Amor e Paz"
+    },
+    {
+      "number": "255",
+      "name": "Treino de Faixa Preta"
+    },
+    {
+      "number": "256",
+      "name": "Ordem da Chefia"
+    },
+    {
+      "number": "257",
+      "name": "Canari"
+    },
+    {
+      "number": "258",
+      "name": "Cheren"
+    },
+    {
+      "number": "259",
+      "name": "Contra-ataque de Alcance"
+    },
+    {
+      "number": "260",
+      "name": "Trompete de Vidro"
+    },
+    {
+      "number": "261",
+      "name": "Torre de Interferência"
+    },
+    {
+      "number": "262",
+      "name": "PP Up do N"
+    },
+    {
+      "number": "263",
+      "name": "Transmissor da Equipe Rocket"
+    },
+    {
+      "number": "264",
+      "name": "Ultra Bola"
+    },
+    {
+      "number": "265",
+      "name": "Mega Froslass ex"
+    },
+    {
+      "number": "266",
+      "name": "Mega Eelektross ex"
+    },
+    {
+      "number": "267",
+      "name": "Mega Diancie ex"
+    },
+    {
+      "number": "268",
+      "name": "Mega Hawlucha ex"
+    },
+    {
+      "number": "269",
+      "name": "Mega Gengar ex"
+    },
+    {
+      "number": "270",
+      "name": "Mega Scrafty ex"
+    },
+    {
+      "number": "271",
+      "name": "Mega Dragonite ex"
+    },
+    {
+      "number": "272",
+      "name": "Mega Meganium ex"
+    },
+    {
+      "number": "273",
+      "name": "Mega Emboar ex"
+    },
+    {
+      "number": "274",
+      "name": "Mega Feraligatr ex"
+    },
+    {
+      "number": "275",
+      "name": "Mega Froslass ex"
+    },
+    {
+      "number": "276",
+      "name": "Pikachu ex"
+    },
+    {
+      "number": "277",
+      "name": "Pikachu ex"
+    },
+    {
+      "number": "278",
+      "name": "Mega Eelektross ex"
+    },
+    {
+      "number": "279",
+      "name": "Bellibolt ex da Kissera"
+    },
+    {
+      "number": "280",
+      "name": "Clefairy ex da Lílian"
+    },
+    {
+      "number": "281",
+      "name": "Mewtwo ex da Equipe Rocket"
+    },
+    {
+      "number": "282",
+      "name": "Mega Diancie ex"
+    },
+    {
+      "number": "283",
+      "name": "Mega Hawlucha ex"
+    },
+    {
+      "number": "284",
+      "name": "Mega Gengar ex"
+    },
+    {
+      "number": "285",
+      "name": "Mega Scrafty ex"
+    },
+    {
+      "number": "286",
+      "name": "Zoroark ex do N"
+    },
+    {
+      "number": "287",
+      "name": "Grimmsnarl ex da Marine"
+    },
+    {
+      "number": "288",
+      "name": "Fezandipiti ex"
+    },
+    {
+      "number": "289",
+      "name": "Metagross ex do Steven"
+    },
+    {
+      "number": "290",
+      "name": "Mega Dragonite ex"
+    },
+    {
+      "number": "291",
+      "name": "Canari"
+    },
+    {
+      "number": "292",
+      "name": "Espírito de Luta da Iris"
+    },
+    {
+      "number": "293",
+      "name": "Surfista"
+    },
+    {
+      "number": "294",
+      "name": "Mega Charizard Y ex"
+    },
+    {
+      "number": "295",
+      "name": "Mega Dragonite ex"
+    }
+  ]
+}

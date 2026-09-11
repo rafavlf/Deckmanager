@@ -1,0 +1,1076 @@
+{
+  "code": "PAR",
+  "name": "Fenda Paradoxal",
+  "series": "Scarlet & Violet",
+  "releaseDate": "2023-11-03",
+  "counts": {
+    "numbered": 182,
+    "complete": 266
+  },
+  "cards": [
+    {
+      "number": "001",
+      "name": "Surskit"
+    },
+    {
+      "number": "002",
+      "name": "Masquerain"
+    },
+    {
+      "number": "003",
+      "name": "Froslass ex"
+    },
+    {
+      "number": "004",
+      "name": "Pansage"
+    },
+    {
+      "number": "005",
+      "name": "Simisage"
+    },
+    {
+      "number": "006",
+      "name": "Dwebble"
+    },
+    {
+      "number": "007",
+      "name": "Crustle"
+    },
+    {
+      "number": "008",
+      "name": "Bounsweet"
+    },
+    {
+      "number": "009",
+      "name": "Steenee"
+    },
+    {
+      "number": "010",
+      "name": "Blipbug"
+    },
+    {
+      "number": "011",
+      "name": "Dottler"
+    },
+    {
+      "number": "012",
+      "name": "Orbeetle"
+    },
+    {
+      "number": "013",
+      "name": "Nymble"
+    },
+    {
+      "number": "014",
+      "name": "Nymble"
+    },
+    {
+      "number": "015",
+      "name": "Toedscool"
+    },
+    {
+      "number": "016",
+      "name": "Toedscool"
+    },
+    {
+      "number": "017",
+      "name": "Toedscruel"
+    },
+    {
+      "number": "018",
+      "name": "Wo-Chien"
+    },
+    {
+      "number": "019",
+      "name": "Magby"
+    },
+    {
+      "number": "020",
+      "name": "Pansear"
+    },
+    {
+      "number": "021",
+      "name": "Simisear"
+    },
+    {
+      "number": "022",
+      "name": "Volcanion"
+    },
+    {
+      "number": "023",
+      "name": "Fuecoco"
+    },
+    {
+      "number": "024",
+      "name": "Crocalor"
+    },
+    {
+      "number": "025",
+      "name": "Charcadet"
+    },
+    {
+      "number": "026",
+      "name": "Charcadet"
+    },
+    {
+      "number": "027",
+      "name": "Armarouge ex"
+    },
+    {
+      "number": "028",
+      "name": "Mariposa Férrea"
+    },
+    {
+      "number": "029",
+      "name": "Chi-Yu"
+    },
+    {
+      "number": "030",
+      "name": "Horsea"
+    },
+    {
+      "number": "031",
+      "name": "Seadra"
+    },
+    {
+      "number": "032",
+      "name": "Kingdra"
+    },
+    {
+      "number": "033",
+      "name": "Remoraid"
+    },
+    {
+      "number": "034",
+      "name": "Octillery"
+    },
+    {
+      "number": "035",
+      "name": "Feebas"
+    },
+    {
+      "number": "036",
+      "name": "Milotic"
+    },
+    {
+      "number": "037",
+      "name": "Snorunt"
+    },
+    {
+      "number": "038",
+      "name": "Garchomp ex"
+    },
+    {
+      "number": "039",
+      "name": "Mantyke"
+    },
+    {
+      "number": "040",
+      "name": "Palkia"
+    },
+    {
+      "number": "041",
+      "name": "Panpour"
+    },
+    {
+      "number": "042",
+      "name": "Simipour"
+    },
+    {
+      "number": "043",
+      "name": "Vanillite"
+    },
+    {
+      "number": "044",
+      "name": "Vanillish"
+    },
+    {
+      "number": "045",
+      "name": "Vanilluxe"
+    },
+    {
+      "number": "046",
+      "name": "Tsareena ex"
+    },
+    {
+      "number": "047",
+      "name": "Wimpod"
+    },
+    {
+      "number": "048",
+      "name": "Wimpod"
+    },
+    {
+      "number": "049",
+      "name": "Golisopod"
+    },
+    {
+      "number": "050",
+      "name": "Golisopod ex"
+    },
+    {
+      "number": "051",
+      "name": "Wiglett"
+    },
+    {
+      "number": "052",
+      "name": "Wiglett"
+    },
+    {
+      "number": "053",
+      "name": "Wugtrio"
+    },
+    {
+      "number": "054",
+      "name": "Veluza"
+    },
+    {
+      "number": "055",
+      "name": "Dondozo"
+    },
+    {
+      "number": "056",
+      "name": "Pacote Férreo"
+    },
+    {
+      "number": "057",
+      "name": "Chien-Pao"
+    },
+    {
+      "number": "058",
+      "name": "Mewtwo ex"
+    },
+    {
+      "number": "059",
+      "name": "Elekid"
+    },
+    {
+      "number": "060",
+      "name": "Plusle"
+    },
+    {
+      "number": "061",
+      "name": "Minun"
+    },
+    {
+      "number": "062",
+      "name": "Blitzle"
+    },
+    {
+      "number": "063",
+      "name": "Zebstrika"
+    },
+    {
+      "number": "064",
+      "name": "Joltik"
+    },
+    {
+      "number": "065",
+      "name": "Galvantula"
+    },
+    {
+      "number": "066",
+      "name": "Zekrom"
+    },
+    {
+      "number": "067",
+      "name": "Oricorio"
+    },
+    {
+      "number": "068",
+      "name": "Tapu Koko ex"
+    },
+    {
+      "number": "069",
+      "name": "Toxel"
+    },
+    {
+      "number": "070",
+      "name": "Mãos Férreas ex"
+    },
+    {
+      "number": "071",
+      "name": "Natu"
+    },
+    {
+      "number": "072",
+      "name": "Xatu"
+    },
+    {
+      "number": "073",
+      "name": "Latios"
+    },
+    {
+      "number": "074",
+      "name": "Deoxys"
+    },
+    {
+      "number": "075",
+      "name": "Yamask"
+    },
+    {
+      "number": "076",
+      "name": "Cofagrigus ex"
+    },
+    {
+      "number": "077",
+      "name": "Pumpkaboo"
+    },
+    {
+      "number": "078",
+      "name": "Gourgeist"
+    },
+    {
+      "number": "079",
+      "name": "Flittle"
+    },
+    {
+      "number": "080",
+      "name": "Flittle"
+    },
+    {
+      "number": "081",
+      "name": "Espathra"
+    },
+    {
+      "number": "082",
+      "name": "Tinkatink"
+    },
+    {
+      "number": "083",
+      "name": "Tinkatink"
+    },
+    {
+      "number": "084",
+      "name": "Tinkatuff"
+    },
+    {
+      "number": "085",
+      "name": "Tinkaton"
+    },
+    {
+      "number": "086",
+      "name": "Cauda Brado"
+    },
+    {
+      "number": "087",
+      "name": "Gimmighoul"
+    },
+    {
+      "number": "088",
+      "name": "Gimmighoul"
+    },
+    {
+      "number": "089",
+      "name": "Valentia Férrea ex"
+    },
+    {
+      "number": "090",
+      "name": "Onix"
+    },
+    {
+      "number": "091",
+      "name": "Gligar"
+    },
+    {
+      "number": "092",
+      "name": "Gliscor"
+    },
+    {
+      "number": "093",
+      "name": "Groudon"
+    },
+    {
+      "number": "094",
+      "name": "Gible"
+    },
+    {
+      "number": "095",
+      "name": "Gabite"
+    },
+    {
+      "number": "096",
+      "name": "Mienfoo"
+    },
+    {
+      "number": "097",
+      "name": "Mienshao"
+    },
+    {
+      "number": "098",
+      "name": "Hoopa ex"
+    },
+    {
+      "number": "099",
+      "name": "Minior"
+    },
+    {
+      "number": "100",
+      "name": "Toxtricity ex"
+    },
+    {
+      "number": "101",
+      "name": "Nacli"
+    },
+    {
+      "number": "102",
+      "name": "Nacli"
+    },
+    {
+      "number": "103",
+      "name": "Naclstack"
+    },
+    {
+      "number": "104",
+      "name": "Garganacl"
+    },
+    {
+      "number": "105",
+      "name": "Klawf"
+    },
+    {
+      "number": "106",
+      "name": "Flamigo"
+    },
+    {
+      "number": "107",
+      "name": "Asa Rasteira"
+    },
+    {
+      "number": "108",
+      "name": "Choque Areia ex"
+    },
+    {
+      "number": "109",
+      "name": "Ting-Lu"
+    },
+    {
+      "number": "110",
+      "name": "Zubat"
+    },
+    {
+      "number": "111",
+      "name": "Golbat"
+    },
+    {
+      "number": "112",
+      "name": "Crobat"
+    },
+    {
+      "number": "113",
+      "name": "Absol"
+    },
+    {
+      "number": "114",
+      "name": "Purrloin"
+    },
+    {
+      "number": "115",
+      "name": "Liepard"
+    },
+    {
+      "number": "116",
+      "name": "Trubbish"
+    },
+    {
+      "number": "117",
+      "name": "Garbodor"
+    },
+    {
+      "number": "118",
+      "name": "Yveltal"
+    },
+    {
+      "number": "119",
+      "name": "Nickit"
+    },
+    {
+      "number": "120",
+      "name": "Thievul"
+    },
+    {
+      "number": "121",
+      "name": "Morpeko"
+    },
+    {
+      "number": "122",
+      "name": "Lokix"
+    },
+    {
+      "number": "123",
+      "name": "Capuz Bruto"
+    },
+    {
+      "number": "124",
+      "name": "Lua Estrondo ex"
+    },
+    {
+      "number": "125",
+      "name": "Steelix"
+    },
+    {
+      "number": "126",
+      "name": "Jirachi"
+    },
+    {
+      "number": "127",
+      "name": "Ferroseed"
+    },
+    {
+      "number": "128",
+      "name": "Ferrothorn"
+    },
+    {
+      "number": "129",
+      "name": "Durant"
+    },
+    {
+      "number": "130",
+      "name": "Honedge"
+    },
+    {
+      "number": "131",
+      "name": "Honedge"
+    },
+    {
+      "number": "132",
+      "name": "Doublade"
+    },
+    {
+      "number": "133",
+      "name": "Doublade"
+    },
+    {
+      "number": "134",
+      "name": "Aegislash"
+    },
+    {
+      "number": "135",
+      "name": "Aegislash ex"
+    },
+    {
+      "number": "136",
+      "name": "Zacian"
+    },
+    {
+      "number": "137",
+      "name": "Skeledirge ex"
+    },
+    {
+      "number": "138",
+      "name": "Orthworm"
+    },
+    {
+      "number": "139",
+      "name": "Gholdengo ex"
+    },
+    {
+      "number": "140",
+      "name": "Altaria ex"
+    },
+    {
+      "number": "141",
+      "name": "Tatsugiri"
+    },
+    {
+      "number": "142",
+      "name": "Porygon"
+    },
+    {
+      "number": "143",
+      "name": "Porygon2"
+    },
+    {
+      "number": "144",
+      "name": "Porygon-Z"
+    },
+    {
+      "number": "145",
+      "name": "Aipom"
+    },
+    {
+      "number": "146",
+      "name": "Ambipom"
+    },
+    {
+      "number": "147",
+      "name": "Miltank"
+    },
+    {
+      "number": "148",
+      "name": "Whismur"
+    },
+    {
+      "number": "149",
+      "name": "Loudred"
+    },
+    {
+      "number": "150",
+      "name": "Exploud"
+    },
+    {
+      "number": "151",
+      "name": "Spinda"
+    },
+    {
+      "number": "152",
+      "name": "Swablu"
+    },
+    {
+      "number": "153",
+      "name": "Tandemaus"
+    },
+    {
+      "number": "154",
+      "name": "Tandemaus"
+    },
+    {
+      "number": "155",
+      "name": "Maushold ex"
+    },
+    {
+      "number": "156",
+      "name": "Bombirdier ex"
+    },
+    {
+      "number": "157",
+      "name": "Cyclizar"
+    },
+    {
+      "number": "158",
+      "name": "Jugulares Férreas"
+    },
+    {
+      "number": "159",
+      "name": "Cápsula Energética de Melhoria Ancestral"
+    },
+    {
+      "number": "160",
+      "name": "Pegador de Contra-ataque"
+    },
+    {
+      "number": "161",
+      "name": "Espanador Amaldiçoado"
+    },
+    {
+      "number": "162",
+      "name": "Colete de Desafio"
+    },
+    {
+      "number": "163",
+      "name": "Recipiente Terrestre"
+    },
+    {
+      "number": "164",
+      "name": "Cápsula Energética de Melhoria Futurista"
+    },
+    {
+      "number": "165",
+      "name": "Lauro"
+    },
+    {
+      "number": "166",
+      "name": "Capa Luxuosa"
+    },
+    {
+      "number": "167",
+      "name": "Mélia"
+    },
+    {
+      "number": "168",
+      "name": "Norman"
+    },
+    {
+      "number": "169",
+      "name": "Dama de Sombrinha"
+    },
+    {
+      "number": "170",
+      "name": "Vitalidade da Professora Arka"
+    },
+    {
+      "number": "171",
+      "name": "Hipótese do Professor Turo"
+    },
+    {
+      "number": "172",
+      "name": "Kaya"
+    },
+    {
+      "number": "173",
+      "name": "Roark"
+    },
+    {
+      "number": "174",
+      "name": "Shauntal"
+    },
+    {
+      "number": "175",
+      "name": "Boneco de Snorlax"
+    },
+    {
+      "number": "176",
+      "name": "Máquina Técnica: Ponto Cego"
+    },
+    {
+      "number": "177",
+      "name": "Máquina Técnica: Involução"
+    },
+    {
+      "number": "178",
+      "name": "Máquina Técnica: Evolução"
+    },
+    {
+      "number": "179",
+      "name": "Máquina Técnica: Turboenergização"
+    },
+    {
+      "number": "180",
+      "name": "Radar Tecnológico"
+    },
+    {
+      "number": "181",
+      "name": "Tulipa"
+    },
+    {
+      "number": "182",
+      "name": "Energia Medicinal"
+    },
+    {
+      "number": "183",
+      "name": "Crustle"
+    },
+    {
+      "number": "184",
+      "name": "Dottler"
+    },
+    {
+      "number": "185",
+      "name": "Toedscruel"
+    },
+    {
+      "number": "186",
+      "name": "Magby"
+    },
+    {
+      "number": "187",
+      "name": "Mariposa Férrea"
+    },
+    {
+      "number": "188",
+      "name": "Snorunt"
+    },
+    {
+      "number": "189",
+      "name": "Mantyke"
+    },
+    {
+      "number": "190",
+      "name": "Vanillish"
+    },
+    {
+      "number": "191",
+      "name": "Wimpod"
+    },
+    {
+      "number": "192",
+      "name": "Veluza"
+    },
+    {
+      "number": "193",
+      "name": "Plusle"
+    },
+    {
+      "number": "194",
+      "name": "Minun"
+    },
+    {
+      "number": "195",
+      "name": "Blitzle"
+    },
+    {
+      "number": "196",
+      "name": "Joltik"
+    },
+    {
+      "number": "197",
+      "name": "Espathra"
+    },
+    {
+      "number": "198",
+      "name": "Gimmighoul"
+    },
+    {
+      "number": "199",
+      "name": "Groudon"
+    },
+    {
+      "number": "200",
+      "name": "Mienshao"
+    },
+    {
+      "number": "201",
+      "name": "Minior"
+    },
+    {
+      "number": "202",
+      "name": "Garganacl"
+    },
+    {
+      "number": "203",
+      "name": "Asa Rasteira"
+    },
+    {
+      "number": "204",
+      "name": "Garbodor"
+    },
+    {
+      "number": "205",
+      "name": "Yveltal"
+    },
+    {
+      "number": "206",
+      "name": "Morpeko"
+    },
+    {
+      "number": "207",
+      "name": "Capuz Bruto"
+    },
+    {
+      "number": "208",
+      "name": "Steelix"
+    },
+    {
+      "number": "209",
+      "name": "Ferrothorn"
+    },
+    {
+      "number": "210",
+      "name": "Aegislash"
+    },
+    {
+      "number": "211",
+      "name": "Aipom"
+    },
+    {
+      "number": "212",
+      "name": "Loudred"
+    },
+    {
+      "number": "213",
+      "name": "Swablu"
+    },
+    {
+      "number": "214",
+      "name": "Porygon-Z"
+    },
+    {
+      "number": "215",
+      "name": "Cyclizar"
+    },
+    {
+      "number": "216",
+      "name": "Jugulares Férreas"
+    },
+    {
+      "number": "217",
+      "name": "Froslass ex"
+    },
+    {
+      "number": "218",
+      "name": "Armarouge ex"
+    },
+    {
+      "number": "219",
+      "name": "Garchomp ex"
+    },
+    {
+      "number": "220",
+      "name": "Tsareena ex"
+    },
+    {
+      "number": "221",
+      "name": "Golisopod ex"
+    },
+    {
+      "number": "222",
+      "name": "Tapu Koko ex"
+    },
+    {
+      "number": "223",
+      "name": "Mãos Férreas ex"
+    },
+    {
+      "number": "224",
+      "name": "Cofagrigus ex"
+    },
+    {
+      "number": "225",
+      "name": "Valentia Férrea ex"
+    },
+    {
+      "number": "226",
+      "name": "Hoopa ex"
+    },
+    {
+      "number": "227",
+      "name": "Toxtricity ex"
+    },
+    {
+      "number": "228",
+      "name": "Choque Areia ex"
+    },
+    {
+      "number": "229",
+      "name": "Lua Estrondo ex"
+    },
+    {
+      "number": "230",
+      "name": "Aegislash ex"
+    },
+    {
+      "number": "231",
+      "name": "Gholdengo ex"
+    },
+    {
+      "number": "232",
+      "name": "Altaria ex"
+    },
+    {
+      "number": "233",
+      "name": "Maushold ex"
+    },
+    {
+      "number": "234",
+      "name": "Bombirdier ex"
+    },
+    {
+      "number": "235",
+      "name": "Lauro"
+    },
+    {
+      "number": "236",
+      "name": "Mélia"
+    },
+    {
+      "number": "237",
+      "name": "Norman"
+    },
+    {
+      "number": "238",
+      "name": "Dama de Sombrinha"
+    },
+    {
+      "number": "239",
+      "name": "Vitalidade da Professora Arka"
+    },
+    {
+      "number": "240",
+      "name": "Hipótese do Professor Turo"
+    },
+    {
+      "number": "241",
+      "name": "Kaya"
+    },
+    {
+      "number": "242",
+      "name": "Roark"
+    },
+    {
+      "number": "243",
+      "name": "Shauntal"
+    },
+    {
+      "number": "244",
+      "name": "Tulipa"
+    },
+    {
+      "number": "245",
+      "name": "Garchomp ex"
+    },
+    {
+      "number": "246",
+      "name": "Golisopod ex"
+    },
+    {
+      "number": "247",
+      "name": "Tapu Koko ex"
+    },
+    {
+      "number": "248",
+      "name": "Mãos Férreas ex"
+    },
+    {
+      "number": "249",
+      "name": "Valentia Férrea ex"
+    },
+    {
+      "number": "250",
+      "name": "Choque Areia ex"
+    },
+    {
+      "number": "251",
+      "name": "Lua Estrondo ex"
+    },
+    {
+      "number": "252",
+      "name": "Gholdengo ex"
+    },
+    {
+      "number": "253",
+      "name": "Altaria ex"
+    },
+    {
+      "number": "254",
+      "name": "Mélia"
+    },
+    {
+      "number": "255",
+      "name": "Dama de Sombrinha"
+    },
+    {
+      "number": "256",
+      "name": "Vitalidade da Professora Arka"
+    },
+    {
+      "number": "257",
+      "name": "Hipótese do Professor Turo"
+    },
+    {
+      "number": "258",
+      "name": "Kaya"
+    },
+    {
+      "number": "259",
+      "name": "Tulipa"
+    },
+    {
+      "number": "260",
+      "name": "Garchomp ex"
+    },
+    {
+      "number": "261",
+      "name": "Valentia Férrea ex"
+    },
+    {
+      "number": "262",
+      "name": "Lua Estrondo ex"
+    },
+    {
+      "number": "263",
+      "name": "Quadra de Praia"
+    },
+    {
+      "number": "264",
+      "name": "Pegador de Contra-ataque"
+    },
+    {
+      "number": "265",
+      "name": "Capa Luxuosa"
+    },
+    {
+      "number": "266",
+      "name": "Energia Reversa"
+    }
+  ]
+}

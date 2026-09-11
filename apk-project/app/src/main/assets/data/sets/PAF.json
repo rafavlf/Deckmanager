@@ -1,0 +1,992 @@
+{
+  "code": "PAF",
+  "name": "Destinos de Paldea",
+  "series": "Scarlet & Violet",
+  "releaseDate": "2024-01-26",
+  "counts": {
+    "numbered": 91,
+    "complete": 245
+  },
+  "cards": [
+    {
+      "number": "001",
+      "name": "Pineco"
+    },
+    {
+      "number": "002",
+      "name": "Forretress ex"
+    },
+    {
+      "number": "003",
+      "name": "Maractus"
+    },
+    {
+      "number": "004",
+      "name": "Toedscool"
+    },
+    {
+      "number": "005",
+      "name": "Toedscruel ex"
+    },
+    {
+      "number": "006",
+      "name": "Espathra ex"
+    },
+    {
+      "number": "007",
+      "name": "Charmander"
+    },
+    {
+      "number": "008",
+      "name": "Charmeleon"
+    },
+    {
+      "number": "009",
+      "name": "Magmar"
+    },
+    {
+      "number": "010",
+      "name": "Magmortar"
+    },
+    {
+      "number": "011",
+      "name": "Numel"
+    },
+    {
+      "number": "012",
+      "name": "Camerupt"
+    },
+    {
+      "number": "013",
+      "name": "Rotom Calor"
+    },
+    {
+      "number": "014",
+      "name": "Charcadet"
+    },
+    {
+      "number": "015",
+      "name": "Armarouge"
+    },
+    {
+      "number": "016",
+      "name": "Lapras"
+    },
+    {
+      "number": "017",
+      "name": "Frigibax"
+    },
+    {
+      "number": "018",
+      "name": "Pikachu"
+    },
+    {
+      "number": "019",
+      "name": "Raichu"
+    },
+    {
+      "number": "020",
+      "name": "Chinchou"
+    },
+    {
+      "number": "021",
+      "name": "Lanturn"
+    },
+    {
+      "number": "022",
+      "name": "Kilowattrel"
+    },
+    {
+      "number": "023",
+      "name": "Exeggcute"
+    },
+    {
+      "number": "024",
+      "name": "Exeggutor"
+    },
+    {
+      "number": "025",
+      "name": "Natu"
+    },
+    {
+      "number": "026",
+      "name": "Xatu"
+    },
+    {
+      "number": "027",
+      "name": "Ralts"
+    },
+    {
+      "number": "028",
+      "name": "Kirlia"
+    },
+    {
+      "number": "029",
+      "name": "Gardevoir ex"
+    },
+    {
+      "number": "030",
+      "name": "Chimecho"
+    },
+    {
+      "number": "031",
+      "name": "Mime Jr."
+    },
+    {
+      "number": "032",
+      "name": "Woobat"
+    },
+    {
+      "number": "033",
+      "name": "Swoobat"
+    },
+    {
+      "number": "034",
+      "name": "Cottonee"
+    },
+    {
+      "number": "035",
+      "name": "Whimsicott"
+    },
+    {
+      "number": "036",
+      "name": "Dedenne"
+    },
+    {
+      "number": "037",
+      "name": "Mimikyu"
+    },
+    {
+      "number": "038",
+      "name": "Fidough"
+    },
+    {
+      "number": "039",
+      "name": "Dachsbun"
+    },
+    {
+      "number": "040",
+      "name": "Ceruledge"
+    },
+    {
+      "number": "041",
+      "name": "Flittle"
+    },
+    {
+      "number": "042",
+      "name": "Greavard"
+    },
+    {
+      "number": "043",
+      "name": "Houndstone"
+    },
+    {
+      "number": "044",
+      "name": "Gimmighoul"
+    },
+    {
+      "number": "045",
+      "name": "Mankey"
+    },
+    {
+      "number": "046",
+      "name": "Primeape"
+    },
+    {
+      "number": "047",
+      "name": "Annihilape"
+    },
+    {
+      "number": "048",
+      "name": "Phanpy"
+    },
+    {
+      "number": "049",
+      "name": "Donphan"
+    },
+    {
+      "number": "050",
+      "name": "Barboach"
+    },
+    {
+      "number": "051",
+      "name": "Clobbopus"
+    },
+    {
+      "number": "052",
+      "name": "Grapploct"
+    },
+    {
+      "number": "053",
+      "name": "Presa Grande ex"
+    },
+    {
+      "number": "054",
+      "name": "Charizard ex"
+    },
+    {
+      "number": "055",
+      "name": "Gastly"
+    },
+    {
+      "number": "056",
+      "name": "Haunter"
+    },
+    {
+      "number": "057",
+      "name": "Gengar"
+    },
+    {
+      "number": "058",
+      "name": "Wooper de Paldea"
+    },
+    {
+      "number": "059",
+      "name": "Clodsire de Paldea ex"
+    },
+    {
+      "number": "060",
+      "name": "Scraggy"
+    },
+    {
+      "number": "061",
+      "name": "Scrafty"
+    },
+    {
+      "number": "062",
+      "name": "Maschiff"
+    },
+    {
+      "number": "063",
+      "name": "Mabosstiff"
+    },
+    {
+      "number": "064",
+      "name": "Varoom"
+    },
+    {
+      "number": "065",
+      "name": "Revavroom"
+    },
+    {
+      "number": "066",
+      "name": "Trilho Férreo ex"
+    },
+    {
+      "number": "067",
+      "name": "Gholdengo"
+    },
+    {
+      "number": "068",
+      "name": "Noibat"
+    },
+    {
+      "number": "069",
+      "name": "Noivern ex"
+    },
+    {
+      "number": "070",
+      "name": "Cyclizar"
+    },
+    {
+      "number": "071",
+      "name": "Lechonk"
+    },
+    {
+      "number": "072",
+      "name": "Oinkologne"
+    },
+    {
+      "number": "073",
+      "name": "Tandemaus"
+    },
+    {
+      "number": "074",
+      "name": "Maushold"
+    },
+    {
+      "number": "075",
+      "name": "Squawkabilly ex"
+    },
+    {
+      "number": "076",
+      "name": "Artazon"
+    },
+    {
+      "number": "077",
+      "name": "Érico"
+    },
+    {
+      "number": "078",
+      "name": "Clive"
+    },
+    {
+      "number": "079",
+      "name": "Gerador Elétrico"
+    },
+    {
+      "number": "080",
+      "name": "Kissera"
+    },
+    {
+      "number": "081",
+      "name": "Monte Enluarado"
+    },
+    {
+      "number": "082",
+      "name": "Noêmia"
+    },
+    {
+      "number": "083",
+      "name": "Mochila da Noêmia"
+    },
+    {
+      "number": "084",
+      "name": "Bola de Ninho"
+    },
+    {
+      "number": "085",
+      "name": "Estudante de Paldea"
+    },
+    {
+      "number": "086",
+      "name": "Estudante de Paldea"
+    },
+    {
+      "number": "087",
+      "name": "Pesquisa de Professores"
+    },
+    {
+      "number": "088",
+      "name": "Pesquisa de Professores"
+    },
+    {
+      "number": "089",
+      "name": "Doce Raro"
+    },
+    {
+      "number": "090",
+      "name": "Máquina Técnica: Socão Crítico"
+    },
+    {
+      "number": "091",
+      "name": "Ultra Bola"
+    },
+    {
+      "number": "092",
+      "name": "Oddish"
+    },
+    {
+      "number": "093",
+      "name": "Gloom"
+    },
+    {
+      "number": "094",
+      "name": "Vileplume"
+    },
+    {
+      "number": "095",
+      "name": "Scyther"
+    },
+    {
+      "number": "096",
+      "name": "Hoppip"
+    },
+    {
+      "number": "097",
+      "name": "Skiploom"
+    },
+    {
+      "number": "098",
+      "name": "Jumpluff"
+    },
+    {
+      "number": "099",
+      "name": "Pineco"
+    },
+    {
+      "number": "100",
+      "name": "Snover"
+    },
+    {
+      "number": "101",
+      "name": "Abomasnow"
+    },
+    {
+      "number": "102",
+      "name": "Smoliv"
+    },
+    {
+      "number": "103",
+      "name": "Dolliv"
+    },
+    {
+      "number": "104",
+      "name": "Arboliva"
+    },
+    {
+      "number": "105",
+      "name": "Toedscool"
+    },
+    {
+      "number": "106",
+      "name": "Capsakid"
+    },
+    {
+      "number": "107",
+      "name": "Scovillain"
+    },
+    {
+      "number": "108",
+      "name": "Rellor"
+    },
+    {
+      "number": "109",
+      "name": "Charmander"
+    },
+    {
+      "number": "110",
+      "name": "Charmeleon"
+    },
+    {
+      "number": "111",
+      "name": "Tauros de Paldea"
+    },
+    {
+      "number": "112",
+      "name": "Entei"
+    },
+    {
+      "number": "113",
+      "name": "Oricorio"
+    },
+    {
+      "number": "114",
+      "name": "Charcadet"
+    },
+    {
+      "number": "115",
+      "name": "Armarouge"
+    },
+    {
+      "number": "116",
+      "name": "Slowpoke"
+    },
+    {
+      "number": "117",
+      "name": "Slowbro"
+    },
+    {
+      "number": "118",
+      "name": "Staryu"
+    },
+    {
+      "number": "119",
+      "name": "Starmie"
+    },
+    {
+      "number": "120",
+      "name": "Tauros de Paldea"
+    },
+    {
+      "number": "121",
+      "name": "Wiglett"
+    },
+    {
+      "number": "122",
+      "name": "Wugtrio"
+    },
+    {
+      "number": "123",
+      "name": "Finizen"
+    },
+    {
+      "number": "124",
+      "name": "Palafin"
+    },
+    {
+      "number": "125",
+      "name": "Veluza"
+    },
+    {
+      "number": "126",
+      "name": "Dondozo"
+    },
+    {
+      "number": "127",
+      "name": "Tatsugiri"
+    },
+    {
+      "number": "128",
+      "name": "Frigibax"
+    },
+    {
+      "number": "129",
+      "name": "Arctibax"
+    },
+    {
+      "number": "130",
+      "name": "Baxcalibur"
+    },
+    {
+      "number": "131",
+      "name": "Pikachu"
+    },
+    {
+      "number": "132",
+      "name": "Raichu"
+    },
+    {
+      "number": "133",
+      "name": "Voltorb"
+    },
+    {
+      "number": "134",
+      "name": "Electrode"
+    },
+    {
+      "number": "135",
+      "name": "Shinx"
+    },
+    {
+      "number": "136",
+      "name": "Luxio"
+    },
+    {
+      "number": "137",
+      "name": "Luxray"
+    },
+    {
+      "number": "138",
+      "name": "Pachirisu"
+    },
+    {
+      "number": "139",
+      "name": "Thundurus"
+    },
+    {
+      "number": "140",
+      "name": "Toxel"
+    },
+    {
+      "number": "141",
+      "name": "Toxtricity"
+    },
+    {
+      "number": "142",
+      "name": "Pawmi"
+    },
+    {
+      "number": "143",
+      "name": "Pawmo"
+    },
+    {
+      "number": "144",
+      "name": "Pawmot"
+    },
+    {
+      "number": "145",
+      "name": "Wattrel"
+    },
+    {
+      "number": "146",
+      "name": "Kilowattrel"
+    },
+    {
+      "number": "147",
+      "name": "Wigglytuff"
+    },
+    {
+      "number": "148",
+      "name": "Abra"
+    },
+    {
+      "number": "149",
+      "name": "Kadabra"
+    },
+    {
+      "number": "150",
+      "name": "Cleffa"
+    },
+    {
+      "number": "151",
+      "name": "Natu"
+    },
+    {
+      "number": "152",
+      "name": "Xatu"
+    },
+    {
+      "number": "153",
+      "name": "Ralts"
+    },
+    {
+      "number": "154",
+      "name": "Kirlia"
+    },
+    {
+      "number": "155",
+      "name": "Drifloon"
+    },
+    {
+      "number": "156",
+      "name": "Drifblim"
+    },
+    {
+      "number": "157",
+      "name": "Mime Jr."
+    },
+    {
+      "number": "158",
+      "name": "Spiritomb"
+    },
+    {
+      "number": "159",
+      "name": "Klefki"
+    },
+    {
+      "number": "160",
+      "name": "Mimikyu"
+    },
+    {
+      "number": "161",
+      "name": "Dachsbun"
+    },
+    {
+      "number": "162",
+      "name": "Ceruledge"
+    },
+    {
+      "number": "163",
+      "name": "Rabsca"
+    },
+    {
+      "number": "164",
+      "name": "Flittle"
+    },
+    {
+      "number": "165",
+      "name": "Tinkatink"
+    },
+    {
+      "number": "166",
+      "name": "Tinkatuff"
+    },
+    {
+      "number": "167",
+      "name": "Tinkaton"
+    },
+    {
+      "number": "168",
+      "name": "Houndstone"
+    },
+    {
+      "number": "169",
+      "name": "Mankey"
+    },
+    {
+      "number": "170",
+      "name": "Primeape"
+    },
+    {
+      "number": "171",
+      "name": "Annihilape"
+    },
+    {
+      "number": "172",
+      "name": "Tauros de Paldea"
+    },
+    {
+      "number": "173",
+      "name": "Riolu"
+    },
+    {
+      "number": "174",
+      "name": "Lucario"
+    },
+    {
+      "number": "175",
+      "name": "Hawlucha"
+    },
+    {
+      "number": "176",
+      "name": "Nacli"
+    },
+    {
+      "number": "177",
+      "name": "Naclstack"
+    },
+    {
+      "number": "178",
+      "name": "Garganacl"
+    },
+    {
+      "number": "179",
+      "name": "Glimmet"
+    },
+    {
+      "number": "180",
+      "name": "Wooper de Paldea"
+    },
+    {
+      "number": "181",
+      "name": "Murkrow"
+    },
+    {
+      "number": "182",
+      "name": "Sneasel"
+    },
+    {
+      "number": "183",
+      "name": "Weavile"
+    },
+    {
+      "number": "184",
+      "name": "Sableye"
+    },
+    {
+      "number": "185",
+      "name": "Pawniard"
+    },
+    {
+      "number": "186",
+      "name": "Bisharp"
+    },
+    {
+      "number": "187",
+      "name": "Kingambit"
+    },
+    {
+      "number": "188",
+      "name": "Mabosstiff"
+    },
+    {
+      "number": "189",
+      "name": "Shroodle"
+    },
+    {
+      "number": "190",
+      "name": "Grafaiai"
+    },
+    {
+      "number": "191",
+      "name": "Scizor"
+    },
+    {
+      "number": "192",
+      "name": "Varoom"
+    },
+    {
+      "number": "193",
+      "name": "Revavroom"
+    },
+    {
+      "number": "194",
+      "name": "Noibat"
+    },
+    {
+      "number": "195",
+      "name": "Cyclizar"
+    },
+    {
+      "number": "196",
+      "name": "Pidgey"
+    },
+    {
+      "number": "197",
+      "name": "Pidgeotto"
+    },
+    {
+      "number": "198",
+      "name": "Jigglypuff"
+    },
+    {
+      "number": "199",
+      "name": "Doduo"
+    },
+    {
+      "number": "200",
+      "name": "Dodrio"
+    },
+    {
+      "number": "201",
+      "name": "Ditto"
+    },
+    {
+      "number": "202",
+      "name": "Snorlax"
+    },
+    {
+      "number": "203",
+      "name": "Wingull"
+    },
+    {
+      "number": "204",
+      "name": "Pelipper"
+    },
+    {
+      "number": "205",
+      "name": "Skwovet"
+    },
+    {
+      "number": "206",
+      "name": "Greedent"
+    },
+    {
+      "number": "207",
+      "name": "Lechonk"
+    },
+    {
+      "number": "208",
+      "name": "Oinkologne"
+    },
+    {
+      "number": "209",
+      "name": "Tandemaus"
+    },
+    {
+      "number": "210",
+      "name": "Maushold"
+    },
+    {
+      "number": "211",
+      "name": "Flamigo"
+    },
+    {
+      "number": "212",
+      "name": "Forretress ex"
+    },
+    {
+      "number": "213",
+      "name": "Toedscruel ex"
+    },
+    {
+      "number": "214",
+      "name": "Espathra ex"
+    },
+    {
+      "number": "215",
+      "name": "Alakazam ex"
+    },
+    {
+      "number": "216",
+      "name": "Mew ex"
+    },
+    {
+      "number": "217",
+      "name": "Gardevoir ex"
+    },
+    {
+      "number": "218",
+      "name": "Glimmora ex"
+    },
+    {
+      "number": "219",
+      "name": "Clodsire de Paldea ex"
+    },
+    {
+      "number": "220",
+      "name": "Noivern ex"
+    },
+    {
+      "number": "221",
+      "name": "Pidgeot ex"
+    },
+    {
+      "number": "222",
+      "name": "Wigglytuff ex"
+    },
+    {
+      "number": "223",
+      "name": "Squawkabilly ex"
+    },
+    {
+      "number": "224",
+      "name": "Wugtrio"
+    },
+    {
+      "number": "225",
+      "name": "Palafin"
+    },
+    {
+      "number": "226",
+      "name": "Pawmi"
+    },
+    {
+      "number": "227",
+      "name": "Clive"
+    },
+    {
+      "number": "228",
+      "name": "Juiz"
+    },
+    {
+      "number": "229",
+      "name": "Noêmia"
+    },
+    {
+      "number": "230",
+      "name": "Estudante de Paldea"
+    },
+    {
+      "number": "231",
+      "name": "Estudante de Paldea"
+    },
+    {
+      "number": "232",
+      "name": "Mew ex"
+    },
+    {
+      "number": "233",
+      "name": "Gardevoir ex"
+    },
+    {
+      "number": "234",
+      "name": "Charizard ex"
+    },
+    {
+      "number": "235",
+      "name": "Arven"
+    },
+    {
+      "number": "236",
+      "name": "Clive"
+    },
+    {
+      "number": "237",
+      "name": "Kissera"
+    },
+    {
+      "number": "238",
+      "name": "Noêmia"
+    },
+    {
+      "number": "239",
+      "name": "Penélope"
+    },
+    {
+      "number": "240",
+      "name": "Wo-Chien ex"
+    },
+    {
+      "number": "241",
+      "name": "Chi-Yu ex"
+    },
+    {
+      "number": "242",
+      "name": "Chien-Pao ex"
+    },
+    {
+      "number": "243",
+      "name": "Miraidon ex"
+    },
+    {
+      "number": "244",
+      "name": "Ting-Lu ex"
+    },
+    {
+      "number": "245",
+      "name": "Koraidon ex"
+    }
+  ]
+}

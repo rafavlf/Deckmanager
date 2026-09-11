@@ -1,0 +1,592 @@
+{
+  "code": "SCR",
+  "name": "Coroa Estelar",
+  "series": "Scarlet & Violet",
+  "releaseDate": "2024-09-13",
+  "counts": {
+    "numbered": 142,
+    "complete": 172
+  },
+  "cards": [
+    {
+      "number": "001",
+      "name": "Venusaur ex"
+    },
+    {
+      "number": "002",
+      "name": "Ledyba"
+    },
+    {
+      "number": "003",
+      "name": "Ledian"
+    },
+    {
+      "number": "004",
+      "name": "Celebi"
+    },
+    {
+      "number": "005",
+      "name": "Lileep"
+    },
+    {
+      "number": "006",
+      "name": "Cradily"
+    },
+    {
+      "number": "007",
+      "name": "Carnivine"
+    },
+    {
+      "number": "008",
+      "name": "Rotom Corte"
+    },
+    {
+      "number": "009",
+      "name": "Grubbin"
+    },
+    {
+      "number": "010",
+      "name": "Gossifleur"
+    },
+    {
+      "number": "011",
+      "name": "Eldegoss"
+    },
+    {
+      "number": "012",
+      "name": "Applin"
+    },
+    {
+      "number": "013",
+      "name": "Dipplin"
+    },
+    {
+      "number": "014",
+      "name": "Hydrapple ex"
+    },
+    {
+      "number": "015",
+      "name": "Nymble"
+    },
+    {
+      "number": "016",
+      "name": "Lokix"
+    },
+    {
+      "number": "017",
+      "name": "Toedscool"
+    },
+    {
+      "number": "018",
+      "name": "Toedscruel"
+    },
+    {
+      "number": "019",
+      "name": "Ponyta"
+    },
+    {
+      "number": "020",
+      "name": "Rapidash"
+    },
+    {
+      "number": "021",
+      "name": "Pansear"
+    },
+    {
+      "number": "022",
+      "name": "Reshiram"
+    },
+    {
+      "number": "023",
+      "name": "Salandit"
+    },
+    {
+      "number": "024",
+      "name": "Salazzle"
+    },
+    {
+      "number": "025",
+      "name": "Turtonator"
+    },
+    {
+      "number": "026",
+      "name": "Scorbunny"
+    },
+    {
+      "number": "027",
+      "name": "Raboot"
+    },
+    {
+      "number": "028",
+      "name": "Cinderace ex"
+    },
+    {
+      "number": "029",
+      "name": "Charcadet"
+    },
+    {
+      "number": "030",
+      "name": "Blastoise ex"
+    },
+    {
+      "number": "031",
+      "name": "Lapras"
+    },
+    {
+      "number": "032",
+      "name": "Lapras ex"
+    },
+    {
+      "number": "033",
+      "name": "Marill"
+    },
+    {
+      "number": "034",
+      "name": "Azumarill"
+    },
+    {
+      "number": "035",
+      "name": "Finneon"
+    },
+    {
+      "number": "036",
+      "name": "Lumineon"
+    },
+    {
+      "number": "037",
+      "name": "Tirtouga"
+    },
+    {
+      "number": "038",
+      "name": "Carracosta"
+    },
+    {
+      "number": "039",
+      "name": "Froakie"
+    },
+    {
+      "number": "040",
+      "name": "Frogadier"
+    },
+    {
+      "number": "041",
+      "name": "Greninja ex"
+    },
+    {
+      "number": "042",
+      "name": "Crabominable"
+    },
+    {
+      "number": "043",
+      "name": "Chewtle"
+    },
+    {
+      "number": "044",
+      "name": "Drednaw"
+    },
+    {
+      "number": "045",
+      "name": "Veluza"
+    },
+    {
+      "number": "046",
+      "name": "Electabuzz"
+    },
+    {
+      "number": "047",
+      "name": "Electivire"
+    },
+    {
+      "number": "048",
+      "name": "Chinchou"
+    },
+    {
+      "number": "049",
+      "name": "Lanturn"
+    },
+    {
+      "number": "050",
+      "name": "Joltik"
+    },
+    {
+      "number": "051",
+      "name": "Galvantula ex"
+    },
+    {
+      "number": "052",
+      "name": "Charjabug"
+    },
+    {
+      "number": "053",
+      "name": "Vikavolt"
+    },
+    {
+      "number": "054",
+      "name": "Togedemaru"
+    },
+    {
+      "number": "055",
+      "name": "Zeraora"
+    },
+    {
+      "number": "056",
+      "name": "Pawmi"
+    },
+    {
+      "number": "057",
+      "name": "Slowpoke"
+    },
+    {
+      "number": "058",
+      "name": "Slowking"
+    },
+    {
+      "number": "059",
+      "name": "Mewtwo"
+    },
+    {
+      "number": "060",
+      "name": "Drifloon"
+    },
+    {
+      "number": "061",
+      "name": "Drifblim"
+    },
+    {
+      "number": "062",
+      "name": "Yamask"
+    },
+    {
+      "number": "063",
+      "name": "Comfey"
+    },
+    {
+      "number": "064",
+      "name": "Milcery"
+    },
+    {
+      "number": "065",
+      "name": "Alcremie"
+    },
+    {
+      "number": "066",
+      "name": "Fidough"
+    },
+    {
+      "number": "067",
+      "name": "Dachsbun ex"
+    },
+    {
+      "number": "068",
+      "name": "Flittle"
+    },
+    {
+      "number": "069",
+      "name": "Espathra"
+    },
+    {
+      "number": "070",
+      "name": "Greavard"
+    },
+    {
+      "number": "071",
+      "name": "Rocha Férrea"
+    },
+    {
+      "number": "072",
+      "name": "Cubone"
+    },
+    {
+      "number": "073",
+      "name": "Marowak"
+    },
+    {
+      "number": "074",
+      "name": "Rhyhorn"
+    },
+    {
+      "number": "075",
+      "name": "Rhydon"
+    },
+    {
+      "number": "076",
+      "name": "Rhyperior"
+    },
+    {
+      "number": "077",
+      "name": "Meditite"
+    },
+    {
+      "number": "078",
+      "name": "Meditite"
+    },
+    {
+      "number": "079",
+      "name": "Medicham"
+    },
+    {
+      "number": "080",
+      "name": "Medicham ex"
+    },
+    {
+      "number": "081",
+      "name": "Riolu"
+    },
+    {
+      "number": "082",
+      "name": "Lucario ex"
+    },
+    {
+      "number": "083",
+      "name": "Mienfoo"
+    },
+    {
+      "number": "084",
+      "name": "Mienshao"
+    },
+    {
+      "number": "085",
+      "name": "Pancham"
+    },
+    {
+      "number": "086",
+      "name": "Diancie"
+    },
+    {
+      "number": "087",
+      "name": "Crabrawler"
+    },
+    {
+      "number": "088",
+      "name": "Falinks"
+    },
+    {
+      "number": "089",
+      "name": "Garganacl ex"
+    },
+    {
+      "number": "090",
+      "name": "Koraidon"
+    },
+    {
+      "number": "091",
+      "name": "Gulpin"
+    },
+    {
+      "number": "092",
+      "name": "Swalot"
+    },
+    {
+      "number": "093",
+      "name": "Pangoro"
+    },
+    {
+      "number": "094",
+      "name": "Impidimp"
+    },
+    {
+      "number": "095",
+      "name": "Morgrem"
+    },
+    {
+      "number": "096",
+      "name": "Grimmsnarl"
+    },
+    {
+      "number": "097",
+      "name": "Bombirdier"
+    },
+    {
+      "number": "098",
+      "name": "Jirachi"
+    },
+    {
+      "number": "099",
+      "name": "Klink"
+    },
+    {
+      "number": "100",
+      "name": "Klang"
+    },
+    {
+      "number": "101",
+      "name": "Klinklang"
+    },
+    {
+      "number": "102",
+      "name": "Meltan"
+    },
+    {
+      "number": "103",
+      "name": "Meltan"
+    },
+    {
+      "number": "104",
+      "name": "Melmetal"
+    },
+    {
+      "number": "105",
+      "name": "Melmetal ex"
+    },
+    {
+      "number": "106",
+      "name": "Duraludon"
+    },
+    {
+      "number": "107",
+      "name": "Archaludon"
+    },
+    {
+      "number": "108",
+      "name": "Varoom"
+    },
+    {
+      "number": "109",
+      "name": "Revavroom"
+    },
+    {
+      "number": "110",
+      "name": "Orthworm ex"
+    },
+    {
+      "number": "111",
+      "name": "Raio Fúria"
+    },
+    {
+      "number": "112",
+      "name": "Tauros"
+    },
+    {
+      "number": "113",
+      "name": "Eevee"
+    },
+    {
+      "number": "114",
+      "name": "Hoothoot"
+    },
+    {
+      "number": "115",
+      "name": "Noctowl"
+    },
+    {
+      "number": "116",
+      "name": "Glameow"
+    },
+    {
+      "number": "117",
+      "name": "Purugly"
+    },
+    {
+      "number": "118",
+      "name": "Rotom Ventilador"
+    },
+    {
+      "number": "119",
+      "name": "Bouffalant"
+    },
+    {
+      "number": "120",
+      "name": "Tornadus"
+    },
+    {
+      "number": "121",
+      "name": "Fletchling"
+    },
+    {
+      "number": "122",
+      "name": "Fletchinder"
+    },
+    {
+      "number": "123",
+      "name": "Talonflame"
+    },
+    {
+      "number": "124",
+      "name": "Wooloo"
+    },
+    {
+      "number": "125",
+      "name": "Dubwool"
+    },
+    {
+      "number": "126",
+      "name": "Lechonk"
+    },
+    {
+      "number": "127",
+      "name": "Cyclizar"
+    },
+    {
+      "number": "128",
+      "name": "Terapagos ex"
+    },
+    {
+      "number": "129",
+      "name": "Fóssil Casca Arcaico"
+    },
+    {
+      "number": "130",
+      "name": "Fóssil Raiz Arcaico"
+    },
+    {
+      "number": "131",
+      "name": "Abismo da Área Zero"
+    },
+    {
+      "number": "132",
+      "name": "Urzy"
+    },
+    {
+      "number": "133",
+      "name": "Plínio"
+    },
+    {
+      "number": "134",
+      "name": "Bomba Deluxe"
+    },
+    {
+      "number": "135",
+      "name": "Trompete de Vidro"
+    },
+    {
+      "number": "136",
+      "name": "Árvore Grandiosa"
+    },
+    {
+      "number": "137",
+      "name": "Gema da Gravidade"
+    },
+    {
+      "number": "138",
+      "name": "Álgaro"
+    },
+    {
+      "number": "139",
+      "name": "Tarsila"
+    },
+    {
+      "number": "140",
+      "name": "Fruta Cau"
+    },
+    {
+      "number": "141",
+      "name": "Fruta Paiapa"
+    },
+    {
+      "number": "142",
+      "name": "Cristal Cintilante"
+    },
+    {
+      "number": "143",
+      "name": "Bulbasaur"
+    },
+    {
+      "number": "148",
+      "name": "Squirtle"
+    },
+    {
+      "number": "175",
+      "name": "Pingente de Bravura"
+    }
+  ]
+}

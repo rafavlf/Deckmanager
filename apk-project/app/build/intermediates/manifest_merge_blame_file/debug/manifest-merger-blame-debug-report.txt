@@ -1,0 +1,86 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.tcgmanager"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:5:5-67
+11-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:6:5-79
+12-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:6:22-76
+13
+14    <permission
+14-->[androidx.core:core:1.12.0] C:\Users\rafae\.gradle\caches\transforms-3\d85085ceaf3fe218053092093934f6af\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
+15        android:name="com.tcgmanager.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+15-->[androidx.core:core:1.12.0] C:\Users\rafae\.gradle\caches\transforms-3\d85085ceaf3fe218053092093934f6af\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
+16        android:protectionLevel="signature" />
+16-->[androidx.core:core:1.12.0] C:\Users\rafae\.gradle\caches\transforms-3\d85085ceaf3fe218053092093934f6af\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
+17
+18    <uses-permission android:name="com.tcgmanager.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+18-->[androidx.core:core:1.12.0] C:\Users\rafae\.gradle\caches\transforms-3\d85085ceaf3fe218053092093934f6af\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
+18-->[androidx.core:core:1.12.0] C:\Users\rafae\.gradle\caches\transforms-3\d85085ceaf3fe218053092093934f6af\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
+19
+20    <application
+20-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:8:5-37:19
+21        android:allowBackup="true"
+21-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:9:9-35
+22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+22-->[androidx.core:core:1.12.0] C:\Users\rafae\.gradle\caches\transforms-3\d85085ceaf3fe218053092093934f6af\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
+23        android:debuggable="true"
+24        android:extractNativeLibs="true"
+25        android:icon="@mipmap/ic_launcher"
+25-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:11:9-43
+26        android:label="@string/app_name"
+26-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:10:9-41
+27        android:theme="@style/AppTheme"
+27-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:12:9-40
+28        android:usesCleartextTraffic="true" >
+28-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:13:9-44
+29        <activity
+29-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:15:9-24:20
+30            android:name="com.tcgmanager.MainActivity"
+30-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:16:13-41
+31            android:configChanges="orientation|screenSize|keyboardHidden"
+31-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:18:13-74
+32            android:exported="true"
+32-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:17:13-36
+33            android:screenOrientation="portrait" >
+33-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:19:13-49
+34            <intent-filter>
+34-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:20:13-23:29
+35                <action android:name="android.intent.action.MAIN" />
+35-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:21:17-69
+35-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:21:25-66
+36
+37                <category android:name="android.intent.category.LAUNCHER" />
+37-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:22:17-77
+37-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:22:27-74
+38            </intent-filter>
+39        </activity>
+40
+41        <!-- FileProvider para compartilhar o CSV exportado -->
+42        <provider
+43            android:name="androidx.core.content.FileProvider"
+43-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:28:13-62
+44            android:authorities="com.tcgmanager.provider"
+44-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:29:13-60
+45            android:exported="false"
+45-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:30:13-37
+46            android:grantUriPermissions="true" >
+46-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:31:13-47
+47            <meta-data
+47-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:32:13-34:58
+48                android:name="android.support.FILE_PROVIDER_PATHS"
+48-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:33:17-67
+49                android:resource="@xml/provider_paths" />
+49-->D:\Deckmanager\apk-project\app\src\main\AndroidManifest.xml:34:17-55
+50        </provider>
+51    </application>
+52
+53</manifest>
